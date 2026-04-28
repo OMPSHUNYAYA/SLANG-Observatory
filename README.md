@@ -260,7 +260,8 @@ Each demo isolates one domain and proves the same invariant:
 
 Start anywhere:
 
-- [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow  
+- [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow
+- [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow    
 
 More demo folders will be added progressively.  
 Check Related Structural References for dedicated SLANG domain repositories.
