@@ -125,8 +125,6 @@ Only structural revelation.
 
 ## ⚡ **30-Second Proof**
 
-`cd demo/SLANG-Invoice`
-
 `python slang_invoice.py`
 
 ---
