@@ -1,0 +1,99 @@
+Open Standard License — SLANG-Observatory Reference Implementations
+
+SLANG-Observatory — Structural Language (SLANG)
+Shunyaya Structural Resolution Model
+
+Legal Status
+
+This is a permissive Open Standard license for SLANG-Observatory reference implementations.
+
+To the maximum extent permitted by law, this license grants rights similar in spirit to permissive open-source licenses, while preserving truthful representation requirements.
+
+If any provision is found unenforceable, the remaining provisions remain in effect.
+
+Permission
+
+Permission is hereby granted, free of charge, to any person or organization to:
+
+use  
+execute  
+study  
+reproduce  
+publish  
+distribute  
+modify  
+implement  
+extend  
+
+any SLANG-Observatory reference implementation(s), including any copies, forks, or derivative works, in whole or in part, for commercial or non-commercial use.
+
+No registration, fees, or approval required.
+
+Conditions
+
+The following conditions apply:
+
+1. Truthful Representation  
+   Implementations and derivatives must not be presented in a misleading manner.
+
+2. Use of Name “SLANG”  
+   The name “SLANG” must not be used to imply:
+   - endorsement  
+   - certification  
+   - official status  
+   - governance authority  
+
+3. Modified Implementations  
+   Modified or extended versions must not be presented as canonical SLANG reference implementations.
+
+Attribution
+
+Attribution is not required, but appreciated.
+
+Suggested form (optional):
+
+Implements SLANG — Structural Language (Shunyaya Structural Resolution Model)
+
+Attribution must not imply endorsement or certification.
+
+Architecture License
+
+Conceptual architecture and documentation are licensed under:
+
+Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+Permitted:
+- research  
+- academic use  
+- study and reproduction  
+- non-commercial distribution  
+
+Commercial use of architecture text is not permitted under this license.
+
+Disclaimer
+
+These reference implementations are minimal demonstration kernels.
+
+They do not constitute production systems and provide no guarantees of:
+- system performance  
+- security  
+- regulatory compliance  
+- operational reliability  
+
+Use is at the user’s sole responsibility.
+
+No Warranty
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+
+MERCHANTABILITY  
+FITNESS FOR A PARTICULAR PURPOSE  
+NON-INFRINGEMENT  
+
+IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM USE.
+
+Closing
+
+This repository is released to encourage independent validation, experimentation, and exploration of structure-based resolution across domains.
