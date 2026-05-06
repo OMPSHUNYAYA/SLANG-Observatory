@@ -205,7 +205,7 @@ It is preserved by something deeper:
 | Invoice | approval workflow | structure |
 | Claims | payout workflow | structure |
 | Cybersecurity | pipelines / escalation flow | structure |
-| Password | reset workflow | structure |
+| Password | authentication / login flow | structure |
 | Audit | verification workflow | structure |
 | Money | transactions / settlement flow | structure |
 | Computation | execution flow | structure |
@@ -256,6 +256,7 @@ Start anywhere:
 - [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow
 - [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
 - [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
+- [SLANG-Password](demo/SLANG-Password/) — access resolution without authentication
 
 More demo folders will be added progressively.  
 Check Related Structural References for dedicated SLANG domain repositories.
