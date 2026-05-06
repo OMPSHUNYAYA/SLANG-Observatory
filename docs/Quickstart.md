@@ -94,6 +94,18 @@ SLANG-OBSERVATORY/
 │   │   ├── README.md  
 │   │   └── slang_claims.py  
 │  
+│   ├── SLANG-Cybersecurity/  
+│   │   ├── README.md  
+│   │   └── slang_cybersecurity.py  
+│  
+│   ├── SLANG-Password/  
+│   │   ├── README.md  
+│   │   └── slang_password.py  
+│  
+│   ├── SLANG-ResetPassword/  
+│   │   ├── README.md  
+│   │   └── slang_reset_password.py  
+│  
 │   └── ...  
 
 ├── docs/  
@@ -101,7 +113,8 @@ SLANG-OBSERVATORY/
 │   ├── FAQ.md  
 │   ├── Proof-Sketch.md  
 │   ├── Dependency-Elimination-Framework.png  
-│   └── Shunyaya-Structural-Stack.png  
+│   ├── Shunyaya-Structural-Stack.png  
+│   └── archive/
 ```
 
 More demos will be added progressively.
