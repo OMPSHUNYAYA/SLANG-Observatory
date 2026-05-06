@@ -18,7 +18,7 @@
 `structure_mature = complete AND consistent`
 
 No workflows. No pipelines. No sequencing.  
-Correctness emerges directly from structure.
+Correctness resolves directly from structure.
 
 ---
 
@@ -198,30 +198,23 @@ It is preserved by something deeper:
 
 ---
 
-## 🧱 **Dependency Elimination Framework**
+## 🧱 **SLANG Dependency Elimination Pattern**
 
-| Domain         | Removed Dependency              | What Preserves Correctness |
-|----------------|--------------------------------|----------------------------|
-| Time           | clocks                         | structure                  |
-| Decision       | order                          | structure                  |
-| Meaning        | sequence                       | structure                  |
-| Money          | transactions                   | structure                  |
-| Truth          | agreement                      | structure                  |
-| Computation    | execution                      | structure                  |
-| AI             | inference                      | structure                  |
-| Cybersecurity  | process / pipelines            | structure                  |
-| Identity       | authority / registry           | structure                  |
-| Consensus      | voting / quorum                | structure                  |
-| Network        | connectivity                   | structure                  |
-| Cloud          | cloud infrastructure           | structure                  |
-| Transition     | traversal / search             | structure                  |
-| Integration    | communication / coordination   | structure                  |
+| SLANG Demo | Removed Dependency | What Preserves Correctness |
+|---|---|---|
+| Invoice | approval workflow | structure |
+| Claims | payout workflow | structure |
+| Cybersecurity | pipelines / escalation flow | structure |
+| Password | reset workflow | structure |
+| Audit | verification workflow | structure |
+| Money | transactions / settlement flow | structure |
+| Computation | execution flow | structure |
 
-Each row removes a dependency — yet correctness remains intact.
+Each demo removes a dependency — yet correctness remains intact.
 
-Nothing is replaced.  
 Nothing is approximated.  
-Only the dependency is eliminated.
+Nothing is substituted.  
+Only the dependency is removed.
 
 👉 The same principle visualized:
 
@@ -261,7 +254,8 @@ Each demo isolates one domain and proves the same invariant:
 Start anywhere:
 
 - [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow
-- [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow    
+- [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
+- [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
 
 More demo folders will be added progressively.  
 Check Related Structural References for dedicated SLANG domain repositories.
@@ -453,30 +447,23 @@ CC BY-NC 4.0
 
 ---
 
-## 🔗 **Related Structural References**
+## 🧱 **Cross-System Dependency Elimination Map**
 
-### **Core SLANG Systems**
-
-- [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) — computation correctness from structure without execution flow
-- [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money) — financial correctness from structure without transactions or settlement
-- [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit) — audit correctness from structure without verification workflows
-
----
-
-### **Foundational Structural Systems**
-
-- [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger) — ledger correctness from structure without ordering
-- [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS) — computation from structure without execution
-- [STIME](https://github.com/OMPSHUNYAYA/Structural-Time) — time from valid structural transitions
-- [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time) — structural clock for time reconstruction
-
----
-
-### **Advanced Structural Systems**
-
-- [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path) — path correctness without traversal or graph search
-- [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money) — financial correctness without continuous connectivity
-- [STILE](https://github.com/OMPSHUNYAYA/STILE) — delivery correctness without communication or network dependency
+| Domain | System | Removed Dependency | What Preserves Correctness |
+|---|---|---|---|
+| Computation | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow | Structure |
+| Computation | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS) | Execution pipelines | Structure |
+| Arithmetic | [SVARE](https://github.com/OMPSHUNYAYA/SVARE) | Computation | Structure |
+| Time | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time) | Clocks | Structure |
+| Time | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time) | Time reconstruction | Structure |
+| Ordering | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger) | Ordering / sequence | Structure |
+| Connectivity | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money) | Continuous connectivity | Structure |
+| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE) | Messaging / network | Structure |
+| Traversal | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path) | Traversal / search | Structure |
+| Infrastructure | [STIC](https://github.com/OMPSHUNYAYA/STIC) | Infrastructure / cloud orchestration | Structure |
+| Media | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER) | Editing / media workflows | Structure |
+| Finance | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money) | Transactions | Structure |
+| Audit | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit) | Verification workflows | Structure |
 
 ---
 
