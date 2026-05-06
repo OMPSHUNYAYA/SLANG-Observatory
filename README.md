@@ -206,6 +206,7 @@ It is preserved by something deeper:
 | Claims | payout workflow | structure |
 | Cybersecurity | pipelines / escalation flow | structure |
 | Password | authentication / login flow | structure |
+| ResetPassword | reset workflow / token orchestration | structure |
 | Audit | verification workflow | structure |
 | Money | transactions / settlement flow | structure |
 | Computation | execution flow | structure |
@@ -257,6 +258,7 @@ Start anywhere:
 - [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
 - [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
 - [SLANG-Password](demo/SLANG-Password/) — access resolution without authentication
+- [SLANG-ResetPassword](demo/SLANG-ResetPassword/) — password reset resolution without workflow
 
 More demo folders will be added progressively.  
 Check Related Structural References for dedicated SLANG domain repositories.
@@ -269,7 +271,7 @@ Each demo is:
 - self-verifiable  
 
 Same structure → same outcome  
-No structure → no outcome  
+No structure → no outcome
 
 ---
 
