@@ -10,7 +10,7 @@
 ![No-Sequence](https://img.shields.io/badge/Sequence-Not%20Required-lightgrey)
 ![Order-Independent](https://img.shields.io/badge/Order-Independent-lightgrey)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Tiny-Kernels](https://img.shields.io/badge/Kernels-Tiny%20%3C2KB-blue)
+![Tiny-Kernels](https://img.shields.io/badge/Kernels-Tiny%20%3C3KB-blue)
 ![Open-Standard](https://img.shields.io/badge/Reference-Open%20Standard-blue)
 
 `correctness = structure`  
@@ -205,6 +205,7 @@ It is preserved by something deeper:
 | Invoice | approval workflow | structure |
 | Claims | payout workflow | structure |
 | Cybersecurity | pipelines / escalation flow | structure |
+| Hurricane Forecast Visibility | forced forecast exposure / premature visibility | structure |
 | Password | authentication / login flow | structure |
 | ResetPassword | reset workflow / token orchestration | structure |
 | Audit | verification workflow | structure |
@@ -257,6 +258,7 @@ Start anywhere:
 - [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow
 - [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
 - [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
+- [SLANG-Hurricane](demo/SLANG-Hurricane/) — forecast visibility without forced cones
 - [SLANG-Password](demo/SLANG-Password/) — access resolution without authentication
 - [SLANG-ResetPassword](demo/SLANG-ResetPassword/) — password reset resolution without workflow
 
