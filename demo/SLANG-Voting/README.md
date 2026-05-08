@@ -28,6 +28,27 @@ The winner becomes visible only when the structure supports visibility.
 
 ---
 
+# 🧭 **Election Admissibility Architecture**
+
+![SLANG-Voting Election Admissibility Architecture](SLANG-Voting-Election-Admissibility-Architecture.png)
+
+The winner is not treated as a process artifact.
+
+Only:
+
+- recorded electoral structure  
+- declared rules  
+- structural validation  
+- structural maturity  
+
+support winner visibility.
+
+`winner_visible iff structure_mature`
+
+The winner becomes visible only when the election structure is complete and consistent.
+
+---
+
 # ⚠️ **Important Clarification**
 
 This is not a complete voting system.
