@@ -175,7 +175,7 @@ Is this outcome structurally allowed to exist?
 
 `observable_truth = resolve(structure)`
 
-visibility = structure_mature
+`visibility = structure_mature`
 
 This introduces a new paradigm:
 
@@ -211,6 +211,7 @@ It is preserved by something deeper:
 | Audit | verification workflow | structure |
 | Money | transactions / settlement flow | structure |
 | Computation | execution flow | structure |
+| Exam Visibility | SLANG-Exam | pre-created papers / secrecy workflows | structure |
 
 Each demo removes a dependency — yet correctness remains intact.
 
@@ -259,6 +260,7 @@ Start anywhere:
 - [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
 - [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
 - [SLANG-Hurricane](demo/SLANG-Hurricane/) — forecast visibility without forced cones
+- [SLANG-Exam](demo/SLANG-Exam/) — question paper visibility without pre-created papers
 - [SLANG-Password](demo/SLANG-Password/) — access resolution without authentication
 - [SLANG-ResetPassword](demo/SLANG-ResetPassword/) — password reset resolution without workflow
 
