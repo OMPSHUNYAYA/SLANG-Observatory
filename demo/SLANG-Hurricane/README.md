@@ -1,4 +1,4 @@
-⭐ **SLANG-Hurricane**
+# ⭐ **SLANG-Hurricane**
 
 ## **Hurricane Forecast Visibility Without Forced Cones — Structural Resolution Kernel**
 
