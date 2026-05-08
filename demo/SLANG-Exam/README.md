@@ -45,6 +45,27 @@ SLANG-Exam removes the early paper itself as a dependency.
 
 ---
 
+# 🧭 **Civilization-Grade Admissibility Architecture**
+
+![SLANG-Exam Admissibility Architecture](SLANG-Exam_Systematic-Admissibility-Framework.png)
+
+The final paper is not treated as a pre-created object.
+
+Only:
+
+- approved structure  
+- admissibility rules  
+- authorization conditions  
+- structural maturity  
+
+exist before the exam.
+
+`paper_visible iff structure_mature`
+
+The paper resolves into existence only when the structure becomes complete and consistent.
+
+---
+
 # ⚠️ **Important Clarification**
 
 This is not a full examination platform.
@@ -474,27 +495,6 @@ The system knows:
 - whether maturity conditions were satisfied  
 
 This prevents mismatch ambiguity.
-
----
-
-# 🧭 **Civilization-Grade Admissibility Architecture**
-
-![SLANG-Exam Admissibility Architecture](SLANG-Exam_Systematic-Admissibility-Framework.png)
-
-The final paper is not treated as a pre-created object.
-
-Only:
-
-- approved structure  
-- admissibility rules  
-- authorization conditions  
-- structural maturity  
-
-exist before the exam.
-
-`paper_visible iff structure_mature`
-
-The paper resolves into existence only when the structure becomes complete and consistent.
 
 ---
 
