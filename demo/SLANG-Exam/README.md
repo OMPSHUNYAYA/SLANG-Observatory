@@ -665,6 +665,24 @@ In real deployment:
 
 ---
 
+# 🎬 **Educational Structural Cinema**
+
+A deterministic cinematic demonstration of SLANG-Exam is also included:
+
+- YouTube:
+  https://www.youtube.com/watch?v=4PQQW48NaOU
+
+- Video generator:
+  `SLANG_Exam_Video_v2_7.py`
+
+The cinematic layer explains the admissibility model visually.
+
+The canonical structural kernel remains:
+
+`slang_exam.py`
+
+---
+
 # 🔍 **What Just Happened**
 
 A tiny resolver propagated examination relationships until structure stabilized.
