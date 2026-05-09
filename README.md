@@ -17,8 +17,11 @@
 `outcome_visible iff structure_mature`  
 `structure_mature = complete AND consistent`
 
-No workflows. No pipelines. No sequencing.  
-Correctness resolves directly from structure.
+No workflow dependency.  
+No pipeline dependency.  
+No sequence dependency.
+
+Correctness resolves from structure.
 
 ---
 
@@ -159,9 +162,9 @@ This is not a better workflow.
 This is not a faster system.  
 This is not optimization.  
 
-This is removal.
+This is dependency elimination.
 
-Correctness does not depend on process.
+Correctness is evaluated structurally rather than primarily through process.
 
 ---
 
@@ -212,7 +215,7 @@ It is preserved by something deeper:
 | Money | transactions / settlement flow | structure |
 | Computation | execution flow | structure |
 | Exam Visibility | pre-created papers / secrecy workflows | structure |
-| Voting / Election Visibility | ballots / machines / recounts as correctness dependencies | structure |
+| Voting / Election Visibility | process-heavy election validation workflows | structure |
 
 Each demo removes a dependency — yet correctness remains intact.
 
@@ -428,7 +431,7 @@ Structure is the only source of truth.
 
 If this pattern holds:
 
-- workflows become optional  
+- many workflow dependencies become reducible  
 - execution becomes secondary  
 - validation becomes structural  
 - correctness becomes intrinsic  
@@ -488,4 +491,5 @@ Correctness was always in structure.
 
 SLANG-Observatory demonstrates that a quiet revolution is possible — one tiny kernel at a time.
 
-Structure is fundamental. Everything else is optional — and removable.
+Structure is fundamental.  
+Many assumed dependencies become optional.
