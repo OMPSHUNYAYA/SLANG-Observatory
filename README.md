@@ -269,12 +269,14 @@ Start anywhere:
 More demo folders will be added progressively.  
 Check Related Structural References for dedicated SLANG domain repositories.
 
-Each demo is:
+Each canonical kernel is:
 
-- tiny (`<2 KB`)  
+- tiny (`<3 KB`)  
 - deterministic  
 - order-independent  
 - self-verifiable  
+
+Some demos additionally include optional educational structural cinema layers. 
 
 Same structure → same outcome  
 No structure → no outcome
