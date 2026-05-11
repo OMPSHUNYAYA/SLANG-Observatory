@@ -463,21 +463,34 @@ CC BY-NC 4.0
 
 ## 🧱 **Cross-System Dependency Elimination Map**
 
-| Domain | System | Removed Dependency | What Preserves Correctness |
-|---|---|---|---|
-| Computation | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow | Structure |
-| Computation | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS) | Execution pipelines | Structure |
-| Arithmetic | [SVARE](https://github.com/OMPSHUNYAYA/SVARE) | Computation | Structure |
-| Time | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time) | Clocks | Structure |
-| Time | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time) | Time reconstruction | Structure |
-| Ordering | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger) | Ordering / sequence | Structure |
-| Connectivity | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money) | Continuous connectivity | Structure |
-| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE) | Messaging / network | Structure |
-| Traversal | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path) | Traversal / search | Structure |
-| Infrastructure | [STIC](https://github.com/OMPSHUNYAYA/STIC) | Infrastructure / cloud orchestration | Structure |
-| Media | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER) | Editing / media workflows | Structure |
-| Finance | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money) | Transactions | Structure |
-| Audit | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit) | Verification workflows | Structure |
+Across these systems, the same structural pattern appears repeatedly.
+
+The dependency changes.  
+The preserved invariant does not.
+
+| Domain        | System | Dependency Removed for Correctness                  | What Preserves Correctness |
+|---------------|--------|------------------------------------|----------------------------|
+| Computation   | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow             | Structure |
+| Computation   | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS)                     | Execution pipelines        | Structure |
+| Arithmetic    | [SVARE](https://github.com/OMPSHUNYAYA/SVARE)                        | Computation                | Structure |
+| Time          | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time)              | Clocks                     | Structure |
+| Time          | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time)                | Time reconstruction        | Structure |
+| Ordering      | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger)              | Ordering / sequence        | Structure |
+| Connectivity  | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money)           | Continuous connectivity    | Structure |
+| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE)                       | Messaging / network        | Structure |
+| Traversal     | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path)             | Traversal / search         | Structure |
+| Infrastructure| [STIC](https://github.com/OMPSHUNYAYA/STIC)                         | Cloud / infrastructure     | Structure |
+| Media         | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER)                    | Editing / manual media workflows | Structure |
+| Finance       | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money)           | Transactions               | Structure |
+| Audit         | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit)           | Verification workflows     | Structure |
+
+Each row demonstrates removal of a dependency for correctness, while structure preserves correctness.
+
+Correctness remains reproducible under structural constraints.
+
+Dependencies may shift from runtime coordination toward structural definition, while preserving deterministic outcomes.
+
+If correctness remains stable after removing a dependency, that dependency may not be fundamental to correctness.
 
 ---
 
