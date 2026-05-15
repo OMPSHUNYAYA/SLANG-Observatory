@@ -22,6 +22,10 @@ No dependency.
 `paper_visible iff structure_mature`  
 `structure_mature = complete AND consistent`
 
+> **Note:** Throughout this README, "structure" refers to the complete, declared, and consistent set of conditions governing whether the final assembled paper may become structurally visible — including blueprint validity, authorization rules, question-bank sufficiency, and exam-window conditions.
+>
+> Structure here does not mean formatting, layout, or visual arrangement.
+
 The paper is not hidden.  
 It is structurally non-existent before maturity.
 
@@ -270,6 +274,27 @@ Only structural revelation.
 
 ---
 
+# ⚠️ **Question Bank Clarification**
+
+SLANG-Exam addresses the early final-assembled-paper exposure surface.
+
+The approved question bank remains a separate operational and security responsibility.
+
+This includes:
+
+- access controls  
+- governance oversight  
+- expert vetting  
+- secure storage  
+
+This kernel governs when the final assembled paper becomes structurally visible.
+
+It does not replace question-bank security.
+
+These are complementary responsibilities.
+
+---
+
 # 🧱 **Dependency Elimination**
 
 | Domain | Removed Dependency | What Preserves Correctness |
@@ -445,6 +470,28 @@ the structure is different.
 `same structure -> same outcome`
 
 Fairness is preserved through structure.
+
+---
+
+### ⚖️ **Structural Fairness Clarification**
+
+Different papers remain admissible only when their identity is itself part of the declared structure.
+
+Equivalent papers must satisfy identical structural constraints:
+
+- topic coverage  
+- marks distribution  
+- difficulty balance  
+- time expectations  
+- format rules  
+
+If these differ:
+
+the structure is different.
+
+`same declared structure -> same resolved outcome`
+
+Fairness is preserved structurally — not merely through identical paper text.
 
 ---
 
@@ -643,28 +690,6 @@ See `slang_exam.py` in this folder — the complete structural examination admis
 
 ---
 
-# ⚠️ **Important Demo Clarification**
-
-In this minimal demo:
-
-`approved_questions`
-
-are symbolic placeholders.
-
-The purpose is not to implement full examination infrastructure.
-
-The purpose is to demonstrate the invariant:
-
-`paper_visible iff structure_mature`
-
-In real deployment:
-
-- question banks remain protected  
-- governance remains external  
-- selection logic becomes part of declared structure  
-
----
-
 # 🎬 **Educational Structural Cinema**
 
 A deterministic cinematic demonstration of SLANG-Exam is also included:
@@ -839,6 +864,28 @@ Even in ~1.40 KB:
 
 ---
 
+# ⚠️ **Important Demo Clarification**
+
+In this minimal demo:
+
+`approved_questions`
+
+are symbolic placeholders used only to expose structural relationships.
+
+In real deployment:
+
+- question banks remain protected  
+- governance remains external  
+- selection logic becomes part of declared structure  
+
+The purpose of the kernel is not to implement a full examination platform.
+
+The purpose is to demonstrate the invariant:
+
+`paper_visible iff structure_mature`
+
+---
+
 # 🌍 **What This Implies**
 
 If this model scales:
@@ -884,6 +931,28 @@ This is dependency elimination.
 
 ---
 
+# 🌍 **Where This Could Matter Most**
+
+Many large-scale examination failures share the same structural pattern:
+
+the final assembled paper exists before exam time.
+
+That early existence creates an exposure surface across:
+
+- printing  
+- transport  
+- storage  
+- distribution  
+- server exposure  
+
+SLANG-Exam targets this early final-assembled-paper dependency for correctness.
+
+If independently validated and institutionally adopted, this approach could reduce exposure created by premature assembled-paper visibility — while preserving governance, fairness, and examination integrity.
+
+Question-bank security, institutional governance, implementation security, and operational controls remain separate responsibilities.
+
+---
+
 # 🔍 **Execution Clarification**
 
 This kernel runs as a program.
@@ -925,24 +994,6 @@ Paper visibility becomes structural admissibility.
 
 ---
 
-# 🌍 **A Deeper Principle**
-
-SLANG-Exam demonstrates a broader structural principle within the Shunyaya framework:
-
-`correctness emerges from structure`
-
-not from:
-
-- secrecy chains  
-- process pressure  
-- forced visibility  
-- storage dependency  
-- workflow escalation  
-
-The paper becomes visible only when the structure is complete and consistent.
-
----
-
 # 🌍 **Governance Made Structurally Visible**
 
 SLANG-Exam is not governance removal.
@@ -981,6 +1032,24 @@ Examples:
 The structural engine remains unchanged.
 
 Only the declared structure evolves.
+
+---
+
+# 🌍 **A Deeper Principle**
+
+SLANG-Exam demonstrates a broader structural principle within the Shunyaya framework:
+
+`correctness emerges from structure`
+
+not from:
+
+- secrecy chains  
+- process pressure  
+- storage dependency  
+- forced visibility  
+- workflow escalation  
+
+The final assembled paper becomes structurally visible only when the declared structure is complete and consistent.
 
 ---
 
