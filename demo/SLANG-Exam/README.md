@@ -4,14 +4,16 @@
 
 **Proven in ~1.40 KB**
 
-No pre-created final paper. No early distribution.  
-No secrecy chain. No courier dependency. No last-minute panic.  
+No pre-created final assembled paper.  
+No early distribution surface.  
+No sealed-envelope secrecy chain.  
+No last-minute reconciliation pressure.  
 
-Only structure — and the final paper becomes visible when the exam structure is mature.
+Only structure — and the final assembled paper becomes structurally visible only when the exam structure is mature.
 
 This is not paper protection by hiding.
 
-This is paper non-existence before structural maturity.  
+This is structural non-visibility before maturity.  
 This is admissibility from structure.
 
 No forced visibility.  
@@ -23,7 +25,7 @@ No dependency.
 `structure_mature = complete AND consistent`
 
 > **Note:** Throughout this README, "structure" refers to the complete, declared, and consistent set of conditions governing whether the final assembled paper may become structurally visible — including blueprint validity, authorization rules, question-bank sufficiency, and exam-window conditions.
->
+
 > Structure here does not mean formatting, layout, or visual arrangement.
 
 The paper is not hidden.  
@@ -43,9 +45,9 @@ This is the key structural shift.
 
 Traditional systems attempt to protect a paper that already exists.
 
-SLANG-Exam removes the early paper itself as a dependency.
+SLANG-Exam removes the early final-assembled paper itself as a dependency.
 
-`No object -> no surface -> no leak`
+`No early assembled object -> no early assembled-paper leak surface`
 
 ---
 
@@ -53,7 +55,7 @@ SLANG-Exam removes the early paper itself as a dependency.
 
 ![SLANG-Exam Admissibility Architecture](SLANG-Exam_Systematic-Admissibility-Framework.png)
 
-The final paper is not treated as a pre-created object.
+The final assembled paper is not treated as a pre-created object.
 
 Only:
 
@@ -66,7 +68,7 @@ exist before the exam.
 
 `paper_visible iff structure_mature`
 
-The paper resolves into existence only when the structure becomes complete and consistent.
+The final assembled paper becomes structurally visible only when the structure becomes complete and consistent.
 
 ---
 
@@ -102,9 +104,9 @@ Real-world deployment, governance, academic integrity, and examination operation
 
 A valid exam paper can become structurally visible without:
 
-- pre-created final papers  
-- secrecy chains  
-- early paper storage  
+- pre-created final assembled papers  
+- sealed-envelope secrecy chains  
+- early assembled-paper storage  
 - forced paper existence  
 - courier dependency  
 - premature visibility  
@@ -117,7 +119,7 @@ when structure is sufficient.
 
 Traditional examination systems assume:
 
-- the final paper must exist early  
+- the final assembled paper must exist early  
 - the paper must be stored securely  
 - secrecy chains are unavoidable  
 - distribution workflows are required  
@@ -126,19 +128,19 @@ Traditional examination systems assume:
 
 SLANG-Exam shows:
 
-Paper visibility does not come from secrecy workflows.
+Paper visibility does not emerge from secrecy workflows.
 
 It emerges from structure.
 
-The paper is not exposed because it exists.
+The final assembled paper is not exposed because it exists.
 
-It becomes visible only when the examination structure is mature.
+It becomes structurally visible only when the examination structure is mature.
 
 ---
 
 # 🧠 **Structural Maturity Gate**
 
-A paper becomes structurally visible only when:
+A final assembled paper becomes structurally visible only when:
 
 - `window_valid`  
 - `center_valid`  
@@ -165,7 +167,7 @@ It is admitted only after structural maturity.
 
 Modern examination systems rely on:
 
-- pre-created papers  
+- pre-created final papers  
 - secrecy chains  
 - printing centers  
 - sealed envelopes  
@@ -178,7 +180,7 @@ Each treated as required.
 
 But:
 
-What if the paper itself is not the source of examination correctness?
+What if the final assembled paper itself is not the source of examination correctness?
 
 What if correctness is preserved by structure?
 
@@ -196,6 +198,10 @@ It is preserved by:
 
 **structure**
 
+For examinations:
+
+`question paper visibility -> remove early assembled-paper dependency -> structure remains -> examination correctness preserved`
+
 ---
 
 # 🌍 **Traditional vs Structural Examination**
@@ -203,20 +209,19 @@ It is preserved by:
 | Traditional Examination | SLANG-Exam |
 |---|---|
 | create paper → store → distribute → protect → exam | create structure → approve rules → resolve paper at exam time |
-| paper exists early | paper becomes visible only after maturity |
+| final assembled paper exists early | final assembled paper becomes visible only after maturity |
 | secrecy chain required | structure alone determines visibility |
-| leak risk unavoidable | no early paper exists to leak |
+| leak risk unavoidable | no early assembled paper exists to leak |
 | emergency paper dependency | admissibility gating |
 | process-dependent trust | structure-dependent trust |
 
 Result:
 
-The paper appears only when structure is complete AND consistent.
+The final assembled paper becomes structurally visible only when structure is complete AND consistent.
 
 No forced existence.  
 No premature visibility.  
 No unsafe exposure.
-
 ---
 
 # ⚠️ **Read This Carefully**
@@ -224,9 +229,9 @@ No unsafe exposure.
 This is not a better examination workflow.  
 This is not a faster exam system.
 
-This is removal.
+This is dependency elimination.
 
-`paper_visibility` does not depend on early paper existence.  
+`paper_visibility` does not depend on early final-assembled-paper existence.  
 Trust does not depend on secrecy chains.  
 It never did.
 
@@ -235,7 +240,7 @@ It never did.
 # ⚡ **The Critical Line**
 
 Question paper visibility  
-→ remove early-paper dependency  
+→ remove early final-assembled-paper dependency  
 → structure remains  
 → admissible examination preserved
 
@@ -243,9 +248,9 @@ Nothing was improved.
 Nothing was replaced.  
 Only the dependency was removed.
 
-No pre-created paper.  
+No pre-created final assembled paper.  
 No forced visibility.  
-No early leakage surface.
+No early assembled-paper leak surface.
 
 ---
 
@@ -259,12 +264,12 @@ It preserves it.
 
 Where:
 
-- `m` = classical examination result  
+- `m` = classical examination outcome  
 - `a` = alignment  
 - `s` = structural state  
 
 When structure is complete and consistent,  
-the visible paper aligns with structurally admissible truth.
+the visible paper aligns with structurally admissible examination truth.
 
 No approximation.  
 No reinterpretation.  
@@ -291,7 +296,7 @@ This kernel governs when the final assembled paper becomes structurally visible.
 
 It does not replace question-bank security.
 
-These are complementary responsibilities.
+These are complementary — not competing — responsibilities.
 
 ---
 
@@ -299,7 +304,7 @@ These are complementary responsibilities.
 
 | Domain | Removed Dependency | What Preserves Correctness |
 |---|---|---|
-| Examination Visibility | Pre-created final paper / secrecy workflow | Structure |
+| Examination Visibility | Pre-created final assembled paper / secrecy workflow | Structure |
 
 ---
 
@@ -326,7 +331,7 @@ Example:
 
 At this stage:
 
-No paper exists.
+No final assembled paper exists.
 
 Only structure exists.
 
@@ -352,9 +357,9 @@ Example:
 
 Still:
 
-No final paper exists.
+No final assembled paper exists.
 
-Only building blocks exist.
+Only approved building blocks exist.
 
 ---
 
@@ -382,18 +387,18 @@ The question bank may exist securely.
 
 But:
 
-there is no single final paper object.
+there is no single final assembled paper object.
 
 Only:
 
-- question bank  
+- approved question bank  
 - blueprint  
-- rules  
+- admissibility rules  
 - authorization structure  
 
 exist before the exam.
 
-The final paper does not yet exist.
+The final assembled paper does not yet exist.
 
 ---
 
@@ -410,7 +415,7 @@ Before exam day, authorities approve:
 
 They approve the structure.
 
-Not one fixed final paper.
+Not one fixed final assembled paper.
 
 ---
 
@@ -431,7 +436,7 @@ Only then:
 
 Otherwise:
 
-No paper appears.
+No final assembled paper appears.
 
 No forced output.  
 No unsafe visibility.  
@@ -443,7 +448,7 @@ Absence is a valid structural state.
 
 ## **7. Structural Resolution**
 
-The paper appears only when:
+The final assembled paper becomes structurally visible only when:
 
 `structure_mature = complete AND consistent`
 
@@ -467,7 +472,7 @@ If these differ:
 
 the structure is different.
 
-`same structure -> same outcome`
+`same declared structure -> same resolved outcome`
 
 Fairness is preserved through structure.
 
@@ -501,11 +506,11 @@ At exam start:
 
 - online paper appears  
 - printable paper unlocks  
-- center receives resolved paper  
+- center receives the resolved version  
 
 Before that:
 
-No complete paper exists to leak.
+No complete final assembled paper exists to leak.
 
 ---
 
@@ -536,9 +541,9 @@ Evaluation links directly to the resolved structure.
 
 The system knows:
 
-- which candidate received which paper  
+- which candidate received which questions  
 - which answer key applies  
-- whether the paper was structurally valid  
+- whether the resolved paper was structurally valid  
 - whether maturity conditions were satisfied  
 
 This prevents mismatch ambiguity.
@@ -555,14 +560,14 @@ python slang_exam.py
 
 # 🔍 **You will observe**
 
-- paper visibility emerges from structure  
-- no pre-created paper required  
+- final assembled paper visibility emerges from structure  
+- no pre-created final assembled paper required  
 - no secrecy chain required  
 - no early visibility required  
 - incomplete structure → no paper  
 - invalid structure → no paper  
 - unauthorized structure → no paper  
-- identical structure → identical paper visibility  
+- identical structure → identical paper visibility
 
 ---
 
@@ -630,7 +635,7 @@ Result:
 - `paper_visible` disappears  
 - `question_paper` disappears  
 
-The paper does not appear when the blueprint itself is structurally invalid.
+The final assembled paper does not become structurally visible when the blueprint itself is structurally invalid.
 
 ---
 
@@ -662,7 +667,7 @@ This is structural absence.
 `absence ≠ failure`  
 `absence = truth`
 
-The system refuses to expose papers unsupported by structure.
+The system refuses to expose final assembled papers unsupported by structure.
 
 ---
 
@@ -674,13 +679,13 @@ In traditional systems:
 
 Here:
 
-absence of paper is a structurally valid state.
+absence of a final assembled paper is a structurally valid state.
 
 No false paper.  
 No forced visibility.  
 No premature existence.
 
-Only what reaches structural maturity becomes visible.
+Only what reaches structural maturity becomes structurally visible.
 
 ---
 
@@ -690,30 +695,12 @@ See `slang_exam.py` in this folder — the complete structural examination admis
 
 ---
 
-# 🎬 **Educational Structural Cinema**
-
-A deterministic cinematic demonstration of SLANG-Exam is also included:
-
-- YouTube:
-  https://www.youtube.com/watch?v=4PQQW48NaOU
-
-- Video generator:
-  `SLANG_Exam_Video_v2_7.py`
-
-The cinematic layer explains the admissibility model visually.
-
-The canonical structural kernel remains:
-
-`slang_exam.py`
-
----
-
 # 🔍 **What Just Happened**
 
 A tiny resolver propagated examination relationships until structure stabilized.
 
 No secrecy chain.  
-No pre-created paper.  
+No pre-created final assembled paper.  
 No forced visibility.
 
 Only:
@@ -726,9 +713,9 @@ Structure resolves.
 
 It does not generate.
 
-The paper is not a pre-declared object.
+The final assembled paper is not a pre-declared object.
 
-It becomes visible only after structural maturity.
+It becomes structurally visible only after structural maturity.
 
 No randomness.  
 No hidden workflow.  
@@ -748,13 +735,13 @@ Center-specific or candidate-specific papers remain admissible only if:
 - admissibility rules remain identical  
 - blueprint integrity remains identical  
 
-Fairness is preserved through structure — not through identical paper text alone.
+Fairness is preserved structurally — not through identical paper text alone.
 
 ---
 
 # 🧠 **Core Structural Properties**
 
-`same structure -> same paper_visibility`  
+`same declared structure -> same paper_visibility`  
 `different paper_visibility -> structure must differ`
 
 - order independent  
@@ -768,7 +755,7 @@ Fairness is preserved through structure — not through identical paper text alo
 
 # 🔐 **Deterministic Guarantee**
 
-`same structure -> same paper_visibility -> same paper_identity`
+`same declared structure -> same paper_visibility -> same paper_identity`
 
 No workflow, distribution sequence, or rule ordering  
 can alter this invariant.
@@ -777,7 +764,7 @@ can alter this invariant.
 
 # 🔐 **Structural Property**
 
-`same structure -> same paper_visibility`  
+`same declared structure -> same paper_visibility`  
 `same declared structure -> same resolved paper_state`
 
 `incomplete structure -> no paper`  
@@ -804,7 +791,7 @@ No unsafe exposure.
 
 # 📌 **Structural Evidence**
 
-The final structure itself is sufficient proof.
+The declared structure itself is sufficient proof.
 
 No secrecy pressure  
 No forced publication  
@@ -812,7 +799,7 @@ No artificial visibility
 
 Inspect structure → verify paper admissibility
 
-`same structure -> same paper_visibility`
+`same declared structure -> same paper_visibility`
 
 The structure itself becomes the audit surface.
 
@@ -840,7 +827,7 @@ Here:
 
 paper identity emerges from structure itself.
 
-`same structure -> same paper_identity`
+`same declared structure -> same paper_identity`
 
 Identity is not externally imposed.
 
@@ -853,14 +840,14 @@ It is structurally resolved.
 Even in ~1.40 KB:
 
 - paper visibility emerges deterministically from structure  
-- no pre-created paper is required  
+- no pre-created final assembled paper is required  
 - unauthorized centers cannot expose papers  
 - incomplete blueprints block visibility  
 - insufficient question banks block visibility  
 - order independence holds  
 - deterministic replay identity is preserved  
 - absence of paper is a valid structural state  
-- the paper resolves from structure, not storage  
+- the final assembled paper resolves from structure, not storage
 
 ---
 
@@ -890,18 +877,18 @@ The purpose is to demonstrate the invariant:
 
 If this model scales:
 
-- reduced paper leakage exposure  
+- reduced early assembled-paper exposure  
 - lower secrecy-chain dependency  
 - structurally auditable examination visibility  
 - deterministic replay identity for paper states  
 - safer admissibility gating before visibility  
-- structural silence instead of unsafe forced papers  
+- structural silence instead of unsafe forced papers
 
 ---
 
 # 🌍 **Why This Matters**
 
-- reduces dependency on early paper existence  
+- reduces dependency on early final-assembled-paper existence  
 - reduces secrecy-chain exposure  
 - enables structural auditability (`structure = evidence`)  
 - prevents unsupported paper visibility  
@@ -927,7 +914,7 @@ This is dependency elimination.
 - full examination platform  
 - academic governance replacement  
 - production examination engine  
-- institutional bypass mechanism  
+- institutional bypass mechanism
 
 ---
 
@@ -947,7 +934,7 @@ That early existence creates an exposure surface across:
 
 SLANG-Exam targets this early final-assembled-paper dependency for correctness.
 
-If independently validated and institutionally adopted, this approach could reduce exposure created by premature assembled-paper visibility — while preserving governance, fairness, and examination integrity.
+If independently validated and institutionally adopted, this approach could reduce exposure created by premature final assembled-paper visibility — while preserving governance, fairness, and examination integrity.
 
 Question-bank security, institutional governance, implementation security, and operational controls remain separate responsibilities.
 
@@ -959,7 +946,7 @@ This kernel runs as a program.
 
 But:
 
-execution is not the source of paper admissibility
+execution is not the source of paper admissibility.
 
 Paper visibility is determined by structure.  
 Execution is only the substrate.
@@ -970,11 +957,11 @@ Execution reveals the visibility state, but does not determine it.
 
 # 🔭 **Observatory Insight**
 
-This demo does not produce examination systems.
+This demo does not produce full examination systems.
 
 It answers:
 
-**Is this paper structurally admissible to exist?**
+**Is this final assembled paper structurally admissible to exist?**
 
 The paper is not forced into visibility.
 
@@ -988,7 +975,7 @@ This is not the full SLANG system.
 
 This is the smallest visible edge of a much larger structural shift.
 
-This tiny kernel shows that question paper visibility can resolve as pure structure.
+This tiny kernel shows that final assembled question-paper visibility can resolve as pure structure.
 
 Paper visibility becomes structural admissibility.
 
@@ -1008,7 +995,7 @@ Authorities still define:
 - fairness constraints  
 - authorization conditions  
 
-But instead of approving one fixed paper early:
+But instead of approving one fixed final assembled paper early:
 
 they approve the structure from which admissible papers may emerge.
 
@@ -1055,7 +1042,7 @@ The final assembled paper becomes structurally visible only when the declared st
 
 # 🧭 **Final Insight**
 
-Question paper visibility does not require pre-created papers.
+Question paper visibility does not require pre-created final assembled papers.
 
 It requires sufficient structure.
 
@@ -1066,14 +1053,14 @@ They reveal it.
 
 # ⭐ **Final Line**
 
-The paper exists only when it is allowed to exist.
+The final assembled paper exists only when it is allowed to exist.
 
-Forced paper existence becomes optional.  
+Forced early paper existence becomes optional.  
 Structure becomes fundamental.
 
 This tiny kernel shows the boundary.
 
-What you are seeing is not the examination system.
+What you are seeing is not the full examination system.
 
 It is the edge of a new structural admissibility model.
 
