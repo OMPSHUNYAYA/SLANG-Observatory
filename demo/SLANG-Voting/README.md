@@ -1,28 +1,32 @@
 # ⭐ **SLANG-Voting**
 
-## **Election Winner Visibility Without Ballots, Machines, or Recounts as Correctness Dependencies — Structural Resolution Kernel**
+## **Election Outcome Admissibility Through Structural Resolution — Minimal Structural Kernel**
 
 **Proven in ~1.53 KB**
 
-Ballots and voting machines are not treated as the fundamental source of admissibility in this model.  
-Reduced quorum workflow dependency. Reduced recount workflow dependency. Reduced aggregation pipeline dependency.
+Election outcome admissibility is not treated as primarily dependent on ballots, voting machines, recount workflows, quorum pipelines, aggregation sequences, or tally ordering as the governing source of correctness in this model.
 
-Only structure — and the winner becomes visible when the election structure is mature.
+Ballots remain the democratic participation mechanism.  
+Operational election systems remain important.
+
+What changes is the admissibility model.
+
+Only structure — and the election outcome becomes visible when the structure is mature.
 
 This does not replace voting.
 
-This explores reduced voting-process workflow dependency as the source of admissibility.  
+This explores reduced voting-process workflow dependency as the governing source of admissibility evaluation.  
 This is admissibility from structure.
 
-`correctness = structure`  
+`correctness = structure`
 
 `winner_visible iff structure_mature`
 
 `structure_mature = complete AND consistent`
 
-The winner is not declared because a process completed.
+The outcome is not declared because a process completed.
 
-The winner becomes visible only when the structure supports visibility.
+The outcome becomes visible only when the structure supports visibility.
 
 `same structure -> same outcome`
 
@@ -57,16 +61,17 @@ It is a structural admissibility kernel.
 
 SLANG-Voting does not replace:
 
-- citizen participation  
-- voter registration  
-- voter identification  
-- ballot secrecy  
-- anti-coercion protections  
-- secure vote transmission  
-- election commissions  
-- legal certification  
-- constitutional authority  
-- public oversight  
+- citizen participation
+- voter registration
+- voter identification
+- ballot secrecy
+- anti-coercion protections
+- secure vote transmission
+- anonymization safeguards
+- election commissions
+- legal certification
+- constitutional authority
+- public oversight
 
 Voting still happens exactly as it does today.
 
@@ -83,23 +88,50 @@ Real-world elections, democratic legitimacy, legal certification, public trust, 
 
 What changes is not democratic participation.
 
-What changes is how correctness is checked after votes are cast.
+What changes is how outcome admissibility is evaluated after votes are cast.
+
+SLANG is a structural validation layer that sits alongside existing systems.
+
+It makes outcome admissibility structurally observable — nothing more, nothing less.
+
+Operational systems still matter.
+
+Votes still need to be securely collected, recorded, protected, transmitted, anonymized, and legally certified.
+
+Structural admissibility still depends on the integrity of the recorded electoral structure.
+
+---
+
+## 🔐 **Privacy Clarification**
+
+Voter anonymization must occur before structural resolution begins.
+
+The resolver operates on recorded electoral structure — not on public voter identity-to-vote mappings.
+
+Anonymization, secrecy protection, and identity separation remain upstream operational responsibilities.
 
 ---
 
 # ⚡ **The Claim**
 
-This model explores how election winner visibility may be structurally evaluated without relying primarily on:
+This model explores how election outcome admissibility may be structurally evaluated without relying primarily on:
 
-- ballots as the source of correctness  
-- voting machines as the source of correctness  
-- recount workflows  
-- quorum pipelines  
-- aggregation sequences  
-- consensus processes  
-- tallying workflows  
+- ballots as the governing correctness source
+- voting machines as the governing correctness source
+- recount workflows
+- quorum pipelines
+- aggregation sequences
+- consensus processes
+- tally sequencing workflows
 
 when structure is sufficient.
+
+Ballots still remain the democratic participation mechanism.
+
+What changes is their role within the admissibility model:
+
+from primary admissibility verifier  
+to operational input feeding structural resolution.
 
 ---
 
@@ -170,9 +202,9 @@ Each treated as required.
 
 But:
 
-What if these are mechanisms around correctness — not the source of correctness?
+What if these are operational mechanisms around admissibility — not the governing source of admissibility itself?
 
-What if election correctness is preserved by structure?
+What if election outcome admissibility emerges from structure?
 
 ---
 
@@ -215,11 +247,11 @@ This is not a better voting machine.
 This is not a faster counting system.  
 This is not automation of existing election pipelines.
 
-This is structural dependency reduction.
+Voting remains the democratic participation mechanism.
 
-`winner_visibility` does not depend on ballots, machines, recounts, quorum pipelines, or aggregation workflows as the source of correctness.
+SLANG explores how outcome admissibility may be evaluated structurally after participation occurs.
 
-Voting remains essential for democratic participation.
+`winner_visibility` does not primarily depend on ballots, machines, recounts, quorum pipelines, or aggregation workflows as the governing source of admissibility.
 
 Admissibility evaluation becomes structurally reproducible.
 
@@ -268,9 +300,20 @@ Only structural revelation.
 
 # 🧱 **Dependency Elimination**
 
-| Domain | Removed Dependency | What Preserves Correctness |
+| Domain | Dependency Removed for Correctness | What Preserves Correctness |
 |---|---|---|
-| Election Winner Visibility | process-heavy validation workflows as primary admissibility dependency | Structure |
+| Election Outcome Admissibility | recount / tally workflows as governing correctness source | structure |
+
+Important clarification:
+
+"Dependency elimination" within the Shunyaya framework refers to removal as the governing source of correctness — not removal from operational use.
+
+Operational election systems may still remain present and important.
+
+What changes is their role within the admissibility model:
+
+from primary correctness determinants  
+to operational substrates whose outputs feed structural resolution.
 
 ---
 
@@ -664,32 +707,6 @@ In real deployment:
 
 ---
 
----
-
-# 🎬 **Educational Structural Cinema**
-
-A deterministic cinematic demonstration of SLANG-Voting is also included:
-
-- YouTube:
-  https://www.youtube.com/watch?v=I7Ll5In3VRo
-
-- Video generator:
-  `SLANG_Voting_Structural_Cinema_v2_7.py`
-
-The cinematic layer explains structural election admissibility visually.
-
-The canonical structural kernel remains:
-
-`slang_voting.py`
-
-This is a structural admissibility demonstration.
-
-It is not legal certification, political endorsement, or a replacement election system.
-
----
-
----
-
 # 🔍 **What Just Happened**
 
 A tiny resolver propagated electoral relationships until structure stabilized.
@@ -825,15 +842,25 @@ It is structurally resolved.
 
 Even in ~1.53 KB:
 
-- election outcome emerges directly from structure  
-- eligibility is structurally determined  
-- vote validity is structurally determined  
-- winner appears only when structure is complete and consistent  
-- order independence holds  
-- no voting pipeline is required as the source of correctness  
-- incomplete or conflicting structure never produces a forced winner  
-- absence of winner is a valid structural state  
-- democratic outcome visibility becomes structural admissibility  
+- election outcome visibility emerges from resolved structure
+- eligibility and vote validity are structurally determined
+- winner appears only when structure is complete and consistent
+- order independence holds
+- no specific tally workflow or sequencing pipeline is treated as the governing source of admissibility in this kernel
+- incomplete or conflicting structure never produces a forced winner
+- absence of winner is a valid structural state
+- democratic outcome visibility becomes structurally reproducible
+
+Important clarification:
+
+throughout this repository, "dependency elimination" refers to removal as the governing source of correctness — not removal from operational use.
+
+Ballots, machines, recounts, quorum checks, and operational election infrastructure may still remain operationally present and important.
+
+What changes is their role:
+
+from primary correctness determinants  
+to operational substrates whose outputs feed structural resolution.
 
 ---
 
@@ -862,7 +889,7 @@ If this model scales:
 
 This is not automation.
 
-This is structural dependency elimination.
+This is structural dependency elimination for admissibility resolution.
 
 ---
 
@@ -920,28 +947,27 @@ It is admitted.
 
 `ABSTAIN` is part of the broader structural model.
 
-In this reference kernel:
+In this reference kernel, it is conceptually present but intentionally not implemented explicitly — allowing the core invariant to remain isolated and minimal.
 
-- it is conceptually present  
-- but not explicitly implemented  
+For developers extending the kernel, `ABSTAIN` can be represented structurally as a valid non-winning participation state:
 
-This is intentional.
+`all(c in ["A", "B", "C", "ABSTAIN"] for c in s.get("votes", {}).values())`
 
-The kernel isolates the core invariant:
+Under this interpretation:
+
+- the voter participated
+- vote-count completeness is preserved
+- `ABSTAIN` is excluded from winner resolution logic
+
+The structure therefore remains complete and consistent while preserving non-vote participation semantics under declared rules.
+
+The full structural model handles `ABSTAIN` formally.
+
+This minimal kernel isolates the simpler invariant:
 
 `correctness = structure`
 
-In this demo:
-
-- complete structure -> winner becomes visible  
-- incomplete structure -> no winner  
-- conflicting structure -> no winner  
-
-Absence of a declared winner is a valid structural state.
-
-SLANG does not choose between competing truths.
-
-It preserves correctness by refusing unsafe resolution.
+`declaration_admissibility = resolve(structure)`
 
 ---
 
@@ -983,7 +1009,7 @@ You do not need legal changes.
 
 This creates a new possibility:
 
-correctness that can be reproduced independently  
+admissibility evaluation that can be reproduced independently  
 without requiring trust in one centralized counting path.
 
 Different observers.  
@@ -1057,8 +1083,8 @@ It usually reflects incomplete or non-equivalent structure.
 
 If independent groups run this in parallel and obtain the same structurally resolved outcome:
 
-- correctness is no longer inferred  
-- correctness becomes reproducible  
+- admissibility is no longer inferred  
+- admissibility evaluation becomes reproducible
 - public trust gains an inspectable structural surface  
 
 Start small.
@@ -1147,13 +1173,13 @@ Only the declared structure evolves.
 
 Voting remains essential for participation.
 
-It does not need to remain the source of correctness.
+SLANG explores how outcome admissibility becomes structurally observable after democratic participation occurs.
 
-Election winner visibility requires sufficient structure.
+Election outcome visibility requires sufficient structure.
 
 Systems do not enforce democratic trust.
 
-They reveal it — when structure is mature.
+They reveal admissibility only when structure is mature.
 
 ---
 
@@ -1165,10 +1191,10 @@ Admissibility evaluation becomes structurally reproducible.
 
 Outcome admissibility is evaluated through structure.
 
-This tiny kernel shows the boundary.
+This tiny kernel demonstrates the boundary.
 
-The full system goes far beyond this.
+The broader SLANG architecture extends far beyond this minimal proof.
 
 This is not voting optimization.
 
-This is dependency elimination.
+This is structural admissibility resolution.
