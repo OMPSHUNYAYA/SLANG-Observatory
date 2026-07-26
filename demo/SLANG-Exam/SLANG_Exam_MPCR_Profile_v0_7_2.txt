@@ -1,0 +1,833 @@
+SLANG-EXAM MULTI-PARTY COMMIT-REVEAL PROFILE
+Version 0.7.2
+
+1. PURPOSE
+
+This document describes the MULTI_PARTY_COMMIT_REVEAL selector implemented by
+SLANG-Exam v0.7.2.
+
+The selector combines context-bound commitments and complete matching reveals
+from several declared parties into deterministic selector material.
+
+The bounded resolution relation is:
+
+exam_result = resolve(submitted_input, versioned_profile, versioned_ruleset)
+
+The selector-specific relation is:
+
+fixed participant set + context-bound commitments + complete matching reveals
+-> deterministic combined selector material
+
+The profile does not replace examination governance, authentication, digital
+signatures, trusted time, secure communications, question-bank protection, or
+institutional approval.
+
+2. VERSIONED CONTRACT
+
+Reference version:
+0.7.2
+
+Core:
+SLANG-CORE-1-D03
+
+Profile:
+SLANG-EXAM-PROFILE-1-D05
+
+Ruleset:
+SLANG-EXAM-RULESET-1-D05
+
+Canonicalization:
+SLANG-CANONICAL-JSON-1-D02
+
+Input schema:
+SLANG-EXAM-INPUT-5
+
+Result schema:
+SLANG-EXAM-RESULT-5
+
+Bundle schema:
+SLANG-EXAM-BUNDLE-5
+
+Receipt schema:
+SLANG-EXAM-RECEIPT-4
+
+Vector schema:
+SLANG-EXAM-VECTORS-4
+
+Selector mode:
+MULTI_PARTY_COMMIT_REVEAL
+
+3. PORTABLE INPUT AND RESOURCE BOUNDARY
+
+The reference accepts portable JSON values within these limits:
+
+MAX_JSON_DEPTH = 64
+MAX_JSON_NODES = 100000
+MAX_JSON_INPUT_BYTES = 4194304
+
+The bounded examination profile also declares:
+
+MAX_QUESTION_BANK_SIZE = 40
+MAX_TOTAL_QUESTIONS = 12
+MAX_QUESTION_MARKS = 200
+MAX_TOTAL_MARKS = 1000
+MAX_SEARCH_NODES = 250000
+
+Question marks must satisfy:
+
+1 <= marks <= MAX_QUESTION_MARKS
+
+Blueprint total marks must satisfy:
+
+1 <= total_marks <= MAX_TOTAL_MARKS
+
+Values outside these limits are refused before search.
+
+4. PARTICIPANT BOUNDARY
+
+The reference supports:
+
+2 <= party_count <= 8
+
+Every declared party must appear exactly once in the commitment manifest.
+
+Every declared party must appear exactly once in the reveal manifest.
+
+Every reveal must correspond to a declared commitment.
+
+The participant set is normalized and sorted by party_id.
+
+The current profile requires every declared party to reveal. It does not
+support threshold subsets, optional contributors, replacement contributors,
+or coordinator-selected reveal subsets.
+
+5. SELECTOR STRUCTURE
+
+The selector contains:
+
+- mode
+- variant_id
+- selection_event_id
+- commitment_manifest
+- reveal_manifest
+- optional declared_commitment_manifest_id
+- optional declared_reveal_manifest_id
+
+The commitment manifest contains:
+
+commitment_manifest.parties[]
+
+Each party commitment record contains:
+
+- party_id
+- commitment
+
+The reveal manifest contains:
+
+reveal_manifest.reveals[]
+
+Each reveal record contains:
+
+- party_id
+- salt
+
+Party identifiers are printable ASCII identifiers.
+
+Commitments and salts are exactly 64 hexadecimal characters. Uppercase and
+lowercase hexadecimal are accepted and normalized to lowercase. Prefixes,
+signs, underscores, whitespace, and non-hexadecimal characters are rejected.
+
+6. SELECTION CONTEXT
+
+SLANG-Exam derives one selection_context_id before validating party
+commitments.
+
+The selection context binds:
+
+- core version
+- profile identity
+- ruleset identity
+- canonicalization identity
+- selector mode
+- selection event identity
+- examination identity
+- session identity
+- audience scope
+- audience identity
+- variant identity
+- question-bank identity
+- blueprint identity
+- participant-set identity
+
+Conceptually:
+
+selection_context_id =
+SHA256(canonical_json(selection_context_material))
+
+The selection context prevents a valid commitment from being reused against a
+different bank, blueprint, audience, participant set, event, variant, profile,
+ruleset, or canonicalization contract.
+
+The selection context does not include:
+
+- assembly_authorized
+- center_authorized
+- candidate_valid
+- release_authorized
+- exam_window_open
+
+Those fields govern admission or visibility. They do not define which paper
+the fixed selection universe resolves.
+
+7. PARTICIPANT-SET IDENTITY
+
+The participant-set material contains:
+
+- domain
+- selection_event_id
+- sorted party identifiers
+
+The domain is:
+
+SLANG-EXAM-MPCR-PARTICIPANTS-1
+
+Conceptually:
+
+participant_set_id =
+SHA256(canonical_json(participant_set_material))
+
+The participant set is fixed before commitment validation because it is part
+of the selection context.
+
+Changing a party identifier changes the participant_set_id and the
+selection_context_id.
+
+8. CONTEXT-BOUND PARTY COMMITMENT
+
+A party commitment is not merely a hash of its salt.
+
+The commitment material contains:
+
+- domain
+- selection_context_id
+- party_id
+- salt
+
+The domain is:
+
+SLANG-EXAM-MPCR-PARTY-COMMITMENT-1
+
+Conceptually:
+
+party_commitment =
+SHA256(canonical_json({
+  domain,
+  selection_context_id,
+  party_id,
+  salt
+}))
+
+A party commitment therefore changes when the declared selection context,
+party identity, or salt changes.
+
+9. CANONICAL MANIFESTS
+
+The reference normalizes commitment and reveal records and sorts them by
+party_id.
+
+Input-array order does not determine the selector result.
+
+The commitment-manifest identity binds:
+
+- domain: SLANG-EXAM-MPCR-COMMITMENTS-1
+- selection_context_id
+- selection_event_id
+- normalized commitments sorted by party_id
+
+The reveal-manifest identity binds:
+
+- domain: SLANG-EXAM-MPCR-REVEALS-1
+- selection_context_id
+- selection_event_id
+- normalized reveals sorted by party_id
+
+Conceptually:
+
+commitment_manifest_id =
+SHA256(canonical_json(commitment_manifest_material))
+
+reveal_manifest_id =
+SHA256(canonical_json(reveal_manifest_material))
+
+Optional declared manifest identities are checked against the derived
+identities.
+
+10. COMMITMENT AGGREGATE
+
+The commitment_aggregate_id is a distinct pre-reveal identity.
+
+It binds:
+
+- domain: SLANG-EXAM-MPCR-COMMITMENT-AGGREGATE-1
+- selection_context_id
+- participant_set_id
+- commitment_manifest_id
+
+Conceptually:
+
+commitment_aggregate_id =
+SHA256(canonical_json(commitment_aggregate_material))
+
+The commitment aggregate is not a copy of the commitment-manifest digest.
+
+It does not bind reveal material and remains meaningful before the reveal
+boundary.
+
+11. SELECTOR TRANSCRIPT
+
+The selector_transcript_id binds the completed public selector transcript.
+
+It binds:
+
+- domain: SLANG-EXAM-MPCR-TRANSCRIPT-1
+- selection_context_id
+- participant_set_id
+- commitment_manifest_id
+- reveal_manifest_id
+
+Conceptually:
+
+selector_transcript_id =
+SHA256(canonical_json(selector_transcript_material))
+
+The transcript identity does not expose raw salts. Raw salts remain available
+inside the reconstruction bundle because the submitted input is preserved.
+
+12. COMBINED SELECTION SALT
+
+The combined selection salt is derived from canonical reveal-fold material.
+
+The fold binds:
+
+- domain: SLANG-EXAM-MPCR-COMBINE-1
+- selection_context_id
+- participant_set_id
+- reveal_manifest_id
+- normalized reveal contributions sorted by party_id
+
+Conceptually:
+
+combined_selection_salt =
+SHA256(canonical_json({
+  domain,
+  selection_context_id,
+  participant_set_id,
+  reveal_manifest_id,
+  contributions
+}))
+
+The combined selection salt enters the deterministic question-ranking seed.
+
+It is operational selector material and is not included in the compact
+receipt.
+
+13. QUESTION RANKING AND PAPER SELECTION
+
+The question-ranking function binds:
+
+- selection context
+- public selector binding
+- combined selection salt
+- question_id
+- content_commitment
+
+Conceptually:
+
+question_rank =
+SHA256(seed, question_id, content_commitment)
+
+Eligible questions are ordered by:
+
+(rank_digest, question_id)
+
+The selected paper is:
+
+the lexicographically first admissible rank vector
+
+The implementation uses bounded include-first search over the canonical rank
+order. The contract does not claim minimum rank sum or another global numeric
+optimization objective.
+
+14. BLUEPRINT ADMISSIBILITY
+
+A paper is admissible only when one selected set jointly satisfies every
+supported constraint:
+
+- total question count
+- total marks
+- topic counts
+- difficulty counts
+- question-type counts
+- exposure-group limits
+- forbidden question pairs
+- approval status
+- allowed-topic registry
+
+Individual capacity is not sufficient. Cross-constraint satisfiability is
+required.
+
+15. SEARCH BOUNDARY
+
+The recursive search is bounded by:
+
+MAX_SEARCH_NODES = 250000
+
+The node-count invariant is:
+
+search_nodes <= search_node_limit
+
+The exact-marks feasibility structure is represented as bounded integer
+bitsets. Sums above the declared target marks are discarded because the search
+never queries them.
+
+Its conceptual memory bound is:
+
+O((N + 1) * (Q + 1) * (M + 1)) bits
+
+where:
+
+N <= MAX_QUESTION_BANK_SIZE
+Q <= MAX_TOTAL_QUESTIONS
+M <= MAX_TOTAL_MARKS
+
+Search evidence includes:
+
+- search_nodes
+- search_node_limit
+- search_budget_exhausted
+- admissible_solution_count_lower_bound
+- decision_solution_threshold
+- complete_solution_found
+- partial_candidate_found
+- best_partial_question_count
+- best_partial_marks
+- pruning counters
+
+The reference applies sound necessary-condition pruning for:
+
+- remaining question capacity
+- topic capacity
+- difficulty capacity
+- question-type capacity
+- exact reachable marks
+- exposure-group capacity
+- forbidden-pair-compatible capacity
+
+A search-budget outcome is a traversal conclusion, not a proof that no paper
+exists.
+
+16. MULTIPLICITY EVIDENCE
+
+The resolver may report:
+
+UNIQUE_PROVED
+
+Exactly one admissible paper was found and the bounded search completed.
+
+MULTIPLE_PROVED
+
+At least two admissible papers were found.
+
+NOT_ESTABLISHED
+
+The bounded search did not establish uniqueness or multiplicity beyond the
+reported lower bound.
+
+Under MULTI_PARTY_COMMIT_REVEAL, multiplicity evidence does not revoke the
+canonical selection. The first admissible rank vector remains the selected
+paper.
+
+Multiplicity is advisory for canonically selecting modes and is excluded from
+the semantic result identity core. Search traversal may therefore change
+multiplicity evidence without changing result_id when the semantic resolution
+is unchanged.
+
+17. AUTHORITY AND VISIBILITY
+
+Authority requirements depend on audience_scope.
+
+COMMON requires:
+
+assembly_authorized
+
+CENTER requires:
+
+assembly_authorized AND center_authorized
+
+CANDIDATE requires:
+
+assembly_authorized AND center_authorized AND candidate_valid
+
+For COMMON, audience_id must be ALL.
+
+For CENTER and CANDIDATE, audience_id must not be ALL.
+
+Assembly and visibility remain separate.
+
+paper_visible = true only when:
+
+- assembly resolves
+- release_authorized = true
+- exam_window_open = true
+
+Changing only a visibility condition preserves:
+
+- selection_context_id
+- selector identities
+- selected paper
+- paper_id
+
+18. RESULT EVIDENCE
+
+A resolved MPCR result declares:
+
+selection_mode = MULTI_PARTY_COMMIT_REVEAL
+
+selection_posture = CONDITIONAL_PRE_REVEAL_RESISTANCE
+
+The result evidence may include:
+
+- selection_context_id
+- selection_event_id
+- party_count
+- participant_set_id
+- commitment_manifest_id
+- reveal_manifest_id
+- commitment_aggregate_id
+- selector_transcript_id
+- multiplicity_state
+- canonical selection rule
+- authority evidence
+- selected question count
+- selected total marks
+
+The compact receipt carries the public selector bindings without carrying raw
+salts.
+
+19. RESULT-STATE MAPPING
+
+Examples of INCOMPLETE outcomes include:
+
+- missing commitment manifest
+- missing reveal manifest
+- too few declared parties
+- missing required party reveal
+- missing required party field
+- missing required reveal field
+- insufficient declared blueprint capacity
+- no admissible paper after complete bounded search
+
+Examples of CONFLICT outcomes include:
+
+- duplicate party identity
+- duplicate reveal party identity
+- undeclared party reveal
+- party commitment mismatch
+- declared commitment-manifest identity mismatch
+- declared reveal-manifest identity mismatch
+- declared bank or blueprint identity mismatch
+- audience scope and audience identity mismatch
+
+Examples of UNSUPPORTED outcomes include:
+
+- invalid manifest type
+- invalid participant or reveal record
+- unsupported manifest field
+- unsupported party or reveal field
+- invalid party identifier
+- invalid commitment syntax
+- invalid salt syntax
+- party-count limit exceeded
+- reveal-count limit exceeded
+- question marks above MAX_QUESTION_MARKS
+- blueprint total marks above MAX_TOTAL_MARKS
+- JSON input depth, node count, or file-size limit exceeded
+- single-party selector fields used under MPCR
+- MPCR fields used under another selector mode
+
+Examples of FORBIDDEN outcomes include:
+
+- an applicable assembly authority condition is false
+- the paper resolves but visibility conditions do not admit disclosure
+
+An ABSTAIN outcome may occur when the bounded search cannot establish a
+selection conclusion within the declared node limit.
+
+20. CONDITIONAL PRE-REVEAL RESISTANCE
+
+The selection posture is conditional.
+
+Advance computation by one party is resisted only when external conditions
+include:
+
+- the participant roster was fixed before commitments
+- the bank and blueprint were fixed before commitments
+- all parties committed against the same selection_context_id
+- commitments were fixed before reveal
+- commitments could not be replaced after other contributions became known
+- at least one independently controlled party used a high-entropy salt
+- at least one independent salt was not chosen through outcome-directed grinding
+- that salt remained undisclosed until the reveal boundary
+- the selection event was not repeatedly restarted to obtain a preferred paper
+- the question bank and resolver endpoint were not compromised
+
+The resolver verifies the final submitted structure. It does not prove that
+these external conditions were satisfied.
+
+21. SELECTIVE ABORT AND LIVENESS
+
+A party with a fixed commitment cannot substitute another salt without causing
+a commitment mismatch.
+
+A party may still withhold its reveal.
+
+A missing required reveal produces INCOMPLETE rather than a forced paper.
+
+The profile does not prevent:
+
+- selective abort
+- denial of service
+- delayed reveal
+- repeated-round bias
+- failure to complete the process
+
+Deadlines, sanctions, restart policy, replacement policy, and liveness
+governance remain external.
+
+22. TIME, AUTHENTICITY, AND BEACON BOUNDARY
+
+The reference does not establish:
+
+- when a commitment was created
+- whether a commitment existed before any reveal
+- whether a commitment was externally timestamped
+- whether a party identity belongs to a real institution or person
+- whether a reveal was transmitted by the declared party
+- whether commitments or reveals were digitally signed
+- whether communication channels were secure
+- whether the event was independently witnessed
+
+SLANG-Exam v0.7.2 does not implement a public randomness beacon.
+
+It does not:
+
+- retrieve a beacon value
+- authenticate a beacon proof
+- verify a beacon round
+- establish a future-round commitment
+- bind reveal deadlines to trusted external time
+
+A beacon-bound selector requires a separate profile and verification contract.
+
+23. SECURITY BOUNDARY
+
+MPCR does not protect:
+
+- question-bank content
+- answer keys
+- credentials
+- signing keys
+- endpoints
+- printing facilities
+- networks
+- logs
+- examination operations
+- revealed salts after submission
+
+Content commitments identify declared metadata commitments. They do not encrypt
+question text or prove that stored content is confidential.
+
+24. SEMANTIC AND OPERATIONAL IDENTITIES
+
+result_id binds the semantic resolution.
+
+search_evidence_id binds operational traversal evidence.
+
+Search-node counts, pruning counters, and advisory multiplicity evidence may
+change under another conforming search implementation without changing the
+selected paper or semantic result, provided the declared contract is preserved.
+
+The cross-implementation relation is:
+
+same canonical input + same identity domain + same conclusive semantic
+resolution -> same result_id
+
+Exact reference replay is stricter:
+
+same canonical input + same reference rules and traversal contract
+-> same result and search evidence
+
+The reconstruction bundle binds both semantic and operational evidence.
+
+25. RECONSTRUCTION AND RECEIPTS
+
+A reconstruction bundle preserves:
+
+- submitted_input
+- normalized_projection
+- semantic result
+- operational search evidence
+- bundle identity
+
+The relation is:
+
+verify_bundle(resolve(input)) = PASS
+
+Bundle verification performs exact reference reconstruction and compares the
+complete bundle, including reference search_evidence. It is therefore an exact
+reference replay check, not a traversal-agnostic semantic check.
+
+The compact receipt binds:
+
+- identity domain
+- canonical input
+- bank and blueprint identities
+- selection context
+- selector identities
+- result state
+- paper identity
+- semantic result identity
+- search evidence identity
+- reconstruction bundle identity
+
+Raw salts are not carried in the compact receipt.
+
+Receipt verification checks the receipt identity.
+
+Receipt-to-bundle verification checks exact binding to the supplied bundle.
+
+Semantic-only conformance verification is provided by the vector utility.
+
+26. REFERENCE EXAMPLE
+
+The supplied three-party example uses:
+
+selection_event_id:
+SELECTION-EVENT-MPCR-001
+
+party_count:
+3
+
+selected_questions:
+Q202, Q401, Q302, Q101, Q104
+
+multiplicity_state:
+MULTIPLE_PROVED
+
+selection_context_id:
+slang_exam_selection_context_sha256:32d766fb26fb7dd21f108442f960cd4b5415db18b37a08b177eaba9f7d0cf41e
+
+participant_set_id:
+slang_exam_mpcr_participants_sha256:6d6fc5cb0d4e3ddd5e1e9d6880bad7d85c86008b390227682b0260efe17f3ef2
+
+commitment_manifest_id:
+slang_exam_mpcr_commitments_sha256:8853c9714db97811c5d351ddb53a9a86b9f2358ce19fc54dffcd243b80e1e90e
+
+reveal_manifest_id:
+slang_exam_mpcr_reveals_sha256:74aa46c7cb45dbce31fab1a0bc21931a5ec943daa40205a91b19f2f1d3e86a3e
+
+commitment_aggregate_id:
+slang_exam_mpcr_commitment_aggregate_sha256:67d2c2c7d5f9a22ab18a6f27ccfb1490d9a44f889d33088676b5f97cda6c6900
+
+selector_transcript_id:
+slang_exam_mpcr_transcript_sha256:f5d6f42a7d7236dd8d451a166599744aa0e906eeb97162b9e6be995c55acff34
+
+paper_id:
+slang_exam_paper_sha256:4c234a22ad9de2ef72375dd506f8ff3972e719ec47f094ce06e4b98b25a6759c
+
+evaluation_manifest_id:
+slang_exam_evaluation_sha256:c5d1b627a4078cc66afea81f9d67a59837b79ce6314a29bd5a1a3d9077dcfcb5
+
+result_id:
+slang_exam_result_sha256:2fcc7636cab756236e02b80bb333784a34f6386d7af5c8ad2e976749a745f661
+
+search_evidence_id:
+slang_exam_search_evidence_sha256:d59a95fd99a8f7088d025a2bccce6312f73fa495605d3fa5e41c6d16882af27a
+
+bundle_id:
+slang_exam_bundle_sha256:b810d36a5522c77507ad976e296e65fbb49e64fdd1ca1542b34eded33422f12d
+
+receipt_id:
+slang_exam_receipt_sha256:919cb3e872bdcd8239e016c22ccfb35f049f3fc531168dbe7c0261eac1f4dc05
+
+27. REFERENCE FILES
+
+The MPCR reference set contains:
+
+- slang_exam_v0_7_2.py
+- SLANG_Exam_MPCR_Example_Input_v0_7_2.json
+- SLANG_Exam_MPCR_Bundle_v0_7_2.json
+- SLANG_Exam_MPCR_Receipt_v0_7_2.json
+- SLANG_Exam_MPCR_Profile_v0_7_2.txt
+
+The wider verification set also contains:
+
+- slang_exam_vectors_v0_7_2.py
+- SLANG_Exam_Vectors_v0_7_2.json
+- SLANG_Exam_Bundle_v0_7_2.json
+- SLANG_Exam_Receipt_v0_7_2.json
+
+28. VERIFICATION COMMANDS
+
+Run the reference audit:
+
+python -B slang_exam_v0_7_2.py --self-test
+
+Resolve the MPCR example:
+
+python -B slang_exam_v0_7_2.py --input SLANG_Exam_MPCR_Example_Input_v0_7_2.json
+
+Verify the MPCR bundle:
+
+python -B slang_exam_v0_7_2.py --verify-bundle SLANG_Exam_MPCR_Bundle_v0_7_2.json
+
+Verify the MPCR receipt:
+
+python -B slang_exam_v0_7_2.py --verify-receipt SLANG_Exam_MPCR_Receipt_v0_7_2.json
+
+Verify receipt-to-bundle binding:
+
+python -B slang_exam_v0_7_2.py --verify-receipt-against-bundle SLANG_Exam_MPCR_Receipt_v0_7_2.json SLANG_Exam_MPCR_Bundle_v0_7_2.json
+
+Verify frozen vectors:
+
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json
+
+Verify frozen vectors semantically:
+
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json --semantic-only
+
+29. REFERENCE VERIFICATION STATUS
+
+Reference self-test:
+
+127/127 PASS
+
+Frozen conformance vectors:
+
+56/56 semantic vectors reproduced
+56/56 reference evidence reproduced
+10/10 metamorphic relations reproduced
+3/3 bounded-search probes reproduced
+
+Reference MPCR bundle:
+
+VERIFY: PASS
+
+Reference MPCR receipt:
+
+VERIFY: PASS
+
+Reference MPCR receipt-to-bundle binding:
+
+VERIFY: PASS

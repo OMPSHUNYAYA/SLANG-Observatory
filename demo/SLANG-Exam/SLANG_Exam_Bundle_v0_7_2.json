@@ -1,0 +1,520 @@
+{
+  "bundle_id": "slang_exam_bundle_sha256:4aa5e394d6a2406c5a67176b1f52ebf9672c5c089d88ec3cc4daad7f27f4cdbc",
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "identity_domain_id": "slang_exam_identity_domain_sha256:9beb36507288c003c796060240ccb90dcc5f1224f8cf6c121c89a74b0846287d",
+  "normalized_projection": {
+    "blueprint": {
+      "allowed_topics": [
+        "ALGEBRA",
+        "APPLICATION",
+        "GEOMETRY",
+        "REASONING"
+      ],
+      "difficulty_counts": {
+        "EASY": 1,
+        "HARD": 1,
+        "MEDIUM": 3
+      },
+      "forbidden_pairs": [
+        [
+          "Q101",
+          "Q201"
+        ]
+      ],
+      "max_per_exposure_group": 2,
+      "topic_counts": {
+        "ALGEBRA": 2,
+        "APPLICATION": 1,
+        "GEOMETRY": 1,
+        "REASONING": 1
+      },
+      "topic_registry_id": "EXAM-TOPICS-1",
+      "total_marks": 10,
+      "total_questions": 5,
+      "type_counts": {
+        "LONG": 1,
+        "MCQ": 2,
+        "SHORT": 2
+      }
+    },
+    "context": {
+      "assembly_authorized": true,
+      "audience_id": "ALL",
+      "audience_scope": "COMMON",
+      "candidate_valid": true,
+      "center_authorized": true,
+      "exam_id": "EXAM-REFERENCE-001",
+      "exam_window_open": true,
+      "release_authorized": true,
+      "session_id": "SESSION-2026-A"
+    },
+    "profile_id": "SLANG-EXAM-PROFILE-1-D05",
+    "question_bank": [
+      {
+        "answer_key_id": "AK-Q101",
+        "approved": true,
+        "content_commitment": "d816776d9fecaa5830e7360bdba151a99c9e6023ba0c88440a9cdb18f05e9bfc",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q101",
+        "question_type": "MCQ",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q102",
+        "approved": true,
+        "content_commitment": "5ee5040285b4ad86574094e10aa9b879529e8ca343f44f1f1f427285b11ac954",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q102",
+        "question_type": "SHORT",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q103",
+        "approved": true,
+        "content_commitment": "c07a235273df926cf62a47b417fff82f4f1a7d6e502b621e7c84604f85984bb7",
+        "difficulty": "HARD",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q103",
+        "question_type": "LONG",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q104",
+        "approved": true,
+        "content_commitment": "6a7e940b82f687057575e9b6bcec730e36dab7fc5e6b9bfe2a3199c5ea42c596",
+        "difficulty": "EASY",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q104",
+        "question_type": "MCQ",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q201",
+        "approved": true,
+        "content_commitment": "15370d74611080e11929e06d335fb24e72e7a4b74398e65ca99d3618382d6131",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q201",
+        "question_type": "SHORT",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q202",
+        "approved": true,
+        "content_commitment": "0e48161c18fbe53091c9371a108fe2f3314b0d30058ac638486578984cbc8650",
+        "difficulty": "HARD",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q202",
+        "question_type": "LONG",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q203",
+        "approved": true,
+        "content_commitment": "fdaea3b0439174b17fc5772324d1083f41a2fd4e6de4235c3eaecd573c702df1",
+        "difficulty": "EASY",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q203",
+        "question_type": "MCQ",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q301",
+        "approved": true,
+        "content_commitment": "7ea302fb217be375a246bdd044f96eb9760c44ee2d701f05df9e6bcda3ba4cdd",
+        "difficulty": "EASY",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q301",
+        "question_type": "MCQ",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q302",
+        "approved": true,
+        "content_commitment": "d9512fd00c15675bb27a7c7e5d514faf1e214d913c68fbb32f792fec5a8bc527",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q302",
+        "question_type": "SHORT",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q303",
+        "approved": true,
+        "content_commitment": "474c3ff1d70b9c77f70d581faf7c9d935a26b8a7cfcd7e8c6b91fe4b8604d459",
+        "difficulty": "HARD",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q303",
+        "question_type": "LONG",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q401",
+        "approved": true,
+        "content_commitment": "cb8b2b4f71e462f36f38405dd7fed213d6c221b0c422ca31fbb7e0339536866f",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q401",
+        "question_type": "SHORT",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q402",
+        "approved": true,
+        "content_commitment": "132d5e6a23a35395db13e71dbfc65212a5b43e0e598ad9ad1901719d81296bf4",
+        "difficulty": "HARD",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q402",
+        "question_type": "LONG",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q403",
+        "approved": true,
+        "content_commitment": "5b1d3be18c56ddfdc6a7dcfceb4b44405d3dc6912d29afd9df793d6df1c2adb4",
+        "difficulty": "EASY",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q403",
+        "question_type": "MCQ",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q999",
+        "approved": false,
+        "content_commitment": "e29065da9561436946ecc659d7346b4f0e42191fb38a51cb3f80edfe28214611",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G9",
+        "marks": 2,
+        "question_id": "Q999",
+        "question_type": "MCQ",
+        "topic": "APPLICATION"
+      }
+    ],
+    "ruleset_id": "SLANG-EXAM-RULESET-1-D05",
+    "schema": "SLANG-EXAM-INPUT-5",
+    "selector": {
+      "mode": "CANONICAL_RANK",
+      "variant_id": "VARIANT-A"
+    }
+  },
+  "result": {
+    "assembly_state": "RESOLVED",
+    "bank_id": "slang_exam_bank_sha256:7a728ad942007a8a08842bdca0292851ee62ec8a4d3b20ef5bc0b23fd4fd8962",
+    "blueprint_id": "slang_exam_blueprint_sha256:d2a903bb512fe4853ae5a2c300201e335a28400666c9b2a2abd5a34dacefe673",
+    "canonical_input_id": "slang_exam_input_sha256:1142ac32b29ad8bef314f5688dea153a40ef49059e431bd5a305b47cebd1400e",
+    "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+    "conflicts": [],
+    "core_version": "SLANG-CORE-1-D03",
+    "evaluation_manifest_id": "slang_exam_evaluation_sha256:363e9befb602821cbb5614560642bc55a6623e30cc6e301b28b679761ca6033c",
+    "evidence": {
+      "applied_authority_requirements": [
+        "assembly_authorized"
+      ],
+      "audience_scope": "COMMON",
+      "authority_admitted": true,
+      "canonical_selection_rule": "LEXICOGRAPHIC_FIRST_ADMISSIBLE_RANK_VECTOR",
+      "multiplicity_state": "MULTIPLE_PROVED",
+      "non_applicable_authority_fields": [
+        "center_authorized",
+        "candidate_valid"
+      ],
+      "selected_question_count": 5,
+      "selected_total_marks": 10,
+      "selection_context_id": "slang_exam_selection_context_sha256:fe6403dcf872901e761169bdacf8803eea47f08c893a3b00dd61e6aa6ff9db0c",
+      "selection_mode": "CANONICAL_RANK",
+      "selection_posture": "PUBLIC_INPUTS",
+      "selector_mode": "CANONICAL_RANK",
+      "variant_id": "VARIANT-A"
+    },
+    "identity_domain_id": "slang_exam_identity_domain_sha256:9beb36507288c003c796060240ccb90dcc5f1224f8cf6c121c89a74b0846287d",
+    "missing_dependencies": [],
+    "normalized_projection_id": "slang_exam_projection_sha256:1142ac32b29ad8bef314f5688dea153a40ef49059e431bd5a305b47cebd1400e",
+    "paper_id": "slang_exam_paper_sha256:8a1c9b64b48610f2632ad97a9d1edefef4434826238b950367e7a41b093f8079",
+    "paper_visible": true,
+    "profile_id": "SLANG-EXAM-PROFILE-1-D05",
+    "prohibitions": [],
+    "reason_codes": [
+      "PAPER_ASSEMBLED_AND_RELEASE_ADMITTED"
+    ],
+    "release_state": "ALLOW",
+    "result_id": "slang_exam_result_sha256:a624c9987e7a4509b457865b2d98a86ea365e667cfaa7250179b12caa82442a4",
+    "ruleset_id": "SLANG-EXAM-RULESET-1-D05",
+    "schema": "SLANG-EXAM-RESULT-5",
+    "search_evidence": {
+      "admissible_solution_count_lower_bound": 2,
+      "best_partial_marks": 10,
+      "best_partial_question_count": 5,
+      "complete_solution_found": true,
+      "decision_solution_threshold": 2,
+      "marks_dp_bits_per_state": 11,
+      "marks_dp_memory_bound_bits": 924,
+      "marks_dp_state_count": 84,
+      "partial_candidate_found": true,
+      "pruned_by_difficulty_capacity": 5,
+      "pruned_by_exposure_capacity": 2,
+      "pruned_by_forbidden_pair_capacity": 2,
+      "pruned_by_marks": 0,
+      "pruned_by_remaining_items": 0,
+      "pruned_by_topic_capacity": 7,
+      "pruned_by_type_capacity": 0,
+      "search_budget_exhausted": false,
+      "search_node_limit": 250000,
+      "search_nodes": 82
+    },
+    "search_evidence_id": "slang_exam_search_evidence_sha256:f2735c0741766fbb078e07a8bd948a7c9c0f07b5b9aae4297e8dacba7f1e1505",
+    "selected_questions": [
+      {
+        "content_commitment": "d816776d9fecaa5830e7360bdba151a99c9e6023ba0c88440a9cdb18f05e9bfc",
+        "question_id": "Q101"
+      },
+      {
+        "content_commitment": "6a7e940b82f687057575e9b6bcec730e36dab7fc5e6b9bfe2a3199c5ea42c596",
+        "question_id": "Q104"
+      },
+      {
+        "content_commitment": "d9512fd00c15675bb27a7c7e5d514faf1e214d913c68fbb32f792fec5a8bc527",
+        "question_id": "Q302"
+      },
+      {
+        "content_commitment": "0e48161c18fbe53091c9371a108fe2f3314b0d30058ac638486578984cbc8650",
+        "question_id": "Q202"
+      },
+      {
+        "content_commitment": "cb8b2b4f71e462f36f38405dd7fed213d6c221b0c422ca31fbb7e0339536866f",
+        "question_id": "Q401"
+      }
+    ],
+    "selection_context_id": "slang_exam_selection_context_sha256:fe6403dcf872901e761169bdacf8803eea47f08c893a3b00dd61e6aa6ff9db0c",
+    "state": "RESOLVED",
+    "submission_id": "slang_exam_submission_sha256:a77c5c0ccc9dc265f2dab6b1ff180fd25de0d2285cb17d2570c9f801d298cd02",
+    "unsupported_features": [],
+    "version": "0.7.2"
+  },
+  "schema": "SLANG-EXAM-BUNDLE-5",
+  "submitted_input": {
+    "blueprint": {
+      "allowed_topics": [
+        "ALGEBRA",
+        "GEOMETRY",
+        "REASONING",
+        "APPLICATION"
+      ],
+      "difficulty_counts": {
+        "EASY": 1,
+        "HARD": 1,
+        "MEDIUM": 3
+      },
+      "forbidden_pairs": [
+        [
+          "Q101",
+          "Q201"
+        ]
+      ],
+      "max_per_exposure_group": 2,
+      "topic_counts": {
+        "ALGEBRA": 2,
+        "APPLICATION": 1,
+        "GEOMETRY": 1,
+        "REASONING": 1
+      },
+      "topic_registry_id": "EXAM-TOPICS-1",
+      "total_marks": 10,
+      "total_questions": 5,
+      "type_counts": {
+        "LONG": 1,
+        "MCQ": 2,
+        "SHORT": 2
+      }
+    },
+    "context": {
+      "assembly_authorized": true,
+      "audience_id": "ALL",
+      "audience_scope": "COMMON",
+      "candidate_valid": true,
+      "center_authorized": true,
+      "exam_id": "EXAM-REFERENCE-001",
+      "exam_window_open": true,
+      "release_authorized": true,
+      "session_id": "SESSION-2026-A"
+    },
+    "profile_id": "SLANG-EXAM-PROFILE-1-D05",
+    "question_bank": [
+      {
+        "answer_key_id": "AK-Q101",
+        "approved": true,
+        "content_commitment": "d816776d9fecaa5830e7360bdba151a99c9e6023ba0c88440a9cdb18f05e9bfc",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q101",
+        "question_type": "MCQ",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q102",
+        "approved": true,
+        "content_commitment": "5ee5040285b4ad86574094e10aa9b879529e8ca343f44f1f1f427285b11ac954",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q102",
+        "question_type": "SHORT",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q103",
+        "approved": true,
+        "content_commitment": "c07a235273df926cf62a47b417fff82f4f1a7d6e502b621e7c84604f85984bb7",
+        "difficulty": "HARD",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q103",
+        "question_type": "LONG",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q104",
+        "approved": true,
+        "content_commitment": "6a7e940b82f687057575e9b6bcec730e36dab7fc5e6b9bfe2a3199c5ea42c596",
+        "difficulty": "EASY",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q104",
+        "question_type": "MCQ",
+        "topic": "ALGEBRA"
+      },
+      {
+        "answer_key_id": "AK-Q201",
+        "approved": true,
+        "content_commitment": "15370d74611080e11929e06d335fb24e72e7a4b74398e65ca99d3618382d6131",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q201",
+        "question_type": "SHORT",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q202",
+        "approved": true,
+        "content_commitment": "0e48161c18fbe53091c9371a108fe2f3314b0d30058ac638486578984cbc8650",
+        "difficulty": "HARD",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q202",
+        "question_type": "LONG",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q203",
+        "approved": true,
+        "content_commitment": "fdaea3b0439174b17fc5772324d1083f41a2fd4e6de4235c3eaecd573c702df1",
+        "difficulty": "EASY",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q203",
+        "question_type": "MCQ",
+        "topic": "GEOMETRY"
+      },
+      {
+        "answer_key_id": "AK-Q301",
+        "approved": true,
+        "content_commitment": "7ea302fb217be375a246bdd044f96eb9760c44ee2d701f05df9e6bcda3ba4cdd",
+        "difficulty": "EASY",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q301",
+        "question_type": "MCQ",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q302",
+        "approved": true,
+        "content_commitment": "d9512fd00c15675bb27a7c7e5d514faf1e214d913c68fbb32f792fec5a8bc527",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G3",
+        "marks": 2,
+        "question_id": "Q302",
+        "question_type": "SHORT",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q303",
+        "approved": true,
+        "content_commitment": "474c3ff1d70b9c77f70d581faf7c9d935a26b8a7cfcd7e8c6b91fe4b8604d459",
+        "difficulty": "HARD",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q303",
+        "question_type": "LONG",
+        "topic": "REASONING"
+      },
+      {
+        "answer_key_id": "AK-Q401",
+        "approved": true,
+        "content_commitment": "cb8b2b4f71e462f36f38405dd7fed213d6c221b0c422ca31fbb7e0339536866f",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G1",
+        "marks": 2,
+        "question_id": "Q401",
+        "question_type": "SHORT",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q402",
+        "approved": true,
+        "content_commitment": "132d5e6a23a35395db13e71dbfc65212a5b43e0e598ad9ad1901719d81296bf4",
+        "difficulty": "HARD",
+        "exposure_group": "G2",
+        "marks": 2,
+        "question_id": "Q402",
+        "question_type": "LONG",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q403",
+        "approved": true,
+        "content_commitment": "5b1d3be18c56ddfdc6a7dcfceb4b44405d3dc6912d29afd9df793d6df1c2adb4",
+        "difficulty": "EASY",
+        "exposure_group": "G4",
+        "marks": 2,
+        "question_id": "Q403",
+        "question_type": "MCQ",
+        "topic": "APPLICATION"
+      },
+      {
+        "answer_key_id": "AK-Q999",
+        "approved": false,
+        "content_commitment": "e29065da9561436946ecc659d7346b4f0e42191fb38a51cb3f80edfe28214611",
+        "difficulty": "MEDIUM",
+        "exposure_group": "G9",
+        "marks": 2,
+        "question_id": "Q999",
+        "question_type": "MCQ",
+        "topic": "APPLICATION"
+      }
+    ],
+    "ruleset_id": "SLANG-EXAM-RULESET-1-D05",
+    "schema": "SLANG-EXAM-INPUT-5",
+    "selector": {
+      "mode": "CANONICAL_RANK",
+      "variant_id": "VARIANT-A"
+    }
+  },
+  "version": "0.7.2"
+}
