@@ -1,1069 +1,1180 @@
-# ⭐ **SLANG-Exam**
+# SLANG-Exam
 
-## **Question Paper Visibility Without Pre-Created Papers — Structural Resolution Kernel**
+## Structural Admissibility for Deterministic Examination-Form Assembly
 
-**Proven in ~1.40 KB**
+SLANG-Exam is a bounded reference demonstration within SLANG-Observatory.
 
-No pre-created final assembled paper.  
-No early distribution surface.  
-No sealed-envelope secrecy chain.  
-No last-minute reconciliation pressure.  
+It separates questions that are often combined:
 
-Only structure — and the final assembled paper becomes structurally visible only when the exam structure is mature.
+1. Is the submitted examination structure supported and complete?
+2. Is the declared examination context admitted?
+3. Can approved question-bank metadata satisfy the declared blueprint?
+4. Which admissible paper is selected under the declared selector?
+5. Is the assembled paper admitted for visibility?
+6. Can the result be reconstructed and verified from preserved evidence?
 
-This is not paper protection by hiding.
+The governing relation is:
 
-This is structural non-visibility before maturity.  
-This is admissibility from structure.
+`exam_result = resolve(submitted_input, versioned_profile, versioned_ruleset)`
 
-No forced visibility.  
-No premature existence.  
-No dependency.
+For a conclusive semantic resolution:
 
-`correctness = structure`  
-`paper_visible iff structure_mature`  
-`structure_mature = complete AND consistent`
+`same canonical input + same identity domain + same semantic resolution -> same result_id`
 
-> **Note:** Throughout this README, "structure" refers to the complete, declared, and consistent set of conditions governing whether the final assembled paper may become structurally visible — including blueprint validity, authorization rules, question-bank sufficiency, and exam-window conditions.
+Exact reference replay is stricter:
 
-> Structure here does not mean formatting, layout, or visual arrangement.
+`same canonical input + same reference rules and traversal contract -> same result and search evidence`
 
-The paper is not hidden.  
-It is structurally non-existent before maturity.
-
-The paper is not delayed.
-
-It is not partially hidden.
-
-It is not waiting in encrypted storage.
-
-It does not yet exist as a final admissible object.
-
-`paper existence is earned by structure`
-
-This is the key structural shift.
-
-Traditional systems attempt to protect a paper that already exists.
-
-SLANG-Exam removes the early final-assembled paper itself as a dependency.
-
-`No early assembled object -> no early assembled-paper leak surface`
+SLANG-Exam does not claim that examination quality, fairness, confidentiality,
+authentication, institutional authority, or operational security can be reduced
+to this resolver.
 
 ---
 
-# 🧭 **Civilization-Grade Admissibility Architecture**
+## 🧭 **Visual Overview**
 
-![SLANG-Exam Admissibility Architecture](SLANG-Exam_Systematic-Admissibility-Framework.png)
-
-The final assembled paper is not treated as a pre-created object.
-
-Only:
-
-- approved structure  
-- admissibility rules  
-- authorization conditions  
-- structural maturity  
-
-exist before the exam.
-
-`paper_visible iff structure_mature`
-
-The final assembled paper becomes structurally visible only when the structure becomes complete and consistent.
+![SLANG-Exam Reference Diagram](SLANG-Exam-Reference-Diagram.png)
 
 ---
 
-# ⚠️ **Important Clarification**
+## Current Reference
 
-This is not a full examination platform.
-
-It is a structural admissibility kernel.
-
-SLANG-Exam does not replace:
-
-- examination boards  
-- universities  
-- invigilators  
-- academic authorities  
-- evaluation systems  
-- regulatory governance  
-- teachers or subject experts  
-
-Students still take exams.  
-Experts still create questions.  
-Boards still define syllabus, marks, rules, difficulty, and evaluation policy.
-
-This kernel demonstrates only one invariant:
-
-`paper_visible iff structure_mature`
-
-Real-world deployment, governance, academic integrity, and examination operations remain the responsibility of official educational institutions.
+- Version: `0.7.2`
+- Python: `3.9+`
+- Dependencies: Python standard library only
+- Reference script: [`slang_exam_v0_7_2.py`](slang_exam_v0_7_2.py)
+- Vector utility: [`slang_exam_vectors_v0_7_2.py`](slang_exam_vectors_v0_7_2.py)
+- Frozen vectors: [`SLANG_Exam_Vectors_v0_7_2.json`](SLANG_Exam_Vectors_v0_7_2.json)
+- MPCR profile: [`SLANG_Exam_MPCR_Profile_v0_7_2.txt`](SLANG_Exam_MPCR_Profile_v0_7_2.txt)
+- Input schema: `SLANG-EXAM-INPUT-5`
+- Result schema: `SLANG-EXAM-RESULT-5`
+- Bundle schema: `SLANG-EXAM-BUNDLE-5`
+- Receipt schema: `SLANG-EXAM-RECEIPT-4`
+- Vector schema: `SLANG-EXAM-VECTORS-4`
+- Canonicalization profile: `SLANG-CANONICAL-JSON-1-D02`
+- Core version: `SLANG-CORE-1-D03`
+- Profile: `SLANG-EXAM-PROFILE-1-D05`
+- Ruleset: `SLANG-EXAM-RULESET-1-D05`
+- Self-test: `127/127 PASS`
+- Frozen semantic vectors: `56/56 reproduced`
+- Reference evidence vectors: `56/56 reproduced`
+- Metamorphic relations: `10/10 reproduced`
+- Bounded-search probes: `3/3 reproduced`
 
 ---
 
-# ⚡ **The Claim**
+## Quick Verification
 
-A valid exam paper can become structurally visible without:
+Run the permanent audit:
 
-- pre-created final assembled papers  
-- sealed-envelope secrecy chains  
-- early assembled-paper storage  
-- forced paper existence  
-- courier dependency  
-- premature visibility  
-
-when structure is sufficient.
-
----
-
-# 🧠 **The Idea**
-
-Traditional examination systems assume:
-
-- the final assembled paper must exist early  
-- the paper must be stored securely  
-- secrecy chains are unavoidable  
-- distribution workflows are required  
-- emergency replacement papers are necessary  
-- paper exposure risk is inevitable  
-
-SLANG-Exam shows:
-
-Paper visibility does not emerge from secrecy workflows.
-
-It emerges from structure.
-
-The final assembled paper is not exposed because it exists.
-
-It becomes structurally visible only when the examination structure is mature.
-
----
-
-# 🧠 **Structural Maturity Gate**
-
-A final assembled paper becomes structurally visible only when:
-
-- `window_valid`  
-- `center_valid`  
-- `candidate_valid`  
-- `blueprint_valid`  
-- `bank_ready`  
-
-are satisfied.
-
-Therefore:
-
-`structure_mature = complete AND consistent`
-
-and:
-
-`paper_visible iff structure_mature`
-
-The paper is not triggered by storage.  
-It is admitted only after structural maturity.
-
----
-
-# 🌍 **A World Built on Pre-Created Papers**
-
-Modern examination systems rely on:
-
-- pre-created final papers  
-- secrecy chains  
-- printing centers  
-- sealed envelopes  
-- storage rooms  
-- distribution networks  
-- human access controls  
-- emergency backup papers  
-
-Each treated as required.
-
-But:
-
-What if the final assembled paper itself is not the source of examination correctness?
-
-What if correctness is preserved by structure?
-
----
-
-# 🔄 **The Shift**
-
-Across domains:
-
-`correctness does not depend on workflow`  
-`paper visibility does not depend on secrecy chains`  
-`trust does not depend on premature paper existence`
-
-It is preserved by:
-
-**structure**
-
-For examinations:
-
-`question paper visibility -> remove early assembled-paper dependency -> structure remains -> examination correctness preserved`
-
----
-
-# 🌍 **Traditional vs Structural Examination**
-
-| Traditional Examination | SLANG-Exam |
-|---|---|
-| create paper → store → distribute → protect → exam | create structure → approve rules → resolve paper at exam time |
-| final assembled paper exists early | final assembled paper becomes visible only after maturity |
-| secrecy chain required | structure alone determines visibility |
-| leak risk unavoidable | no early assembled paper exists to leak |
-| emergency paper dependency | admissibility gating |
-| process-dependent trust | structure-dependent trust |
-
-Result:
-
-The final assembled paper becomes structurally visible only when structure is complete AND consistent.
-
-No forced existence.  
-No premature visibility.  
-No unsafe exposure.
----
-
-# ⚠️ **Read This Carefully**
-
-This is not a better examination workflow.  
-This is not a faster exam system.
-
-This is dependency elimination.
-
-`paper_visibility` does not depend on early final-assembled-paper existence.  
-Trust does not depend on secrecy chains.  
-It never did.
-
----
-
-# ⚡ **The Critical Line**
-
-Question paper visibility  
-→ remove early final-assembled-paper dependency  
-→ structure remains  
-→ admissible examination preserved
-
-Nothing was improved.  
-Nothing was replaced.  
-Only the dependency was removed.
-
-No pre-created final assembled paper.  
-No forced visibility.  
-No early assembled-paper leak surface.
-
----
-
-# 🧩 **Structural Collapse Guarantee**
-
-This kernel does not modify classical examination correctness.
-
-It preserves it.
-
-`phi((m, a, s)) = m`
-
-Where:
-
-- `m` = classical examination outcome  
-- `a` = alignment  
-- `s` = structural state  
-
-When structure is complete and consistent,  
-the visible paper aligns with structurally admissible examination truth.
-
-No approximation.  
-No reinterpretation.  
-No forced existence.
-
-Only structural revelation.
-
----
-
-# ⚠️ **Question Bank Clarification**
-
-SLANG-Exam addresses the early final-assembled-paper exposure surface.
-
-The approved question bank remains a separate operational and security responsibility.
-
-This includes:
-
-- access controls  
-- governance oversight  
-- expert vetting  
-- secure storage  
-
-This kernel governs when the final assembled paper becomes structurally visible.
-
-It does not replace question-bank security.
-
-These are complementary — not competing — responsibilities.
-
----
-
-# 🧱 **Dependency Elimination**
-
-| Domain | Removed Dependency | What Preserves Correctness |
-|---|---|---|
-| Examination Visibility | Pre-created final assembled paper / secrecy workflow | Structure |
-
----
-
-# ⚡ **The Full Structural Process**
-
-## **1. Structural Context**
-
-The examination authority defines:
-
-- syllabus  
-- topics  
-- marks  
-- difficulty mix  
-- question types  
-- time limits  
-- exam policies  
-
-Example:
-
-- 30% algebra  
-- 20% geometry  
-- 20% reasoning  
-- 30% application problems  
-
-At this stage:
-
-No final assembled paper exists.
-
-Only structure exists.
-
----
-
-## **2. Approved Building Blocks**
-
-Experts prepare approved questions.
-
-Each question contains structural tags:
-
-- topic  
-- marks  
-- difficulty  
-- format  
-- expected time  
-- answer key  
-- approval status  
-
-Example:
-
-`Q101 -> Algebra, Medium, 2 marks, MCQ, approved`
-
-Still:
-
-No final assembled paper exists.
-
-Only approved building blocks exist.
-
----
-
-## **3. Paper Blueprint**
-
-The system defines admissibility rules:
-
-`total_questions = 10`  
-`total_marks = 20`  
-`easy = 3`  
-`medium = 5`  
-`hard = 2`
-
-`must_include = ["algebra", "geometry"]`
-
-This blueprint is structure.
-
-Not content.
-
----
-
-## **4. Structural Storage**
-
-The question bank may exist securely.
-
-But:
-
-there is no single final assembled paper object.
-
-Only:
-
-- approved question bank  
-- blueprint  
-- admissibility rules  
-- authorization structure  
-
-exist before the exam.
-
-The final assembled paper does not yet exist.
-
----
-
-## **5. Structural Approval**
-
-Before exam day, authorities approve:
-
-- syllabus structure  
-- blueprint validity  
-- authorization rules  
-- center eligibility  
-- candidate/session conditions  
-- visibility window  
-
-They approve the structure.
-
-Not one fixed final assembled paper.
-
----
-
-## **6. Structural Maturity Check**
-
-At official exam time, the resolver checks:
-
-- Is the exam window open?  
-- Is the center authorized?  
-- Is the candidate valid?  
-- Is the blueprint valid?  
-- Are enough approved questions available?  
-- Are all structural rules satisfied?  
-
-Only then:
-
-`paper_visible = true`
-
-Otherwise:
-
-No final assembled paper appears.
-
-No forced output.  
-No unsafe visibility.  
-No guess.
-
-Absence is a valid structural state.
-
----
-
-## **7. Structural Resolution**
-
-The final assembled paper becomes structurally visible only when:
-
-`structure_mature = complete AND consistent`
-
-The system may resolve:
-
-- one common paper  
-- center-specific equivalent papers  
-- candidate-specific equivalent papers  
-
-All remain structurally equivalent.
-
-Equivalent papers must satisfy identical structural constraints:
-
-- topic coverage  
-- marks distribution  
-- difficulty balance  
-- time expectation  
-- format rules  
-
-If these differ:
-
-the structure is different.
-
-`same declared structure -> same resolved outcome`
-
-Fairness is preserved through structure.
-
----
-
-### ⚖️ **Structural Fairness Clarification**
-
-Different papers remain admissible only when their identity is itself part of the declared structure.
-
-Equivalent papers must satisfy identical structural constraints:
-
-- topic coverage  
-- marks distribution  
-- difficulty balance  
-- time expectations  
-- format rules  
-
-If these differ:
-
-the structure is different.
-
-`same declared structure -> same resolved outcome`
-
-Fairness is preserved structurally — not merely through identical paper text.
-
----
-
-## **8. Structural Visibility**
-
-At exam start:
-
-- online paper appears  
-- printable paper unlocks  
-- center receives the resolved version  
-
-Before that:
-
-No complete final assembled paper exists to leak.
-
----
-
-## **9. Structural Identity**
-
-Each resolved paper may contain:
-
-- `exam_id`  
-- `center_id`  
-- `candidate_id`  
-- `paper_version`  
-- `question_set_hash`  
-
-This enables:
-
-- tamper detection  
-- replay verification  
-- auditability  
-- deterministic identity  
-
-`same structure -> same paper_identity`
-
----
-
-## **10. Structural Evaluation**
-
-Evaluation links directly to the resolved structure.
-
-The system knows:
-
-- which candidate received which questions  
-- which answer key applies  
-- whether the resolved paper was structurally valid  
-- whether maturity conditions were satisfied  
-
-This prevents mismatch ambiguity.
-
----
-
-# ⚡ **30-Second Proof**
-
+```bat
+python -B slang_exam_v0_7_2.py --self-test
 ```
-python slang_exam.py
+
+Expected summary:
+
+```text
+TOTAL                127/127 PASS
+```
+
+Verify the frozen vectors:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json
+```
+
+Expected summary:
+
+```text
+semantic vectors: 56/56 reproduced
+reference evidence: 56/56 reproduced
+relations: 10/10 reproduced
+search probes: 3/3 reproduced
+VERIFY: PASS
+```
+
+Run semantic-only conformance verification:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json --semantic-only
+```
+
+Expected summary:
+
+```text
+semantic vectors: 56/56 reproduced
+reference evidence: not required
+relations: 10/10 reproduced
+search probes: not required
+VERIFY: PASS
+```
+
+Run the default reference case:
+
+```bat
+python -B slang_exam_v0_7_2.py
+```
+
+Run the MPCR example:
+
+```bat
+python -B slang_exam_v0_7_2.py --input SLANG_Exam_MPCR_Example_Input_v0_7_2.json
 ```
 
 ---
 
-# 🔍 **You will observe**
+## Reference Files
 
-- final assembled paper visibility emerges from structure  
-- no pre-created final assembled paper required  
-- no secrecy chain required  
-- no early visibility required  
-- incomplete structure → no paper  
-- invalid structure → no paper  
-- unauthorized structure → no paper  
-- identical structure → identical paper visibility
+### Core and conformance
 
----
+- [`slang_exam_v0_7_2.py`](slang_exam_v0_7_2.py)
+- [`slang_exam_vectors_v0_7_2.py`](slang_exam_vectors_v0_7_2.py)
+- [`SLANG_Exam_Vectors_v0_7_2.json`](SLANG_Exam_Vectors_v0_7_2.json)
 
-# 🔬 **Break the Structure — Safety in Action**
+### Canonical reference evidence
 
-## **Test 1 — Exam Window Closed**
+- [`SLANG_Exam_Bundle_v0_7_2.json`](SLANG_Exam_Bundle_v0_7_2.json)
+- [`SLANG_Exam_Receipt_v0_7_2.json`](SLANG_Exam_Receipt_v0_7_2.json)
 
-Change:
+### Multi-party commit-reveal evidence
 
-`"exam_time": "closed"`
+- [`SLANG_Exam_MPCR_Example_Input_v0_7_2.json`](SLANG_Exam_MPCR_Example_Input_v0_7_2.json)
+- [`SLANG_Exam_MPCR_Bundle_v0_7_2.json`](SLANG_Exam_MPCR_Bundle_v0_7_2.json)
+- [`SLANG_Exam_MPCR_Receipt_v0_7_2.json`](SLANG_Exam_MPCR_Receipt_v0_7_2.json)
+- [`SLANG_Exam_MPCR_Profile_v0_7_2.txt`](SLANG_Exam_MPCR_Profile_v0_7_2.txt)
 
-Result:
+### Visual reference
 
-- `window_valid` disappears  
-- `paper_visible` disappears  
-- `question_paper` disappears  
+- [`SLANG-Exam-Reference-Diagram.png`](SLANG-Exam-Reference-Diagram.png)
 
-The paper does not appear before the structurally valid exam window.
+The reference script can run without the frozen vector JSON.
 
----
-
-## **Test 2 — Unauthorized Center**
-
-Change:
-
-`"center_authorized": "false"`
-
-Result:
-
-- `center_valid` disappears  
-- `paper_visible` disappears  
-- `question_paper` disappears  
-
-Unauthorized centers cannot reveal the paper.
+The vector utility requires the reference script and requires the frozen vector
+JSON when `--verify` is used.
 
 ---
 
-## **Test 3 — Insufficient Question Bank**
+## What the Reference Resolves
 
-Change:
+The reference accepts:
 
-`"approved_questions": ["Q1", "Q2", "Q3"]`
+- an examination context
+- a paper blueprint
+- a selector declaration
+- approved question-bank metadata
+- optional declared bank and blueprint identities
+- selector-specific commitment evidence
 
-Result:
+It resolves:
 
-- `bank_ready` disappears  
-- `paper_visible` disappears  
-- `question_paper` disappears  
+- portable input admission
+- input validity
+- audience-context consistency
+- scope-sensitive assembly authority
+- blueprint capacity
+- cross-constraint satisfiability
+- deterministic paper selection
+- multiplicity evidence
+- release admission
+- paper visibility
+- selector evidence
+- deterministic identities
+- reconstruction bundles
+- compact receipts
 
-The system refuses incomplete paper construction.
-
-`missing structure -> no paper`
-
----
-
-## **Test 4 — Invalid Blueprint**
-
-Change:
-
-`"total_questions": 4`
-
-Result:
-
-- `blueprint_valid` disappears  
-- `paper_visible` disappears  
-- `question_paper` disappears  
-
-The final assembled paper does not become structurally visible when the blueprint itself is structurally invalid.
-
----
-
-## **Test 5 — Rule Reordering**
-
-Reorder the rules → run again
-
-Result:
-
-`same structure -> same paper_visibility`
-
-Workflow never mattered.
-
-Structure did.
+The reference question bank contains metadata and content commitments. It does
+not contain question text.
 
 ---
 
-# ⚡ **Structural Absence Principle**
+## Resolution States
 
-If structure is not complete and consistent:
+The resolver may return:
 
-`-> paper visibility does not exist`
+- `RESOLVED`
+- `INCOMPLETE`
+- `CONFLICT`
+- `FORBIDDEN`
+- `UNSUPPORTED`
+- `ABSTAIN`
 
-This is not delay.  
-This is not failure.
+### `RESOLVED`
 
-This is structural absence.
+The submitted structure is supported, admitted, satisfiable, selected, and
+visible under the declared release conditions.
 
-`absence ≠ failure`  
-`absence = truth`
+### `INCOMPLETE`
 
-The system refuses to expose final assembled papers unsupported by structure.
+Required structure or capacity is absent, or a complete bounded search proves
+that no admissible paper satisfies the declared blueprint.
 
----
+### `CONFLICT`
 
-# 🔐 **The Examination Twist**
+Declared facts, identities, commitments, references, or normalized structures
+contradict one another.
 
-In traditional systems:
+### `FORBIDDEN`
 
-`absence of paper = operational failure`
+The declared structure may be valid, but an applicable authority or visibility
+condition does not admit the requested outcome.
 
-Here:
+### `UNSUPPORTED`
 
-absence of a final assembled paper is a structurally valid state.
+The submitted value lies outside the bounded input, schema, selector,
+question-bank, marks, or resource contract.
 
-No false paper.  
-No forced visibility.  
-No premature existence.
+### `ABSTAIN`
 
-Only what reaches structural maturity becomes structurally visible.
-
----
-
-# 💻 **The Code (~1.40 KB)**
-
-See `slang_exam.py` in this folder — the complete structural examination admissibility kernel.
-
----
-
-# 🔍 **What Just Happened**
-
-A tiny resolver propagated examination relationships until structure stabilized.
-
-No secrecy chain.  
-No pre-created final assembled paper.  
-No forced visibility.
-
-Only:
-
-`paper_visibility = resolve(structure)`
-
-The system resolves until structural maturity is reached.
-
-Structure resolves.
-
-It does not generate.
-
-The final assembled paper is not a pre-declared object.
-
-It becomes structurally visible only after structural maturity.
-
-No randomness.  
-No hidden workflow.  
-No forced selection logic.
-
-Only structural admissibility.
+The resolver does not force an outcome when bounded search cannot establish the
+required conclusion within the declared search limit, or when a selector
+requires refusal under multiplicity.
 
 ---
 
-# 🔐 **Structural Fairness Clarification**
+## Portable JSON Boundary
 
-Different papers are valid only when their identity is itself part of the declared structure.
+The supported portable JSON domain contains:
 
-Center-specific or candidate-specific papers remain admissible only if:
+- objects with string keys
+- arrays
+- strings without lone surrogates
+- booleans
+- `null`
+- integers in the portable safe range
 
-- structural constraints remain identical  
-- admissibility rules remain identical  
-- blueprint integrity remains identical  
+The supported integer range is:
 
-Fairness is preserved structurally — not through identical paper text alone.
+`-(2^53 - 1) <= integer <= 2^53 - 1`
 
----
+The loader and portable-value validator reject:
 
-# 🧠 **Core Structural Properties**
+- floating-point values
+- `NaN`
+- positive or negative infinity
+- integers outside the portable safe range
+- duplicate JSON object keys
+- lone surrogate strings
+- invalid JSON
+- invalid UTF-8 input
+- unsupported Python objects passed directly to the resolver
 
-`same declared structure -> same paper_visibility`  
-`different paper_visibility -> structure must differ`
+The resource limits are:
 
-- order independent  
-- deterministic  
-- idempotent  
+- `MAX_JSON_DEPTH = 64`
+- `MAX_JSON_NODES = 100000`
+- `MAX_JSON_INPUT_BYTES = 4194304`
 
-`structure_mature -> paper_visible`  
-`¬structure_mature -> no paper_visibility`
+Excessive nesting, excessive structural size, and oversized input files are
+refused without entering examination search.
 
----
-
-# 🔐 **Deterministic Guarantee**
-
-`same declared structure -> same paper_visibility -> same paper_identity`
-
-No workflow, distribution sequence, or rule ordering  
-can alter this invariant.
-
----
-
-# 🔐 **Structural Property**
-
-`same declared structure -> same paper_visibility`  
-`same declared structure -> same resolved paper_state`
-
-`incomplete structure -> no paper`  
-`unauthorized structure -> no paper`  
-`invalid structure -> no paper`
-
-If visibility changes, the structure changed.
+These restrictions reduce avoidable identity differences and protect the
+reference paths that read untrusted input and untrusted reconstruction bundles.
 
 ---
 
-# 🛡 **Safety Model**
+## Examination Resource Boundary
 
-| Condition | Result |
-|---|---|
-| complete + consistent | paper visible |
-| incomplete | no paper visibility |
-| invalid / conflicting | no forced paper |
+The bounded examination profile declares:
 
-No guessing.  
-No premature visibility.  
-No unsafe exposure.
+- `MAX_QUESTION_BANK_SIZE = 40`
+- `MAX_TOTAL_QUESTIONS = 12`
+- `MAX_QUESTION_MARKS = 200`
+- `MAX_TOTAL_MARKS = 1000`
+- `MAX_SEARCH_NODES = 250000`
 
----
+Question marks must satisfy:
 
-# 📌 **Structural Evidence**
+`1 <= marks <= MAX_QUESTION_MARKS`
 
-The declared structure itself is sufficient proof.
+Blueprint total marks must satisfy:
 
-No secrecy pressure  
-No forced publication  
-No artificial visibility  
+`1 <= total_marks <= MAX_TOTAL_MARKS`
 
-Inspect structure → verify paper admissibility
-
-`same declared structure -> same paper_visibility`
-
-The structure itself becomes the audit surface.
-
-Not:
-
-- secrecy chains  
-- transport logs  
-- human custody chains  
-- courier evidence  
-- emergency workflows  
-
-Inspect structure -> verify paper admissibility
-
-`structure = evidence`
+Values outside these limits produce `UNSUPPORTED` before exact-marks
+feasibility or recursive search begins.
 
 ---
 
-# 🔐 **The Structural Identity Twist**
+## Strict SHA-256 Syntax
 
-In traditional systems:
+SHA-256 commitments must contain exactly 64 hexadecimal characters:
 
-paper identity is attached after creation.
+`^[0-9a-fA-F]{64}$`
 
-Here:
+Accepted uppercase characters are normalized to lowercase.
 
-paper identity emerges from structure itself.
+The reference rejects:
 
-`same declared structure -> same paper_identity`
+- leading or trailing whitespace
+- a leading plus or minus sign
+- underscores
+- a `0x` prefix
+- non-hexadecimal characters
+- incorrect length
 
-Identity is not externally imposed.
-
-It is structurally resolved.
-
----
-
-# ⚡ **What This Tiny Kernel Shows**
-
-Even in ~1.40 KB:
-
-- paper visibility emerges deterministically from structure  
-- no pre-created final assembled paper is required  
-- unauthorized centers cannot expose papers  
-- incomplete blueprints block visibility  
-- insufficient question banks block visibility  
-- order independence holds  
-- deterministic replay identity is preserved  
-- absence of paper is a valid structural state  
-- the final assembled paper resolves from structure, not storage
+This rule applies consistently to question content commitments, selector
+commitments, reveal salts, and declared digest identities.
 
 ---
 
-# ⚠️ **Important Demo Clarification**
+## Submission Preservation
 
-In this minimal demo:
+A reconstruction bundle preserves:
 
-`approved_questions`
+`submitted_input`
 
-are symbolic placeholders used only to expose structural relationships.
+This is the authoritative source used for complete reconstruction.
 
-In real deployment:
+The bundle also contains:
 
-- question banks remain protected  
-- governance remains external  
-- selection logic becomes part of declared structure  
+`normalized_projection`
 
-The purpose of the kernel is not to implement a full examination platform.
+The normalized projection is a derived inspection surface. It does not replace
+the submitted input during verification.
 
-The purpose is to demonstrate the invariant:
+The core relation is:
 
-`paper_visible iff structure_mature`
+`verify_bundle(resolve(input)) = PASS`
 
----
-
-# 🌍 **What This Implies**
-
-If this model scales:
-
-- reduced early assembled-paper exposure  
-- lower secrecy-chain dependency  
-- structurally auditable examination visibility  
-- deterministic replay identity for paper states  
-- safer admissibility gating before visibility  
-- structural silence instead of unsafe forced papers
+for every admitted portable JSON input represented by the resolver surface.
 
 ---
 
-# 🌍 **Why This Matters**
+## Input Validation
 
-- reduces dependency on early final-assembled-paper existence  
-- reduces secrecy-chain exposure  
-- enables structural auditability (`structure = evidence`)  
-- prevents unsupported paper visibility  
-- introduces admissibility before visibility  
+The resolver validates:
 
-This is not optimization.
+- schema, profile, and ruleset identifiers
+- required and optional fields
+- supported field names
+- printable ASCII identifiers and labels
+- integer and resource ranges
+- boolean fields
+- exact SHA-256 syntax
+- question-bank limits
+- blueprint totals
+- topic registry declarations
+- selector-specific fields
+- commitment and reveal manifests
+- audience-scope and audience-identity consistency
 
-This is dependency elimination.
-
----
-
-# ⚠️ **What This Is / Is Not**
-
-## **IS**
-
-- minimal structural proof  
-- deterministic admissibility kernel  
-- dependency elimination demonstration  
-- examination visibility maturity demonstration  
-
-## **IS NOT**
-
-- full examination platform  
-- academic governance replacement  
-- production examination engine  
-- institutional bypass mechanism
+Derived result fields are not accepted inside submitted input.
 
 ---
 
-# 🌍 **Where This Could Matter Most**
+## Bank and Blueprint Identity
 
-Many large-scale examination failures share the same structural pattern:
+The normalized question bank and blueprint receive deterministic identities:
 
-the final assembled paper exists before exam time.
+`bank_id = SHA256(canonical normalized question bank)`
 
-That early existence creates an exposure surface across:
+`blueprint_id = SHA256(canonical normalized blueprint)`
 
-- printing  
-- transport  
-- storage  
-- distribution  
-- server exposure  
+Optional declared identities are checked against the derived values.
 
-SLANG-Exam targets this early final-assembled-paper dependency for correctness.
-
-If independently validated and institutionally adopted, this approach could reduce exposure created by premature final assembled-paper visibility — while preserving governance, fairness, and examination integrity.
-
-Question-bank security, institutional governance, implementation security, and operational controls remain separate responsibilities.
+A mismatch produces `CONFLICT`.
 
 ---
 
-# 🔍 **Execution Clarification**
+## Selection Context
 
-This kernel runs as a program.
+The resolver derives one `selection_context_id` before validating
+commit-reveal evidence.
 
-But:
+The selection context binds:
 
-execution is not the source of paper admissibility.
+- core version
+- profile identity
+- ruleset identity
+- canonicalization identity
+- selector mode
+- selection event identity
+- examination identity
+- session identity
+- audience scope
+- audience identity
+- variant identity
+- question-bank identity
+- blueprint identity
+- MPCR participant-set identity when applicable
 
-Paper visibility is determined by structure.  
-Execution is only the substrate.
+Conceptually:
 
-Execution reveals the visibility state, but does not determine it.
+`selection_context_id = SHA256(canonical selection context)`
 
----
+This prevents a valid commitment from being reused against another declared
+bank, blueprint, audience, event, variant, participant set, profile, ruleset, or
+canonicalization contract.
 
-# 🔭 **Observatory Insight**
-
-This demo does not produce full examination systems.
-
-It answers:
-
-**Is this final assembled paper structurally admissible to exist?**
-
-The paper is not forced into visibility.
-
-It is admitted.
-
----
-
-# ⚡ **The Important Part**
-
-This is not the full SLANG system.
-
-This is the smallest visible edge of a much larger structural shift.
-
-This tiny kernel shows that final assembled question-paper visibility can resolve as pure structure.
-
-Paper visibility becomes structural admissibility.
+Authority and release booleans do not enter the selection context. They govern
+admission and visibility rather than the fixed selection universe.
 
 ---
 
-# 🌍 **Governance Made Structurally Visible**
+## Scope-Sensitive Authority
 
-SLANG-Exam is not governance removal.
+The reference applies authority requirements according to `audience_scope`.
 
-It is governance expressed as admissibility structure.
+For `COMMON`:
 
-Authorities still define:
+`assembly_authorized = true`
 
-- syllabus  
-- rules  
-- validity  
-- fairness constraints  
-- authorization conditions  
+For `CENTER`:
 
-But instead of approving one fixed final assembled paper early:
+`assembly_authorized = true AND center_authorized = true`
 
-they approve the structure from which admissible papers may emerge.
+For `CANDIDATE`:
 
-This reduces unnecessary exposure while preserving institutional authority.
+`assembly_authorized = true AND center_authorized = true AND candidate_valid = true`
 
----
+Audience-identity requirements are:
 
-# ❓ **Universality Clarification**
+`COMMON -> audience_id = ALL`
 
-The kernel is universal.
+`CENTER -> audience_id != ALL`
 
-Only the rules change.
+`CANDIDATE -> audience_id != ALL`
 
-Examples:
-
-- school board exams -> syllabus coverage rules  
-- entrance exams -> ranking constraints  
-- certification exams -> competency thresholds  
-- university exams -> subject-specific admissibility  
-
-The structural engine remains unchanged.
-
-Only the declared structure evolves.
+These values are declared facts in the bounded model. They do not establish
+authentication, institutional authority, or identity ownership.
 
 ---
 
-# 🌍 **A Deeper Principle**
+## Blueprint Admissibility
 
-SLANG-Exam demonstrates a broader structural principle within the Shunyaya framework:
+The blueprint declares:
 
-`correctness emerges from structure`
+- total question count
+- total marks
+- topic counts
+- difficulty counts
+- question-type counts
+- maximum questions per exposure group
+- forbidden question pairs
+- optional topic registry identity
+- optional allowed-topic set
 
-not from:
+Capacity diagnostics may identify:
 
-- secrecy chains  
-- process pressure  
-- storage dependency  
-- forced visibility  
-- workflow escalation  
+- `MISSING_TOPIC_CAPACITY:<TOPIC>`
+- `MISSING_DIFFICULTY_CAPACITY:<DIFFICULTY>`
+- `MISSING_TYPE_CAPACITY:<TYPE>`
+- `MISSING_TOTAL_QUESTION_CAPACITY`
 
-The final assembled paper becomes structurally visible only when the declared structure is complete and consistent.
-
----
-
-# 🧭 **Final Insight**
-
-Question paper visibility does not require pre-created final assembled papers.
-
-It requires sufficient structure.
-
-Systems do not enforce examination trust.  
-They reveal it.
+Individual category capacity is not sufficient. One selected set must satisfy
+all supported constraints together.
 
 ---
 
-# ⭐ **Final Line**
+## Deterministic Selection
 
-The final assembled paper exists only when it is allowed to exist.
+Eligible questions are ordered by:
 
-Forced early paper existence becomes optional.  
-Structure becomes fundamental.
+`(rank_digest, question_id)`
 
-This tiny kernel shows the boundary.
+The selected paper is:
 
-What you are seeing is not the full examination system.
+`the lexicographically first admissible rank vector`
 
-It is the edge of a new structural admissibility model.
+The implementation uses bounded include-first search over canonical rank order.
 
-This is not examination optimization.
+The contract does not claim minimum rank sum or another global numeric
+optimization objective.
 
-This is dependency elimination.
+---
+
+## Exact-Marks Feasibility and Memory Bound
+
+The exact-marks feasibility structure uses bounded integer bitsets.
+
+Conceptually:
+
+`bit k = 1 iff mark total k is reachable`
+
+Sums above `target_marks` are discarded because search never queries them.
+
+The conceptual memory bound is:
+
+`O((N + 1) * (Q + 1) * (M + 1)) bits`
+
+where:
+
+- `N <= MAX_QUESTION_BANK_SIZE`
+- `Q <= MAX_TOTAL_QUESTIONS`
+- `M <= MAX_TOTAL_MARKS`
+
+This boundary applies before recursive selection search and prevents
+combinatorial reachable-sum set growth from adversarial marks.
+
+---
+
+## Search Boundary
+
+Recursive search is bounded by:
+
+`MAX_SEARCH_NODES = 250000`
+
+The node-count invariant is:
+
+`search_nodes <= search_node_limit`
+
+Search evidence includes:
+
+- nodes evaluated
+- node limit
+- budget-exhaustion status
+- admissible-solution lower bound
+- decision threshold
+- partial-candidate diagnostics
+- pruning counters
+
+The reference applies sound necessary-condition pruning for:
+
+- remaining item capacity
+- exact reachable marks
+- topic capacity
+- difficulty capacity
+- question-type capacity
+- exposure-group capacity
+- forbidden-pair-compatible capacity
+
+`SEARCH_BUDGET_EXHAUSTED` is a traversal conclusion. It is not a proof that no
+admissible paper exists.
+
+---
+
+## Multiplicity Evidence
+
+The resolver may report:
+
+- `UNIQUE_PROVED`
+- `MULTIPLE_PROVED`
+- `NOT_ESTABLISHED`
+
+`UNIQUE_PROVED` means bounded search established exactly one admissible paper.
+
+`MULTIPLE_PROVED` means at least two admissible papers were found.
+
+`NOT_ESTABLISHED` means bounded search did not establish uniqueness or
+multiplicity beyond the reported lower bound.
+
+For canonically selecting modes, multiplicity is advisory and does not revoke
+an already established first admissible paper.
+
+Advisory multiplicity is excluded from the semantic `result_id` core for those
+modes. Therefore, changing only the multiplicity probe or search traversal does
+not change `result_id` when the semantic resolution remains the same.
+
+For `ABSTAIN_ON_MULTIPLE`, the semantic state and stable reason code carry the
+authoritative refusal conclusion.
+
+---
+
+## Release Admission
+
+Assembly and visibility are separate.
+
+`paper_visible = true` only when:
+
+- assembly resolves
+- `release_authorized = true`
+- `exam_window_open = true`
+
+A paper may be assembled while its selected question list remains withheld.
+
+When visibility is withheld:
+
+- `state = FORBIDDEN`
+- `assembly_state = RESOLVED`
+- `release_state = WITHHOLD`
+- `paper_visible = false`
+- `paper_id` remains available
+- `selected_questions = null`
+
+Changing only a release condition preserves:
+
+- `selection_context_id`
+- selector public bindings
+- selected paper
+- `paper_id`
+
+---
+
+## Selector Modes
+
+### `CANONICAL_RANK`
+
+This mode ranks eligible questions from public declared inputs.
+
+Its posture is:
+
+`selection_posture = PUBLIC_INPUTS`
+
+The selected paper is the lexicographically first admissible paper under the
+canonical rank order.
+
+This mode is deterministic and reproducible. It does not provide selection
+secrecy.
+
+### `ABSTAIN_ON_MULTIPLE`
+
+This mode requires uniqueness.
+
+Its behavior is:
+
+`0 solutions + complete search -> INCOMPLETE`
+
+`1 solution + complete search -> RESOLVED`
+
+`2 solutions found -> ABSTAIN`
+
+`uniqueness not established before exhaustion -> ABSTAIN`
+
+A multiple-paper outcome uses:
+
+`MULTIPLE_ADMISSIBLE_PAPERS_WITHOUT_SELECTION`
+
+A uniqueness-boundary failure may use:
+
+`UNIQUENESS_NOT_ESTABLISHED`
+
+### `COMMIT_REVEAL_RANK`
+
+This mode accepts:
+
+- `selection_event_id`
+- `selection_commitment`
+- `selection_salt`
+- `variant_id`
+
+The commitment binds:
+
+- commitment domain
+- `selection_context_id`
+- revealed salt
+
+Conceptually:
+
+`selection_commitment = SHA256(domain, selection_context_id, salt)`
+
+Its posture is:
+
+`selection_posture = SINGLE_PARTY_COMMIT_REVEAL`
+
+The resolver does not establish when the commitment was created, whether it was
+anchored before reveal, whether the salt remained secret, or whether candidate
+salts were searched before committing.
+
+### `MULTI_PARTY_COMMIT_REVEAL`
+
+This mode accepts:
+
+- `selection_event_id`
+- `variant_id`
+- commitment manifest
+- reveal manifest
+- optional declared manifest identities
+
+The bounded participant range is:
+
+`2 <= party_count <= 8`
+
+Each party commitment binds:
+
+`party_commitment = SHA256(domain, selection_context_id, party_id, salt)`
+
+The selector derives:
+
+- `participant_set_id`
+- `commitment_manifest_id`
+- `reveal_manifest_id`
+- `commitment_aggregate_id`
+- `selector_transcript_id`
+- combined selection salt
+
+Its posture is:
+
+`selection_posture = CONDITIONAL_PRE_REVEAL_RESISTANCE`
+
+The commitment aggregate is a distinct pre-reveal identity:
+
+`commitment_aggregate_id != commitment_manifest_id`
+
+The completed transcript binds both manifests without exposing raw salts in the
+compact receipt.
+
+See:
+
+[`SLANG_Exam_MPCR_Profile_v0_7_2.txt`](SLANG_Exam_MPCR_Profile_v0_7_2.txt)
+
+---
+
+## MPCR Structural Binding
+
+### Participant set
+
+The participant set is normalized by `party_id` and bound before commitment
+validation.
+
+Changing the participant roster changes:
+
+- `participant_set_id`
+- `selection_context_id`
+- valid party commitments
+
+### Commitment manifest
+
+The commitment manifest is normalized and sorted by `party_id`.
+
+Input-array order does not determine its identity.
+
+### Reveal manifest
+
+The reveal manifest is normalized and sorted by `party_id`.
+
+Every declared party must reveal exactly once.
+
+### Commitment aggregate
+
+The pre-reveal aggregate binds:
+
+- `selection_context_id`
+- `participant_set_id`
+- `commitment_manifest_id`
+
+### Selector transcript
+
+The completed transcript binds:
+
+- `selection_context_id`
+- `participant_set_id`
+- `commitment_manifest_id`
+- `reveal_manifest_id`
+
+### Conditional posture
+
+The resolver verifies submitted structure. It does not prove that:
+
+- the roster was fixed before commitments
+- the bank and blueprint were fixed before commitments
+- commitments were externally anchored before reveal
+- at least one independent salt remained secret
+- a salt was not chosen through outcome-directed grinding
+- the event was not restarted to obtain a preferred paper
+- communication or storage systems were secure
+
+---
+
+## Semantic and Operational Identities
+
+### `result_id`
+
+`result_id` binds the semantic resolution through an explicit stable identity
+core.
+
+It excludes traversal-dependent evidence such as:
+
+- node counts
+- pruning counts
+- partial-candidate metrics
+- search budget diagnostics
+- advisory multiplicity for canonically selecting modes
+
+### `search_evidence_id`
+
+`search_evidence_id` binds operational traversal evidence, including:
+
+- search-node count
+- node limit
+- pruning counters
+- partial-candidate statistics
+- budget status
+- reference multiplicity evidence
+
+### `bundle_id`
+
+The reconstruction bundle binds:
+
+- submitted input
+- normalized projection
+- semantic result
+- operational search evidence
+
+### `receipt_id`
+
+The compact receipt binds the public result and bundle references without
+carrying the complete submitted input or raw reveal salts.
+
+---
+
+## Verification Semantics
+
+### Bundle verification
+
+Bundle verification performs exact reference reconstruction and compares the
+complete bundle, including reference `search_evidence`.
+
+It is an exact reference replay check. It is not traversal-agnostic.
+
+### Receipt verification
+
+Receipt verification checks the compact receipt's own canonical identity and
+required structure.
+
+### Receipt-to-bundle verification
+
+Receipt-to-bundle verification confirms exact binding between the supplied
+receipt and supplied reconstruction bundle.
+
+### Semantic-only conformance
+
+Semantic-only conformance is provided by the frozen vector utility:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json --semantic-only
+```
+
+It does not require reproduction of reference traversal evidence or bounded
+search probes.
+
+---
+
+## Reconstruction Bundles
+
+Verify the canonical bundle:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-bundle SLANG_Exam_Bundle_v0_7_2.json
+```
+
+Verify the MPCR bundle:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-bundle SLANG_Exam_MPCR_Bundle_v0_7_2.json
+```
+
+Expected result:
+
+```text
+VERIFY: PASS
+Reason: PASS
+```
+
+---
+
+## Compact Receipts
+
+Verify the canonical receipt:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt SLANG_Exam_Receipt_v0_7_2.json
+```
+
+Verify its bundle binding:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt-against-bundle SLANG_Exam_Receipt_v0_7_2.json SLANG_Exam_Bundle_v0_7_2.json
+```
+
+Verify the MPCR receipt:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt SLANG_Exam_MPCR_Receipt_v0_7_2.json
+```
+
+Verify its bundle binding:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt-against-bundle SLANG_Exam_MPCR_Receipt_v0_7_2.json SLANG_Exam_MPCR_Bundle_v0_7_2.json
+```
+
+Expected result:
+
+```text
+VERIFY: PASS
+Reason: PASS
+```
+
+---
+
+## Frozen Conformance Vectors
+
+The frozen vector set contains:
+
+- `56` scenarios
+- `10` metamorphic relations
+- `3` bounded-search probes
+- semantic result expectations
+- exact reference operational-evidence expectations
+
+Vector-set identity:
+
+`slang_exam_vectors_sha256:4fd82bf072c30ca5b55f91e7f8f63ff467f6c674b12478a69d350c16ddeb2c9a`
+
+Full verification:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json
+```
+
+Semantic-only verification:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json --semantic-only
+```
+
+A replacement vector file is not silently written over an existing contract
+file. Candidate generation requires an explicit output path, and replacement
+of an existing candidate path requires explicit contract-change acceptance.
+
+---
+
+## Permanent Adversarial Coverage
+
+The v0.7.2 permanent checks include:
+
+- oversized per-question marks
+- oversized blueprint total marks
+- bounded wide-spread marks
+- powers-of-two marks rejection before search
+- strict hexadecimal acceptance and rejection cases
+- excessive JSON depth
+- excessive JSON node count
+- excessive JSON input size
+- question-bank order invariance
+- manifest-order invariance
+- semantic result identity independent of advisory multiplicity
+- semantic result identity independent of node and pruning counters
+- budget exhaustion before any paper is found
+- budget exhaustion after one canonical paper is found
+- multiplicity proof under sufficient budget
+- near-duplicate category banks
+- exact bundle reconstruction
+- receipt and receipt-to-bundle tamper checks
+
+---
+
+## Reference Evidence
+
+### Canonical reference
+
+- Selection mode: `CANONICAL_RANK`
+- State: `RESOLVED`
+- Multiplicity: `MULTIPLE_PROVED`
+- Bundle verification: `PASS`
+- Receipt verification: `PASS`
+- Receipt-to-bundle binding: `PASS`
+
+Canonical paper identity:
+
+`slang_exam_paper_sha256:8a1c9b64b48610f2632ad97a9d1edefef4434826238b950367e7a41b093f8079`
+
+Canonical result identity:
+
+`slang_exam_result_sha256:a624c9987e7a4509b457865b2d98a86ea365e667cfaa7250179b12caa82442a4`
+
+Canonical search-evidence identity:
+
+`slang_exam_search_evidence_sha256:f2735c0741766fbb078e07a8bd948a7c9c0f07b5b9aae4297e8dacba7f1e1505`
+
+Canonical bundle identity:
+
+`slang_exam_bundle_sha256:4aa5e394d6a2406c5a67176b1f52ebf9672c5c089d88ec3cc4daad7f27f4cdbc`
+
+Canonical receipt identity:
+
+`slang_exam_receipt_sha256:115f512640f07d3d04bd5ff8c2adf91d0660e204cadec3d33dd4933ebf464a35`
+
+### MPCR reference
+
+- Selection mode: `MULTI_PARTY_COMMIT_REVEAL`
+- State: `RESOLVED`
+- Multiplicity: `MULTIPLE_PROVED`
+- Selected questions: `Q202, Q401, Q302, Q101, Q104`
+- Bundle verification: `PASS`
+- Receipt verification: `PASS`
+- Receipt-to-bundle binding: `PASS`
+
+MPCR selection-context identity:
+
+`slang_exam_selection_context_sha256:32d766fb26fb7dd21f108442f960cd4b5415db18b37a08b177eaba9f7d0cf41e`
+
+MPCR paper identity:
+
+`slang_exam_paper_sha256:4c234a22ad9de2ef72375dd506f8ff3972e719ec47f094ce06e4b98b25a6759c`
+
+MPCR result identity:
+
+`slang_exam_result_sha256:2fcc7636cab756236e02b80bb333784a34f6386d7af5c8ad2e976749a745f661`
+
+MPCR search-evidence identity:
+
+`slang_exam_search_evidence_sha256:d59a95fd99a8f7088d025a2bccce6312f73fa495605d3fa5e41c6d16882af27a`
+
+MPCR bundle identity:
+
+`slang_exam_bundle_sha256:b810d36a5522c77507ad976e296e65fbb49e64fdd1ca1542b34eded33422f12d`
+
+MPCR receipt identity:
+
+`slang_exam_receipt_sha256:919cb3e872bdcd8239e016c22ccfb35f049f3fc531168dbe7c0261eac1f4dc05`
+
+---
+
+## Command Reference
+
+Show command help:
+
+```bat
+python -B slang_exam_v0_7_2.py --help
+```
+
+Run the permanent audit:
+
+```bat
+python -B slang_exam_v0_7_2.py --audit
+```
+
+Resolve an input file:
+
+```bat
+python -B slang_exam_v0_7_2.py --input INPUT.json
+```
+
+Print the default reconstruction bundle:
+
+```bat
+python -B slang_exam_v0_7_2.py --bundle
+```
+
+Print the default compact receipt:
+
+```bat
+python -B slang_exam_v0_7_2.py --receipt
+```
+
+Write the default reconstruction bundle:
+
+```bat
+python -B slang_exam_v0_7_2.py --write-bundle SLANG_Exam_Bundle_v0_7_2.json
+```
+
+Write the default compact receipt:
+
+```bat
+python -B slang_exam_v0_7_2.py --write-receipt SLANG_Exam_Receipt_v0_7_2.json
+```
+
+Verify a bundle:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-bundle BUNDLE.json
+```
+
+Verify a receipt:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt RECEIPT.json
+```
+
+Verify receipt-to-bundle binding:
+
+```bat
+python -B slang_exam_v0_7_2.py --verify-receipt-against-bundle RECEIPT.json BUNDLE.json
+```
+
+---
+
+## Security and Governance Boundary
+
+SLANG-Exam does not provide:
+
+- authentication
+- institutional authorization infrastructure
+- identity ownership proof
+- digital signatures
+- trusted timestamps
+- secure communication
+- question-bank encryption
+- answer-key protection
+- endpoint security
+- printing security
+- network security
+- physical examination security
+- invigilation
+- grading validity
+- pedagogical quality assessment
+- legal or institutional compliance
+
+Question content commitments identify declared content references. They do not
+encrypt question text or prove confidentiality.
+
+Commit-reveal selectors verify the submitted final structure. They do not prove
+the external history of commitment creation, anchoring, secrecy, independence,
+or event governance.
+
+---
+
+## Bounded Claim
+
+Within the declared profile:
+
+`complete + consistent + admitted structure -> deterministic bounded resolution`
+
+`incomplete structure -> no forced paper`
+
+`conflicting structure -> no forced paper`
+
+`unsupported structure -> explicit refusal`
+
+`visibility not admitted -> assembled paper may remain withheld`
+
+`same canonical input + same identity domain + same conclusive semantic resolution -> same result_id`
+
+Operational execution remains necessary to evaluate the resolver.
+
+The bounded claim is that the result follows from admitted declared structure
+and the versioned contract rather than question-bank input order or
+manifest-array order.
+
+---
+
+## Verification Status
+
+Reference self-test:
+
+`127/127 PASS`
+
+Frozen conformance vectors:
+
+`56/56 semantic vectors reproduced`
+
+`56/56 reference evidence reproduced`
+
+`10/10 metamorphic relations reproduced`
+
+`3/3 bounded-search probes reproduced`
+
+Canonical bundle:
+
+`VERIFY: PASS`
+
+Canonical receipt:
+
+`VERIFY: PASS`
+
+Canonical receipt-to-bundle binding:
+
+`VERIFY: PASS`
+
+MPCR bundle:
+
+`VERIFY: PASS`
+
+MPCR receipt:
+
+`VERIFY: PASS`
+
+MPCR receipt-to-bundle binding:
+
+`VERIFY: PASS`
