@@ -1,10 +1,21 @@
 # ⭐ **FAQ — SLANG-Observatory**
 
 ## **Structural Language (SLANG)**  
-**Deterministic Structural Resolution Across Domains**
+**Bounded Deterministic Resolution Across Domains**
 
-No workflows • No pipelines • No sequencing  
-`correctness = structure`
+SLANG-Observatory contains focused reference demonstrations that resolve
+bounded states from declared structure and versioned rules.
+
+The recurring pattern is:
+
+`declared structure + versioned rules -> bounded resolution state`
+
+Where a demo declares order independence:
+
+`same canonical structure + same versioned rules -> same bounded result`
+
+The exact inputs, states, limits, evidence, and claim boundaries are defined by
+each demo.
 
 ---
 
@@ -12,318 +23,665 @@ No workflows • No pipelines • No sequencing
 
 ### **A1. What is SLANG-Observatory?**
 
-SLANG-Observatory is a collection of tiny deterministic kernels (often `< 2 KB`) that demonstrate:
+SLANG-Observatory is a collection of focused structural-resolution
+demonstrations.
 
-outcomes are resolved from structure — not process
+Each demo applies a shared bounded discipline to a different declared domain
+schema, such as invoices, claims, cybersecurity escalation, forecast
+visibility, examination-form assembly, voting, access admission, or password
+reset admission.
 
-Each demo isolates one domain to reveal the same universal pattern.
-
----
-
-### **A2. What does “no workflow” mean?**
-
-It means correctness does not require:
-
-- workflows  
-- pipelines  
-- sequencing  
-- orchestration  
-
-Instead:
-
-`outcome_visible iff structure_mature`  
-`structure_mature = complete AND consistent`
+The demos are not presented as separate foundational frameworks merely because
+their domain labels differ.
 
 ---
 
-### **A3. Core idea in one line**
+### **A2. What does SLANG resolve?**
 
-`correctness = structure`
+A SLANG demo resolves a bounded state from declared facts, rules, context, and
+admission conditions.
+
+Conceptually:
+
+`outcome = resolve(declared_structure, versioned_rules)`
+
+Depending on the demo, the result may be:
+
+- a visible outcome
+- an admitted action or state
+- a withheld outcome
+- an incomplete state
+- a conflict state
+- an abstention
+- an unsupported-input refusal
+- another explicitly declared non-result state
 
 ---
 
-### **A4. What is being removed?**
+### **A3. What is the central idea?**
 
-Not systems. Not execution.
+A named workflow, sequence, arrival order, or operational mechanism does not
+have to remain the sole authority over a bounded result when the declared
+structure is sufficient to resolve that result.
 
-Only the assumption that correctness depends on process.
+The practical relation is:
+
+`operational mechanism -> no longer the sole resolution authority`
+
+`complete + consistent + admitted structure -> bounded resolution`
+
+This does not mean that workflows, execution, communication, infrastructure,
+or domain operations disappear.
+
+---
+
+### **A4. Is SLANG claiming that correctness always equals structure?**
+
+No.
+
+SLANG-Observatory makes a narrower claim:
+
+within a declared reference model, a bounded resolution can be governed by
+explicit structure and versioned rules rather than by a named operational
+sequence alone.
+
+Each demo must be judged by its own inputs, rules, limits, evidence, and
+documented claim boundary.
 
 ---
 
 ## **SECTION B — Structural Model**
 
-### **B1. What is “structure”?**
+### **B1. What does “structure” mean?**
 
-Structure is the complete and consistent set of relationships required for an outcome.
+Structure is the set of declared facts, relationships, rules, identities,
+constraints, authority conditions, and evidence required by a particular demo.
 
----
-
-### **B2. When does an outcome appear?**
-
-Only when:
-
-`structure_mature = complete AND consistent`
+Structure is not a universal object with one fixed schema. Each demo defines
+its own supported structure.
 
 ---
 
-### **B3. What if structure is incomplete?**
+### **B2. When does an outcome become visible?**
 
-Nothing appears.
+Only when the relevant demo establishes the conditions required by its declared
+contract.
 
-No guessing. No forced result.
+A typical relation is:
 
-Silence is honest feedback.
+`complete + consistent + admitted structure -> bounded resolution`
 
----
+Some demos also require:
 
-### **B4. What if structure is conflicting?**
-
-No unsafe outcome is produced.
-
-The system remains conservative.
-
----
-
-### **B5. Why is absence important?**
-
-Because absence prevents false correctness.
+- authority
+- visibility admission
+- release conditions
+- uniqueness
+- exact resource bounds
+- supported evidence identities
+- a completed bounded search
 
 ---
 
-## **SECTION C — Determinism & Guarantees**
+### **B3. What happens when structure is incomplete?**
+
+The demo should preserve an explicit non-result rather than force an answer.
+
+Depending on the contract, the result may be:
+
+- `INCOMPLETE`
+- `ABSTAIN`
+- `DENY`
+- another declared unresolved state
+
+The exact state names are demo-specific.
+
+---
+
+### **B4. What happens when declarations conflict?**
+
+A conflict should remain visible.
+
+The resolver may return:
+
+- `CONFLICT`
+- `ABSTAIN`
+- `DENY`
+- another explicitly declared refusal state
+
+A conflicting input is not silently repaired through workflow order unless the
+demo contract explicitly defines such behavior.
+
+---
+
+### **B5. Does missing or conflicting structure always produce silence?**
+
+No.
+
+Some demos return explicit machine-readable states, receipts, diagnostics, or
+reason codes. The important property is that the resolver does not force a
+positive outcome when the declared contract does not justify one.
+
+---
+
+## **SECTION C — Determinism and Order Independence**
 
 ### **C1. Is SLANG deterministic?**
 
-Yes.
+A demo may claim determinism when identical admitted canonical inputs under the
+same versioned rules reproduce the same bounded result.
 
-`same structure -> same outcome`  
-`different outcome -> different structure`
+`same admitted canonical structure + same versioned rules -> same bounded result`
 
----
-
-### **C2. Can two systems disagree?**
-
-No, if structure is identical.
-
-`S1 = S2 -> Outcome1 = Outcome2`
+Determinism applies only within the declared implementation and identity
+boundary.
 
 ---
 
-### **C3. Does order matter?**
+### **C2. Can two implementations disagree?**
+
+Conforming implementations should reproduce the same declared semantic result when they use the same canonicalization rules, profiles, versioned rules, and supported inputs.
+
+However, exact execution evidence may differ when implementations use different
+traversal strategies or operational paths unless the reference contract also
+binds those details.
+
+SLANG-Exam v0.7.2 makes this distinction explicit:
+
+- semantic result identity is separated from traversal-dependent evidence
+- exact bundle replay reproduces the reference evidence
+- semantic-only vector verification does not require identical traversal
+  evidence
+
+---
+
+### **C3. Does order always not matter?**
 
 No.
 
-Structure is a set, not a sequence.
+Order independence is claimed only where a demo explicitly normalizes an input
+or treats it as a set.
+
+`deterministic != universally order-independent`
+
+`order-independent where declared != every order is semantically equivalent`
+
+Literal submission identity may still preserve the exact submitted form even
+when the semantic result is invariant to supported ordering changes.
 
 ---
 
-### **C4. Does time matter?**
+### **C4. Does time never matter?**
 
 No.
 
-Correctness is not time-dependent.
+Wall-clock time may remain important for operations, validity windows,
+scheduling, security, or legal requirements.
+
+A time-independent claim means only that wall-clock time does not govern the
+particular bounded admissibility result where the demo explicitly declares that
+property.
 
 ---
 
 ### **C5. What ensures consistency?**
 
-Structure alone.
+Consistency is established by the validation and resolution rules of the
+specific demo.
+
+Structure does not validate itself. The implementation must define:
+
+- supported fields
+- canonicalization
+- constraints
+- conflict rules
+- admission rules
+- resource limits
+- outcome states
+- verification behavior
 
 ---
 
-## **SECTION D — Execution Clarification (The #1 Objection)**
+## **SECTION D — Execution Clarification**
 
-### **D1. Is execution completely removed?**
+### **D1. Is software execution removed?**
 
 No.
 
-Execution may still exist at the machine level.
+Execution is still required to evaluate the reference implementation.
 
-But:
-
-execution is not the source of correctness
-
----
-
-### **D2. Then what produces the result?**
-
-`outcome = resolve(structure)`
-
-Not:
-
-`execute(step1 -> step2 -> step3)`
+The structural claim concerns what determines the bounded result, not whether a
+processor executes instructions.
 
 ---
 
-### **D3. Is this just a rules engine?**
+### **D2. What is removed from sole authority?**
+
+Depending on the demo, the reference model may remove one of the following from
+sole resolution authority:
+
+- workflow sequence
+- fragment arrival order
+- pipeline order
+- premature publication
+- a pre-created final artifact
+- recount or reset workflow sequence
+- continuous connectivity
+- traversal or search
+- another declared operational mechanism
+
+The mechanism may remain available for operation, discovery, transport,
+presentation, audit, or recovery.
+
+---
+
+### **D3. Is this merely delayed execution?**
 
 No.
 
-Rules express structure.  
-Correctness emerges from structural maturity — not rule order or execution path.
+A structural resolver may still execute, but its bounded result is derived from
+the admitted declared structure rather than from the historical order in which
+supported fragments happened to arrive.
 
 ---
 
-## **SECTION E — Safety Properties**
+### **D4. Is SLANG just a rules engine?**
 
-### **E1. What prevents incorrect results?**
+SLANG implementations use rules, but the useful distinction is not based on a
+label.
 
-Structural gating:
-
-- incomplete → no outcome  
-- conflicting → no forced outcome  
-
----
-
-### **E2. What happens with missing data?**
-
-Nothing is forced.
-
-System remains silent.
-
-This is a feature, not a bug.
+The demonstrations make completeness, consistency, admission, refusal,
+identity, and evidence boundaries explicit. Rule order must not become an
+undeclared source of the bounded outcome where the contract claims canonical
+resolution.
 
 ---
 
-### **E3. Can incorrect structure produce results?**
+## **SECTION E — Evidence and Verification**
 
-Yes — outcomes follow structure.  
-Therefore, correct structure definition is critical.
+### **E1. How are results verified?**
 
----
+Verification varies by demo.
 
-## **SECTION F — Practical Meaning**
+Published evidence may include:
 
-### **F1. What changes?**
+- self-tests
+- frozen conformance vectors
+- metamorphic relations
+- exact replay checks
+- semantic-only conformance checks
+- reconstruction bundles
+- compact receipts
+- tamper tests
+- independent implementation paths
 
-From: `computation = result of execution`  
-To:   `computation = resolve(structure)`
-
----
-
-### **F2. Where can this be used?**
-
-- validation layers  
-- eligibility systems  
-- rule-based systems  
-- decision systems  
-- structural verification  
+Each verification result applies only to its declared files, profiles, inputs,
+schemas, and evidence boundary.
 
 ---
 
-### **F3. Is this replacing existing systems?**
+### **E2. What does a passing self-test prove?**
+
+It establishes that the tested implementation reproduces its declared reference
+expectations for the covered cases.
+
+It does not by itself establish:
+
+- production safety
+- domain completeness
+- legal validity
+- fairness
+- factual truth
+- institutional approval
+- third-party certification
+- superiority over established systems
+
+---
+
+### **E3. What is the difference between semantic and operational evidence?**
+
+Semantic evidence concerns the meaning of the resolved result.
+
+Operational evidence may include details such as:
+
+- search nodes
+- traversal counters
+- pruning statistics
+- execution traces
+- reference replay details
+
+A project may bind both, or it may preserve a semantic identity separately from
+operational evidence.
+
+---
+
+### **E4. What is special about SLANG-Exam v0.7.2?**
+
+SLANG-Exam v0.7.2 is a broader Observatory reference demonstration that
+includes:
+
+- bounded examination-form assembly
+- canonical ranking
+- abstention under unresolved multiplicity
+- single-party commit-reveal ranking
+- multi-party commit-reveal ranking
+- scope-sensitive authority
+- release and visibility separation
+- bounded exact-marks feasibility
+- explicit JSON, marks, and search limits
+- reconstruction bundles
+- compact receipts
+- frozen semantic vectors
+- exact reference-evidence vectors
+- metamorphic relations
+- bounded-search probes
+
+Its current published checks report:
+
+- `127/127 PASS` reference self-test
+- `56/56` semantic vectors reproduced
+- `56/56` reference-evidence vectors reproduced
+- `10/10` metamorphic relations reproduced
+- `3/3` bounded-search probes reproduced
+
+These results apply only to the declared v0.7.2 contract and its published
+artifacts.
+
+---
+
+## **SECTION F — Safety and Failure Behavior**
+
+### **F1. What prevents a forced positive result?**
+
+A demo may use:
+
+- input validation
+- completeness checks
+- conflict checks
+- authority gates
+- visibility gates
+- exact capacity checks
+- bounded search
+- explicit abstention
+- unsupported-input refusal
+
+The purpose is not to guarantee universal correctness. It is to make the
+reference model refuse outcomes that its own contract does not justify.
+
+---
+
+### **F2. Can incorrect declarations still produce a result?**
+
+Yes.
+
+A deterministic resolver can consistently resolve incorrect or misleading
+declared facts if those facts satisfy the supported structure.
+
+Therefore, source authenticity, factual validation, authorization, and domain
+review remain separate responsibilities unless a specific demo explicitly
+implements them.
+
+---
+
+### **F3. Does a verified result establish factual truth?**
 
 No.
 
-It can act as:
+Verification establishes agreement with the declared structural contract and
+evidence boundary. It does not automatically establish:
 
-- a structural validation layer  
-- a correctness reference layer  
-
----
-
-## **SECTION G — Boundaries**
-
-### **G1. What SLANG does NOT claim**
-
-- not a replacement for all systems  
-- not removal of machine execution  
-- not universal applicability  
-- not performance optimization  
+- authenticity of the source
+- truth of the submitted facts
+- legal authority
+- policy approval
+- safety
+- fairness
+- execution authority
 
 ---
 
-### **G2. What it DOES claim**
+### **F4. Can resource limits affect a result?**
 
-There exists a class of systems where:
+Yes.
 
-correctness is determined by structure, not process
+A bounded resolver may return `UNSUPPORTED`, `ABSTAIN`, or another non-result
+state when declared limits are exceeded or a required conclusion cannot be
+established within its search boundary.
 
-For valid structure:
-
-`classical result = SLANG result`
+Resource exhaustion is not proof that no admissible result exists outside the
+declared bound.
 
 ---
 
-## **SECTION H — Ecosystem Context**
+## **SECTION G — Practical Meaning**
 
-### **H1. Where does SLANG fit?**
+### **G1. Where can this pattern be useful?**
 
-SLANG is the resolution layer in the Shunyaya framework.
+Potential uses include:
 
-It connects to:
+- bounded validation layers
+- eligibility and admission checks
+- deterministic reference models
+- evidence reconstruction
+- explicit refusal handling
+- order-independent reconciliation where declared
+- visibility and release gating
+- conformance testing
+- structural diagnostics
 
-- SLANG → resolution without execution  
-- ORL → correctness without order  
-- STRAL → transition without traversal  
-- STINT → correctness without network dependency  
+Operational use requires domain-specific validation and appropriate controls.
+
+---
+
+### **G2. Is SLANG-Observatory replacing existing systems?**
+
+No.
+
+A demo may act as:
+
+- a bounded reference resolver
+- a validation layer
+- an admissibility layer
+- an evidence layer
+- a comparison surface
+- a reproducibility demonstration
+
+Existing domain infrastructure may still be required for authentication,
+transport, execution, settlement, security, legal authority, monitoring, or
+human judgment.
+
+---
+
+### **G3. Why are some demos very small?**
+
+Small demonstrations help isolate one structural contract and make it easier to
+inspect.
+
+Small size is not itself evidence of correctness, novelty, security, or
+generality.
+
+The stronger demos may therefore include larger verification and evidence
+surfaces even when the core relation remains compact.
+
+---
+
+### **G4. Are all demos equally mature?**
+
+No.
+
+The repository contains demonstrations with different levels of:
+
+- implementation depth
+- documentation
+- verification
+- adversarial testing
+- reconstruction evidence
+- domain specificity
+
+Each demo should be evaluated independently.
+
+---
+
+## **SECTION H — Repository Relationships**
+
+### **H1. Where does SLANG fit in the wider Shunyaya ecosystem?**
+
+SLANG is one structural-resolution family within the broader Shunyaya
+ecosystem.
+
+Related families and systems explore different bounded questions, including:
+
+- ORL — orderless reconciliation
+- STIME — structural progress through accepted transitions
+- STINT-Money — financial-state resolution without continuous connectivity
+  as sole authority
+- STRAL-Path — path validity without traversal as sole authority
+- STILE — delivery admission separated from transport observation
+- SVARE — exact mathematical resolution for supported expressions
+
+These are related systems, not interchangeable labels.
+
+---
+
+### **H2. Are the Observatory demos separate frameworks?**
+
+No.
+
+They intentionally reuse a common bounded structural-resolution discipline
+across different domain schemas.
+
+`shared structural primitive + different bounded domain schema -> domain demonstration`
+
+A domain adaptation does not automatically create a separate architectural or
+novelty claim.
+
+---
+
+### **H3. What are the standalone SLANG repositories?**
+
+Selected SLANG domains have dedicated repositories with broader documentation
+and verification surfaces:
+
+- SLANG-Computation
+- SLANG-Audit
+- SLANG-Money
+
+Those repositories define their own current contracts, evidence, and limits.
 
 ---
 
 ## **SECTION I — Common Skeptic Questions**
 
-### **I1. Isn’t something still “running”?**
+### **I1. Is something still running?**
 
 Yes.
 
-But the claim is:
-
-correctness does not depend on how it runs
+Software executes. The narrower claim is that the admitted structure and
+versioned rules determine the bounded resolution rather than an undeclared
+historical workflow path.
 
 ---
 
-### **I2. Is this just delayed execution?**
+### **I2. Do real systems still need workflows?**
+
+Often, yes.
+
+Workflows may remain necessary for:
+
+- user interaction
+- responsibility assignment
+- review
+- scheduling
+- escalation
+- audit
+- transport
+- settlement
+- security
+- legal or institutional processes
+
+SLANG asks whether those workflows must also remain the sole authority over a
+specific bounded result.
+
+---
+
+### **I3. Is the same result guaranteed on every machine?**
+
+Only within the supported runtime, input, canonicalization, and implementation
+contract.
+
+Projects may publish replay or conformance evidence to demonstrate the intended
+boundary. Environment-independent behavior must not be assumed beyond what is
+tested and documented.
+
+---
+
+### **I4. Can a demo fail?**
+
+Yes.
+
+It can reject malformed or unsupported input, expose a conflict, remain
+incomplete, abstain, or fail verification.
+
+Clean refusal is part of the reference behavior.
+
+---
+
+### **I5. Does dependency elimination mean dependency removal?**
+
+Not necessarily.
+
+In this framework, dependency elimination means that a named operational
+mechanism no longer governs the bounded admissible resolution as its sole
+authority.
+
+The mechanism may remain operational.
+
+---
+
+### **I6. Does the repository claim to be a formal standard?**
 
 No.
 
-There is no dependency on execution path.
+SLANG-Observatory does not claim recognition as a formal technical standard,
+security certification, production qualification, or third-party verification.
 
 ---
 
-### **I3. Why are the demos so small?**
+## **SECTION J — License and Use**
 
-To isolate the principle clearly.
+### **J1. Can the implementations be used and modified?**
 
-Small size removes complexity and exposes the invariant directly.
-
----
-
-### **I4. “This sounds too good to be true.”**
-
-The demos are intentionally minimal so you can:
-
-read, run, and verify the invariant yourself in under a minute
+The reference implementations and associated verification artifacts may be
+used, copied, modified, tested, studied, and redistributed without a license
+fee, subject to the repository LICENSE.
 
 ---
 
-### **I5. “But real systems need workflows.”**
+### **J2. What license applies to documentation and diagrams?**
 
-Workflows may still exist for:
-
-- user experience  
-- audit trails  
-- operational needs  
-
-But:
-
-correctness does not originate from them — it emerges from structure
+Unless a file states otherwise, documentation, architecture materials,
+specifications, diagrams, and explanatory content are subject to the separate
+terms stated in the repository LICENSE, including the declared CC BY-NC 4.0
+terms.
 
 ---
 
-### **I6. Can this fail?**
+### **J3. Can a modified implementation be presented as verified?**
 
-Yes — if structure is incorrect or incomplete.
+Not on the basis of the original verification results.
 
-The system refuses to produce false outcomes.
-
----
-
-## ⭐ **Final One-Line Summary**
-
-SLANG-Observatory demonstrates that outcomes can be determined deterministically from complete and consistent structure — without workflows, sequencing, or execution pipelines.
+Modified files, rules, profiles, schemas, vectors, contexts, or evidence require
+their own verification. Modified artifacts must not imply endorsement,
+certification, or authorship by the original maintainers.
 
 ---
 
-## 🔥 **Final Line**
+## ⭐ **Final Summary**
 
-The revolution is quiet. The implications are loud.
+SLANG-Observatory demonstrates that bounded outcomes can be resolved
+deterministically from admitted declared structure and versioned rules, while a
+named workflow, sequence, or operational mechanism may remain available without
+serving as the sole resolution authority.
+
+Each claim is limited to the code, evidence, inputs, rules, limits, and
+documented boundary of the relevant demo.
