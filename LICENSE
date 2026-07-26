@@ -1,99 +1,132 @@
-Open Standard License — SLANG-Observatory Reference Implementations
+SLANG-OBSERVATORY LICENSE v1.0
 
-SLANG-Observatory — Structural Language (SLANG)
-Shunyaya Structural Resolution Model
+1. Scope
 
-Legal Status
+This license applies to the SLANG-Observatory materials distributed with this
+repository unless a specific file or directory states otherwise.
 
-This is a permissive Open Standard license for SLANG-Observatory reference implementations.
+The covered materials are divided into:
 
-To the maximum extent permitted by law, this license grants rights similar in spirit to permissive open-source licenses, while preserving truthful representation requirements.
+- reference implementations and verification artifacts; and
+- documentation and architecture materials.
 
-If any provision is found unenforceable, the remaining provisions remain in effect.
+2. Reference Implementations and Verification Artifacts
 
-Permission
+The reference implementations and verification artifacts include, where present,
+runnable demonstrations, verification tooling, conformance materials,
+machine-readable inputs, evidence files, and other implementation or verification
+files.
 
-Permission is hereby granted, free of charge, to any person or organization to:
+Permission is granted, without a license fee, to use, copy, modify, test, study,
+and redistribute these materials for lawful purposes, including commercial and
+non-commercial use, subject to the terms of this license.
 
-use  
-execute  
-study  
-reproduce  
-publish  
-distribute  
-modify  
-implement  
-extend  
+A substantial redistribution of these materials must retain this license and any
+applicable copyright or attribution notices included with the original materials.
 
-any SLANG-Observatory reference implementation(s), including any copies, forks, or derivative works, in whole or in part, for commercial or non-commercial use.
+Modified implementation or verification files must be clearly identified as
+modified and must not imply that the modifications were verified, certified,
+endorsed, or authored by the original project maintainers.
 
-No registration, fees, or approval required.
+Third-party components remain subject to their own licenses and notices.
 
-Conditions
+3. Documentation and Architecture Materials
 
-The following conditions apply:
+Unless a file or section states otherwise, SLANG-Observatory documentation,
+architectural descriptions, specifications, diagrams, and explanatory materials
+are licensed under the Creative Commons Attribution-NonCommercial 4.0
+International License (CC BY-NC 4.0).
 
-1. Truthful Representation  
-   Implementations and derivatives must not be presented in a misleading manner.
+Under that license, these materials may be shared and adapted for non-commercial
+purposes with appropriate attribution, a link to the license, and an indication
+of whether changes were made.
 
-2. Use of Name “SLANG”  
-   The name “SLANG” must not be used to imply:
-   - endorsement  
-   - certification  
-   - official status  
-   - governance authority  
+The full license terms govern these materials:
 
-3. Modified Implementations  
-   Modified or extended versions must not be presented as canonical SLANG reference implementations.
+https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
-Attribution
+Commercial use of substantial portions of the documentation or architecture
+materials requires separate permission from the relevant rights holder unless the
+use is limited to factual reference, interoperability, review, or implementation
+of independently written software without substantial copying of the protected
+materials.
 
-Attribution is not required, but appreciated.
+Nothing in this license is intended to restrict rights that may otherwise be
+available under applicable law.
 
-Suggested form (optional):
+4. Attribution
 
-Implements SLANG — Structural Language (Shunyaya Structural Resolution Model)
+Attribution is not required for use, modification, or redistribution of the
+reference implementations or verification artifacts, but it is appreciated.
 
-Attribution must not imply endorsement or certification.
+Where attribution is required for documentation or architecture materials, or
+where voluntary attribution is provided for a reference implementation, a
+reasonable attribution is:
 
-Architecture License
+SLANG-Observatory
+Developed within the Shunyaya Framework
 
-Conceptual architecture and documentation are licensed under:
+Attribution may be provided in documentation, notices, credits, or another
+reasonable location appropriate to the form of redistribution or adaptation.
 
-Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)
+Attribution must not imply endorsement.
 
-https://creativecommons.org/licenses/by-nc/4.0/
+5. Names and Marks
 
-Permitted:
-- research  
-- academic use  
-- study and reproduction  
-- non-commercial distribution  
+This license does not grant trademark rights or permission to imply endorsement.
 
-Commercial use of architecture text is not permitted under this license.
+The names SLANG-Observatory, SLANG, Structural Language, Shunyaya Framework,
+Shunyaya, and related project names may be used for accurate factual reference
+and attribution.
 
-Disclaimer
+6. Verification and Assurance Claims
 
-These reference implementations are minimal demonstration kernels.
+A passing reference audit, conformance result, vector result, self-test,
+reconstruction result, bundle verification result, receipt verification result,
+checksum result, or other verification result applies only to the declared files,
+profiles, inputs, contexts, schemas, and verification boundary associated with
+that result.
 
-They do not constitute production systems and provide no guarantees of:
-- system performance  
-- security  
-- regulatory compliance  
-- operational reliability  
+Modified files, changed rules, changed profiles, changed contexts, changed
+vectors, changed schemas, changed evidence, or changed verification artifacts
+require their own verification.
 
-Use is at the user’s sole responsibility.
+Redistribution, modification, or use of the covered materials must not imply
+third-party verification, certification, production qualification, legal approval,
+regulatory approval, security approval, safety approval, financial approval, or
+endorsement by the original project maintainers unless such a claim has been
+separately and expressly authorized.
 
-No Warranty
+Reference audits and separate implementation reconstruction do not, by themselves,
+constitute independent third-party verification or certification.
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+7. No Correctness, Security, Legal, or Safety Warranty
 
-MERCHANTABILITY  
-FITNESS FOR A PARTICULAR PURPOSE  
-NON-INFRINGEMENT  
+THE SLANG-OBSERVATORY REFERENCE IMPLEMENTATIONS, VERIFICATION ARTIFACTS,
+ARCHITECTURE, DIAGRAMS, SPECIFICATIONS, AND DOCUMENTATION ARE PROVIDED "AS IS",
+WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY,
+RELIABILITY, SECURITY, SAFETY, AVAILABILITY, OR CORRECTNESS.
 
-IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM USE.
+SLANG-Observatory is not a replacement for authentication, source verification,
+factual validation, legal review, regulatory compliance, safety assessment,
+organizational approval, application security, operational controls, or
+domain-specific decision and execution systems.
 
-Closing
+A structurally resolved, incomplete, conflicting, forbidden, unsupported,
+abstained, reconstructed, or otherwise verified result does not by itself
+establish factual truth, authenticity, legal validity, regulatory approval,
+safety, policy approval, or execution authority.
 
-This repository is released to encourage independent validation, experimentation, and exploration of structure-based resolution across domains.
+8. Limitation of Liability
+
+To the maximum extent permitted by applicable law, the authors and contributors
+shall not be liable for any claim, damages, loss, or other liability arising from
+use, modification, distribution, implementation, extension, deployment,
+publication, verification, or reliance on SLANG-Observatory or the covered
+materials.
+
+9. Acceptance
+
+Using, modifying, or redistributing the covered materials indicates acceptance of
+these terms.
