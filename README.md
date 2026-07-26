@@ -1,229 +1,56 @@
 # ⭐ **SLANG-Observatory**
 
-## **Structural Language (SLANG) — Tiny Deterministic Kernels**
+## **Structural Language (SLANG) — Bounded Deterministic Resolution Demos**
 
 ![SLANG-Observatory](https://img.shields.io/badge/SLANG-Structural%20Language-black)
-![Structure-Based](https://img.shields.io/badge/Correctness-Structure%20Based-purple)
-![Deterministic](https://img.shields.io/badge/Deterministic-Resolution-green)
-![No-Workflow](https://img.shields.io/badge/Workflow-Not%20Required-lightgrey)
-![No-Pipeline](https://img.shields.io/badge/Pipeline-Not%20Required-lightgrey)
-![No-Sequence](https://img.shields.io/badge/Sequence-Not%20Required-lightgrey)
-![Order-Independent](https://img.shields.io/badge/Order-Independent-lightgrey)
+![Deterministic](https://img.shields.io/badge/Resolution-Deterministic%20Where%20Declared-green)
+![Bounded](https://img.shields.io/badge/Models-Bounded-purple)
+![Order-Independent](https://img.shields.io/badge/Order--Independent-Where%20Declared-lightgrey)
+![Replay-Verifiable](https://img.shields.io/badge/Replay--Verifiable-Where%20Published-green)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Tiny-Kernels](https://img.shields.io/badge/Kernels-Tiny%20%3C3KB-blue)
-![Open-Standard](https://img.shields.io/badge/Reference-Open%20Standard-blue)
 
-`correctness = structure`  
-`outcome_visible iff structure_mature`  
-`structure_mature = complete AND consistent`
+SLANG-Observatory is a collection of focused reference demonstrations that
+resolve bounded outcomes from declared structure and versioned rules.
 
-No workflow dependency.  
-No pipeline dependency.  
-No sequence dependency.
+The recurring relation is:
 
-Correctness resolves from structure.
+`declared structure + versioned rules -> bounded resolution state`
 
----
+Where a demo declares order independence:
 
-## ⚡ **The Claim**
+`same canonical structure + same versioned rules -> same bounded result`
 
-Across domains, correctness resolves without workflow, sequencing, or execution pipelines — when structure is sufficient.
+Where required structure is missing or conflicting:
 
----
+`incomplete structure -> no forced outcome`
 
-## 🚀 **The Core Insight (30-Second Revolution)**
+`conflicting structure -> ABSTAIN OR DENY OR another explicit non-result state`
 
-What if correctness never needed workflows, clocks, ordering, or coordination?
-
-Traditional systems assume:
-
-- Approval requires approval chains  
-- Detection requires analysis pipelines  
-- Inference requires model execution  
-- Settlement requires transaction logs  
-
-SLANG proves:
-
-When structure is complete AND consistent, outcome becomes visible — deterministically and order-independently.
-
-`same structure -> same outcome`  
-`incomplete structure -> no outcome`  
-`conflicting structure -> no forced resolution`
-
-This is not a faster workflow.  
-This is removal of what was never fundamental to correctness.
+The exact states, inputs, limits, evidence, and claim boundaries are defined by
+each demo.
 
 ---
 
-## 🔥 **Break This SLANG (Challenge)**
+## ⚡ **What SLANG-Observatory Tests**
 
-If workflows are required for correctness, this must fail:
+Each demo asks a narrow question:
 
-`S1 = S2`  
-`Outcome1 != Outcome2`
+Can a named workflow, sequence, arrival order, or operational mechanism stop
+being the sole authority over a bounded result while deterministic structural
+resolution remains reproducible?
 
-Or demonstrate any of the following:
+The practical pattern is:
 
-- incomplete structure -> forced outcome  
-- conflicting structure -> unsafe resolution  
-- reordered structure -> different result  
+`operational mechanism -> no longer the sole resolution authority`
 
-If none of these occur:
+`complete + consistent + domain-bounded structure -> admissible outcome`
 
-workflow is not fundamental to correctness in this model
+This does not mean that execution, communication, workflows, infrastructure,
+authentication, transactions, or domain operations disappear physically.
 
----
-
-## ⚡ **Try it in 30 seconds**
-
-Open any folder  
-Run the script  
-Modify the structure  
-Run again  
-
-Observe:
-
-- same structure → same outcome  
-- incomplete structure → no forced outcome  
-- order does not matter  
-- process does not matter  
-
----
-
-## ⚡ **Instant Demo Entry**
-
-Start with a real example:
-
-```
-python demo/SLANG-Invoice/slang_invoice.py
-```
-
-Then try:
-
-Break structure → outcome disappears  
-Fix structure → outcome reappears  
-
-This is not execution control.  
-This is structural visibility.
-
----
-
-## 🧠 **The Unifying Principle**
-
-`correctness = structure`
-
-`outcome_visible iff structure_mature`
-
-`structure_mature = complete AND consistent`
-
-If correctness remains after removing a dependency, that dependency was never fundamental.
-
----
-
-## 🧩 **Structural Collapse Guarantee**
-
-This framework does not modify classical outcomes.  
-It preserves them.
-
-`phi((m, a, s)) = m`
-
-Where:
-
-- `m` = classical result  
-- `a` = alignment  
-- `s` = structural state  
-
-No new result is created.  
-No approximation is introduced.  
-
-Structure reveals what was always true.
-
----
-
-## ⚡ **The Critical Line**
-
-Across every domain:
-
-remove dependency → structure remains → correctness preserved
-
-Nothing was improved.  
-Nothing was optimized.  
-Nothing was replaced.  
-
-Only the dependency was removed.
-
-And nothing broke.
-
----
-
-## ⚠️ **Read This Carefully**
-
-This is not a better workflow.  
-This is not a faster system.  
-This is not optimization.  
-
-This is dependency elimination.
-
-Correctness is evaluated structurally rather than primarily through process.
-
----
-
-## 🔭 **The Observatory Insight (New Layer)**
-
-SLANG-Observatory does not just resolve outcomes.
-
-It answers:
-
-Is this outcome structurally allowed to exist?
-
-`observable_truth = resolve(structure)`
-
-`visibility = structure_mature`
-
-This introduces a new paradigm:
-
-Systems do not produce truth.  
-They reveal it — when structure is sufficient.
-
----
-
-## 🔄 **The Shift**
-
-Across domains, a pattern emerges:
-
-- correctness does not depend on workflow  
-- correctness does not depend on sequence  
-- correctness does not depend on execution flow  
-
-It is preserved by something deeper:
-
-**structure**
-
----
-
-## 🧱 **SLANG Dependency Elimination Pattern**
-
-| SLANG Demo | Removed Dependency | What Preserves Correctness |
-|---|---|---|
-| Invoice | approval workflow | structure |
-| Claims | payout workflow | structure |
-| Cybersecurity | pipelines / escalation flow | structure |
-| Hurricane Forecast Visibility | forced forecast exposure / premature visibility | structure |
-| Password | authentication / login flow | structure |
-| ResetPassword | reset workflow / token orchestration | structure |
-| Audit | verification workflow | structure |
-| Money | transactions / settlement flow | structure |
-| Computation | execution flow | structure |
-| Exam Visibility | pre-created papers / secrecy workflows | structure |
-| Voting / Election Visibility | process-heavy election validation workflows | structure |
-
-Each demo removes a dependency — yet correctness remains intact.
-
-Nothing is approximated.  
-Nothing is substituted.  
-Only the dependency is removed.
-
-👉 The same principle visualized:
+They may remain necessary for real-world operation. The claim is only that,
+within a declared reference model, they need not be the sole source of the
+bounded resolution.
 
 ---
 
@@ -233,276 +60,350 @@ Only the dependency is removed.
 
 ---
 
-## 🧭 **Framework & References**
+## 🚀 **Start Here**
 
-### **Docs**
+### Run the invoice demonstration
 
-- [Quickstart](docs/Quickstart.md)  
-- [FAQ](docs/FAQ.md)  
-- [Proof Sketch](docs/Proof-Sketch.md)  
+```bat
+python demo/SLANG-Invoice/slang_invoice.py
+```
+
+### Run the SLANG-Exam v0.7.2 audit
+
+```bat
+cd demo/SLANG-Exam
+python -B slang_exam_v0_7_2.py --self-test
+```
+
+Expected summary:
+
+```text
+TOTAL                127/127 PASS
+```
+
+Verify the frozen SLANG-Exam vectors:
+
+```bat
+python -B slang_exam_vectors_v0_7_2.py --verify SLANG_Exam_Vectors_v0_7_2.json
+```
+
+Expected summary:
+
+```text
+semantic vectors: 56/56 reproduced
+reference evidence: 56/56 reproduced
+relations: 10/10 reproduced
+search probes: 3/3 reproduced
+VERIFY: PASS
+```
 
 ---
 
-### **Framework**
+## 🧭 **Documentation**
 
+- [Quickstart](docs/Quickstart.md)
+- [FAQ](docs/FAQ.md)
+- [Proof Sketch](docs/Proof-Sketch.md)
 - [Dependency Elimination Framework](docs/Dependency-Elimination-Framework.png)
 - [Shunyaya Structural Stack](docs/Shunyaya-Structural-Stack.png)
 
-Part of a broader structural pattern (Dependency Elimination Framework) where removing assumed dependencies reveals that correctness is preserved by structure alone.
+---
+
+## 🧩 **Repository Demos**
+
+The demos reuse a common structural-resolution discipline while retaining
+different schemas, state models, and domain boundaries.
+
+`shared SLANG contract + different bounded domain schema -> domain demonstration`
+
+The repeated pattern is intentional. These demos are not presented as separate
+foundational frameworks or as proof that every real-world dependency in each
+domain has been removed.
+
+### [SLANG-Invoice](demo/SLANG-Invoice/)
+
+**Invoice approval visibility from complete declared structure.**
+
+Tests whether approval workflow sequence must remain the sole resolution
+authority for the bounded invoice model.
+
+### [SLANG-Claims](demo/SLANG-Claims/)
+
+**Claim-payability admission from complete declared structure.**
+
+Resolves eligibility within the reference model. It does not execute payment or
+replace insurer policy, legal review, fraud controls, or settlement systems.
+
+### [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/)
+
+**Escalation admission from complete declared evidence.**
+
+Tests whether pipeline order must remain the sole escalation authority for the
+bounded model. It does not replace operational detection, response, monitoring,
+or security controls.
+
+### [SLANG-Hurricane](demo/SLANG-Hurricane/)
+
+**Forecast visibility from structural maturity.**
+
+`forecast_visible iff structure_complete AND structure_consistent`
+
+This is a visibility-admission demonstration, not a forecasting model,
+meteorological system, or public-safety authority.
+
+### [SLANG-Exam](demo/SLANG-Exam/)
+
+**Deterministic examination-form assembly and visibility from bounded declared
+structure.**
+
+SLANG-Exam v0.7.2 includes:
+
+- canonical ranking
+- abstention under unresolved multiplicity
+- single-party commit-reveal ranking
+- multi-party commit-reveal ranking
+- scope-sensitive authority
+- bounded exact-marks feasibility
+- explicit search and resource limits
+- reconstruction bundles
+- compact receipts
+- semantic and reference-evidence vectors
+
+The reference separates assembly from visibility and preserves explicit
+`RESOLVED`, `INCOMPLETE`, `CONFLICT`, `FORBIDDEN`, `UNSUPPORTED`, and `ABSTAIN`
+states.
+
+It is not a complete examination platform and does not provide authentication,
+question secrecy, institutional authorization, secure distribution, invigilation,
+grading, or legal certification.
+
+### [SLANG-Voting](demo/SLANG-Voting/)
+
+**Winner visibility from complete recorded structure.**
+
+Tests whether recount or tally workflow sequence must remain the sole bounded
+result source. It is not a complete election system, voting machine, legal
+certification process, or public-election authority.
+
+### [SLANG-Password](demo/SLANG-Password/)
+
+**Access admissibility from complete declared structure.**
+
+This is a minimal structural-resolution demonstration. It is not a replacement
+for authentication, cryptography, MFA, credential storage, access control, or
+security policy.
+
+### [SLANG-ResetPassword](demo/SLANG-ResetPassword/)
+
+**Password-reset admissibility from complete declared structure.**
+
+This is a minimal admission demonstration. It is not a password-reset engine or
+a replacement for MFA, token security, abuse prevention, identity proofing, or
+policy enforcement.
 
 ---
 
-## **Repository Demos (Tiny Structural Proofs)**
+## 🧱 **Focused Dependency Map**
 
-Each demo isolates one domain and proves the same invariant:
+This table describes only the bounded question tested by each demonstration.
 
-`outcome = resolve(structure)`
+| Demo | Operational Mechanism No Longer Treated as Sole Resolution Authority | Structural Basis |
+|---|---|---|
+| Invoice | approval workflow sequence | declared invoice facts, rules, and consistency checks |
+| Claims | payout workflow sequence | declared claim evidence and eligibility rules |
+| Cybersecurity | pipeline or escalation sequence | complete supported escalation evidence |
+| Hurricane | forced or premature forecast publication | maturity and visibility-admission structure |
+| Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
+| Voting | recount or tally workflow sequence | complete recorded tally structure |
+| Password | login workflow sequence | complete bounded admission evidence |
+| ResetPassword | reset workflow sequence | complete bounded reset-admission evidence |
 
-Start anywhere:
-
-- [SLANG-Invoice](demo/SLANG-Invoice/) — approval without workflow
-- [SLANG-Claims](demo/SLANG-Claims/) — payout without workflow
-- [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/) — escalation without pipelines
-- [SLANG-Hurricane](demo/SLANG-Hurricane/) — forecast visibility without forced cones
-- [SLANG-Exam](demo/SLANG-Exam/) — question paper visibility without pre-created papers
-- [SLANG-Voting](demo/SLANG-Voting/) — winner visibility without ballots, machines, or recounts as correctness dependencies
-- [SLANG-Password](demo/SLANG-Password/) — access resolution without authentication
-- [SLANG-ResetPassword](demo/SLANG-ResetPassword/) — password reset resolution without workflow
-
-More demo folders will be added progressively.  
-Check Related Structural References for dedicated SLANG domain repositories.
-
-Each canonical kernel is:
-
-- tiny (`<3 KB`)  
-- deterministic  
-- order-independent  
-- self-verifiable  
-
-Some demos additionally include optional educational structural cinema layers. 
-
-Same structure → same outcome  
-No structure → no outcome
+The table does not claim that the named mechanisms are unnecessary in
+real-world systems. It records what each demo removes from sole authority over
+its own bounded result.
 
 ---
 
 ## 🔍 **What This Repository Contains**
 
-Each folder is a minimal SLANG demonstration across domains.
+Depending on the demo, a folder may include:
 
-Each demonstrates the same invariant:
+- a runnable Python reference implementation
+- a browser demonstration
+- example inputs
+- frozen vectors
+- reconstruction bundles
+- compact receipts
+- verification utilities
+- diagrams and explanatory documents
 
-`same structure -> same outcome`  
-order independent  
-deterministic  
-idempotent  
-
----
-
-## 🧠 **How SLANG Works**
-
-Express structure as relationships (rules + facts)  
-Resolve only when structure is complete AND consistent  
-
-Outcome appears — or remains absent  
-
-`outcome = resolve(structure)`
-
-Execution is the substrate.  
-Structure is the source of truth.
+Not every demo has the same artifact set. Each folder defines its own
+verification surface and limits.
 
 ---
 
-## 🧠 **Execution Clarification**
+## 🧠 **How the Resolution Pattern Works**
 
-Execution reveals outcomes.  
-Structure determines them.
+A typical SLANG demonstration:
 
-Outcome depends only on structure — not on:
+1. accepts declared facts, rules, and context
+2. validates the supported input boundary
+3. normalizes order-independent structures where declared
+4. checks completeness, consistency, authority, and admissibility
+5. resolves a bounded state
+6. preserves explicit non-result states when resolution is not justified
+7. produces evidence where the demo publishes verification artifacts
 
-- workflow  
-- sequence  
-- execution path  
-- timing  
-- coordination  
+Conceptually:
 
----
+`outcome = resolve(declared_structure, versioned_rules)`
 
-## **From Minimal Kernels to Full Systems**
+Execution is still required to evaluate the resolver.
 
-These minimal kernels isolate the structural invariant.
-
-They are the smallest visible proofs.
-
-Alongside these, full reference implementations are available for selected domains, including:
-
-- SLANG-Money  
-- SLANG-Audit  
-- SLANG-Computation  
-
-These expanded packages demonstrate the same principle with:
-
-- complete repository structure  
-- documentation and proof sketches  
-- reproducibility and verification layers  
-- deterministic outputs and structural certificates  
-
-The invariant remains identical:
-
-`same structure -> same outcome`
-
-The difference is scope:
-
-kernels isolate the truth  
-reference systems demonstrate it at scale  
-
-The principle does not change with size. Only its visibility does.
+The structural claim concerns what determines the bounded result, not whether
+software execution physically occurs.
 
 ---
 
-## 🧠 **The Important Part**
+## 🔁 **Determinism and Order Independence**
 
-These are not full systems.
+A demo may claim determinism when identical admitted canonical inputs under the
+same versioned rules reproduce the same result.
 
-These are the smallest visible proofs.
+A demo may claim order independence only for structures that its contract
+explicitly normalizes or treats as sets.
 
-Each tiny kernel isolates one truth:
+Therefore:
 
-`correctness = structure`
+`deterministic != universally order-independent`
 
-The full Shunyaya stack extends this across:
+`order-independent where declared != every input order is semantically equivalent`
 
-- time  
-- money  
-- communication  
-- execution  
-- identity  
-- consensus  
-- and beyond  
-
-The principle does not change.
-
-Only its visibility increases.
+SLANG-Exam, for example, distinguishes literal submission identity from
+canonical result identity while preserving question-bank and manifest-order
+invariance where declared.
 
 ---
 
-## 🛡 **Safety & Guarantees**
+## 🧾 **Evidence and Verification**
 
-`incomplete structure -> no outcome` (prevents wrong results)  
-`conflicting structure -> no unsafe resolution`  
-`identical structure -> identical outcome`  
-reproducible across runs  
-classical collapse preserved: `phi((m, a, s)) = m`  
+Verification strength varies by demo.
 
-Absence is truth. Silence is valid output.
+Published evidence may include:
 
-This is structural safety.
+- self-tests
+- frozen conformance vectors
+- metamorphic relations
+- reconstruction bundles
+- compact receipts
+- exact replay verification
+- semantic-only conformance modes
+- tamper checks
+
+A passing self-test or reconstruction check establishes agreement with the
+declared reference contract. It does not establish production safety,
+institutional approval, domain completeness, or third-party certification.
 
 ---
 
-## 🧭 **Structural Property**
+## ⚙️ **From Observatory Demos to Standalone Reference Systems**
 
-`S1 = S2 -> Outcome1 = Outcome2`  
-`Outcome1 != Outcome2 -> S1 != S2`  
+Selected SLANG domains also have dedicated repositories with broader
+documentation and verification surfaces:
 
-Structure is the only source of truth.
+- [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation)
+- [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit)
+- [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money)
+
+The Observatory contains focused domain demonstrations. The standalone
+repositories define their own contracts, evidence, and limitations.
 
 ---
 
 ## ⚖️ **What This Is / Is Not**
 
-### **SLANG-Observatory IS:**
+### SLANG-Observatory is:
 
-- a collection of minimal structural proofs  
-- a deterministic resolution playground  
-- a demonstration of dependency elimination  
-- a structure-first correctness model  
+- a collection of bounded structural-resolution demonstrations
+- a deterministic resolution playground
+- a repository for inspectable domain kernels and evidence
+- a place to test whether a named operational mechanism must remain the sole
+  authority over a bounded result
 
-### **SLANG-Observatory IS NOT:**
+### SLANG-Observatory is not:
 
-- a production system  
-- a framework or SDK  
-- a replacement for domain infrastructure  
-- a security system  
-
----
-
-## 🌍 **Why This Matters**
-
-If this pattern holds:
-
-- many workflow dependencies become reducible  
-- execution becomes secondary  
-- validation becomes structural  
-- correctness becomes intrinsic  
-
-Systems become:
-
-- resilient  
-- reproducible  
-- dependency-independent  
-- auditable by inspection  
+- a production platform
+- a universal correctness framework
+- a complete SDK
+- a replacement for domain infrastructure
+- a security certification
+- a formal technical standard
+- proof that workflows, execution, communication, or infrastructure are
+  unnecessary in real systems
 
 ---
 
-## 📜 **License**
+## 🛡 **Safety and Claim Boundary**
+
+The demonstrations preserve explicit non-result states rather than forcing an
+answer when required structure is missing, conflicting, forbidden, unsupported,
+or inconclusive.
+
+Typical relations include:
+
+`complete + consistent + admitted structure -> bounded resolution`
+
+`incomplete structure -> no forced outcome`
+
+`conflicting structure -> ABSTAIN OR DENY OR another explicit non-result state`
+
+`unsupported input -> explicit refusal`
+
+These relations apply only to the declared model implemented by the relevant
+demo.
+
+The repository does not certify:
+
+- real-world correctness outside the declared model
+- security
+- safety
+- fairness
+- legal compliance
+- operational readiness
+- institutional authorization
+- domain completeness
+- superiority over established systems
+
+Independent validation remains necessary before any high-risk or operational
+use.
+
+---
+
+# 📜 **License**
 
 See: [LICENSE](LICENSE)
 
-**Reference Implementation (This Repository):**
+The SLANG-Observatory reference implementations and associated verification
+artifacts are free to use, copy, modify, test, study, and redistribute without a
+license fee, subject to the license terms stated in the repository.
 
-These tiny kernels are the official minimal examples of the SLANG structural resolution model.  
-They demonstrate the core principles in their simplest form across multiple domains.
+Documentation, architecture materials, specifications, diagrams, and
+explanatory content are subject to the separate terms stated in the LICENSE.
 
-Released as an Open Standard — free to use, study, implement, extend, and deploy.
-
-**Architecture and Documentation:**  
-CC BY-NC 4.0
-
----
-
-## 🧱 **Cross-System Dependency Elimination Map**
-
-Across these systems, the same structural pattern appears repeatedly.
-
-The dependency changes.  
-The preserved invariant does not.
-
-| Domain        | System | Dependency Removed for Correctness                  | What Preserves Correctness |
-|---------------|--------|------------------------------------|----------------------------|
-| Computation   | [SLANG-Computation](https://github.com/OMPSHUNYAYA/SLANG-Computation) | Execution flow             | Structure |
-| Computation   | [STOCRS](https://github.com/OMPSHUNYAYA/STOCRS)                     | Execution pipelines        | Structure |
-| Arithmetic    | [SVARE](https://github.com/OMPSHUNYAYA/SVARE)                        | Computation                | Structure |
-| Time          | [STIME](https://github.com/OMPSHUNYAYA/Structural-Time)              | Clocks                     | Structure |
-| Time          | [SSUM-Time](https://github.com/OMPSHUNYAYA/SSUM-Time)                | Time reconstruction        | Structure |
-| Ordering      | [ORL](https://github.com/OMPSHUNYAYA/Orderless-Ledger)              | Ordering / sequence        | Structure |
-| Connectivity  | [STINT-Money](https://github.com/OMPSHUNYAYA/STINT-Money)           | Continuous connectivity    | Structure |
-| Communication | [STILE](https://github.com/OMPSHUNYAYA/STILE)                       | Messaging / network        | Structure |
-| Traversal     | [STRAL-Path](https://github.com/OMPSHUNYAYA/STRAL-Path)             | Traversal / search         | Structure |
-| Infrastructure| [STIC](https://github.com/OMPSHUNYAYA/STIC)                         | Cloud / infrastructure     | Structure |
-| Media         | [STRUMER](https://github.com/OMPSHUNYAYA/STRUMER)                    | Editing / manual media workflows | Structure |
-| Finance       | [SLANG-Money](https://github.com/OMPSHUNYAYA/SLANG-Money)           | Transactions               | Structure |
-| Audit         | [SLANG-Audit](https://github.com/OMPSHUNYAYA/SLANG-Audit)           | Verification workflows     | Structure |
-
-Each row demonstrates removal of a dependency for correctness, while structure preserves correctness.
-
-Correctness remains reproducible under structural constraints.
-
-Dependencies may shift from runtime coordination toward structural definition, while preserving deterministic outcomes.
-
-If correctness remains stable after removing a dependency, that dependency may not be fundamental to correctness.
+This repository does not claim recognition as a formal technical standard,
+security certification, production qualification, or third-party verification.
 
 ---
 
 ## 🧭 **Final Statement**
 
-Workflows did not create correctness.  
-Execution did not create correctness.  
-Validation did not create correctness.  
+SLANG-Observatory demonstrates a bounded structural-resolution discipline:
 
-Correctness was always in structure.
+`same admitted canonical structure + same versioned rules -> same bounded result`
 
-SLANG-Observatory demonstrates that a quiet revolution is possible — one tiny kernel at a time.
+Where a named workflow, sequence, or operational mechanism is removed from sole
+resolution authority, the remaining structure must still be explicit,
+complete, consistent, and verifiable within the declared model.
 
-Structure is fundamental.  
-Many assumed dependencies become optional.
+Each demo should be judged by its own code, evidence, limits, and documented
+claim boundary.
