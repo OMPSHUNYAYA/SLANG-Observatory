@@ -31,6 +31,16 @@ to this resolver.
 
 ---
 
+## License and Use Notice
+
+The SLANG-Exam reference implementation and verification artifacts are free to use, copy, modify, test, study, and redistribute without a license fee, subject to the [SLANG-Observatory LICENSE](../../LICENSE).
+
+Architecture materials, documentation, specifications, diagrams, and explanatory content are subject to CC BY-NC 4.0 as stated in the LICENSE.
+
+Provided as is, without warranty. SLANG-Exam is not an operational examination system, security mechanism, certification process, or institutional authority.
+
+---
+
 ## 🧭 **Visual Overview**
 
 ![SLANG-Exam Reference Diagram](SLANG-Exam-Reference-Diagram.png)
