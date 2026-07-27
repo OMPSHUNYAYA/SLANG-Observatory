@@ -1,0 +1,442 @@
+{
+  "bundle_id": "slang_voting_bundle_sha256:fc896a8019e0275312c595c152806a3ecaf81e604b5bc840d28ebff20dc8a78b",
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "core_version": "SLANG-CORE-1-D05",
+  "identity_domain_id": "slang_voting_identity_domain_sha256:c4f0826944e220b69afc1d0d1e4e1645c13520e36452e622321986a57a827263",
+  "normalized_projection": {
+    "computed_candidate_set_id": "slang_voting_candidate_set_sha256:556e559f33e2e857080fd1843d9033dea81dc5c4be98aa43ef5cb8664301a79d",
+    "computed_reporting_boundary_id": "slang_voting_reporting_boundary_sha256:0dee66f3798667a2a15ecf38ca65144da0ae5bc7f523b38561a6bcd53f9deb56",
+    "contest": {
+      "aggregation_mode": "SUM_COUNTS",
+      "candidate_ids": [
+        "CANDIDATE-A",
+        "CANDIDATE-B",
+        "CANDIDATE-C"
+      ],
+      "contest_id": "CONTEST-001",
+      "decision_rule": {
+        "mode": "UNIQUE_MAX"
+      },
+      "expected_unit_ids": [
+        "UNIT-001",
+        "UNIT-002",
+        "UNIT-003",
+        "UNIT-004"
+      ]
+    },
+    "context": {
+      "evaluation_authorized": true,
+      "evaluation_id": "EVALUATION-001",
+      "evidence_mode": "MULTI_SOURCE_EXACT_AGREEMENT",
+      "expected_source_ids": [
+        "SOURCE-A",
+        "SOURCE-B",
+        "SOURCE-C"
+      ],
+      "jurisdiction_id": "JURISDICTION-REFERENCE",
+      "reference_visibility_authorized": true,
+      "reporting_boundary_sealed": true
+    },
+    "declared_candidate_set_id": "slang_voting_candidate_set_sha256:556e559f33e2e857080fd1843d9033dea81dc5c4be98aa43ef5cb8664301a79d",
+    "declared_reporting_boundary_id": "slang_voting_reporting_boundary_sha256:0dee66f3798667a2a15ecf38ca65144da0ae5bc7f523b38561a6bcd53f9deb56",
+    "profile_id": "SLANG-VOTING-PROFILE-1-D03",
+    "ruleset_id": "SLANG-VOTING-RULESET-1-D03",
+    "schema": "SLANG-VOTING-INPUT-1",
+    "sources": [
+      {
+        "computed_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "108798abd1fefeffd7e52904cf3f46224feaffad9197d4dd9e13e0dc4441cfef",
+        "source_id": "SOURCE-A"
+      },
+      {
+        "computed_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "bb5e1dd8e94ed4ea2939a7f7696400f66e982f4462154607d5c87315ddc3ac40",
+        "source_id": "SOURCE-B"
+      },
+      {
+        "computed_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "0350ba0127703bb6b6030a611f4a5b391ad1c2ead513439df5dae928b4d09024",
+        "source_id": "SOURCE-C"
+      }
+    ]
+  },
+  "result": {
+    "aggregation_mode": "SUM_COUNTS",
+    "candidate_record_totals": {
+      "CANDIDATE-A": "370",
+      "CANDIDATE-B": "325",
+      "CANDIDATE-C": "115"
+    },
+    "candidate_resolution_totals": {
+      "CANDIDATE-A": "370",
+      "CANDIDATE-B": "325",
+      "CANDIDATE-C": "115"
+    },
+    "candidate_set_id": "slang_voting_candidate_set_sha256:556e559f33e2e857080fd1843d9033dea81dc5c4be98aa43ef5cb8664301a79d",
+    "canonical_input_id": "slang_voting_canonical_input_sha256:39ff9daf2f6124e09bb5253e81067527cd3a0e1a628b172318a3e0820f1cdfa9",
+    "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+    "certification_authority": "NONE",
+    "conflicts": [],
+    "contest_id": "CONTEST-001",
+    "core_version": "SLANG-CORE-1-D05",
+    "decision_rule_mode": "UNIQUE_MAX",
+    "evaluation_evidence_id": "slang_voting_evaluation_evidence_sha256:c7b80ce195babfb0b2ab8e93b7060a24f20417215b4d42ff0ac194cabc4a7c6c",
+    "evaluation_id": "EVALUATION-001",
+    "evidence": {
+      "decision_reason": "UNIQUE_MAXIMUM",
+      "ranked_candidate_ids": [
+        "CANDIDATE-A",
+        "CANDIDATE-B",
+        "CANDIDATE-C"
+      ],
+      "top_resolution_total": "370",
+      "total_resolution_quantity": "810"
+    },
+    "evidence_mode": "MULTI_SOURCE_EXACT_AGREEMENT",
+    "execution_authority": "NONE",
+    "identity_domain_id": "slang_voting_identity_domain_sha256:c4f0826944e220b69afc1d0d1e4e1645c13520e36452e622321986a57a827263",
+    "leading_candidate_ids": [
+      "CANDIDATE-A"
+    ],
+    "missing_dependencies": [],
+    "official_result_authority": "NONE",
+    "outcome_id": "slang_voting_outcome_sha256:37f621f9548d5bea53a5704a8e74d6514daf930ed81f47f624ff2b11ef3e6fb6",
+    "outcome_visible": true,
+    "profile_id": "SLANG-VOTING-PROFILE-1-D03",
+    "prohibitions": [],
+    "reason_codes": [
+      "UNIQUE_MAXIMUM"
+    ],
+    "report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+    "reporting_boundary_id": "slang_voting_reporting_boundary_sha256:0dee66f3798667a2a15ecf38ca65144da0ae5bc7f523b38561a6bcd53f9deb56",
+    "resolution_state": "RESOLVED",
+    "result_id": "slang_voting_result_sha256:00420863e38264fdcfa6c47c0d7f5fd27363a9f5693bbda13a42bdddeb9d5dc9",
+    "rule_profile_id": "slang_voting_rule_profile_sha256:f2f17291fe32288aab285e686afb1d883350bab477842192fcbd3e143846e657",
+    "ruleset_id": "SLANG-VOTING-RULESET-1-D03",
+    "schema": "SLANG-VOTING-RESULT-1",
+    "selected_candidate_ids": [
+      "CANDIDATE-A"
+    ],
+    "source_agreement_id": "slang_voting_source_agreement_sha256:6adfff0ee4442e7f6702efccd7f7a6d89f8da0dbc2846e107efcc300b7938082",
+    "source_manifest_id": "slang_voting_source_manifest_sha256:1273d0613db33040655b9420eea003b66501a03de19c1832b2f7df01f595afb9",
+    "state": "RESOLVED",
+    "submission_id": "slang_voting_submission_sha256:fe54d56a1f37690fd76dd88f084b50eb729a5b2df2cfc6c5fb148d29d3ba26bb",
+    "total_non_candidate_records": "14",
+    "total_records": "824",
+    "unsupported_features": [],
+    "version": "0.1.2",
+    "visibility_state": "VISIBLE"
+  },
+  "schema": "SLANG-VOTING-BUNDLE-1",
+  "submitted_input": {
+    "contest": {
+      "aggregation_mode": "SUM_COUNTS",
+      "candidate_ids": [
+        "CANDIDATE-A",
+        "CANDIDATE-B",
+        "CANDIDATE-C"
+      ],
+      "contest_id": "CONTEST-001",
+      "decision_rule": {
+        "mode": "UNIQUE_MAX"
+      },
+      "expected_unit_ids": [
+        "UNIT-001",
+        "UNIT-002",
+        "UNIT-003",
+        "UNIT-004"
+      ]
+    },
+    "context": {
+      "evaluation_authorized": true,
+      "evaluation_id": "EVALUATION-001",
+      "evidence_mode": "MULTI_SOURCE_EXACT_AGREEMENT",
+      "expected_source_ids": [
+        "SOURCE-A",
+        "SOURCE-B",
+        "SOURCE-C"
+      ],
+      "jurisdiction_id": "JURISDICTION-REFERENCE",
+      "reference_visibility_authorized": true,
+      "reporting_boundary_sealed": true
+    },
+    "declared_candidate_set_id": "slang_voting_candidate_set_sha256:556e559f33e2e857080fd1843d9033dea81dc5c4be98aa43ef5cb8664301a79d",
+    "declared_reporting_boundary_id": "slang_voting_reporting_boundary_sha256:0dee66f3798667a2a15ecf38ca65144da0ae5bc7f523b38561a6bcd53f9deb56",
+    "profile_id": "SLANG-VOTING-PROFILE-1-D03",
+    "ruleset_id": "SLANG-VOTING-RULESET-1-D03",
+    "schema": "SLANG-VOTING-INPUT-1",
+    "sources": [
+      {
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "108798abd1fefeffd7e52904cf3f46224feaffad9197d4dd9e13e0dc4441cfef",
+        "source_id": "SOURCE-A"
+      },
+      {
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "bb5e1dd8e94ed4ea2939a7f7696400f66e982f4462154607d5c87315ddc3ac40",
+        "source_id": "SOURCE-B"
+      },
+      {
+        "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+        "reports": [
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "120",
+              "CANDIDATE-B": "90",
+              "CANDIDATE-C": "30"
+            },
+            "non_candidate_count": "5",
+            "total_records": "245",
+            "unit_id": "UNIT-001"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "80",
+              "CANDIDATE-B": "100",
+              "CANDIDATE-C": "20"
+            },
+            "non_candidate_count": "4",
+            "total_records": "204",
+            "unit_id": "UNIT-002"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "75",
+              "CANDIDATE-B": "65",
+              "CANDIDATE-C": "40"
+            },
+            "non_candidate_count": "3",
+            "total_records": "183",
+            "unit_id": "UNIT-003"
+          },
+          {
+            "candidate_counts": {
+              "CANDIDATE-A": "95",
+              "CANDIDATE-B": "70",
+              "CANDIDATE-C": "25"
+            },
+            "non_candidate_count": "2",
+            "total_records": "192",
+            "unit_id": "UNIT-004"
+          }
+        ],
+        "source_dataset_commitment": "0350ba0127703bb6b6030a611f4a5b391ad1c2ead513439df5dae928b4d09024",
+        "source_id": "SOURCE-C"
+      }
+    ]
+  },
+  "version": "0.1.2"
+}

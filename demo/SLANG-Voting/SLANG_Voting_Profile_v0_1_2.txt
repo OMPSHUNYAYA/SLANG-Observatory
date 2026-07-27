@@ -1,0 +1,1535 @@
+SLANG-VOTING BOUNDED ELECTION-RESULT PROFILE
+Version 0.1.2
+
+1. PURPOSE
+
+This profile defines deterministic bounded election-result resolution from
+aggregate declared records, an exact reporting boundary, versioned aggregation
+and decision rules, and explicit source-evidence structure.
+
+The profile resolves only the supplied admitted structure.
+
+It does not determine whether the structure corresponds to authentic ballots,
+lawful participation, a complete real-world election, or an official result.
+It is not a voting system, election standard, or certification authority.
+
+The central relation is:
+
+`same admitted canonical reports + same sealed reporting boundary + same versioned profile -> same bounded result state`
+
+2. VERSIONED CONTRACT
+
+Version:
+
+`0.1.2`
+
+Core:
+
+`SLANG-CORE-1-D05`
+
+Profile:
+
+`SLANG-VOTING-PROFILE-1-D03`
+
+Ruleset:
+
+`SLANG-VOTING-RULESET-1-D03`
+
+Canonicalization:
+
+`SLANG-CANONICAL-JSON-1-D02`
+
+Input schema:
+
+`SLANG-VOTING-INPUT-1`
+
+Result schema:
+
+`SLANG-VOTING-RESULT-1`
+
+Bundle schema:
+
+`SLANG-VOTING-BUNDLE-1`
+
+Receipt schema:
+
+`SLANG-VOTING-RECEIPT-1`
+
+Public summary schema:
+
+`SLANG-VOTING-PUBLIC-SUMMARY-1`
+
+Vector schema:
+
+`SLANG-VOTING-VECTORS-2`
+
+3. SUPPORTED OUTCOME STATES
+
+The profile supports:
+
+`RESOLVED`
+
+`INCOMPLETE`
+
+`CONFLICT`
+
+`FORBIDDEN`
+
+`UNSUPPORTED`
+
+`ABSTAIN`
+
+`RESOLVED` means that the admitted bounded structure produces an unambiguous
+result under the selected supported rule.
+
+`INCOMPLETE` means that required declared structure is absent or the declared
+reporting boundary remains open.
+
+`CONFLICT` means that submitted structural claims cannot coexist under this
+profile.
+
+`FORBIDDEN` means that evaluation, reference visibility, or submitted-field
+behavior is explicitly prohibited.
+
+`UNSUPPORTED` means that the requested method, representation, field, value, or
+resource size lies outside this profile.
+
+`ABSTAIN` means that admitted complete structure does not justify an
+unambiguous result under the supported decision rule.
+
+4. PROCESSING STAGES
+
+A conforming implementation applies these stages in order:
+
+1. strict portable JSON admission
+2. structural normalization and validation
+3. primary validation-state selection
+4. exact source report-set agreement
+5. bounded aggregation
+6. decision-rule evaluation
+7. reference-visibility handling
+8. identity, bundle, and receipt construction
+9. visibility-aware public summary projection
+
+Validation strictly precedes aggregation and decision.
+
+5. PRIMARY VALIDATION-STATE SELECTION
+
+A submission may exhibit more than one independent validation issue.
+
+Every validation issue carries exactly one of:
+
+`FORBIDDEN`
+
+`CONFLICT`
+
+`UNSUPPORTED`
+
+`INCOMPLETE`
+
+The normative precedence is:
+
+`FORBIDDEN > CONFLICT > UNSUPPORTED > INCOMPLETE`
+
+If the validation issue set is non-empty:
+
+`state = highest-precedence issue state`
+
+`resolution_state = state`
+
+`outcome_visible = false`
+
+If:
+
+`state = FORBIDDEN`
+
+then:
+
+`visibility_state = WITHHOLD`
+
+Otherwise:
+
+`visibility_state = NOT_RESOLVED`
+
+Aggregation and decision do not run while any validation issue remains.
+
+When several issues share the highest state, the representative issue is the
+lexically smallest tuple:
+
+`(code, detail)`
+
+Representative selection does not alter the state. It fixes deterministic
+reference selection among same-state issues.
+
+6. DIAGNOSTIC AGGREGATION
+
+The selected `state` reflects only the highest-precedence validation state.
+Diagnostics preserve all detected validation findings.
+
+The result fields are constructed as follows:
+
+`reason_codes = lexically sorted unique issue codes`
+
+`missing_dependencies = lexically sorted unique details of INCOMPLETE issues`
+
+`conflicts = lexically sorted unique details of CONFLICT issues`
+
+`prohibitions = lexically sorted unique details of FORBIDDEN issues`
+
+`unsupported_features = lexically sorted unique details of UNSUPPORTED issues`
+
+A result may therefore carry:
+
+`state = FORBIDDEN`
+
+while its reason codes and category fields retain lower-precedence findings.
+
+Example:
+
+`evaluation_authorized = false`
+
+combined with a missing expected reporting unit yields:
+
+`state = FORBIDDEN`
+
+with both:
+
+`EVALUATION_NOT_AUTHORIZED`
+
+`MISSING_REPORTING_UNIT`
+
+`FORBIDDEN` does not suppress structural diagnostics. This profile does not
+provide diagnostic confidentiality or suppress diagnostic fields. The
+separate public-summary projection redacts only candidate-bearing values as
+defined in Section 28.
+
+7. PORTABLE JSON ADMISSION
+
+Portable JSON admission occurs before structural validation.
+
+A portable JSON boundary failure returns:
+
+`state = UNSUPPORTED`
+
+`resolution_state = UNSUPPORTED`
+
+`visibility_state = NOT_RESOLVED`
+
+`outcome_visible = false`
+
+`reason_codes = [PORTABLE_JSON_BOUNDARY_FAILURE]`
+
+No structural normalization, aggregation, or decision procedure runs after
+this failure.
+
+8. TOP-LEVEL INPUT
+
+The admitted top-level fields are:
+
+`schema`
+
+`profile_id`
+
+`ruleset_id`
+
+`context`
+
+`contest`
+
+`sources`
+
+`declared_candidate_set_id`
+
+`declared_reporting_boundary_id`
+
+The following fields are required:
+
+`schema`
+
+`profile_id`
+
+`ruleset_id`
+
+`context`
+
+`contest`
+
+`sources`
+
+Declared candidate-set and reporting-boundary identities are optional input
+bindings. The canonical reference includes both.
+
+Derived result, winner, state, visibility, identity, bundle, receipt, and
+evidence fields are prohibited as top-level input.
+
+9. CONTEXT
+
+The context fields are:
+
+`evaluation_id`
+
+`jurisdiction_id`
+
+`evaluation_authorized`
+
+`reporting_boundary_sealed`
+
+`reference_visibility_authorized`
+
+`evidence_mode`
+
+`expected_source_ids`
+
+All context fields are required.
+
+`evaluation_authorized` and `reference_visibility_authorized` are reference
+policy declarations. They do not represent legal election authority.
+
+`reporting_boundary_sealed = false` produces `INCOMPLETE`.
+
+`evaluation_authorized = false` produces `FORBIDDEN`.
+
+10. IDENTIFIER SYNTAX
+
+Identifiers are normalized to uppercase and must match:
+
+`[A-Z0-9][A-Z0-9._:-]{0,63}`
+
+The maximum identifier length is 64 characters.
+
+Normalization collisions are `CONFLICT`.
+
+11. DECLARED STRUCTURAL IDENTITY SYNTAX
+
+The following declared identities require their exact prefix followed by 64
+lowercase hexadecimal characters:
+
+`declared_candidate_set_id`
+
+`declared_reporting_boundary_id`
+
+`declared_report_set_id`
+
+Uppercase hexadecimal in these declared structural identities is
+`UNSUPPORTED`, not a semantic conflict.
+
+A syntactically valid lowercase identity that differs from the computed
+identity is `CONFLICT`.
+
+`source_dataset_commitment` accepts 64 hexadecimal characters in either case
+and normalizes the digest to lowercase. It is a declared binding value, not a
+structural identity assertion computed by this resolver.
+
+12. CONTEST STRUCTURE
+
+The contest fields are:
+
+`contest_id`
+
+`candidate_ids`
+
+`expected_unit_ids`
+
+`aggregation_mode`
+
+`decision_rule`
+
+All contest fields are required.
+
+The candidate set must contain at least one candidate and no more than 128
+candidates.
+
+The expected reporting-unit set must contain at least one unit and no more than
+10000 units.
+
+Candidate and reporting-unit presentation order is not semantically
+significant under this profile.
+
+13. REPORTING-BOUNDARY CLOSURE
+
+The declared boundary is:
+
+`expected_unit_set = set(expected_unit_ids)`
+
+For every admitted source:
+
+`reported_unit_set = expected_unit_set`
+
+A missing unit produces `INCOMPLETE`.
+
+An undeclared unit produces `CONFLICT`.
+
+A duplicate unit report produces `CONFLICT`.
+
+The context must declare:
+
+`reporting_boundary_sealed = true`
+
+A sealed declared boundary does not prove real-world completeness.
+
+14. SOURCE EVIDENCE MODES
+
+The supported evidence modes are:
+
+`SINGLE_SOURCE`
+
+`MULTI_SOURCE_EXACT_AGREEMENT`
+
+`SINGLE_SOURCE` requires exactly one expected source and exactly one submitted
+source.
+
+`MULTI_SOURCE_EXACT_AGREEMENT` requires at least two expected sources. Every
+source must submit a complete report set.
+
+Conformance requires both:
+
+`report_set_id(source_1) = ... = report_set_id(source_n)`
+
+and:
+
+`canonical_reports(source_1) = ... = canonical_reports(source_n)`
+
+Disagreement in report-set identities or canonical report content produces
+`CONFLICT`.
+
+After exact canonical equality is established, aggregation may consume the
+canonical report set of any submitted source because all admitted source
+report sets are equal.
+
+A missing expected source produces `INCOMPLETE`.
+
+An extra or duplicate source produces `CONFLICT`.
+
+This agreement is structural agreement among submitted inputs. Source
+independence and authenticity are outside the profile.
+
+15. SOURCE STRUCTURE
+
+Each source contains:
+
+`source_id`
+
+`source_dataset_commitment`
+
+`declared_report_set_id`
+
+`reports`
+
+All source fields are required.
+
+`source_dataset_commitment` must be exactly 64 hexadecimal characters. The
+profile validates syntax and normalizes the digest to lowercase.
+
+`declared_report_set_id` must use:
+
+`slang_voting_report_set_sha256:<64 lowercase hexadecimal characters>`
+
+The declared value must equal the computed report-set identity.
+
+16. REPORT-SET IDENTITY COMPUTATION CONDITIONS
+
+A source receives `computed_report_set_id` only when all of the following hold:
+
+- `contest_id`, `candidate_ids`, `expected_unit_ids`, and `aggregation_mode`
+  are available after normalization
+- at least one normalized report is available
+- no report-affecting validation issue remains
+
+These two source-binding syntax issues do not block report-set computation:
+
+`INVALID_SOURCE_DATASET_COMMITMENT`
+
+`INVALID_DECLARED_REPORT_SET_ID`
+
+They do not change the semantic report set.
+
+Every other issue detected while normalizing the source or its reports blocks
+`computed_report_set_id`.
+
+When a syntactically valid declared report-set identity is available, it is
+compared with the computed identity. A mismatch produces:
+
+`CONFLICT / DECLARED_REPORT_SET_ID_MISMATCH`
+
+17. REPORT STRUCTURE
+
+Every `SUM_COUNTS` report contains:
+
+`unit_id`
+
+`candidate_counts`
+
+`non_candidate_count`
+
+`total_records`
+
+Every `UNIT_WINNER_WEIGHT` report contains those fields and:
+
+`unit_weight`
+
+Unsupported report fields produce `UNSUPPORTED`.
+
+18. CANDIDATE-COUNT CLOSURE
+
+For every report:
+
+`set(candidate_counts.keys()) = set(candidate_ids)`
+
+A missing candidate count produces `INCOMPLETE`.
+
+An undeclared candidate count produces `CONFLICT`.
+
+Candidate map order is not semantically significant.
+
+19. DECIMAL QUANTITY SYNTAX
+
+The following report quantities are canonical non-negative decimal strings:
+
+`candidate_counts[candidate_id]`
+
+`non_candidate_count`
+
+`total_records`
+
+`unit_weight`
+
+The syntax is:
+
+`0 | [1-9][0-9]*`
+
+The maximum quantity length is 30 decimal digits.
+
+The following are unsupported:
+
+- signed strings
+- leading zeros
+- decimal points
+- exponent notation
+- JSON integers
+- JSON floating-point numbers
+- booleans
+
+`unit_weight` must be positive.
+
+20. REPORT RECONCILIATION
+
+Every report must satisfy:
+
+`sum(candidate_counts) + non_candidate_count = total_records`
+
+Failure produces:
+
+`CONFLICT / REPORT_TOTAL_MISMATCH`
+
+21. AGGREGATE-CAPACITY INVARIANT
+
+The declared limits imply:
+
+`maximum admitted quantity = 10^30 - 1`
+
+`maximum reporting units per source = 10000`
+
+Therefore the exact aggregate upper bound is:
+
+`10000 * (10^30 - 1) = 10^34 - 10000 < 10^34`
+
+The largest reachable admitted aggregate has at most 34 decimal digits.
+
+The implementation guard is:
+
+`MAX_AGGREGATE_DIGITS = 40`
+
+Therefore:
+
+`every input passing the per-field and reporting-unit limits remains below the aggregate guard`
+
+`AGGREGATE_RESOURCE_LIMIT_EXCEEDED` is a defensive condition. The permanent
+audit verifies that the admitted limits cannot reach it. A future change to
+the quantity, reporting-unit, or aggregate limits must preserve this invariant
+or revise the profile and its frozen evidence.
+
+22. AGGREGATION MODE: SUM_COUNTS
+
+For each candidate `c`:
+
+`candidate_record_total(c) = sum(report_count(u, c) for every expected unit u)`
+
+`candidate_resolution_total(c) = candidate_record_total(c)`
+
+Non-candidate records are excluded from candidate resolution totals but remain
+preserved in evidence.
+
+23. AGGREGATION MODE: UNIT_WINNER_WEIGHT
+
+For every unit `u`:
+
+`local_leaders(u) = argmax_c report_count(u, c)`
+
+If:
+
+`len(local_leaders(u)) != 1`
+
+then the entire bounded evaluation returns:
+
+`ABSTAIN / UNIT_LOCAL_TIE`
+
+The profile does not partially allocate untied units, discard the tied unit, or
+invent a local tie procedure.
+
+Otherwise:
+
+`local_winner(u) = the sole element of local_leaders(u)`
+
+and:
+
+`candidate_resolution_total(c) = sum(unit_weight(u) for every unit u won by c)`
+
+Candidate-record totals remain separately preserved.
+
+24. DECISION RULE: UNIQUE_MAX
+
+Let:
+
+`top_total = max_c candidate_resolution_total(c)`
+
+and:
+
+`top_candidates = {c | candidate_resolution_total(c) = top_total}`
+
+If total resolution quantity is zero, return:
+
+`ABSTAIN / ZERO_RESOLUTION_TOTAL`
+
+If:
+
+`len(top_candidates) = 1`
+
+return:
+
+`RESOLVED / UNIQUE_MAXIMUM`
+
+Otherwise return:
+
+`ABSTAIN / TOP_TIE`
+
+25. DECISION RULE: ABSOLUTE_MAJORITY
+
+Let:
+
+`total_resolution_quantity = sum_c candidate_resolution_total(c)`
+
+A candidate resolves only if it is the sole top candidate and:
+
+`2 * top_total > total_resolution_quantity`
+
+A successful decision returns:
+
+`RESOLVED / ABSOLUTE_MAJORITY`
+
+Otherwise return:
+
+`ABSTAIN / NO_ABSOLUTE_MAJORITY`
+
+No later round is executed or inferred by this profile.
+
+26. DECISION RULE: TOP_K
+
+`TOP_K` requires:
+
+`1 <= seats_to_fill < candidate_count`
+
+Candidates are ranked by descending resolution total. Candidate identifiers are
+used only to make the published ranking representation deterministic.
+
+Let the final selected position have quantity `boundary_total`.
+
+If more candidates share `boundary_total` than remaining positions, return:
+
+`ABSTAIN / TOP_K_BOUNDARY_TIE`
+
+Otherwise return:
+
+`RESOLVED / TOP_K_UNAMBIGUOUS`
+
+with exactly `seats_to_fill` selected candidates.
+
+Lexical order does not remove a material boundary tie.
+
+27. RESOLUTION AND REFERENCE VISIBILITY
+
+If the decision resolves and:
+
+`reference_visibility_authorized = true`
+
+then:
+
+`state = RESOLVED`
+
+`resolution_state = RESOLVED`
+
+`visibility_state = VISIBLE`
+
+`outcome_visible = true`
+
+If the decision resolves and:
+
+`reference_visibility_authorized = false`
+
+then:
+
+`state = FORBIDDEN`
+
+`resolution_state = RESOLVED`
+
+`visibility_state = WITHHOLD`
+
+`outcome_visible = false`
+
+`reason_codes = [REFERENCE_VISIBILITY_WITHHELD]`
+
+`WITHHOLD` is a reference-display state. It does not redact the full result
+object, selected candidates, totals, identities, reconstruction bundle, or
+receipt and does not provide confidentiality or access control. The separate
+public-summary projection defined below sets candidate-bearing fields to `null`
+whenever `outcome_visible = false`.
+
+28. PUBLIC SUMMARY PROJECTION
+
+The command-line resolver emits a visibility-aware presentation projection with
+schema:
+
+`SLANG-VOTING-PUBLIC-SUMMARY-1`
+
+The exact fields are:
+
+`summary_schema`
+
+`version`
+
+`state`
+
+`resolution_state`
+
+`visibility_state`
+
+`outcome_visible`
+
+`outcome_fields_redacted`
+
+`selected_candidate_ids`
+
+`leading_candidate_ids`
+
+`candidate_resolution_totals`
+
+`reason_codes`
+
+`result_id`
+
+`bundle_id`
+
+Candidate-bearing values are exposed only when:
+
+`outcome_visible = true`
+
+Otherwise the same fields remain present with `null` values:
+
+`selected_candidate_ids = null`
+
+`leading_candidate_ids = null`
+
+`candidate_resolution_totals = null`
+
+`outcome_fields_redacted = true`
+
+This rule applies to withheld resolved outcomes and to `ABSTAIN`, `INCOMPLETE`,
+`CONFLICT`, `UNSUPPORTED`, and validation-stage `FORBIDDEN` outcomes.
+
+The full result object, bundle, and receipt remain unchanged and may retain
+outcome-bearing evidence. Public-summary redaction is a presentation rule. It
+does not provide confidentiality, access control, or official publication
+authority.
+
+29. AUTHORITY BOUNDARY
+
+Every result declares:
+
+`execution_authority = NONE`
+
+`certification_authority = NONE`
+
+`official_result_authority = NONE`
+
+The reference does not cast, transmit, count, recount, audit, certify, publish,
+or legally finalize a real election.
+
+30. CANONICAL JSON AND IDENTITY FUNCTION
+
+Canonical JSON uses:
+
+- escaped ASCII output
+- lexicographically sorted object keys
+- no insignificant whitespace
+- no non-finite numbers
+
+Every structural identity uses:
+
+`identity = prefix + sha256(canonical_json(preimage))`
+
+The SHA-256 digest is encoded as 64 lowercase hexadecimal characters.
+
+31. DETERMINISTIC JSON FILE SERIALIZATION
+
+Generated vector documents, reconstruction bundles, and compact receipts use
+this file-byte contract:
+
+`UTF-8 + no BOM + LF line endings + exactly one terminal LF`
+
+A conforming writer MUST encode the formatted JSON text directly as UTF-8 bytes.
+It MUST NOT rely on operating-system text-mode newline conversion.
+
+The formatted JSON representation uses:
+
+- two-space indentation
+- lexicographically sorted object keys
+- native Unicode characters where valid
+- no trailing spaces
+- no carriage-return bytes
+- exactly one terminal line-feed byte
+
+Therefore:
+
+`same supported JSON object + same conforming writer -> same file bytes`
+
+This file-byte contract is distinct from structural identity. Structural
+identities use canonical JSON without insignificant whitespace. A differently
+formatted admitted file may reproduce the same semantic identity even when its
+file bytes differ. Byte equality is required for artifacts emitted by the
+published deterministic writer.
+
+The permanent audit verifies UTF-8 validity, absence of carriage returns, one
+terminal LF, strict round-trip behavior, exact writer output, and canonical
+bytes for the frozen example, bundle, receipt, and vector document.
+
+The vector verifier reports:
+
+`serialization bytes: 1/1 reproduced`
+
+only when the supplied vector file is already encoded in this canonical file
+form.
+
+32. IDENTITY-DOMAIN PREIMAGE
+
+`identity_domain_id` uses prefix:
+
+`slang_voting_identity_domain_sha256:`
+
+Its exact preimage is:
+
+`{version, core_version, profile_id, ruleset_id, canonicalization_id, input_schema, result_schema, bundle_schema, receipt_schema, public_summary_schema}`
+
+33. SUBMISSION AND CANONICAL INPUT PREIMAGES
+
+`submission_id` uses prefix:
+
+`slang_voting_submission_sha256:`
+
+Its preimage is the admitted submitted JSON structure after strict loading and
+JSON cloning, before semantic normalization.
+
+`canonical_input_id` uses prefix:
+
+`slang_voting_canonical_input_sha256:`
+
+Its preimage is the complete normalized projection, including computed
+structural identities present in that projection.
+
+34. CANDIDATE, BOUNDARY, REPORT, AND RULE PREIMAGES
+
+`candidate_set_id` uses prefix:
+
+`slang_voting_candidate_set_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-CANDIDATE-SET-1, contest_id, candidate_ids}`
+
+`reporting_boundary_id` uses prefix:
+
+`slang_voting_reporting_boundary_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-REPORTING-BOUNDARY-1, contest_id, expected_unit_ids, reporting_boundary_sealed}`
+
+`report_set_id` uses prefix:
+
+`slang_voting_report_set_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-REPORT-SET-1, contest_id, candidate_ids, expected_unit_ids, aggregation_mode, reports}`
+
+`rule_profile_id` uses prefix:
+
+`slang_voting_rule_profile_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-RULE-PROFILE-1, aggregation_mode, decision_rule}`
+
+35. SOURCE MANIFEST AND AGREEMENT PREIMAGES
+
+`source_manifest_id` uses prefix:
+
+`slang_voting_source_manifest_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-SOURCE-MANIFEST-1, evidence_mode, expected_source_ids, sources}`
+
+Each manifest source entry is:
+
+`{source_id, source_dataset_commitment, declared_report_set_id, computed_report_set_id}`
+
+`source_agreement_id` uses prefix:
+
+`slang_voting_source_agreement_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-SOURCE-AGREEMENT-1, evidence_mode, expected_source_ids, source_report_sets}`
+
+Each source-agreement entry is:
+
+`{source_id, report_set_id}`
+
+These identities do not prove external source truth.
+
+36. OUTCOME, EVIDENCE, AND RESULT PREIMAGES
+
+`outcome_id` uses prefix:
+
+`slang_voting_outcome_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-OUTCOME-1, identity_domain_id, candidate_set_id, reporting_boundary_id, report_set_id, rule_profile_id, resolution_state, selected_candidate_ids, leading_candidate_ids, candidate_resolution_totals}`
+
+Reference visibility is excluded from `outcome_id`.
+
+`evaluation_evidence_id` uses prefix:
+
+`slang_voting_evaluation_evidence_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-EVALUATION-EVIDENCE-1, source_manifest_id, source_agreement_id, outcome_id, state, visibility_state, outcome_visible, evidence}`
+
+`result_id` uses prefix:
+
+`slang_voting_result_sha256:`
+
+and exact preimage:
+
+`{domain: SLANG-VOTING-RESULT-IDENTITY-1, identity_domain_id, outcome_id, state, visibility_state, outcome_visible}`
+
+37. BUNDLE AND RECEIPT PREIMAGES
+
+`bundle_id` uses prefix:
+
+`slang_voting_bundle_sha256:`
+
+Its preimage is the complete bundle object before `bundle_id` is inserted.
+
+`receipt_id` uses prefix:
+
+`slang_voting_receipt_sha256:`
+
+Its preimage is the complete receipt object before `receipt_id` is inserted.
+
+38. ORDER INVARIANCE
+
+The following presentation orders are normalized:
+
+- candidate list order
+- expected reporting-unit list order
+- expected source list order
+- source list order
+- report list order
+- candidate-count object key order
+
+Therefore:
+
+`same admitted semantic structure under supported presentation permutations -> same canonical_input_id`
+
+`same admitted semantic structure under supported presentation permutations -> same outcome_id`
+
+Submitted presentation remains separately bound by `submission_id`.
+
+39. REASON-CODE REGISTRY: FORBIDDEN
+
+`DERIVED_FIELD_INJECTION` - a prohibited derived top-level field is supplied.
+
+`EVALUATION_NOT_AUTHORIZED` - `evaluation_authorized = false`.
+
+`REFERENCE_VISIBILITY_WITHHELD` - bounded resolution is `RESOLVED` while
+`reference_visibility_authorized = false`.
+
+40. REASON-CODE REGISTRY: INCOMPLETE
+
+`MISSING_TOP_LEVEL_FIELD` - a required top-level field is absent.
+
+`MISSING_CONTEXT` - context is absent.
+
+`MISSING_CONTEXT_FIELD` - a required context field is absent.
+
+`MISSING_CONTEST` - contest is absent.
+
+`MISSING_CONTEST_FIELD` - a required contest field is absent.
+
+`MISSING_DECISION_RULE` - decision rule is absent.
+
+`MISSING_DECISION_RULE_MODE` - decision-rule mode is absent.
+
+`MISSING_SEATS_TO_FILL` - `TOP_K` lacks `seats_to_fill`.
+
+`MISSING_EXPECTED_SOURCE` - expected source list is absent.
+
+`EMPTY_EXPECTED_SOURCE` - expected source list is empty.
+
+`MULTI_SOURCE_REQUIRES_AT_LEAST_TWO_SOURCES` - multi-source mode declares fewer
+than two expected sources.
+
+`REPORTING_BOUNDARY_OPEN` - declared reporting boundary is not sealed.
+
+`MISSING_CANDIDATE` - candidate list is absent.
+
+`EMPTY_CANDIDATE` - candidate list is empty.
+
+`MISSING_REPORTING_UNIT` - expected-unit declaration is absent or an expected
+unit report is missing; the detail identifies the location.
+
+`EMPTY_REPORTING_UNIT` - expected reporting-unit list is empty.
+
+`MISSING_SOURCE_FIELD` - a required source field is absent.
+
+`MISSING_SOURCE` - an expected source is absent.
+
+`MISSING_REPORT_FIELD` - a required report field is absent.
+
+`MISSING_CANDIDATE_COUNTS` - a report lacks its candidate-count map.
+
+`MISSING_CANDIDATE_COUNT` - a declared candidate lacks a count in a report.
+
+41. REASON-CODE REGISTRY: CONFLICT
+
+`DUPLICATE_EXPECTED_SOURCE_ID` - expected source identifiers collide after
+normalization.
+
+`SINGLE_SOURCE_REQUIRES_ONE_SOURCE` - single-source mode declares an expected
+source cardinality other than one.
+
+`DUPLICATE_CANDIDATE_ID` - candidate identifiers collide after normalization.
+
+`DUPLICATE_REPORTING_UNIT_ID` - expected unit identifiers collide after
+normalization.
+
+`NORMALIZED_CANDIDATE_COUNT_COLLISION` - candidate-count keys collide after
+normalization.
+
+`UNDECLARED_CANDIDATE_COUNT` - a report contains a count for an undeclared
+candidate.
+
+`REPORT_TOTAL_MISMATCH` - report quantities do not reconcile.
+
+`DUPLICATE_UNIT_REPORT` - a source contains more than one report for the same
+normalized unit.
+
+`UNDECLARED_REPORTING_UNIT` - a source reports an undeclared unit.
+
+`DECLARED_REPORT_SET_ID_MISMATCH` - a valid declared report-set identity differs
+from the computed identity.
+
+`DECLARED_CANDIDATE_SET_ID_MISMATCH` - a valid declared candidate-set identity
+differs from the computed identity.
+
+`DECLARED_REPORTING_BOUNDARY_ID_MISMATCH` - a valid declared reporting-boundary
+identity differs from the computed identity.
+
+`DUPLICATE_SOURCE` - submitted source identifiers collide after normalization.
+
+`UNDECLARED_SOURCE` - a submitted source is not in the expected source set.
+
+`SOURCE_REPORT_SETS_DISAGREE` - computed report-set identities differ.
+
+`SOURCE_CANONICAL_REPORTS_DISAGREE` - canonical report content differs despite a
+shared report-set identity lane.
+
+`SINGLE_SOURCE_CARDINALITY_MISMATCH` - normalized submitted source cardinality
+is not one in single-source mode.
+
+`NO_COMMON_REPORT_SET` - no exact common report set is available when decision
+processing begins.
+
+42. REASON-CODE REGISTRY: UNSUPPORTED
+
+`PORTABLE_JSON_BOUNDARY_FAILURE` - strict portable JSON admission fails.
+
+`INPUT_NOT_OBJECT` - the admitted top-level JSON value is not an object.
+
+`UNSUPPORTED_TOP_LEVEL_FIELD` - an unknown top-level field is supplied.
+
+`UNSUPPORTED_INPUT_SCHEMA` - input schema identifier differs from the profile.
+
+`UNSUPPORTED_PROFILE_ID` - profile identifier differs from the profile.
+
+`UNSUPPORTED_RULESET_ID` - ruleset identifier differs from the profile.
+
+`INVALID_CONTEXT_TYPE` - context is not an object.
+
+`UNSUPPORTED_CONTEXT_FIELD` - context contains an unknown field.
+
+`INVALID_EVALUATION_ID` - evaluation identifier is invalid.
+
+`INVALID_JURISDICTION_ID` - jurisdiction identifier is invalid.
+
+`INVALID_EVALUATION_AUTHORIZED` - evaluation authorization is not Boolean.
+
+`INVALID_REPORTING_BOUNDARY_SEALED` - boundary declaration is not Boolean.
+
+`INVALID_REFERENCE_VISIBILITY_AUTHORIZED` - visibility authorization is not
+Boolean.
+
+`UNSUPPORTED_EVIDENCE_MODE` - evidence mode is unsupported.
+
+`INVALID_EXPECTED_SOURCE_TYPE` - expected source lane is not a list.
+
+`EXPECTED_SOURCE_LIMIT_EXCEEDED` - expected source count exceeds the limit.
+
+`INVALID_EXPECTED_SOURCE_ID` - an expected source identifier is invalid.
+
+`INVALID_CONTEST_TYPE` - contest is not an object.
+
+`UNSUPPORTED_CONTEST_FIELD` - contest contains an unknown field.
+
+`INVALID_CONTEST_ID` - contest identifier is invalid.
+
+`INVALID_CANDIDATE_TYPE` - candidate lane is not a list.
+
+`CANDIDATE_LIMIT_EXCEEDED` - candidate count exceeds the limit.
+
+`INVALID_CANDIDATE_ID` - a candidate identifier is invalid.
+
+`INVALID_REPORTING_UNIT_TYPE` - expected reporting-unit lane is not a list.
+
+`REPORTING_UNIT_LIMIT_EXCEEDED` - expected unit count exceeds the limit.
+
+`INVALID_REPORTING_UNIT_ID` - an expected unit identifier is invalid.
+
+`UNSUPPORTED_AGGREGATION_MODE` - aggregation mode is unsupported.
+
+`INVALID_DECISION_RULE_TYPE` - decision rule is not an object.
+
+`UNSUPPORTED_DECISION_RULE_FIELD` - decision rule contains an unknown field.
+
+`UNSUPPORTED_DECISION_RULE_MODE` - decision mode is unsupported.
+
+`INVALID_SEATS_TO_FILL` - `seats_to_fill` is not a positive plain integer.
+
+`SEATS_TO_FILL_MUST_BE_LESS_THAN_CANDIDATE_COUNT` - `TOP_K` selection size is
+not below candidate count.
+
+`SEATS_TO_FILL_NOT_APPLICABLE` - `seats_to_fill` is supplied for another rule.
+
+`INVALID_SOURCE_TYPE` - a source is not an object.
+
+`UNSUPPORTED_SOURCE_FIELD` - a source contains an unknown field.
+
+`INVALID_SOURCE_ID` - source identifier is invalid.
+
+`INVALID_SOURCE_DATASET_COMMITMENT` - source commitment is not 64 hexadecimal
+characters.
+
+`INVALID_DECLARED_REPORT_SET_ID` - declared report-set identity has invalid
+prefix, length, characters, or hexadecimal case.
+
+`INVALID_REPORTS_TYPE` - source reports are not a list.
+
+`REPORT_LIMIT_EXCEEDED` - source report count exceeds the limit.
+
+`INVALID_REPORT_TYPE` - a report is not an object.
+
+`UNSUPPORTED_REPORT_FIELD` - a report contains an unknown field.
+
+`INVALID_UNIT_ID` - report unit identifier is invalid.
+
+`INVALID_CANDIDATE_COUNTS_TYPE` - candidate-count lane is not an object.
+
+`INVALID_REPORT_CANDIDATE_ID` - a candidate-count key is invalid.
+
+`INVALID_CANDIDATE_COUNT_DECIMAL` - candidate count is not canonical decimal
+text.
+
+`CANDIDATE_COUNT_DIGIT_LIMIT_EXCEEDED` - candidate count exceeds 30 digits.
+
+`INVALID_NON_CANDIDATE_COUNT_DECIMAL` - non-candidate count is not canonical
+decimal text.
+
+`NON_CANDIDATE_COUNT_DIGIT_LIMIT_EXCEEDED` - non-candidate count exceeds 30
+digits.
+
+`INVALID_TOTAL_RECORDS_DECIMAL` - total record count is not canonical decimal
+text.
+
+`TOTAL_RECORDS_DIGIT_LIMIT_EXCEEDED` - total record count exceeds 30 digits.
+
+`INVALID_UNIT_WEIGHT_DECIMAL` - unit weight is not canonical decimal text.
+
+`UNIT_WEIGHT_DIGIT_LIMIT_EXCEEDED` - unit weight exceeds 30 digits.
+
+`UNIT_WEIGHT_MUST_BE_POSITIVE` - unit weight is zero.
+
+`INVALID_SOURCES_TYPE` - sources lane is not a list.
+
+`SOURCE_LIMIT_EXCEEDED` - submitted source count exceeds the limit.
+
+`INVALID_DECLARED_CANDIDATE_SET_ID` - declared candidate-set identity has
+invalid prefix, length, characters, or hexadecimal case.
+
+`INVALID_DECLARED_REPORTING_BOUNDARY_ID` - declared boundary identity has
+invalid prefix, length, characters, or hexadecimal case.
+
+`AGGREGATE_RESOURCE_LIMIT_EXCEEDED` - the defensive aggregate digit guard is
+exceeded.
+
+43. REASON-CODE REGISTRY: DECISION
+
+`ZERO_RESOLUTION_TOTAL` - total resolution quantity is zero; state is
+`ABSTAIN`.
+
+`UNIQUE_MAXIMUM` - `UNIQUE_MAX` resolves one candidate; state is `RESOLVED`.
+
+`TOP_TIE` - `UNIQUE_MAX` has multiple top candidates; state is `ABSTAIN`.
+
+`ABSOLUTE_MAJORITY` - one candidate has a sole strict majority; state is
+`RESOLVED`.
+
+`NO_ABSOLUTE_MAJORITY` - strict majority is not met; state is `ABSTAIN`.
+
+`TOP_K_UNAMBIGUOUS` - `TOP_K` selection boundary is unambiguous; state is
+`RESOLVED`.
+
+`TOP_K_BOUNDARY_TIE` - a tie crosses the final selected position; state is
+`ABSTAIN`.
+
+`UNIT_LOCAL_TIE` - at least one unit lacks a unique local winner under
+`UNIT_WINNER_WEIGHT`; the whole evaluation is `ABSTAIN`.
+
+44. PORTABLE JSON BOUNDARY
+
+Strict loading rejects:
+
+- duplicate JSON object keys
+- JSON floating-point numbers
+- non-finite JSON numbers
+- JSON integers outside the portable safe range
+- lone Unicode surrogates
+- excessive input bytes
+- excessive depth
+- excessive node count
+
+The portable integer range is:
+
+`-9007199254740991 <= n <= 9007199254740991`
+
+Report quantities remain decimal strings and do not use this JSON integer lane.
+
+45. RESOURCE LIMITS
+
+Maximum input bytes:
+
+`16777216`
+
+Maximum JSON depth:
+
+`64`
+
+Maximum JSON nodes:
+
+`500000`
+
+Maximum candidates:
+
+`128`
+
+Maximum reporting units per source:
+
+`10000`
+
+Maximum sources:
+
+`16`
+
+Maximum identifier length:
+
+`64`
+
+Maximum count digits:
+
+`30`
+
+Maximum aggregate digits:
+
+`40`
+
+46. RECONSTRUCTION BUNDLE
+
+The bundle contains:
+
+- schema and version metadata
+- identity-domain metadata
+- submitted input
+- normalized projection
+- result
+- bundle identity
+
+Verification reconstructs the bundle from the submitted input and requires
+canonical equality.
+
+A passing reconstruction demonstrates agreement with this reference profile.
+It does not establish source authenticity or official correctness.
+
+47. COMPACT RECEIPT
+
+The receipt binds:
+
+- states and visibility
+- selected and leading candidates
+- aggregation, decision, and evidence modes
+- all principal semantic and operational identities
+- authority boundaries
+- bundle identity
+- receipt identity
+
+Receipt verification does not reconstruct the report set without the bound
+bundle.
+
+48. UNSUPPORTED ELECTORAL FAMILIES
+
+The current profile does not implement:
+
+- ranked-choice redistribution
+- single transferable vote
+- proportional representation allocation
+- divisor methods
+- quota methods
+- runoff sequencing
+- reserved-seat allocation
+- legal tie-break procedures
+- invalid-record adjudication
+- mixed-member compensation
+- candidate substitution
+- recount procedures
+- certification procedures
+
+A new family requires a separate versioned profile, ruleset, vectors, and claim
+boundary.
+
+49. SECURITY, PRIVACY, AND GOVERNANCE BOUNDARY
+
+The profile does not provide:
+
+- voter identity or eligibility verification
+- ballot secrecy
+- anonymization
+- coercion resistance
+- voting hardware security
+- secure transport
+- source authentication
+- digital signatures
+- chain of custody
+- audit sampling
+- fraud detection
+- recount execution
+- dispute resolution
+- legal compliance
+- official certification
+- democratic legitimacy
+
+The reference consumes aggregate records and should not receive public voter
+identity-to-choice mappings.
+
+The following distinctions are normative boundaries:
+
+`sealed declared boundary != proven real-world completeness`
+
+`multi-source exact agreement != source independence`
+
+`source commitment syntax != provenance`
+
+`bundle reconstruction != source truth`
+
+`receipt verification != official correctness`
+
+`public-summary redaction != confidentiality`
+
+50. CANONICAL REFERENCE
+
+The canonical reference uses:
+
+`evidence_mode = MULTI_SOURCE_EXACT_AGREEMENT`
+
+`aggregation_mode = SUM_COUNTS`
+
+`decision_rule.mode = UNIQUE_MAX`
+
+Three declared sources submit the same four-unit report set.
+
+The candidate totals are:
+
+`CANDIDATE-A = 370`
+
+`CANDIDATE-B = 325`
+
+`CANDIDATE-C = 115`
+
+The bounded result is:
+
+`state = RESOLVED`
+
+`selected_candidate_ids = [CANDIDATE-A]`
+
+The example is synthetic and does not represent a real election.
+
+51. VERIFICATION COMMANDS
+
+Run the reference audit:
+
+`python -B slang_voting_v0_1_2.py --self-test`
+
+Verify frozen vectors:
+
+`python -B slang_voting_vectors_v0_1_2.py --verify SLANG_Voting_Vectors_v0_1_2.json`
+
+Verify the canonical bundle:
+
+`python -B slang_voting_v0_1_2.py --verify-bundle SLANG_Voting_Bundle_v0_1_2.json`
+
+Verify the canonical receipt:
+
+`python -B slang_voting_v0_1_2.py --verify-receipt SLANG_Voting_Receipt_v0_1_2.json`
+
+Verify receipt-to-bundle binding:
+
+`python -B slang_voting_v0_1_2.py --verify-receipt-against-bundle SLANG_Voting_Receipt_v0_1_2.json SLANG_Voting_Bundle_v0_1_2.json`
+
+Regenerate the vector document:
+
+`python -B slang_voting_vectors_v0_1_2.py --write GENERATED_SLANG_Voting_Vectors_v0_1_2.json`
+
+Compare the generated and frozen vector files byte-for-byte on Windows:
+
+`fc /b SLANG_Voting_Vectors_v0_1_2.json GENERATED_SLANG_Voting_Vectors_v0_1_2.json`
+
+Expected:
+
+`FC: no differences encountered`
+
+Require a visible resolved outcome:
+
+`python -B slang_voting_v0_1_2.py --input INPUT.json --require-visible-result`
+
+Default command-line resolution uses:
+
+`0 = input processed and bounded state emitted`
+
+`1 = requested verification failed`
+
+`2 = loading, parsing, command, or execution error`
+
+The optional visible-result mode also uses:
+
+`3 = bounded state emitted but no visible resolved outcome is available`
+
+Portable JSON failures are written to stderr as:
+
+`ERROR_CODE: PORTABLE_JSON_BOUNDARY_FAILURE`
+
+`ERROR_DETAIL: <specific reason>`
+
+Filesystem failures use `IO_ERROR`. Other invalid command combinations or
+unexpected resolution exceptions use `COMMAND_OR_RESOLUTION_ERROR`.
+
+52. REFERENCE VERIFICATION STATUS
+
+Permanent audit:
+
+`209/209 PASS`
+
+Semantic vectors:
+
+`49/49 reproduced`
+
+Presentation vectors:
+
+`4/4 reproduced`
+
+Parser vectors:
+
+`8/8 reproduced`
+
+Reference evidence:
+
+`3/3 reproduced`
+
+Canonical serialization bytes:
+
+`1/1 reproduced`
+
+Metamorphic relations:
+
+`8/8 reproduced`
+
+Canonical bundle:
+
+`VERIFY: PASS`
+
+Canonical receipt:
+
+`VERIFY: PASS`
+
+Receipt-to-bundle binding:
+
+`VERIFY: PASS`
+
+Vector-set identity:
+
+`slang_voting_vector_set_sha256:466f6277ed1b09f49539d5eb0147e8b2914f08a804331c69e6697465b9750ecb`
+
+Canonical result identity:
+
+`slang_voting_result_sha256:00420863e38264fdcfa6c47c0d7f5fd27363a9f5693bbda13a42bdddeb9d5dc9`
+
+Canonical bundle identity:
+
+`slang_voting_bundle_sha256:fc896a8019e0275312c595c152806a3ecaf81e604b5bc840d28ebff20dc8a78b`
+
+Canonical receipt identity:
+
+`slang_voting_receipt_sha256:90253123696e4b381d384a27cc9af333a9ea843ff1e58baef7544e794c1ef2ce`
+
+53. BOUNDED CLAIM
+
+Within this exact versioned profile:
+
+`same admitted canonical reports + same sealed reporting boundary + same versioned profile -> same bounded result state`
+
+`same admitted canonical structure -> same primary state + same reason_codes`
+
+The claim is limited to deterministic transformation, explicit refusal,
+identity construction, reconstruction, and conformance over admitted declared
+aggregate records.
+
+The profile does not establish source truth, fairness, security, legal validity,
+official finality, or universal electoral coverage.

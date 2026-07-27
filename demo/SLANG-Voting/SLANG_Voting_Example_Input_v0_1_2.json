@@ -1,0 +1,181 @@
+{
+  "contest": {
+    "aggregation_mode": "SUM_COUNTS",
+    "candidate_ids": [
+      "CANDIDATE-A",
+      "CANDIDATE-B",
+      "CANDIDATE-C"
+    ],
+    "contest_id": "CONTEST-001",
+    "decision_rule": {
+      "mode": "UNIQUE_MAX"
+    },
+    "expected_unit_ids": [
+      "UNIT-001",
+      "UNIT-002",
+      "UNIT-003",
+      "UNIT-004"
+    ]
+  },
+  "context": {
+    "evaluation_authorized": true,
+    "evaluation_id": "EVALUATION-001",
+    "evidence_mode": "MULTI_SOURCE_EXACT_AGREEMENT",
+    "expected_source_ids": [
+      "SOURCE-A",
+      "SOURCE-B",
+      "SOURCE-C"
+    ],
+    "jurisdiction_id": "JURISDICTION-REFERENCE",
+    "reference_visibility_authorized": true,
+    "reporting_boundary_sealed": true
+  },
+  "declared_candidate_set_id": "slang_voting_candidate_set_sha256:556e559f33e2e857080fd1843d9033dea81dc5c4be98aa43ef5cb8664301a79d",
+  "declared_reporting_boundary_id": "slang_voting_reporting_boundary_sha256:0dee66f3798667a2a15ecf38ca65144da0ae5bc7f523b38561a6bcd53f9deb56",
+  "profile_id": "SLANG-VOTING-PROFILE-1-D03",
+  "ruleset_id": "SLANG-VOTING-RULESET-1-D03",
+  "schema": "SLANG-VOTING-INPUT-1",
+  "sources": [
+    {
+      "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+      "reports": [
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "120",
+            "CANDIDATE-B": "90",
+            "CANDIDATE-C": "30"
+          },
+          "non_candidate_count": "5",
+          "total_records": "245",
+          "unit_id": "UNIT-001"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "80",
+            "CANDIDATE-B": "100",
+            "CANDIDATE-C": "20"
+          },
+          "non_candidate_count": "4",
+          "total_records": "204",
+          "unit_id": "UNIT-002"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "75",
+            "CANDIDATE-B": "65",
+            "CANDIDATE-C": "40"
+          },
+          "non_candidate_count": "3",
+          "total_records": "183",
+          "unit_id": "UNIT-003"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "95",
+            "CANDIDATE-B": "70",
+            "CANDIDATE-C": "25"
+          },
+          "non_candidate_count": "2",
+          "total_records": "192",
+          "unit_id": "UNIT-004"
+        }
+      ],
+      "source_dataset_commitment": "108798abd1fefeffd7e52904cf3f46224feaffad9197d4dd9e13e0dc4441cfef",
+      "source_id": "SOURCE-A"
+    },
+    {
+      "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+      "reports": [
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "120",
+            "CANDIDATE-B": "90",
+            "CANDIDATE-C": "30"
+          },
+          "non_candidate_count": "5",
+          "total_records": "245",
+          "unit_id": "UNIT-001"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "80",
+            "CANDIDATE-B": "100",
+            "CANDIDATE-C": "20"
+          },
+          "non_candidate_count": "4",
+          "total_records": "204",
+          "unit_id": "UNIT-002"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "75",
+            "CANDIDATE-B": "65",
+            "CANDIDATE-C": "40"
+          },
+          "non_candidate_count": "3",
+          "total_records": "183",
+          "unit_id": "UNIT-003"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "95",
+            "CANDIDATE-B": "70",
+            "CANDIDATE-C": "25"
+          },
+          "non_candidate_count": "2",
+          "total_records": "192",
+          "unit_id": "UNIT-004"
+        }
+      ],
+      "source_dataset_commitment": "bb5e1dd8e94ed4ea2939a7f7696400f66e982f4462154607d5c87315ddc3ac40",
+      "source_id": "SOURCE-B"
+    },
+    {
+      "declared_report_set_id": "slang_voting_report_set_sha256:e8f0b0c994fa42c792ed00d1065d325eb605a1cec5fbb5df78db203dd59c6ad3",
+      "reports": [
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "120",
+            "CANDIDATE-B": "90",
+            "CANDIDATE-C": "30"
+          },
+          "non_candidate_count": "5",
+          "total_records": "245",
+          "unit_id": "UNIT-001"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "80",
+            "CANDIDATE-B": "100",
+            "CANDIDATE-C": "20"
+          },
+          "non_candidate_count": "4",
+          "total_records": "204",
+          "unit_id": "UNIT-002"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "75",
+            "CANDIDATE-B": "65",
+            "CANDIDATE-C": "40"
+          },
+          "non_candidate_count": "3",
+          "total_records": "183",
+          "unit_id": "UNIT-003"
+        },
+        {
+          "candidate_counts": {
+            "CANDIDATE-A": "95",
+            "CANDIDATE-B": "70",
+            "CANDIDATE-C": "25"
+          },
+          "non_candidate_count": "2",
+          "total_records": "192",
+          "unit_id": "UNIT-004"
+        }
+      ],
+      "source_dataset_commitment": "0350ba0127703bb6b6030a611f4a5b391ad1c2ead513439df5dae928b4d09024",
+      "source_id": "SOURCE-C"
+    }
+  ]
+}
