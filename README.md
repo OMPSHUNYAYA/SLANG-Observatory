@@ -187,11 +187,16 @@ certification process, or public-election authority.
 
 ### [SLANG-Password](demo/SLANG-Password/)
 
-**Access admissibility from complete declared structure.**
+**Deterministic admission of declared password-verification evidence.**
 
-This is a minimal structural-resolution demonstration. It is not a replacement
-for authentication, cryptography, MFA, credential storage, access control, or
-security policy.
+SLANG-Password v0.1.0 resolves whether externally produced verifier evidence is
+complete, consistent, correctly bound to the declared authentication context,
+compatible with the declared verifier set and evidence mode, and structurally
+admissible under the identified profile and ruleset.
+
+It does not compare passwords, authenticate users, grant access, create
+sessions, issue tokens, mutate credentials, or replace established
+authentication and security controls.
 
 ### [SLANG-ResetPassword](demo/SLANG-ResetPassword/)
 
@@ -215,7 +220,7 @@ This table describes only the bounded question tested by each demonstration.
 | Hurricane | forced or premature forecast publication | maturity and visibility-admission structure |
 | Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
 | Voting | recount or tally workflow sequence | complete recorded tally structure |
-| Password | login workflow sequence | complete bounded admission evidence |
+| Password | password-verification workflow or verifier-evidence arrival order as sole bounded admission authority | declared verifier evidence, bound authentication context, verifier set, evidence mode, profile, and ruleset |
 | ResetPassword | reset workflow sequence | complete bounded reset-admission evidence |
 
 The table does not claim that the named mechanisms are unnecessary in
