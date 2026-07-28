@@ -200,11 +200,17 @@ authentication and security controls.
 
 ### [SLANG-ResetPassword](demo/SLANG-ResetPassword/)
 
-**Password-reset admissibility from complete declared structure.**
+**Deterministic admission of declared credential-replacement authorization
+evidence.**
 
-This is a minimal admission demonstration. It is not a password-reset engine or
-a replacement for MFA, token security, abuse prevention, identity proofing, or
-policy enforcement.
+SLANG-ResetPassword v0.1.0 resolves whether externally produced
+reset-authorization evidence is complete, consistent, correctly bound to the
+declared reset context, compatible with the declared authorizer set and evidence
+mode, and structurally admissible under the identified profile and ruleset.
+
+It does not validate reset tokens, one-time passwords, recovery codes, or new
+passwords; authenticate users; mutate credentials; grant access; create
+sessions; or execute password resets.
 
 ---
 
@@ -221,7 +227,7 @@ This table describes only the bounded question tested by each demonstration.
 | Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
 | Voting | recount or tally workflow sequence | complete recorded tally structure |
 | Password | password-verification workflow or verifier-evidence arrival order as sole bounded admission authority | declared verifier evidence, bound authentication context, verifier set, evidence mode, profile, and ruleset |
-| ResetPassword | reset workflow sequence | complete bounded reset-admission evidence |
+| ResetPassword | reset workflow or authorization-evidence arrival order as sole bounded admission authority | declared authorization evidence, bound reset context, authorizer set, evidence mode, profile, and ruleset |
 
 The table does not claim that the named mechanisms are unnecessary in
 real-world systems. It records what each demo removes from sole authority over
