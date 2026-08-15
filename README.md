@@ -24,7 +24,7 @@ Where required structure is missing or conflicting:
 
 `incomplete structure -> no forced outcome`
 
-`conflicting structure -> ABSTAIN OR DENY OR another explicit non-result state`
+`conflicting structure -> explicit declared non-result state`
 
 The exact states, inputs, limits, evidence, and claim boundaries are defined by
 each demo.
@@ -129,10 +129,22 @@ authority for the bounded invoice model.
 
 ### [SLANG-Claims](demo/SLANG-Claims/)
 
-**Claim-payability admission from complete declared structure.**
+**Deterministic claim-payability admission from declared structure.**
 
-Resolves eligibility within the reference model. It does not execute payment or
-replace insurer policy, legal review, fraud controls, or settlement systems.
+SLANG-Claims v0.2.1 resolves declared claim context and bound claim-authority
+evidence under an identified profile, ruleset, canonicalization contract, and
+bounded arithmetic profile.
+
+It publishes frozen conformance vectors, reconstruction bundles, compact
+receipts, portable non-result attestations, machine-readable contracts and
+schemas, and an optional outer authenticity envelope.
+
+`same admitted canonical claim structure + same versioned contract -> same bounded claim result`
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+It does not authenticate claimants or evidence sources, interpret policy or law,
+determine fraud, settle claims, authorize payment, or move money.
 
 ### [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/)
 
@@ -221,7 +233,7 @@ This table describes only the bounded question tested by each demonstration.
 | Demo | Operational Mechanism No Longer Treated as Sole Resolution Authority | Structural Basis |
 |---|---|---|
 | Invoice | approval workflow sequence | declared invoice facts, rules, and consistency checks |
-| Claims | payout workflow sequence | declared claim evidence and eligibility rules |
+| Claims | claim-processing or payout workflow sequence | declared claim context, bound claim-authority evidence, versioned rules, and bounded claim arithmetic |
 | Cybersecurity | pipeline or escalation sequence | complete supported escalation evidence |
 | Hurricane | forced or premature forecast publication | maturity and visibility-admission structure |
 | Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
@@ -242,9 +254,12 @@ Depending on the demo, a folder may include:
 - a runnable Python reference implementation
 - a browser demonstration
 - example inputs
-- frozen vectors
+- frozen conformance vectors
 - reconstruction bundles
 - compact receipts
+- portable non-result attestations
+- machine-readable contract manifests and schemas
+- optional authenticity artifacts
 - verification utilities
 - diagrams and explanatory documents
 
@@ -315,6 +330,14 @@ A passing self-test or reconstruction check establishes agreement with the
 declared reference contract. It does not establish production safety,
 institutional approval, domain completeness, or third-party certification.
 
+Where a demo publishes stronger verification layers, their scopes remain
+distinct:
+
+`structural integrity != correspondence != authenticity != operational authority`
+
+A cryptographically authenticated artifact does not by itself establish
+real-world truth, institutional trust, or authorization to act.
+
 ---
 
 ## ⚙️ **From Observatory Demos to Standalone Reference Systems**
@@ -366,7 +389,7 @@ Typical relations include:
 
 `incomplete structure -> no forced outcome`
 
-`conflicting structure -> ABSTAIN OR DENY OR another explicit non-result state`
+`conflicting structure -> explicit declared non-result state`
 
 `unsupported input -> explicit refusal`
 
