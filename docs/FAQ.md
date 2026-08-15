@@ -140,17 +140,20 @@ The exact state names are demo-specific.
 
 ### **B4. What happens when declarations conflict?**
 
-A conflict should remain visible.
+A conflict should remain visible through the state model declared by the
+specific demo.
 
-The resolver may return:
+A resolver may return `CONFLICT` or another explicitly declared non-result state
+when supported declarations cannot coexist.
 
-- `CONFLICT`
-- `ABSTAIN`
-- `DENY`
-- another explicitly declared refusal state
+`conflict -> explicit declared non-result state`
 
 A conflicting input is not silently repaired through workflow order unless the
 demo contract explicitly defines such behavior.
+
+State meanings remain demo-specific. In particular, `CONFLICT` and `ABSTAIN`
+should not be assumed to mean the same thing unless the relevant contract says
+so.
 
 ---
 
@@ -158,9 +161,9 @@ demo contract explicitly defines such behavior.
 
 No.
 
-Some demos return explicit machine-readable states, receipts, diagnostics, or
-reason codes. The important property is that the resolver does not force a
-positive outcome when the declared contract does not justify one.
+Some demos return explicit machine-readable states, attestations, receipts,
+diagnostics, or reason codes. The important property is that the resolver does
+not force a positive outcome when the declared contract does not justify one.
 
 ---
 
@@ -308,10 +311,15 @@ Published evidence may include:
 - self-tests
 - frozen conformance vectors
 - metamorphic relations
-- exact replay checks
+- exact replay or reconstruction checks
 - semantic-only conformance checks
 - reconstruction bundles
 - compact receipts
+- portable non-result attestations
+- machine-readable contract manifests and schemas
+- machine-readable verification reports where published
+- artifact-correspondence checks
+- optional authenticity envelopes
 - tamper tests
 - independent implementation paths
 
@@ -355,7 +363,38 @@ operational evidence.
 
 ---
 
-### **E4. What is special about SLANG-Exam v0.7.2?**
+### **E4. Are integrity, correspondence, authenticity, truth, and authority the same thing?**
+
+No.
+
+Where a demo publishes these layers, they answer different questions.
+
+`structural integrity != correspondence`
+
+`correspondence != authenticity`
+
+`authenticity != trust policy`
+
+`authenticity != real-world truth`
+
+`real-world truth != authorization to act`
+
+`trust policy != authorization to act`
+
+For example:
+
+- structural integrity asks whether an artifact satisfies its own declared contract
+- correspondence asks whether it exactly matches the required source or reconstruction
+- authenticity asks whether supplied key material cryptographically authenticates the artifact
+- trust policy asks whether that key should be trusted in the relevant deployment
+- operational authority asks whether an external system may act on the result
+
+A passing result at one layer must not silently be interpreted as a passing
+result at a stronger layer.
+
+---
+
+### **E5. What is special about SLANG-Exam v0.7.2?**
 
 SLANG-Exam v0.7.2 is a broader Observatory reference demonstration that
 includes:
@@ -386,6 +425,34 @@ Its current published checks report:
 
 These results apply only to the declared v0.7.2 contract and its published
 artifacts.
+
+---
+
+### **E6. What is special about SLANG-Claims v0.2.1?**
+
+SLANG-Claims v0.2.1 is a bounded claim-payability admission reference.
+
+It resolves declared claim context and bound claim-authority evidence under an
+identified profile, ruleset, canonicalization contract, and bounded arithmetic
+profile.
+
+Its published verification surface includes:
+
+- frozen conformance vectors
+- reconstruction bundles
+- compact receipts
+- portable non-result attestations
+- machine-readable contracts and schemas
+- separate integrity and correspondence checks
+- machine-readable authenticity verification reports
+- an optional outer authenticity envelope
+
+The central boundary remains:
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+SLANG-Claims does not authenticate claimants or evidence sources, interpret
+policy or law, determine fraud, settle claims, authorize payment, or move money.
 
 ---
 
