@@ -39,7 +39,7 @@ Then inspect:
 - the submitted declarations
 - the resolved state
 - any reason or refusal state
-- any published identity, receipt, or evidence output
+- any published identity, bundle, receipt, attestation, or evidence output
 - the demo-specific README
 
 No installation step is required for reference demos that use only the Python
@@ -49,7 +49,7 @@ standard library.
 
 ## **1. Minimum Requirements**
 
-- Python 3.9 or later
+- Python 3.9-compatible syntax where declared; use a currently supported Python release for operational testing unless a demo states otherwise
 - a terminal or command prompt
 - the repository downloaded or cloned locally
 - no network connection for demos documented as offline
@@ -104,7 +104,8 @@ Representative folders may include:
 - `SLANG-ResetPassword`
 - `SLANG-Exam`
 
-The exact folders and artifacts present in the repository remain authoritative.
+The exact folders and artifacts present in the repository remain the governing
+reference.
 
 Before running a demonstration, read its local README when available.
 
@@ -148,15 +149,22 @@ A typical bounded relation is:
 
 `complete + consistent + admitted structure -> bounded resolution`
 
-When the declared contract is not satisfied, the demo may return:
+When the declared contract is not satisfied, the demo may return a declared
+resolution or non-result state such as:
 
 - `INCOMPLETE`
 - `CONFLICT`
 - `ABSTAIN`
-- `DENY`
 - `FORBIDDEN`
 - `UNSUPPORTED`
 - another declared non-result state
+
+Some demos separately define admission states such as `ADMIT`, `DENY`, or
+`WITHHOLD`, visibility states, or authority states.
+
+`resolution state != admission state != visibility state != operational authority`
+
+where the relevant demo defines those dimensions separately.
 
 ---
 
@@ -228,12 +236,13 @@ Typical behavior:
 
 | Condition | Representative behavior |
 |---|---|
-| Supported and complete | Evaluate the declared resolution rules |
-| Missing required structure | Return `INCOMPLETE`, `ABSTAIN`, `DENY`, or another declared non-result |
-| Accepted declarations conflict | Return `CONFLICT`, `ABSTAIN`, `DENY`, or another declared refusal |
-| Input lies outside the supported boundary | Return `UNSUPPORTED` or another declared refusal |
-| Authority is absent | Withhold or deny the action where the contract requires authority |
-| Visibility or release is absent | Keep an otherwise assembled result hidden where declared |
+| Supported and complete | Evaluate the declared bounded resolution rules |
+| Missing required structure | Return the explicit non-result state defined by the demo, such as `INCOMPLETE` |
+| Accepted declarations conflict | Expose `CONFLICT` or another explicitly declared non-result state |
+| Input lies outside the supported boundary | Return `UNSUPPORTED` or another declared refusal state |
+| Admission conditions are not satisfied | Preserve the declared admission state, such as `DENY` or `WITHHOLD`, where separately defined |
+| Authority is absent | Do not infer operational authorization where the contract requires authority |
+| Visibility or release is absent | Keep an otherwise resolved or assembled result hidden where declared |
 
 State names and precedence differ across demos.
 
@@ -283,22 +292,23 @@ python -B demo/SLANG-Exam/slang_exam_v0_7_2.py --self-test
 Expected published result:
 
 ```text
-127/127 PASS
+TOTAL                127/127 PASS
 ```
 
 ### Run the vector verifier
 
 ```text
-python -B demo/SLANG-Exam/slang_exam_vectors_v0_7_2.py
+python -B demo/SLANG-Exam/slang_exam_vectors_v0_7_2.py --verify demo/SLANG-Exam/SLANG_Exam_Vectors_v0_7_2.json
 ```
 
 Expected published checks:
 
 ```text
-56/56 semantic vectors reproduced
-56/56 reference-evidence vectors reproduced
-10/10 metamorphic relations reproduced
-3/3 bounded-search probes reproduced
+semantic vectors: 56/56 reproduced
+reference evidence: 56/56 reproduced
+relations: 10/10 reproduced
+search probes: 3/3 reproduced
+VERIFY: PASS
 ```
 
 These results apply only to the declared SLANG-Exam v0.7.2 contract and its
@@ -325,6 +335,61 @@ README.md
 ```
 
 Use the local SLANG-Exam README as the detailed operating guide.
+
+---
+
+## **11A. SLANG-Claims v0.2.1 Quick Verification**
+
+SLANG-Claims provides a deterministic claim-payability admission reference from
+declared claim context and bound claim-authority evidence.
+
+The central relation is:
+
+`same admitted canonical claim structure + same versioned contract -> same bounded claim result`
+
+The operational boundary remains:
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+### Run the core self-test
+
+From the repository root:
+
+```text
+python -B demo/SLANG-Claims/slang_claims_v0_2_1.py --self-test
+```
+
+Expected published result:
+
+```text
+TOTAL 101/101 PASS
+```
+
+### Verify the frozen conformance vectors
+
+```text
+python -B demo/SLANG-Claims/slang_claims_vectors_v0_2_1.py --verify demo/SLANG-Claims/SLANG_Claims_Vectors_v0_2_1.json
+```
+
+Expected published summary:
+
+```text
+TOTAL: 154/154 PASS
+VERIFY: PASS
+```
+
+The SLANG-Claims folder additionally publishes reconstruction bundles, compact
+receipts, portable non-result attestations, machine-readable contracts and
+schemas, and an optional outer authenticity envelope.
+
+The authenticity layer may optionally use the `cryptography` package for
+Ed25519. The core resolver uses only the Python standard library.
+
+Use the local SLANG-Claims README for bundle, receipt, attestation,
+correspondence, authenticity, and machine-readable verification-report commands.
+
+These results apply only to the declared SLANG-Claims v0.2.1 contract and its
+published artifacts.
 
 ---
 
@@ -376,28 +441,50 @@ It does not prove that no solution exists outside the bound.
 
 ---
 
-## **14. Evidence and Receipts**
+## **14. Evidence and Verification Scope**
 
 Depending on the demonstration, published evidence may include:
 
 - result identities
-- ruleset identities
+- ruleset or contract identities
 - input or canonical-structure identities
-- bundles
-- receipts
-- vector files
+- reconstruction bundles
+- compact receipts
+- portable non-result attestations
+- frozen conformance vectors
+- machine-readable contracts and schemas
+- machine-readable verification reports
 - self-tests
 - metamorphic checks
+- correspondence checks
+- optional authenticity envelopes
 - tamper checks
 - exact replay evidence
 
-Verification establishes agreement with the declared reference contract.
+Different verification operations may establish different properties.
+
+`structural integrity != correspondence`
+
+`correspondence != authenticity`
+
+`authenticity != trust policy`
+
+`authenticity != real-world truth`
+
+`real-world truth != authorization to act`
+
+`trust policy != authorization to act`
+
+A passing verification establishes only the scope actually checked by the
+relevant verifier.
 
 It does not automatically establish:
 
 - factual truth
-- source authenticity
+- authenticity of underlying source declarations
+- institutional trust in supplied key material
 - legal authority
+- operational authorization
 - production safety
 - fairness
 - institutional approval
@@ -445,7 +532,7 @@ docs/Shunyaya-Structural-Stack.png
 ```
 
 The diagrams are explanatory summaries. The code, local documentation, rules,
-profiles, vectors, and evidence remain authoritative for each demo.
+profiles, vectors, and evidence remain the governing reference for each demo.
 
 ---
 
