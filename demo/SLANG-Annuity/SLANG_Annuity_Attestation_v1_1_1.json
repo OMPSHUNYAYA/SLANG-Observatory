@@ -1,0 +1,30 @@
+{
+  "actuarial_valuation_authority": "NONE",
+  "attestation_id": "slang_annuity_attestation_sha256:e3f046a72c25eea4371e68084235c4cff1c514f4595a650df7985624209a6d07",
+  "canonical_input_id": "slang_annuity_canonical_input_sha256:8d8753b4e77e6af85abf5bd62f895e6ddf305c3da585586b673cb7699a9f0e2b",
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "conflicts": [],
+  "context_id": "slang_annuity_context_sha256:9779e82af1e95d5b73b804ed12ceeb822eb0e0a3dfe5e7b71d00520b2a58598a",
+  "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+  "contract_interpretation_authority": "NONE",
+  "core_version": "SLANG-CORE-1-D05",
+  "diagnostics": [
+    "$.context.evaluation_authorized:EVALUATION_NOT_AUTHORIZED"
+  ],
+  "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+  "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+  "legal_entitlement_authority": "NONE",
+  "missing_dependencies": [],
+  "payment_authority": "NONE",
+  "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+  "reason_codes": [
+    "EVALUATION_NOT_AUTHORIZED"
+  ],
+  "result_id": "slang_annuity_result_sha256:6df7b1625b2542f2b3982aa22b6420dc766e4afd0934506d1a2136bf9a66a618",
+  "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+  "schema": "SLANG-ANNUITY-ATTESTATION-1",
+  "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+  "state": "ABSTAIN",
+  "tax_authority": "NONE",
+  "version": "1.1.1"
+}

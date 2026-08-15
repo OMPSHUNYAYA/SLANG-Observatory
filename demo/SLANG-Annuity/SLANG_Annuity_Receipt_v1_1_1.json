@@ -1,0 +1,34 @@
+{
+  "actuarial_valuation_authority": "NONE",
+  "annuity_outcome": "PAYABLE",
+  "authority_ids": [
+    "AUTHORITY-A"
+  ],
+  "bundle_id": "slang_annuity_bundle_sha256:4ead37f4ac826938e0520d0fbf72e68302f21eb298dc5d29d2668bfa17ec5fa6",
+  "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+  "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+  "contract_interpretation_authority": "NONE",
+  "core_version": "SLANG-CORE-1-D05",
+  "currency": "USD",
+  "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+  "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+  "legal_entitlement_authority": "NONE",
+  "outcome_id": "slang_annuity_outcome_sha256:91a3cfeaca4bebdd1de0f0d216aba9e0118f945b53262954ce8a4fd3684df482",
+  "payment_authority": "NONE",
+  "payout_amount_minor": 1250000,
+  "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+  "reason_codes": [
+    "PAYOUT_ADMITTED"
+  ],
+  "receipt_id": "slang_annuity_receipt_sha256:8f56dc1137825ea1fd10388084e8e80f8249a722acd863f066845e87976e8232",
+  "result_id": "slang_annuity_result_sha256:44c66ab6071bc0484680d0e7a8d9f3e50cf816dda1f53578a14fdf1c78609f33",
+  "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+  "schema": "SLANG-ANNUITY-RECEIPT-1",
+  "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+  "state": "RESOLVED",
+  "tax_authority": "NONE",
+  "version": "1.1.1",
+  "visibility_state": "VISIBLE"
+}

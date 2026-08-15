@@ -1,0 +1,168 @@
+{
+  "authority_boundary": {
+    "actuarial_valuation_authority": "NONE",
+    "contract_interpretation_authority": "NONE",
+    "legal_entitlement_authority": "NONE",
+    "payment_authority": "NONE",
+    "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+    "tax_authority": "NONE"
+  },
+  "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "claim_boundary": "BOUNDED_ANNUITANT_PERIODIC_PAYOUT_ADMISSION_ONLY",
+  "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+  "core_version": "SLANG-CORE-1-D05",
+  "forbidden_derived_field_signatures": [
+    "agecondition",
+    "ageeligible",
+    "annuityoutcome",
+    "attestationid",
+    "bundleid",
+    "canonicalinputid",
+    "contributioncondition",
+    "contributionsufficient",
+    "eligibilitystate",
+    "outcomeid",
+    "payeecondition",
+    "payoutamount",
+    "payoutamountminor",
+    "payouteligible",
+    "receiptid",
+    "resolutionstate",
+    "resultid",
+    "ruleprofileid",
+    "vestingcomplete",
+    "vestingcondition",
+    "visibilitystate"
+  ],
+  "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+  "identity_domain_material": {
+    "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+    "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+    "core_version": "SLANG-CORE-1-D05",
+    "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+    "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+    "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01"
+  },
+  "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+  "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+  "reason_codes": [
+    "AGE_CONDITION_NOT_SATISFIED",
+    "CONTEXT_BINDING_MISMATCH",
+    "CONTRACT_NOT_ACTIVE",
+    "CONTRIBUTION_CONDITION_NOT_SATISFIED",
+    "DECLARED_CONTEXT_ID_MISMATCH",
+    "DECLARED_EVIDENCE_SET_ID_MISMATCH",
+    "DECLARED_PERIODIC_PAYOUT_NOT_POSITIVE",
+    "DUPLICATE_AUTHORITY_ID",
+    "EMPTY_IDENTIFIER_LIST",
+    "EVALUATION_NOT_AUTHORIZED",
+    "EVIDENCE_COMMITMENT_MISMATCH",
+    "EVIDENCE_RESULT_DISAGREEMENT",
+    "FLOAT_NOT_SUPPORTED",
+    "FORBIDDEN_DERIVED_FIELD",
+    "INVALID_BOOLEAN",
+    "INVALID_COMMITMENT",
+    "INVALID_CONTEXT_TYPE",
+    "INVALID_CURRENCY",
+    "INVALID_EVIDENCE_LIST_TYPE",
+    "INVALID_EVIDENCE_RECORD_TYPE",
+    "INVALID_IDENTIFIER",
+    "INVALID_NONNEGATIVE_INTEGER",
+    "INVALID_POSITIVE_INTEGER",
+    "INVALID_TOP_LEVEL_TYPE",
+    "JSON_CONTAINER_LIMIT",
+    "JSON_DEPTH_LIMIT",
+    "JSON_INTEGER_LIMIT",
+    "JSON_STRING_LIMIT",
+    "MISSING_EXPECTED_AUTHORITY",
+    "MISSING_REQUIRED_FIELD",
+    "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS",
+    "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EXPECTED_AUTHORITIES",
+    "NON_STRING_KEY",
+    "OUTCOME_WITHHELD",
+    "PAYEE_NOT_VALID",
+    "PAYOUT_ADMITTED",
+    "PAYOUT_NOT_ELECTED",
+    "SINGLE_AUTHORITY_REQUIRES_ONE_EVIDENCE_RECORD",
+    "SINGLE_AUTHORITY_REQUIRES_ONE_EXPECTED_AUTHORITY",
+    "UNEXPECTED_AUTHORITY",
+    "UNKNOWN_FIELD",
+    "UNSUPPORTED_CONTRACT_STATUS",
+    "UNSUPPORTED_EVIDENCE_MODE",
+    "UNSUPPORTED_EVIDENCE_SCHEMA",
+    "UNSUPPORTED_INPUT_SCHEMA",
+    "UNSUPPORTED_JSON_TYPE",
+    "UNSUPPORTED_PAYEE_STATUS",
+    "UNSUPPORTED_PAYOUT_ELECTION",
+    "UNSUPPORTED_PAYOUT_MODE",
+    "UNSUPPORTED_PROFILE_ID",
+    "UNSUPPORTED_RULESET_ID",
+    "VESTING_CONDITION_NOT_SATISFIED"
+  ],
+  "receipt_correspondence_scope": "REQUIRES_EXACT_RECONSTRUCTION_BUNDLE",
+  "receipt_integrity_scope": "SELF_CONSISTENCY_AND_DECLARED_INVARIANTS_ONLY",
+  "rule_profile_material": {
+    "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+    "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+    "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+    "quantum_relation": "admitted_payout_amount_minor = declared_periodic_payout_minor",
+    "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+    "state_precedence": [
+      "FORBIDDEN",
+      "CONFLICT",
+      "UNSUPPORTED",
+      "INCOMPLETE",
+      "ABSTAIN",
+      "RESOLVED"
+    ],
+    "supported_evidence_modes": [
+      "MULTI_AUTHORITY_EXACT_AGREEMENT",
+      "SINGLE_AUTHORITY"
+    ],
+    "supported_payout_modes": [
+      "ANNUITANT_PERIODIC"
+    ]
+  },
+  "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+  "schema": "SLANG-ANNUITY-CONTRACT-1",
+  "schemas": {
+    "attestation": "SLANG-ANNUITY-ATTESTATION-1",
+    "bundle": "SLANG-ANNUITY-BUNDLE-1",
+    "contract": "SLANG-ANNUITY-CONTRACT-1",
+    "input": "SLANG-ANNUITY-INPUT-1",
+    "receipt": "SLANG-ANNUITY-RECEIPT-1",
+    "result": "SLANG-ANNUITY-RESULT-1",
+    "summary": "SLANG-ANNUITY-SUMMARY-1"
+  },
+  "state_precedence": [
+    "FORBIDDEN",
+    "CONFLICT",
+    "UNSUPPORTED",
+    "INCOMPLETE",
+    "ABSTAIN",
+    "RESOLVED"
+  ],
+  "supported_contract_status": [
+    "ACTIVE",
+    "INACTIVE",
+    "SUSPENDED",
+    "TERMINATED"
+  ],
+  "supported_evidence_modes": [
+    "MULTI_AUTHORITY_EXACT_AGREEMENT",
+    "SINGLE_AUTHORITY"
+  ],
+  "supported_payee_status": [
+    "NOT_VALID",
+    "VALID"
+  ],
+  "supported_payout_election": [
+    "ELECTED",
+    "NOT_ELECTED"
+  ],
+  "supported_payout_modes": [
+    "ANNUITANT_PERIODIC"
+  ],
+  "version": "1.1.1"
+}

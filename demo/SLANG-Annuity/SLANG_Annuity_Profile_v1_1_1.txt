@@ -1,0 +1,329 @@
+SLANG-ANNUITY PROFILE v1.1.1
+
+TITLE
+Deterministic annuitant periodic-payout admission from declared structure.
+
+CORE RELATION
+
+declared annuity context + bound authority evidence + versioned rules -> bounded payout-admission state
+
+For admitted canonical structure:
+
+same admitted canonical structure + same versioned contract -> same bounded result
+
+For insufficient, conflicting, forbidden, unsupported, or unauthorized structure:
+
+insufficient admissible structure -> no forced PAYABLE outcome
+
+BOUNDARY
+
+This profile resolves one bounded question:
+
+Does the declared evidence admit a PAYABLE or NOT_PAYABLE annuitant periodic-payout result under this exact profile and ruleset?
+
+This profile does not:
+
+- authenticate the real-world source of evidence
+- interpret an annuity contract
+- determine legal entitlement
+- determine tax treatment
+- perform actuarial valuation
+- calculate present value, mortality, interest, surrender value, or guaranteed income
+- validate beneficiary rights or death benefits
+- authorize payment
+- move money
+- replace insurer, custodian, banking, accounting, legal, tax, compliance, or regulatory systems
+
+PAYOUT MODE
+
+Supported payout mode:
+
+ANNUITANT_PERIODIC
+
+The original tiny concept used beneficiary declaration as a universal payout gate. v1.1.1 removes that assumption from this profile. Beneficiary and death-benefit logic belong in a separately identified payout profile if implemented later.
+
+ELIGIBILITY CONDITIONS
+
+For the admitted evidence record:
+
+contract_condition = SATISFIED iff contract_status = ACTIVE
+
+age_condition = SATISFIED iff attained_age_years >= minimum_start_age_years
+
+vesting_condition = SATISFIED iff credited_service_years >= minimum_vesting_years
+
+contribution_condition = SATISFIED iff total_contributed_minor >= minimum_contribution_minor
+
+election_condition = SATISFIED iff payout_election = ELECTED
+
+payee_condition = SATISFIED iff payee_status = VALID
+
+amount_condition = SATISFIED iff declared_periodic_payout_minor > 0
+
+If every condition is SATISFIED:
+
+annuity_outcome = PAYABLE
+
+admitted_payout_amount_minor = declared_periodic_payout_minor
+
+Otherwise, when the evidence is complete and supported:
+
+annuity_outcome = NOT_PAYABLE
+
+payout_amount_minor = 0
+
+QUANTUM PROFILE
+
+ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1
+
+This profile deliberately does not derive a financial benefit amount from age, contribution history, mortality assumptions, interest assumptions, or actuarial tables.
+
+The amount relation is only:
+
+admitted_payout_amount_minor = declared_periodic_payout_minor
+
+The declared amount is treated as bound input evidence, not as a universal annuity calculation.
+
+EVIDENCE MODES
+
+SINGLE_AUTHORITY
+
+Exactly one expected authority and exactly one bound evidence record are required.
+
+MULTI_AUTHORITY_EXACT_AGREEMENT
+
+Two or more expected authorities are permitted. Every expected authority must be represented exactly once. The bounded evidence fields must agree exactly.
+
+exact agreement -> continue
+
+material disagreement -> ABSTAIN
+
+No majority vote, averaging, ranking, or authority weighting is used.
+
+EVIDENCE COMMITMENT
+
+Each evidence record carries:
+
+slang_annuity_evidence_sha256:<digest>
+
+The digest binds the record content under canonical JSON. It is an integrity commitment only.
+
+integrity commitment != source authenticity
+
+source authenticity = NOT_ESTABLISHED_BY_REFERENCE_PROFILE
+
+STATE MODEL
+
+RESOLVED
+Complete supported evidence yields PAYABLE or NOT_PAYABLE.
+
+INCOMPLETE
+Required structure or expected authority evidence is missing.
+
+CONFLICT
+Bindings, commitments, duplicate authorities, or declared identities cannot coexist.
+
+FORBIDDEN
+Caller-supplied derived outcome or authority fields are present.
+
+UNSUPPORTED
+Input is outside the exact versioned profile.
+
+ABSTAIN
+Evaluation is not authorized or exact multi-authority evidence materially disagrees.
+
+Primary-state precedence:
+
+FORBIDDEN > CONFLICT > UNSUPPORTED > INCOMPLETE > ABSTAIN > RESOLVED
+
+REASON-CODE POLICY
+
+reason_codes is the deterministic union of detected issue codes. It is not a minimal root-cause set.
+
+primary state = highest-precedence detected state
+
+reason_codes = union of detected issue codes
+
+reason_codes != minimal causal explanation
+
+missing_dependencies, conflicts, and diagnostics preserve their dedicated structural detail surfaces.
+
+EVALUATION AUTHORIZATION
+
+evaluation_authorized gates admission of a bounded annuity evaluation outcome. It does not gate parsing, structural validation, or diagnostic generation.
+
+If evaluation_authorized = false and a higher-precedence structural issue is also present, the higher-precedence structural state remains primary while EVALUATION_NOT_AUTHORIZED remains detectable.
+
+evaluation authorization != diagnostic confidentiality
+
+evaluation authorization != visibility authorization
+
+DERIVED-FIELD FIREWALL
+
+Callers may not pre-seed fields such as:
+
+payout_eligible
+payout_amount
+payout_amount_minor
+annuity_outcome
+resolution_state
+result_id
+receipt_id
+bundle_id
+
+This prevents a caller from turning a derived outcome into asserted input.
+
+CANONICALIZATION
+
+Canonical JSON uses:
+
+- UTF-8 JSON
+- lexicographically sorted object keys
+- no insignificant whitespace
+- no floating-point numbers
+- no NaN or Infinity
+- duplicate JSON keys rejected by the strict file parser
+- bounded depth, string length, container size, integer magnitude, and input size
+- evidence records canonicalized by authority_id
+- expected authority identifiers canonicalized by sorted order
+
+ORDER-INDEPENDENCE CLAIM
+
+This profile declares order independence only for structures explicitly canonicalized as order-independent, including the authority evidence set.
+
+same authority evidence set in different list order -> same canonical result
+
+This does not claim that every sequence in every annuity operation is semantically irrelevant.
+
+PORTABLE INTEGER BOUNDARY
+
+MAX_SAFE_INTEGER = 9007199254740991
+
+This is a deterministic serialization and portability bound. It is not an economic reasonableness limit or a contract payout ceiling.
+
+portable integer bound != maximum reasonable payout
+
+portable integer bound != contract payout ceiling
+
+A payout ceiling belongs in a separately identified profile when required.
+
+DECLARED-IDENTITY MAINTENANCE
+
+The package exposes two local content-binding maintenance operations.
+
+--stamp-declared-ids recomputes only declared_context_id and declared_evidence_set_id. It refuses to proceed when any other structural issue remains, including EVIDENCE_COMMITMENT_MISMATCH.
+
+--refresh-bindings recomputes evidence commitments and then recomputes the two declared identities. It is intended for controlled local edits and demonstrations.
+
+content binding refresh != source authentication
+
+SOURCE_AUTHENTICITY remains NOT_ESTABLISHED_BY_REFERENCE_PROFILE after either operation.
+
+LIBRARY-PATH DIAGNOSTIC PRECISION
+
+The in-memory resolver preserves portable-JSON cause codes for representative non-file input failures:
+
+FLOAT_NOT_SUPPORTED
+NON_STRING_KEY
+UNSUPPORTED_JSON_TYPE
+
+These are structural reason codes for the library entry path. File-byte parser failures remain governed by the strict parser and command-line error contract.
+
+DEPENDENCY-AWARE IDENTITY CORRESPONDENCE
+
+Declared evidence-set correspondence is evaluated only when every submitted evidence record can be canonically normalized.
+
+complete canonical evidence material -> declared evidence-set correspondence may be evaluated
+
+dropped malformed evidence record -> declared evidence-set correspondence is not evaluated from the incomplete reconstructed set
+
+This prevents a consequential declared-evidence-set conflict from outranking the malformed evidence that caused the record to disappear.
+
+A genuinely incorrect declared_evidence_set_id over otherwise complete canonical evidence remains CONFLICT.
+
+VISIBILITY
+
+Resolution and presentation are separate.
+
+If a resolved result has visibility_authorized = true:
+
+visibility_state = VISIBLE
+
+If a resolved result has visibility_authorized = false:
+
+visibility_state = WITHHELD
+
+The public summary neutralizes outcome-dependent fields when withheld.
+
+withheld PAYABLE summary = withheld NOT_PAYABLE summary
+
+within the declared summary projection.
+
+This is presentation noninterference, not encryption.
+
+INDEPENDENT VERIFICATION
+
+The package includes a verifier that does not import the core resolver. It independently constructs canonical evidence commitments and expected semantic outcomes, then invokes the local core through its command-line resolve interface.
+
+independent implementation agreement != proof that the shared specification is correct
+
+EVIDENCE SURFACES
+
+Bundle:
+Exact reconstruction surface containing submitted input, normalized projection, and result.
+
+Receipt:
+Compact structural evidence. Receipt integrity alone does not prove correspondence to an input. Exact correspondence requires verification against the reconstruction bundle.
+
+Attestation:
+Portable state evidence for RESOLVED and non-result states, including ABSTAIN, INCOMPLETE, CONFLICT, FORBIDDEN, and UNSUPPORTED.
+
+AUTHORITY BOUNDARY
+
+source_authenticity = NOT_ESTABLISHED_BY_REFERENCE_PROFILE
+contract_interpretation_authority = NONE
+legal_entitlement_authority = NONE
+tax_authority = NONE
+actuarial_valuation_authority = NONE
+payment_authority = NONE
+
+A resolved PAYABLE result means only:
+
+PAYABLE under this identified bounded reference contract
+
+It does not mean:
+
+PAYMENT_AUTHORIZED
+
+IDENTIFIERS
+
+Version:
+1.1.1
+
+Core:
+SLANG-CORE-1-D05
+
+Profile:
+SLANG-ANNUITY-PROFILE-1-D01
+
+Ruleset:
+SLANG-ANNUITY-RULESET-1-D01
+
+Canonicalization:
+SLANG-CANONICAL-JSON-1-D02
+
+Authority evidence profile:
+ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1
+
+Quantum profile:
+ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1
+
+Contract:
+slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1
+
+Identity domain:
+slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9
+
+RULE OF INTERPRETATION
+
+The machine-readable contract and reference implementation define the executable bounded behavior. This profile explains that behavior. No broader annuity, legal, actuarial, tax, or payment claim should be inferred.

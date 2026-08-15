@@ -1,0 +1,3545 @@
+{
+  "artifacts": {
+    "attestation": {
+      "actuarial_valuation_authority": "NONE",
+      "attestation_id": "slang_annuity_attestation_sha256:e3f046a72c25eea4371e68084235c4cff1c514f4595a650df7985624209a6d07",
+      "canonical_input_id": "slang_annuity_canonical_input_sha256:8d8753b4e77e6af85abf5bd62f895e6ddf305c3da585586b673cb7699a9f0e2b",
+      "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+      "conflicts": [],
+      "context_id": "slang_annuity_context_sha256:9779e82af1e95d5b73b804ed12ceeb822eb0e0a3dfe5e7b71d00520b2a58598a",
+      "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+      "contract_interpretation_authority": "NONE",
+      "core_version": "SLANG-CORE-1-D05",
+      "diagnostics": [
+        "$.context.evaluation_authorized:EVALUATION_NOT_AUTHORIZED"
+      ],
+      "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+      "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+      "legal_entitlement_authority": "NONE",
+      "missing_dependencies": [],
+      "payment_authority": "NONE",
+      "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+      "reason_codes": [
+        "EVALUATION_NOT_AUTHORIZED"
+      ],
+      "result_id": "slang_annuity_result_sha256:6df7b1625b2542f2b3982aa22b6420dc766e4afd0934506d1a2136bf9a66a618",
+      "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+      "schema": "SLANG-ANNUITY-ATTESTATION-1",
+      "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+      "state": "ABSTAIN",
+      "tax_authority": "NONE",
+      "version": "1.1.1"
+    },
+    "attestation_hash": "ccd00a6b737a4f6a2416e9bb647d00bf564327221dc9748a1dd1cd757a3985df",
+    "attestation_input": {
+      "annuity_evidence": [
+        {
+          "attained_age_years": 68,
+          "authority_id": "AUTHORITY-A",
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "contract_status": "ACTIVE",
+          "credited_service_years": 12,
+          "currency": "USD",
+          "declared_periodic_payout_minor": 1250000,
+          "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+          "minimum_contribution_minor": 15000000,
+          "minimum_start_age_years": 65,
+          "minimum_vesting_years": 10,
+          "payee_status": "VALID",
+          "payout_election": "ELECTED",
+          "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+          "total_contributed_minor": 18000000
+        }
+      ],
+      "context": {
+        "case_id": "ANNUITY-DEMO-001",
+        "contract_reference": "CONTRACT-DEMO-001",
+        "currency": "USD",
+        "evaluation_authorized": false,
+        "evidence_mode": "SINGLE_AUTHORITY",
+        "expected_authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "payout_mode": "ANNUITANT_PERIODIC",
+        "visibility_authorized": true
+      },
+      "declared_context_id": "slang_annuity_context_sha256:9779e82af1e95d5b73b804ed12ceeb822eb0e0a3dfe5e7b71d00520b2a58598a",
+      "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+      "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+      "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+      "schema": "SLANG-ANNUITY-INPUT-1"
+    },
+    "bundle": {
+      "bundle_id": "slang_annuity_bundle_sha256:4ead37f4ac826938e0520d0fbf72e68302f21eb298dc5d29d2668bfa17ec5fa6",
+      "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+      "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+      "core_version": "SLANG-CORE-1-D05",
+      "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+      "normalized_projection": {
+        "normalized_input": {
+          "annuity_evidence": [
+            {
+              "attained_age_years": 68,
+              "authority_id": "AUTHORITY-A",
+              "case_id": "ANNUITY-DEMO-001",
+              "contract_reference": "CONTRACT-DEMO-001",
+              "contract_status": "ACTIVE",
+              "credited_service_years": 12,
+              "currency": "USD",
+              "declared_periodic_payout_minor": 1250000,
+              "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+              "minimum_contribution_minor": 15000000,
+              "minimum_start_age_years": 65,
+              "minimum_vesting_years": 10,
+              "payee_status": "VALID",
+              "payout_election": "ELECTED",
+              "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+              "total_contributed_minor": 18000000
+            }
+          ],
+          "context": {
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "currency": "USD",
+            "evaluation_authorized": true,
+            "evidence_mode": "SINGLE_AUTHORITY",
+            "expected_authority_ids": [
+              "AUTHORITY-A"
+            ],
+            "payout_mode": "ANNUITANT_PERIODIC",
+            "visibility_authorized": true
+          },
+          "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+          "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+          "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+          "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+          "schema": "SLANG-ANNUITY-INPUT-1"
+        },
+        "reason_codes": [],
+        "validation_state": "RESOLVED"
+      },
+      "result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:91a3cfeaca4bebdd1de0f0d216aba9e0118f945b53262954ce8a4fd3684df482",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:44c66ab6071bc0484680d0e7a8d9f3e50cf816dda1f53578a14fdf1c78609f33",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "schema": "SLANG-ANNUITY-BUNDLE-1",
+      "submitted_input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "version": "1.1.1"
+    },
+    "bundle_hash": "d9382f6e80da9f316d187557c2b87b22040117b03db32d1e821648eef42c385d",
+    "receipt": {
+      "actuarial_valuation_authority": "NONE",
+      "annuity_outcome": "PAYABLE",
+      "authority_ids": [
+        "AUTHORITY-A"
+      ],
+      "bundle_id": "slang_annuity_bundle_sha256:4ead37f4ac826938e0520d0fbf72e68302f21eb298dc5d29d2668bfa17ec5fa6",
+      "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+      "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+      "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+      "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+      "contract_interpretation_authority": "NONE",
+      "core_version": "SLANG-CORE-1-D05",
+      "currency": "USD",
+      "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+      "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+      "legal_entitlement_authority": "NONE",
+      "outcome_id": "slang_annuity_outcome_sha256:91a3cfeaca4bebdd1de0f0d216aba9e0118f945b53262954ce8a4fd3684df482",
+      "payment_authority": "NONE",
+      "payout_amount_minor": 1250000,
+      "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+      "reason_codes": [
+        "PAYOUT_ADMITTED"
+      ],
+      "receipt_id": "slang_annuity_receipt_sha256:8f56dc1137825ea1fd10388084e8e80f8249a722acd863f066845e87976e8232",
+      "result_id": "slang_annuity_result_sha256:44c66ab6071bc0484680d0e7a8d9f3e50cf816dda1f53578a14fdf1c78609f33",
+      "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+      "schema": "SLANG-ANNUITY-RECEIPT-1",
+      "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+      "state": "RESOLVED",
+      "tax_authority": "NONE",
+      "version": "1.1.1",
+      "visibility_state": "VISIBLE"
+    },
+    "receipt_hash": "e44e25ed9b46ed31d8239f267461f6d06adeb03dfde38437b612e1e0be515bb9"
+  },
+  "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+  "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+  "core_version": "SLANG-CORE-1-D05",
+  "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+  "parser": [
+    {
+      "expected_prefix": "DUPLICATE_JSON_KEY",
+      "name": "duplicate_key",
+      "raw": "{\"x\":1,\"x\":2}"
+    },
+    {
+      "expected_prefix": "FLOAT_NOT_SUPPORTED",
+      "name": "float",
+      "raw": "{\"x\":1.25}"
+    },
+    {
+      "expected_prefix": "NONFINITE_NUMBER_NOT_SUPPORTED",
+      "name": "nan",
+      "raw": "{\"x\":NaN}"
+    },
+    {
+      "expected_prefix": "JSONDecodeError",
+      "name": "bad_json",
+      "raw": "{\"x\":"
+    }
+  ],
+  "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+  "relations": [
+    {
+      "left": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          },
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-B",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:ae4b8a3029b06940665c2e8770111759fe620bb9dbcb812389559f844f2a7c15",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:3c701f1fa0890019a5e0fb74f5b32d41728c2d386c4249d5400a0f8cdffbf952",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "evidence_order_independence",
+      "relation": "RESULT_EQUAL",
+      "right": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-B",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:ae4b8a3029b06940665c2e8770111759fe620bb9dbcb812389559f844f2a7c15",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          },
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:3c701f1fa0890019a5e0fb74f5b32d41728c2d386c4249d5400a0f8cdffbf952",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      }
+    },
+    {
+      "left": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": false
+        },
+        "declared_context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "withheld_outcome_noninterference",
+      "relation": "SUMMARY_EQUAL",
+      "right": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 60,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:8874b5a1d1182f48000ebe8b39d4b60dd0a7f4435e8249e2ba0b4ef5e1aa41e2",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": false
+        },
+        "declared_context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      }
+    },
+    {
+      "left": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "repeat_determinism",
+      "relation": "RESULT_EQUAL",
+      "right": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      }
+    },
+    {
+      "left": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "single_multi_outcome_projection",
+      "relation": "OUTCOME_PROJECTION_EQUAL",
+      "right": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          },
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-B",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:ae4b8a3029b06940665c2e8770111759fe620bb9dbcb812389559f844f2a7c15",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:3c701f1fa0890019a5e0fb74f5b32d41728c2d386c4249d5400a0f8cdffbf952",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      }
+    }
+  ],
+  "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+  "schema": "SLANG-ANNUITY-VECTORS-1",
+  "semantic": [
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:91a3cfeaca4bebdd1de0f0d216aba9e0118f945b53262954ce8a4fd3684df482",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:44c66ab6071bc0484680d0e7a8d9f3e50cf816dda1f53578a14fdf1c78609f33",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:91a3cfeaca4bebdd1de0f0d216aba9e0118f945b53262954ce8a4fd3684df482",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:44c66ab6071bc0484680d0e7a8d9f3e50cf816dda1f53578a14fdf1c78609f33",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "reference_payable"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:708927419f1b39e510452c7e2c762af43ec9544334c4873915586f48cba7bbf8",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NOT_SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:531c3fb446eeb39eed71acde1e1cce77ff5918240ca7aa17d88dad1d1b5ccff0",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:76f81db48c5ed209522daea82cb2b8fa1d6aa1eca8a32a7e924dc41d1c075f12",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:91faad8db6361f5713378bdc011e2353b1988cf6fb039280c843f040234dc051",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:76f81db48c5ed209522daea82cb2b8fa1d6aa1eca8a32a7e924dc41d1c075f12",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "result_id": "slang_annuity_result_sha256:91faad8db6361f5713378bdc011e2353b1988cf6fb039280c843f040234dc051",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "INACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:892cf3c808da9341d07482257ff0aae7f26d5e21153ce599492712921708a4ac",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "inactive_contract"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:065aec66525f998b9d3c9f1000756d5e9e28785c177857c616fa5148e11cf331",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NOT_SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:77d9cf7671cf826c2bde30e26d9e43c70bf11f0343d1daeefb3a238c893ac93e",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:a95241d0284dfc75df099ed5f938e15d8ee49c0eb56f175886c98b1cd87ef845",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:5aaa38d6756c9ef6f351830ce61cf7df4287eed504f819d521b5d5bc2dce0901",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:a95241d0284dfc75df099ed5f938e15d8ee49c0eb56f175886c98b1cd87ef845",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "result_id": "slang_annuity_result_sha256:5aaa38d6756c9ef6f351830ce61cf7df4287eed504f819d521b5d5bc2dce0901",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "SUSPENDED",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:02015ec1b5ac53c4cf0ad8aaf62bf4fefd8a34771f92810c5d9e75cd8b608c4a",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "suspended_contract"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:a8ddb84eaa0fe8a036d45ab8ed0e0fde54725b4a14ff96b9dcec61aee1fbff58",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NOT_SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:6a13342f86a4bbb8a762bc1880c65cea19c7622bb2c75ee0aade199a0b420594",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:bfe547fc20bd127bfcce304caadbc8ea016ad34de16862f3e1e615d3de2b9a63",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:93d77b2119127872a1e2bf34d1ceda76ab8577a79a17d78d42ab38c98ce25cda",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:bfe547fc20bd127bfcce304caadbc8ea016ad34de16862f3e1e615d3de2b9a63",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "CONTRACT_NOT_ACTIVE"
+        ],
+        "result_id": "slang_annuity_result_sha256:93d77b2119127872a1e2bf34d1ceda76ab8577a79a17d78d42ab38c98ce25cda",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "TERMINATED",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:12ded0df3a4ddc5bf0f9b36b21e313b3c088dab689b38b6cd45a8713739623dd",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "terminated_contract"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NOT_SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:398ae9242955a609f461c1c527ad4f5fedc48c5df4ff190271b26b9787b4bbf5",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:be1751a78e436601d9e8b64813029647c4e4ab63dcb241e41a159bd06465f90a",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:d8047b164679e09a16753e8520cd76420e1da7c66a68a28a4b989a053021933f",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "AGE_CONDITION_NOT_SATISFIED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:9c0acf477090178b04caf0e8a9a8403290d8bf12471cdfaf2a5622bd8dc462c0",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:d8047b164679e09a16753e8520cd76420e1da7c66a68a28a4b989a053021933f",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "AGE_CONDITION_NOT_SATISFIED"
+        ],
+        "result_id": "slang_annuity_result_sha256:9c0acf477090178b04caf0e8a9a8403290d8bf12471cdfaf2a5622bd8dc462c0",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 60,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:8874b5a1d1182f48000ebe8b39d4b60dd0a7f4435e8249e2ba0b4ef5e1aa41e2",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "below_age"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:d41bddda116e5c45a6632fa0f4dfcc28cb2d34710b1bd49b2a6425ff5ca21353",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:81d08ffd9016f6c5892b85204cc3a4b682196dc497c0c9310fcd61d867328b83",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:3e4524e90ba282a53da4df6bec9cc16fba21ce22446ebb098631bfd2a7e1bf8e",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:a37d3874ca60d20b6ccaf34014a1fe166e077adeb4f2e7a4bd5a51bce88f57f3",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:3e4524e90ba282a53da4df6bec9cc16fba21ce22446ebb098631bfd2a7e1bf8e",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:a37d3874ca60d20b6ccaf34014a1fe166e077adeb4f2e7a4bd5a51bce88f57f3",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 65,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:86b5c78de8b69be94c9a9e7dd3238d8ed928fa7527c863dff7bed0a42f242b72",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "age_exact_boundary"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:af6c74b75bffcfd54bd5fd20daf88b70c5beea1537295c278a233fdf8530e845",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:6535e88d6005774df9101abc6795ed81d268e4b14a5c365f383067650a1d0bfd",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:1e63beaa660832434726efc96c60fea8823d9dcf2158f14bcf1d7ea2756ca30c",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "VESTING_CONDITION_NOT_SATISFIED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:0662fdbcc1508edb15e1bc65205db31a8b6b1ffa19b7ea100633578849413bdb",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NOT_SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:1e63beaa660832434726efc96c60fea8823d9dcf2158f14bcf1d7ea2756ca30c",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "VESTING_CONDITION_NOT_SATISFIED"
+        ],
+        "result_id": "slang_annuity_result_sha256:0662fdbcc1508edb15e1bc65205db31a8b6b1ffa19b7ea100633578849413bdb",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 9,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:1eb659892285fb1d005e92309e4bae0132964b7e50e8f8a03f1e978afafe684f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "insufficient_vesting"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:ac8bde441ffdfbb886f6a851dcce11aa917e46859896d6e6c917ab6aaf1a37ab",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:3707329422a7fb6c1ebb2aa1c1ccd45d3ca3000ebb3ffcd7684339a47bc97ba3",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:3d939caa88aa92dd11ff40acc5391423a3e052819b643e45aa4e909fa7a4e86b",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:512ba4099cf51a6aa69b3e962b4da0b6391d1b09585c22cecccfba749686b610",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:3d939caa88aa92dd11ff40acc5391423a3e052819b643e45aa4e909fa7a4e86b",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:512ba4099cf51a6aa69b3e962b4da0b6391d1b09585c22cecccfba749686b610",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 10,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:d287123604389a00ec893bedb82263fc8c123f259802ff870dfaf9558b7e051c",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "vesting_exact_boundary"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:69bab370606435613bafbfcb0869dec5b36651468f295b06d6bb8f5d5744c535",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NOT_SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:f51837bc11cd89de842e9f4a044c084dc2969b8cf1c4d28bfd6361bca851f23c",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:bccb34d207f4c312bc9188313fb9d9c08b29647334a2fb5f74c6b8b9c61ea7e4",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "CONTRIBUTION_CONDITION_NOT_SATISFIED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:6d7a8147088e22ff87f52beb00c10125b833581ff1d7534f83601d54bdda87f2",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:bccb34d207f4c312bc9188313fb9d9c08b29647334a2fb5f74c6b8b9c61ea7e4",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "CONTRIBUTION_CONDITION_NOT_SATISFIED"
+        ],
+        "result_id": "slang_annuity_result_sha256:6d7a8147088e22ff87f52beb00c10125b833581ff1d7534f83601d54bdda87f2",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:95058447dcb751953bbbedfb8fa51dda95ecab7f1e2c7bada11ad8fd7f93bfd3",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 14999999
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "insufficient_contribution"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:b8b5774cf4593b040673aa24cdb58f51d1f8de02c3f0d51729b1b79fc26372bc",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:f5c97e7a97e837210a89d2f529f7e863b4688cf1ed7c83e96c37efde31295d36",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:46fb4c3210c90a95c0cf3daf1af75838167d21862be5d10aba25f02045e2db53",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:604d12bb6344c5a596cc1445fa8178c7e4c9ce67b1e38501a2796033732161cc",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:46fb4c3210c90a95c0cf3daf1af75838167d21862be5d10aba25f02045e2db53",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:604d12bb6344c5a596cc1445fa8178c7e4c9ce67b1e38501a2796033732161cc",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:5830837f1894c490dec6cc82e68a627af7db1face09bd7f22353533672a96706",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 15000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "contribution_exact_boundary"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:b8ff2b12e92aec1d5969cd780df9e2b79282cc0342b2d0452b01ea62877aed39",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "NOT_SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:a4b169d3d3ffc4cfa9d0845450629e651270cbf83696f66b79e795b6b996ebf5",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:1ca8e2a905b5c65255d886fbf55e546bad5b3381a6b1877758bf8e4e5d8e0ec1",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_NOT_ELECTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:61047cd73d71d5bd0d562e6a1b0273ab0c7277b62240f75f6590c27fb375f5b4",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:1ca8e2a905b5c65255d886fbf55e546bad5b3381a6b1877758bf8e4e5d8e0ec1",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "PAYOUT_NOT_ELECTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:61047cd73d71d5bd0d562e6a1b0273ab0c7277b62240f75f6590c27fb375f5b4",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:a8790e50cddc1ef43c2ea5028af7730a9789cb26c7f023a06255fa94c5fcbe38",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "NOT_ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "not_elected"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:7c51ec54587a29e1eca347938e4d1871454287d97e8cac9039a1a29d39d39452",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:fd91c3303e9adbd1fa05ac793ae57d299bf7862e399e6d6e57a4979cf878d946",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:7cef74dc71a45bd9deac394c0efdd155f86cc782b73f55339fda9ffea050b2ff",
+        "payee_condition": "NOT_SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYEE_NOT_VALID"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:92a6f9cb1bd0a32e43898df58cc09cd959f5e27e487a4a8bd4b0b421054c4d0d",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:7cef74dc71a45bd9deac394c0efdd155f86cc782b73f55339fda9ffea050b2ff",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "PAYEE_NOT_VALID"
+        ],
+        "result_id": "slang_annuity_result_sha256:92a6f9cb1bd0a32e43898df58cc09cd959f5e27e487a4a8bd4b0b421054c4d0d",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:49ec8276a9284e213f8fff9be871e66d4e2446094dc95c15c7f21005033008ea",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "NOT_VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "payee_invalid"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "NOT_SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:b478e3bc545637d27450b17bc42dd0d190bff93853c2b10507bf9bf2d8538615",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:6bde02fc5cf1b5f8e8fa8ab52ec1e9446b82f7f1a9fef4591289168f026e94c2",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:f5ddd61ae5c2b1f86fad171018cca6c9b5836758e1a28420e0fa8c9d645e8db0",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "DECLARED_PERIODIC_PAYOUT_NOT_POSITIVE"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:efc799ef573e8c86211901137e3ea75715e81e85320021b1679ccd5850a7fb4b",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:f5ddd61ae5c2b1f86fad171018cca6c9b5836758e1a28420e0fa8c9d645e8db0",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "DECLARED_PERIODIC_PAYOUT_NOT_POSITIVE"
+        ],
+        "result_id": "slang_annuity_result_sha256:efc799ef573e8c86211901137e3ea75715e81e85320021b1679ccd5850a7fb4b",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 0,
+            "evidence_commitment": "slang_annuity_evidence_sha256:56ff59a7ee87c63576df34de0f8aaa799c02ff71992552e26b73bf8a56b137eb",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "zero_amount"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:e240fa5f7dbf4838b4d05c0fcb2680a7af2a5420bd95afc02adcd85a912975ca",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:303e88343afccc8215c4d6e5fa1b88416c55e5d1b446ffe96a1689aac6b21f7b",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:79cb475b692cfd96d4de91c676ef51b9a34a19549809ca3f299e28033bfeafb8",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:e824e3b56916f9cfd121f1043223fa5ba65f761f90b74b071acf928e27febfc5",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:79cb475b692cfd96d4de91c676ef51b9a34a19549809ca3f299e28033bfeafb8",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:e824e3b56916f9cfd121f1043223fa5ba65f761f90b74b071acf928e27febfc5",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1,
+            "evidence_commitment": "slang_annuity_evidence_sha256:8f6fff403b76a126027817f3b8592de8d7ee634f320edf9456a4076a57b1fb66",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "small_positive_amount"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:6fdbe2a49131503949f73ea7ae354611b9b5f8f0235ba8f0acf9df09f2fd22a2",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence:AUTHORITY-A:MISSING_EXPECTED_AUTHORITY",
+          "$.annuity_evidence:SINGLE_AUTHORITY_REQUIRES_ONE_EVIDENCE_RECORD",
+          "$.annuity_evidence[0].attained_age_years:MISSING_REQUIRED_FIELD"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:aa98b729e46021dc79ef929f620f9603216a8ecaa05c1b2210cb38f5e4503735",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [
+          "$.annuity_evidence",
+          "$.annuity_evidence:AUTHORITY-A",
+          "$.annuity_evidence[0].attained_age_years"
+        ],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "MISSING_REQUIRED_FIELD",
+          "SINGLE_AUTHORITY_REQUIRES_ONE_EVIDENCE_RECORD"
+        ],
+        "resolution_state": "INCOMPLETE",
+        "result_id": "slang_annuity_result_sha256:1194e8cc0c11e8a72ea90696b857ab9361d410d19b0cc32ff206063f6a4af0cb",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "INCOMPLETE",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "MISSING_REQUIRED_FIELD",
+          "SINGLE_AUTHORITY_REQUIRES_ONE_EVIDENCE_RECORD"
+        ],
+        "result_id": "slang_annuity_result_sha256:1194e8cc0c11e8a72ea90696b857ab9361d410d19b0cc32ff206063f6a4af0cb",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "INCOMPLETE",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "missing_age"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.payout_amount_minor:FORBIDDEN_DERIVED_FIELD",
+          "$.payout_amount_minor:UNKNOWN_FIELD"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "FORBIDDEN_DERIVED_FIELD",
+          "UNKNOWN_FIELD"
+        ],
+        "resolution_state": "FORBIDDEN",
+        "result_id": "slang_annuity_result_sha256:bc724eac786cc88e1e74ad9e123721eb1886ff5178820e842cb6e46d5485f6d4",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "FORBIDDEN",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "FORBIDDEN_DERIVED_FIELD",
+          "UNKNOWN_FIELD"
+        ],
+        "result_id": "slang_annuity_result_sha256:bc724eac786cc88e1e74ad9e123721eb1886ff5178820e842cb6e46d5485f6d4",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "FORBIDDEN",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "payout_amount_minor": 999,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "forbidden_derived_injection"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:c72f094be5011d771c3680c50b3742d2d1dd8e2856e3d748d780bed2096aa660",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.context.unversioned_extension:UNKNOWN_FIELD"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "UNKNOWN_FIELD"
+        ],
+        "resolution_state": "UNSUPPORTED",
+        "result_id": "slang_annuity_result_sha256:dc88f11f588e6a65e532f1daf6d37e2d7d6128fd6147018554b8f2738711be7d",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "UNSUPPORTED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "UNKNOWN_FIELD"
+        ],
+        "result_id": "slang_annuity_result_sha256:dc88f11f588e6a65e532f1daf6d37e2d7d6128fd6147018554b8f2738711be7d",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "UNSUPPORTED",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "unversioned_extension": true,
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "unknown_context_field"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:8d8753b4e77e6af85abf5bd62f895e6ddf305c3da585586b673cb7699a9f0e2b",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:9779e82af1e95d5b73b804ed12ceeb822eb0e0a3dfe5e7b71d00520b2a58598a",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.context.evaluation_authorized:EVALUATION_NOT_AUTHORIZED"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "EVALUATION_NOT_AUTHORIZED"
+        ],
+        "resolution_state": "ABSTAIN",
+        "result_id": "slang_annuity_result_sha256:6df7b1625b2542f2b3982aa22b6420dc766e4afd0934506d1a2136bf9a66a618",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "ABSTAIN",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "EVALUATION_NOT_AUTHORIZED"
+        ],
+        "result_id": "slang_annuity_result_sha256:6df7b1625b2542f2b3982aa22b6420dc766e4afd0934506d1a2136bf9a66a618",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "ABSTAIN",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": false,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:9779e82af1e95d5b73b804ed12ceeb822eb0e0a3dfe5e7b71d00520b2a58598a",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "evaluation_not_authorized"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:398f133b48d641a5cc06729b5dd92d83f0e8c3271606c303624efe45a8abbc0b",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [
+          "$.annuity_evidence[0].evidence_commitment"
+        ],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence[0].evidence_commitment:EVIDENCE_COMMITMENT_MISMATCH"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:e137cf37f29507223292e023ba8a23b3a32b8ed75315aa41b7c199dece63b33d",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "EVIDENCE_COMMITMENT_MISMATCH"
+        ],
+        "resolution_state": "CONFLICT",
+        "result_id": "slang_annuity_result_sha256:6587224f3fbe56167156d3e215f71a50c9d042b5b5549cdf3afea428851191dd",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "CONFLICT",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "EVIDENCE_COMMITMENT_MISMATCH"
+        ],
+        "result_id": "slang_annuity_result_sha256:6587224f3fbe56167156d3e215f71a50c9d042b5b5549cdf3afea428851191dd",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "CONFLICT",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "commitment_mismatch"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:5c1c4a55009f7afb4d96d9485bc376c8885618db0de09828505a682be2760a25",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [
+          "$.annuity_evidence[0]"
+        ],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence[0]:CONTEXT_BINDING_MISMATCH"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:f30150e071c0009ba2ab2e131e67527f5d8736d499a96d459f01fab008340203",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "CONTEXT_BINDING_MISMATCH"
+        ],
+        "resolution_state": "CONFLICT",
+        "result_id": "slang_annuity_result_sha256:fee7e8d002d15df0d7d95121c591f7150f80faa0fb16875232f369d37b073f6f",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "CONFLICT",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "CONTEXT_BINDING_MISMATCH"
+        ],
+        "result_id": "slang_annuity_result_sha256:fee7e8d002d15df0d7d95121c591f7150f80faa0fb16875232f369d37b073f6f",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "CONFLICT",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-OTHER",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:b1c706bc6c0d40ee742c0e2aa323798004664659d4eb7f5b3aedf2ba3cf6b965",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "context_binding_mismatch"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:27d2c334b4b479962f0c3b8a934ac020ba8604dd540022237b14d1d9797eb434",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [
+          "$.declared_context_id"
+        ],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.declared_context_id:DECLARED_CONTEXT_ID_MISMATCH"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "DECLARED_CONTEXT_ID_MISMATCH"
+        ],
+        "resolution_state": "CONFLICT",
+        "result_id": "slang_annuity_result_sha256:599872830319e08fe7a14390a7bb23ea683118e53336e5d9f1e2c9bcd73a75f2",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "CONFLICT",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "DECLARED_CONTEXT_ID_MISMATCH"
+        ],
+        "result_id": "slang_annuity_result_sha256:599872830319e08fe7a14390a7bb23ea683118e53336e5d9f1e2c9bcd73a75f2",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "CONFLICT",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "declared_context_id_mismatch"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A",
+          "AUTHORITY-B"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:112b43fad3249890345fcfc9a16faf6c070d01a4671770945e45241c42859068",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:3c701f1fa0890019a5e0fb74f5b32d41728c2d386c4249d5400a0f8cdffbf952",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:b29508fe5d186490fefdfff08d0c9ca1908b8b4b06953b928e8f9c0500138f68",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:5072609facbfce1edd8e51561bce02b7965e113e4566828919011c1bf1d8bf21",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "VISIBLE"
+      },
+      "expected_summary": {
+        "admission_state": "ADMITTED",
+        "annuity_outcome": "PAYABLE",
+        "currency": "USD",
+        "outcome_id": "slang_annuity_outcome_sha256:b29508fe5d186490fefdfff08d0c9ca1908b8b4b06953b928e8f9c0500138f68",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "result_id": "slang_annuity_result_sha256:5072609facbfce1edd8e51561bce02b7965e113e4566828919011c1bf1d8bf21",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "VISIBLE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          },
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-B",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:ae4b8a3029b06940665c2e8770111759fe620bb9dbcb812389559f844f2a7c15",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:3c701f1fa0890019a5e0fb74f5b32d41728c2d386c4249d5400a0f8cdffbf952",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "multi_authority_payable"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A",
+          "AUTHORITY-B"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:e4ce0617ed151ca9d025b2f322aeafcf6383189404cccd176b05b6e276528683",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence:EVIDENCE_RESULT_DISAGREEMENT"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:09df9d9e846e2d56a977e4c1104123b54721c369d91b9062e469ef7fee65d854",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "EVIDENCE_RESULT_DISAGREEMENT"
+        ],
+        "resolution_state": "ABSTAIN",
+        "result_id": "slang_annuity_result_sha256:11b5d1973150ca394d6eda5eb5eb6bdc0c52acfe50bb4fcf75c09caf760daf32",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "ABSTAIN",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "EVIDENCE_RESULT_DISAGREEMENT"
+        ],
+        "result_id": "slang_annuity_result_sha256:11b5d1973150ca394d6eda5eb5eb6bdc0c52acfe50bb4fcf75c09caf760daf32",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "ABSTAIN",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          },
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-B",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1300000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:6b8b3b28ec229fa5ebf78a4a7bbaac4346f264f58ada710ba1eac222327c4b68",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "multi_authority_disagreement"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:da328bf6bd2a3e76eb15bad2098f58762dad412bc0a970dd9ce902294c3e33e2",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence:AUTHORITY-B:MISSING_EXPECTED_AUTHORITY",
+          "$.annuity_evidence:MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [
+          "$.annuity_evidence",
+          "$.annuity_evidence:AUTHORITY-B"
+        ],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS"
+        ],
+        "resolution_state": "INCOMPLETE",
+        "result_id": "slang_annuity_result_sha256:22a62382c79117a55f1c155234b2a7bd66ced31fe4986ece46d92277c94e7520",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "INCOMPLETE",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS"
+        ],
+        "result_id": "slang_annuity_result_sha256:22a62382c79117a55f1c155234b2a7bd66ced31fe4986ece46d92277c94e7520",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "INCOMPLETE",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "MULTI_AUTHORITY_EXACT_AGREEMENT",
+          "expected_authority_ids": [
+            "AUTHORITY-A",
+            "AUTHORITY-B"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:8dab235ba16e3290cb506af16369ccb6fa2b5e7c45ea252e9fe05069ec211b1a",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "missing_expected_authority"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NONE",
+        "amount_condition": "NONE",
+        "annuity_outcome": "NONE",
+        "authority_ids": [
+          "AUTHORITY-X"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:70b07ac7ff3a1d1da46684de132d8eb77a33879f7b96a7f53289d3f4b78d0357",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [
+          "$.annuity_evidence:AUTHORITY-X"
+        ],
+        "context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "contract_condition": "NONE",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "NONE",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [
+          "$.annuity_evidence:AUTHORITY-A:MISSING_EXPECTED_AUTHORITY",
+          "$.annuity_evidence:AUTHORITY-X:UNEXPECTED_AUTHORITY"
+        ],
+        "election_condition": "NONE",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:d64256e25704cec00ff5a1c4c3a5382e8c256b4a43b1e43e1222ba21a847bee9",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [
+          "$.annuity_evidence:AUTHORITY-A"
+        ],
+        "outcome_id": "NONE",
+        "payee_condition": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "UNEXPECTED_AUTHORITY"
+        ],
+        "resolution_state": "CONFLICT",
+        "result_id": "slang_annuity_result_sha256:8d25296e2c4aaee087333df959a9c9054afbfce8d25a7163d35ba2099b61386e",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "CONFLICT",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "NONE",
+        "visibility_state": "NONE"
+      },
+      "expected_summary": {
+        "admission_state": "NONE",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "MISSING_EXPECTED_AUTHORITY",
+          "UNEXPECTED_AUTHORITY"
+        ],
+        "result_id": "slang_annuity_result_sha256:8d25296e2c4aaee087333df959a9c9054afbfce8d25a7163d35ba2099b61386e",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "CONFLICT",
+        "version": "1.1.1",
+        "visibility_state": "NONE"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-X",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:29ed10c9e9d53f3b215fece7e67bd05e106db0512a511939feb42396bf7af832",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": true
+        },
+        "declared_context_id": "slang_annuity_context_sha256:f5ef1cdebef27e9c88e9cfcff7bbf940fa88f88ce2aace1b27e8c6d1aee62288",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "unexpected_authority"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:b3b7d7ac6c348a47f303da1552ca8801e3f219b6cb59169a851a06c6658249e0",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:7ec823aeb7afec60989134548c6a1854433fcd13ab0390317986a625df2c3b3d",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 1250000,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "PAYOUT_ADMITTED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:80f13bd05df10ee9b38dbbb9c9134fc40f8f935bcf6d3befee26efbfc51a1604",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "WITHHELD"
+      },
+      "expected_summary": {
+        "admission_state": "WITHHOLD",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "OUTCOME_WITHHELD"
+        ],
+        "result_id": "NONE",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "WITHHELD"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 68,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:73b21709b794be206a50f5c0704cc261fc482b930e1f6bc5d497d838e3cbdd9f",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": false
+        },
+        "declared_context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "declared_evidence_set_id": "slang_annuity_evidence_set_sha256:babae59837513e726d2882422e211cc0cb87c29809495a230d5f90f2b34327a8",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "hidden_payable"
+    },
+    {
+      "expected_result": {
+        "actuarial_valuation_authority": "NONE",
+        "age_condition": "NOT_SATISFIED",
+        "amount_condition": "SATISFIED",
+        "annuity_outcome": "NOT_PAYABLE",
+        "authority_ids": [
+          "AUTHORITY-A"
+        ],
+        "authority_profile_id": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+        "canonical_input_id": "slang_annuity_canonical_input_sha256:dee7803d7c6de5880d178224e73252e4a52195b940f80741e7e3240f5b5cf30a",
+        "canonicalization_id": "SLANG-CANONICAL-JSON-1-D02",
+        "conflicts": [],
+        "context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "contract_condition": "SATISFIED",
+        "contract_id": "slang_annuity_contract_sha256:ea7932daa206e8864d634334200cebf6042cff4d53aeb5571960155bd9265ad1",
+        "contract_interpretation_authority": "NONE",
+        "contribution_condition": "SATISFIED",
+        "core_version": "SLANG-CORE-1-D05",
+        "currency": "USD",
+        "diagnostics": [],
+        "election_condition": "SATISFIED",
+        "evidence_set_id": "slang_annuity_evidence_set_sha256:be1751a78e436601d9e8b64813029647c4e4ab63dcb241e41a159bd06465f90a",
+        "identity_domain_id": "slang_annuity_identity_domain_sha256:266ca099be5951bc65e6cb30dc43d11ae135ab6451f87121dd369a08341db0a9",
+        "legal_entitlement_authority": "NONE",
+        "missing_dependencies": [],
+        "outcome_id": "slang_annuity_outcome_sha256:42370a62d9fd929a14fb873f1fda6fc6e203004b9adbd3582d8c268ba2924826",
+        "payee_condition": "SATISFIED",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "quantum_profile_id": "ANNUITY-DECLARED-PERIODIC-BENEFIT-PASS-THROUGH-1",
+        "reason_codes": [
+          "AGE_CONDITION_NOT_SATISFIED"
+        ],
+        "resolution_state": "RESOLVED",
+        "result_id": "slang_annuity_result_sha256:6436d4212762a4b5d91e61a621f81cf13bbdb74ae9bb9a783df45ccc0ec9c263",
+        "rule_profile_id": "slang_annuity_rule_profile_sha256:5aa38b8abc36567302b404c83406bca8ae7da2e12e25a6595228eefd65ae21f4",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-RESULT-1",
+        "source_authenticity": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE",
+        "state": "RESOLVED",
+        "tax_authority": "NONE",
+        "version": "1.1.1",
+        "vesting_condition": "SATISFIED",
+        "visibility_state": "WITHHELD"
+      },
+      "expected_summary": {
+        "admission_state": "WITHHOLD",
+        "annuity_outcome": "NONE",
+        "currency": "NONE",
+        "outcome_id": "NONE",
+        "payment_authority": "NONE",
+        "payout_amount_minor": 0,
+        "reason_codes": [
+          "OUTCOME_WITHHELD"
+        ],
+        "result_id": "NONE",
+        "schema": "SLANG-ANNUITY-SUMMARY-1",
+        "state": "RESOLVED",
+        "version": "1.1.1",
+        "visibility_state": "WITHHELD"
+      },
+      "input": {
+        "annuity_evidence": [
+          {
+            "attained_age_years": 60,
+            "authority_id": "AUTHORITY-A",
+            "case_id": "ANNUITY-DEMO-001",
+            "contract_reference": "CONTRACT-DEMO-001",
+            "contract_status": "ACTIVE",
+            "credited_service_years": 12,
+            "currency": "USD",
+            "declared_periodic_payout_minor": 1250000,
+            "evidence_commitment": "slang_annuity_evidence_sha256:8874b5a1d1182f48000ebe8b39d4b60dd0a7f4435e8249e2ba0b4ef5e1aa41e2",
+            "minimum_contribution_minor": 15000000,
+            "minimum_start_age_years": 65,
+            "minimum_vesting_years": 10,
+            "payee_status": "VALID",
+            "payout_election": "ELECTED",
+            "schema": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1",
+            "total_contributed_minor": 18000000
+          }
+        ],
+        "context": {
+          "case_id": "ANNUITY-DEMO-001",
+          "contract_reference": "CONTRACT-DEMO-001",
+          "currency": "USD",
+          "evaluation_authorized": true,
+          "evidence_mode": "SINGLE_AUTHORITY",
+          "expected_authority_ids": [
+            "AUTHORITY-A"
+          ],
+          "payout_mode": "ANNUITANT_PERIODIC",
+          "visibility_authorized": false
+        },
+        "declared_context_id": "slang_annuity_context_sha256:a8fa4933dbd1fcd5942935c4bbb11c69b7097c2dafc103182e0cc1fa18f8606f",
+        "profile_id": "SLANG-ANNUITY-PROFILE-1-D01",
+        "ruleset_id": "SLANG-ANNUITY-RULESET-1-D01",
+        "schema": "SLANG-ANNUITY-INPUT-1"
+      },
+      "name": "hidden_not_payable"
+    }
+  ],
+  "version": "1.1.1"
+}
