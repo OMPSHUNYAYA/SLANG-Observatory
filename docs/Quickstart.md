@@ -99,6 +99,7 @@ Representative folders may include:
 
 - `SLANG-Invoice`
 - `SLANG-Claims`
+- `SLANG-Annuity`
 - `SLANG-Cybersecurity`
 - `SLANG-Password`
 - `SLANG-ResetPassword`
@@ -236,7 +237,7 @@ Typical behavior:
 
 | Condition | Representative behavior |
 |---|---|
-| Supported and complete | Evaluate the declared bounded resolution rules |
+| Supported, complete, consistent, and admitted | Evaluate the declared bounded resolution rules |
 | Missing required structure | Return the explicit non-result state defined by the demo, such as `INCOMPLETE` |
 | Accepted declarations conflict | Expose `CONFLICT` or another explicitly declared non-result state |
 | Input lies outside the supported boundary | Return `UNSUPPORTED` or another declared refusal state |
@@ -250,18 +251,22 @@ State names and precedence differ across demos.
 
 ## **9. Unsupported Inputs**
 
-Unsupported input should be refused before the bounded resolver is treated as
-though it covers that input.
+Unsupported input should be refused rather than treated as though the bounded
+reference contract covers it.
 
 Conceptually:
 
-`x -> admit_R(x) -> C(x) -> F_R(C(x))`
+`P_supported(x) = false -> UNSUPPORTED or another declared refusal state`
 
-If the supported-input predicate fails:
+A demo may implement admission and resolution as separate functions or within a
+single resolver.
 
-`admit_R(x) = UNSUPPORTED`
+The required property is:
 
-The resolver is then not invoked over an input outside its declared domain.
+`unsupported structure != admitted structure`
+
+An input outside the declared boundary must not be processed as though it were
+supported.
 
 ---
 
@@ -393,6 +398,91 @@ published artifacts.
 
 ---
 
+## **11B. SLANG-Annuity v1.1.1 Quick Verification**
+
+SLANG-Annuity provides a deterministic annuitant periodic-payout admission
+reference from declared annuity context and bound authority evidence.
+
+The central relation is:
+
+`same admitted canonical annuity structure + same versioned contract -> same bounded result`
+
+The operational boundary remains:
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+### Run the core self-test
+
+From the repository root:
+
+```text
+python -B demo/SLANG-Annuity/slang_annuity_v1_1_1.py --self-test
+```
+
+Expected published result:
+
+```text
+SLANG-Annuity v1.1.1 self-test
+TOTAL 102/102 PASS
+```
+
+### Verify the frozen conformance vectors
+
+```text
+python -B demo/SLANG-Annuity/slang_annuity_vectors_v1_1_1.py --verify demo/SLANG-Annuity/SLANG_Annuity_Vectors_v1_1_1.json
+```
+
+Expected published summary:
+
+```text
+header: 9/9 reproduced
+semantic: 54/54 reproduced
+relations: 4/4 reproduced
+parser: 4/4 reproduced
+artifacts: 8/8 reproduced
+TOTAL: 79/79 PASS
+VERIFY: PASS
+```
+
+### Run the independent semantic verifier
+
+```text
+python -B demo/SLANG-Annuity/slang_annuity_independent_verifier_v1_1_1.py --core demo/SLANG-Annuity/slang_annuity_v1_1_1.py
+```
+
+Expected published summary:
+
+```text
+INDEPENDENT SEMANTIC VERIFIER: TOTAL 34/34 PASS
+VERIFY: PASS
+```
+
+The independent semantic verifier does not import the core resolver into its own
+process. It provides cross-implementation agreement on selected published
+semantics while remaining bounded by the shared published specification.
+
+The SLANG-Annuity folder additionally publishes reconstruction bundles, compact
+receipts, portable non-result attestations, machine-readable contracts and
+schemas, and deterministic binding-maintenance commands.
+
+The declared payout amount is admitted rather than actuarially calculated:
+
+`payout_amount_minor = declared_periodic_payout_minor`
+
+when the payout is admitted.
+
+SLANG-Annuity does not authenticate evidence sources, interpret annuity
+contracts, establish legal entitlement, perform actuarial valuation, determine
+tax treatment, authorize payment, or move money.
+
+Use the local SLANG-Annuity README for bundle, receipt, attestation,
+correspondence, binding-maintenance, schema, and verification commands.
+
+These results apply only to the declared SLANG-Annuity v1.1.1 contract and its
+published artifacts.
+
+---
+
 ## **12. Semantic Conformance and Exact Replay**
 
 Some demos distinguish two evidence levels.
@@ -457,6 +547,7 @@ Depending on the demonstration, published evidence may include:
 - self-tests
 - metamorphic checks
 - correspondence checks
+- independent semantic verifiers where published
 - optional authenticity envelopes
 - tamper checks
 - exact replay evidence
@@ -503,6 +594,7 @@ SLANG-Observatory/
 ├── demo/
 │   ├── SLANG-Invoice/
 │   ├── SLANG-Claims/
+│   ├── SLANG-Annuity/
 │   ├── SLANG-Cybersecurity/
 │   ├── SLANG-Password/
 │   ├── SLANG-ResetPassword/
