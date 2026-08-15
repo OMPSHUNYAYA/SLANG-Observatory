@@ -200,21 +200,19 @@ If:
 
 then the contract must not produce a positive result that requires completeness.
 
-Instead, the resolver returns the explicit non-result state defined by its
-contract, such as `INCOMPLETE` or another declared unresolved state.
+The resolver preserves the incompleteness condition within the state and
+diagnostic model defined by its contract. Depending on the demo and any
+simultaneously detected higher-precedence condition, the primary state may be
+`INCOMPLETE` or another declared non-result state.
 
-The exact state vocabulary is demo-specific.
+The exact state vocabulary and precedence are demo-specific.
 
 Thus:
 
-`incomplete structure -> explicit declared non-result state`
-
-and therefore:
-
 `incomplete structure -> no forced positive outcome`
 
-The proof depends on the implementation enforcing the completeness gate before
-admitting the positive result.
+The proof depends on the implementation preventing admission of a positive
+result when its declared completeness condition is not satisfied.
 
 ---
 
@@ -258,12 +256,16 @@ If:
 
 `P_supported(x) = false`
 
-then the input-admission layer returns:
+then the implementation returns:
 
 `admit_R(x) = UNSUPPORTED`
 
-or another declared refusal state, without invoking `F_R` over an unsupported
-input.
+or another declared refusal state, rather than treating `x` as an admitted
+input to the bounded semantic relation.
+
+A demo may implement admission and resolution as separate functions or within a
+single resolver. The required property is that unsupported structure is not
+processed as though it were supported.
 
 This protects the claim boundary by preventing the resolver from pretending to
 cover inputs that its contract does not define.
@@ -374,13 +376,16 @@ external state is unchanged, repeated evaluation produces the same result:
 
 This is repeat-evaluation stability under the declared execution boundary.
 
-If duplicate members are explicitly normalized away:
+If duplicate members are explicitly normalized away, let `dup(S)` denote a
+supported representation formed by inserting duplicate members into `S`.
 
-`C(S union S) = C(S)`
+Where the contract declares those duplicates semantically irrelevant:
 
-then:
+`C(dup(S)) = C(S)`
 
-`F_R(C(S union S)) = F_R(C(S))`
+and therefore:
+
+`F_R(C(dup(S))) = F_R(C(S))`
 
 This duplicate-insensitivity property applies only where the contract treats
 duplicates as semantically irrelevant.
@@ -465,10 +470,13 @@ declared:
 
 `exact_verify(reference_bundle) = PASS`
 
-Exact replay is stronger but more implementation-specific.
+Exact replay is more exacting within its declared reference-artifact scope but
+is also more implementation-specific.
 
-Semantic conformance is narrower but more suitable for alternate conforming
-implementations.
+Semantic conformance checks a different, narrower semantic scope and may be
+more suitable for alternate conforming implementations.
+
+`more exact replay != stronger claim about factual truth or operational authority`
 
 ---
 
@@ -657,7 +665,7 @@ cross-state invariants and must document them explicitly.
 | Semantic conformance | Conforming implementations reproduce the declared semantic result |
 | Exact replay | Reference operational evidence is reproduced where the contract binds it |
 | Verification-scope separation | Structural integrity, correspondence, authenticity, trust, truth, and operational authority remain distinct where separately defined |
-| Evidence boundary | Verification proves agreement with the declared contract, not universal factual truth |
+| Evidence boundary | Verification establishes only the scope declared by the relevant verifier, not universal factual truth |
 
 ---
 
