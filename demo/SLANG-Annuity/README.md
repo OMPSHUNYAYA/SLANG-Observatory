@@ -287,9 +287,9 @@ The amount is not calculated from age or contribution history. It is admitted fr
 
 `declared_periodic_payout_minor = 1250000`
 
-under the frozen relation:
+under the frozen relation when the payout is admitted:
 
-`admitted_payout_amount_minor = declared_periodic_payout_minor`
+`payout_amount_minor = declared_periodic_payout_minor`
 
 To test a supported eligibility change, copy the canonical input to `edited.json` and change only:
 
@@ -688,7 +688,7 @@ A genuinely incorrect `declared_evidence_set_id` over otherwise complete canonic
 
 `declared_evidence_set_id`
 
-It validates the input with those two declarations removed. Any remaining structural issue blocks the operation.
+It validates the input with those two declarations removed. Any remaining normalization or binding issue blocks the operation.
 
 `--refresh-bindings` additionally recomputes each evidence record's deterministic `evidence_commitment` before rebuilding the two declared identities.
 
@@ -1104,7 +1104,9 @@ SLANG-Annuity v1.1.1 directly covers structural integrity and declared reconstru
 
 ## **What a Passing Verification Means**
 
-A passing self-test or vector verification establishes implementation agreement with the declared SLANG-Annuity v1.1.1 reference contract and frozen corpus.
+A passing self-test establishes that the supplied core satisfies its internal SLANG-Annuity v1.1.1 checks.
+
+A passing frozen-vector verification establishes reproduction of the supplied frozen corpus under the declared SLANG-Annuity v1.1.1 reference contract.
 
 A passing independent semantic verification establishes agreement between the core runtime and a separately implemented reading of selected published semantics without importing the core. It does not independently validate the correctness of the shared specification itself.
 
@@ -1140,6 +1142,7 @@ The supplied v1.1.1 package currently completes:
 - receipt-to-bundle correspondence: `PASS`
 - non-result attestation integrity: `PASS`
 - attestation-to-input correspondence: `PASS`
+- Draft 2020-12 schema validation for canonical input, result, bundle, receipt, summary, attestation, and contract: `7/7 PASS`
 
 The canonical payable example preserves the declared authority boundary:
 
