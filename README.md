@@ -43,7 +43,7 @@ The practical pattern is:
 
 `operational mechanism -> no longer the sole resolution authority`
 
-`complete + consistent + domain-bounded structure -> admissible outcome`
+`complete + consistent + admitted domain-bounded structure -> bounded outcome`
 
 This does not mean that execution, communication, workflows, infrastructure,
 authentication, transactions, or domain operations disappear physically.
@@ -66,6 +66,32 @@ bounded resolution.
 
 ```bat
 python demo/SLANG-Invoice/slang_invoice.py
+```
+
+### Run the SLANG-Annuity v1.1.1 audit
+
+```bat
+python -B demo/SLANG-Annuity/slang_annuity_v1_1_1.py --self-test
+```
+
+Expected summary:
+
+```text
+SLANG-Annuity v1.1.1 self-test
+TOTAL 102/102 PASS
+```
+
+Run its independent semantic verifier:
+
+```bat
+python -B demo/SLANG-Annuity/slang_annuity_independent_verifier_v1_1_1.py --core demo/SLANG-Annuity/slang_annuity_v1_1_1.py
+```
+
+Expected summary:
+
+```text
+INDEPENDENT SEMANTIC VERIFIER: TOTAL 34/34 PASS
+VERIFY: PASS
 ```
 
 ### Run the SLANG-Exam v0.7.2 audit
@@ -114,7 +140,7 @@ VERIFY: PASS
 The demos reuse a common structural-resolution discipline while retaining
 different schemas, state models, and domain boundaries.
 
-`shared SLANG contract + different bounded domain schema -> domain demonstration`
+`shared SLANG discipline + different bounded domain contract -> domain demonstration`
 
 The repeated pattern is intentional. These demos are not presented as separate
 foundational frameworks or as proof that every real-world dependency in each
@@ -145,6 +171,27 @@ schemas, and an optional outer authenticity envelope.
 
 It does not authenticate claimants or evidence sources, interpret policy or law,
 determine fraud, settle claims, authorize payment, or move money.
+
+### [SLANG-Annuity](demo/SLANG-Annuity/)
+
+**Deterministic annuitant periodic-payout admission from declared structure.**
+
+SLANG-Annuity v1.1.1 resolves declared annuity context and bound authority
+evidence under an identified profile, ruleset, canonicalization contract, and
+declared periodic-benefit pass-through profile.
+
+It publishes frozen conformance vectors, an independent semantic verifier,
+reconstruction bundles, compact receipts, portable non-result attestations,
+machine-readable contracts and schemas, deterministic binding-maintenance
+commands, and explicit verification-scope separation.
+
+`same admitted canonical annuity structure + same versioned contract -> same bounded result`
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+It does not authenticate evidence sources, interpret annuity contracts,
+establish legal entitlement, perform actuarial valuation, determine tax
+treatment, authorize payment, or move money.
 
 ### [SLANG-Cybersecurity](demo/SLANG-Cybersecurity/)
 
@@ -234,6 +281,7 @@ This table describes only the bounded question tested by each demonstration.
 |---|---|---|
 | Invoice | approval workflow sequence | declared invoice facts, rules, and consistency checks |
 | Claims | claim-processing or payout workflow sequence | declared claim context, bound claim-authority evidence, versioned rules, and bounded claim arithmetic |
+| Annuity | annuity-processing or payout-admission workflow sequence | declared annuity context, bound authority evidence, versioned rules, and declared periodic-payout structure |
 | Cybersecurity | pipeline or escalation sequence | complete supported escalation evidence |
 | Hurricane | forced or premature forecast publication | maturity and visibility-admission structure |
 | Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
@@ -258,7 +306,7 @@ Depending on the demo, a folder may include:
 - reconstruction bundles
 - compact receipts
 - portable non-result attestations
-- machine-readable contract manifests and schemas
+- machine-readable contracts and schemas
 - optional authenticity artifacts
 - verification utilities
 - diagrams and explanatory documents
@@ -324,11 +372,24 @@ Published evidence may include:
 - compact receipts
 - exact replay verification
 - semantic-only conformance modes
+- independent semantic verifiers where published
 - tamper checks
 
-A passing self-test or reconstruction check establishes agreement with the
-declared reference contract. It does not establish production safety,
-institutional approval, domain completeness, or third-party certification.
+A passing self-test establishes only that the supplied implementation satisfies
+the checks declared by that demo.
+
+A passing frozen-conformance verification establishes reproduction of the
+published frozen corpus where one is supplied.
+
+A passing reconstruction or correspondence check establishes only the exact
+artifact relationship stated by that verifier.
+
+Where a demo publishes an independently implemented semantic verifier, it may
+add cross-implementation agreement on the selected published semantics without
+thereby proving that the shared specification itself is correct.
+
+None of these establishes production safety, institutional approval, domain
+completeness, or third-party certification.
 
 Where a demo publishes stronger verification layers, their scopes remain
 distinct:
