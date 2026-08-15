@@ -1,0 +1,191 @@
+{
+  "$defs": {
+    "authorityBoundaryNone": {
+      "const": "NONE"
+    },
+    "currency": {
+      "pattern": "^[A-Z]{3}$",
+      "type": "string"
+    },
+    "identifier": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$",
+      "type": "string"
+    },
+    "nonnegativeInt": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "$id": "SLANG_Annuity_Input_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "annuity_evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "attained_age_years": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "authority_id": {
+            "$ref": "#/$defs/identifier"
+          },
+          "case_id": {
+            "$ref": "#/$defs/identifier"
+          },
+          "contract_reference": {
+            "$ref": "#/$defs/identifier"
+          },
+          "contract_status": {
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "SUSPENDED",
+              "TERMINATED"
+            ]
+          },
+          "credited_service_years": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "currency": {
+            "$ref": "#/$defs/currency"
+          },
+          "declared_periodic_payout_minor": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "evidence_commitment": {
+            "pattern": "^slang_annuity_evidence_sha256:[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "minimum_contribution_minor": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "minimum_start_age_years": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "minimum_vesting_years": {
+            "$ref": "#/$defs/nonnegativeInt"
+          },
+          "payee_status": {
+            "enum": [
+              "NOT_VALID",
+              "VALID"
+            ]
+          },
+          "payout_election": {
+            "enum": [
+              "ELECTED",
+              "NOT_ELECTED"
+            ]
+          },
+          "schema": {
+            "const": "ANNUITY-PAYOUT-AUTHORITY-EVIDENCE-1"
+          },
+          "total_contributed_minor": {
+            "$ref": "#/$defs/nonnegativeInt"
+          }
+        },
+        "required": [
+          "attained_age_years",
+          "authority_id",
+          "case_id",
+          "contract_reference",
+          "contract_status",
+          "credited_service_years",
+          "currency",
+          "declared_periodic_payout_minor",
+          "evidence_commitment",
+          "minimum_contribution_minor",
+          "minimum_start_age_years",
+          "minimum_vesting_years",
+          "payee_status",
+          "payout_election",
+          "schema",
+          "total_contributed_minor"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "context": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "contract_reference": {
+          "$ref": "#/$defs/identifier"
+        },
+        "currency": {
+          "$ref": "#/$defs/currency"
+        },
+        "evaluation_authorized": {
+          "type": "boolean"
+        },
+        "evidence_mode": {
+          "enum": [
+            "MULTI_AUTHORITY_EXACT_AGREEMENT",
+            "SINGLE_AUTHORITY"
+          ]
+        },
+        "expected_authority_ids": {
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "payout_mode": {
+          "enum": [
+            "ANNUITANT_PERIODIC"
+          ]
+        },
+        "visibility_authorized": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "case_id",
+        "contract_reference",
+        "currency",
+        "payout_mode",
+        "evidence_mode",
+        "evaluation_authorized",
+        "visibility_authorized",
+        "expected_authority_ids"
+      ],
+      "type": "object"
+    },
+    "declared_context_id": {
+      "pattern": "^slang_annuity_context_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "declared_evidence_set_id": {
+      "pattern": "^slang_annuity_evidence_set_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "profile_id": {
+      "const": "SLANG-ANNUITY-PROFILE-1-D01"
+    },
+    "ruleset_id": {
+      "const": "SLANG-ANNUITY-RULESET-1-D01"
+    },
+    "schema": {
+      "const": "SLANG-ANNUITY-INPUT-1"
+    }
+  },
+  "required": [
+    "schema",
+    "profile_id",
+    "ruleset_id",
+    "context",
+    "annuity_evidence"
+  ],
+  "title": "SLANG-ANNUITY-INPUT-1",
+  "type": "object"
+}

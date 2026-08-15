@@ -1,0 +1,68 @@
+{
+  "$id": "SLANG_Annuity_Attestation_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actuarial_valuation_authority": {},
+    "attestation_id": {
+      "pattern": "^slang_annuity_attestation_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "canonical_input_id": {},
+    "canonicalization_id": {},
+    "conflicts": {},
+    "context_id": {},
+    "contract_id": {},
+    "contract_interpretation_authority": {},
+    "core_version": {},
+    "diagnostics": {},
+    "evidence_set_id": {},
+    "identity_domain_id": {},
+    "legal_entitlement_authority": {},
+    "missing_dependencies": {},
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "profile_id": {},
+    "reason_codes": {},
+    "result_id": {},
+    "ruleset_id": {},
+    "schema": {
+      "const": "SLANG-ANNUITY-ATTESTATION-1"
+    },
+    "source_authenticity": {},
+    "state": {},
+    "tax_authority": {},
+    "version": {
+      "const": "1.1.1"
+    }
+  },
+  "required": [
+    "actuarial_valuation_authority",
+    "attestation_id",
+    "canonical_input_id",
+    "canonicalization_id",
+    "conflicts",
+    "context_id",
+    "contract_id",
+    "contract_interpretation_authority",
+    "core_version",
+    "diagnostics",
+    "evidence_set_id",
+    "identity_domain_id",
+    "legal_entitlement_authority",
+    "missing_dependencies",
+    "payment_authority",
+    "profile_id",
+    "reason_codes",
+    "result_id",
+    "ruleset_id",
+    "schema",
+    "source_authenticity",
+    "state",
+    "tax_authority",
+    "version"
+  ],
+  "title": "SLANG-ANNUITY-ATTESTATION-1",
+  "type": "object"
+}

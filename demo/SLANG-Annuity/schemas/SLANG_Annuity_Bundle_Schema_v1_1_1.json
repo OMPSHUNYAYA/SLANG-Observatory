@@ -1,0 +1,38 @@
+{
+  "$id": "SLANG_Annuity_Bundle_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bundle_id": {
+      "pattern": "^slang_annuity_bundle_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "canonicalization_id": {},
+    "contract_id": {},
+    "core_version": {},
+    "identity_domain_id": {},
+    "normalized_projection": {},
+    "result": {},
+    "schema": {
+      "const": "SLANG-ANNUITY-BUNDLE-1"
+    },
+    "submitted_input": {},
+    "version": {
+      "const": "1.1.1"
+    }
+  },
+  "required": [
+    "bundle_id",
+    "canonicalization_id",
+    "contract_id",
+    "core_version",
+    "identity_domain_id",
+    "normalized_projection",
+    "result",
+    "schema",
+    "submitted_input",
+    "version"
+  ],
+  "title": "SLANG-ANNUITY-BUNDLE-1",
+  "type": "object"
+}

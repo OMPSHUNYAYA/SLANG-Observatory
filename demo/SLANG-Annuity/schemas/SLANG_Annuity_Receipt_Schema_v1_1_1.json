@@ -1,0 +1,76 @@
+{
+  "$id": "SLANG_Annuity_Receipt_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actuarial_valuation_authority": {},
+    "annuity_outcome": {},
+    "authority_ids": {},
+    "bundle_id": {},
+    "canonical_input_id": {},
+    "canonicalization_id": {},
+    "context_id": {},
+    "contract_id": {},
+    "contract_interpretation_authority": {},
+    "core_version": {},
+    "currency": {},
+    "evidence_set_id": {},
+    "identity_domain_id": {},
+    "legal_entitlement_authority": {},
+    "outcome_id": {},
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "payout_amount_minor": {},
+    "profile_id": {},
+    "reason_codes": {},
+    "receipt_id": {
+      "pattern": "^slang_annuity_receipt_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "result_id": {},
+    "ruleset_id": {},
+    "schema": {
+      "const": "SLANG-ANNUITY-RECEIPT-1"
+    },
+    "source_authenticity": {},
+    "state": {},
+    "tax_authority": {},
+    "version": {
+      "const": "1.1.1"
+    },
+    "visibility_state": {}
+  },
+  "required": [
+    "actuarial_valuation_authority",
+    "annuity_outcome",
+    "authority_ids",
+    "bundle_id",
+    "canonical_input_id",
+    "canonicalization_id",
+    "context_id",
+    "contract_id",
+    "contract_interpretation_authority",
+    "core_version",
+    "currency",
+    "evidence_set_id",
+    "identity_domain_id",
+    "legal_entitlement_authority",
+    "outcome_id",
+    "payment_authority",
+    "payout_amount_minor",
+    "profile_id",
+    "reason_codes",
+    "receipt_id",
+    "result_id",
+    "ruleset_id",
+    "schema",
+    "source_authenticity",
+    "state",
+    "tax_authority",
+    "version",
+    "visibility_state"
+  ],
+  "title": "SLANG-ANNUITY-RECEIPT-1",
+  "type": "object"
+}

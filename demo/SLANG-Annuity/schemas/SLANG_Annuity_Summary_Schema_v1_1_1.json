@@ -1,0 +1,41 @@
+{
+  "$id": "SLANG_Annuity_Summary_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admission_state": {},
+    "annuity_outcome": {},
+    "currency": {},
+    "outcome_id": {},
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "payout_amount_minor": {},
+    "reason_codes": {},
+    "result_id": {},
+    "schema": {
+      "const": "SLANG-ANNUITY-SUMMARY-1"
+    },
+    "state": {},
+    "version": {
+      "const": "1.1.1"
+    },
+    "visibility_state": {}
+  },
+  "required": [
+    "admission_state",
+    "annuity_outcome",
+    "currency",
+    "outcome_id",
+    "payment_authority",
+    "payout_amount_minor",
+    "reason_codes",
+    "result_id",
+    "schema",
+    "state",
+    "version",
+    "visibility_state"
+  ],
+  "title": "SLANG-ANNUITY-SUMMARY-1",
+  "type": "object"
+}

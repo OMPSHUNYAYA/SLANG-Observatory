@@ -1,0 +1,220 @@
+{
+  "$defs": {
+    "authorityBoundaryNone": {
+      "const": "NONE"
+    },
+    "currency": {
+      "pattern": "^[A-Z]{3}$",
+      "type": "string"
+    },
+    "identifier": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$",
+      "type": "string"
+    },
+    "nonnegativeInt": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "$id": "SLANG_Annuity_Result_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actuarial_valuation_authority": {
+      "const": "NONE"
+    },
+    "age_condition": {},
+    "amount_condition": {},
+    "annuity_outcome": {
+      "enum": [
+        "PAYABLE",
+        "NOT_PAYABLE",
+        "NONE"
+      ]
+    },
+    "authority_ids": {},
+    "authority_profile_id": {},
+    "canonical_input_id": {},
+    "canonicalization_id": {},
+    "conflicts": {},
+    "context_id": {},
+    "contract_condition": {},
+    "contract_id": {},
+    "contract_interpretation_authority": {
+      "const": "NONE"
+    },
+    "contribution_condition": {},
+    "core_version": {
+      "const": "SLANG-CORE-1-D05"
+    },
+    "currency": {},
+    "diagnostics": {},
+    "election_condition": {},
+    "evidence_set_id": {},
+    "identity_domain_id": {},
+    "legal_entitlement_authority": {
+      "const": "NONE"
+    },
+    "missing_dependencies": {},
+    "outcome_id": {},
+    "payee_condition": {},
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "payout_amount_minor": {
+      "$ref": "#/$defs/nonnegativeInt"
+    },
+    "profile_id": {
+      "const": "SLANG-ANNUITY-PROFILE-1-D01"
+    },
+    "quantum_profile_id": {},
+    "reason_codes": {
+      "items": {
+        "enum": [
+          "AGE_CONDITION_NOT_SATISFIED",
+          "CONTEXT_BINDING_MISMATCH",
+          "CONTRACT_NOT_ACTIVE",
+          "CONTRIBUTION_CONDITION_NOT_SATISFIED",
+          "DECLARED_CONTEXT_ID_MISMATCH",
+          "DECLARED_EVIDENCE_SET_ID_MISMATCH",
+          "DECLARED_PERIODIC_PAYOUT_NOT_POSITIVE",
+          "DUPLICATE_AUTHORITY_ID",
+          "EMPTY_IDENTIFIER_LIST",
+          "EVALUATION_NOT_AUTHORIZED",
+          "EVIDENCE_COMMITMENT_MISMATCH",
+          "EVIDENCE_RESULT_DISAGREEMENT",
+          "FORBIDDEN_DERIVED_FIELD",
+          "INVALID_BOOLEAN",
+          "INVALID_COMMITMENT",
+          "INVALID_CONTEXT_TYPE",
+          "INVALID_CURRENCY",
+          "INVALID_EVIDENCE_LIST_TYPE",
+          "INVALID_EVIDENCE_RECORD_TYPE",
+          "INVALID_IDENTIFIER",
+          "INVALID_NONNEGATIVE_INTEGER",
+          "INVALID_POSITIVE_INTEGER",
+          "INVALID_TOP_LEVEL_TYPE",
+          "JSON_CONTAINER_LIMIT",
+          "JSON_DEPTH_LIMIT",
+          "JSON_INTEGER_LIMIT",
+          "JSON_STRING_LIMIT",
+          "MISSING_EXPECTED_AUTHORITY",
+          "MISSING_REQUIRED_FIELD",
+          "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS",
+          "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EXPECTED_AUTHORITIES",
+          "OUTCOME_WITHHELD",
+          "PAYEE_NOT_VALID",
+          "PAYOUT_ADMITTED",
+          "PAYOUT_NOT_ELECTED",
+          "SINGLE_AUTHORITY_REQUIRES_ONE_EVIDENCE_RECORD",
+          "SINGLE_AUTHORITY_REQUIRES_ONE_EXPECTED_AUTHORITY",
+          "UNEXPECTED_AUTHORITY",
+          "UNKNOWN_FIELD",
+          "UNSUPPORTED_CONTRACT_STATUS",
+          "UNSUPPORTED_EVIDENCE_MODE",
+          "UNSUPPORTED_EVIDENCE_SCHEMA",
+          "UNSUPPORTED_INPUT_SCHEMA",
+          "UNSUPPORTED_PAYEE_STATUS",
+          "UNSUPPORTED_PAYOUT_ELECTION",
+          "UNSUPPORTED_PAYOUT_MODE",
+          "UNSUPPORTED_PROFILE_ID",
+          "UNSUPPORTED_RULESET_ID",
+          "VESTING_CONDITION_NOT_SATISFIED"
+        ]
+      },
+      "type": "array"
+    },
+    "resolution_state": {
+      "enum": [
+        "RESOLVED",
+        "INCOMPLETE",
+        "CONFLICT",
+        "FORBIDDEN",
+        "UNSUPPORTED",
+        "ABSTAIN"
+      ]
+    },
+    "result_id": {},
+    "rule_profile_id": {},
+    "ruleset_id": {
+      "const": "SLANG-ANNUITY-RULESET-1-D01"
+    },
+    "schema": {
+      "const": "SLANG-ANNUITY-RESULT-1"
+    },
+    "source_authenticity": {
+      "const": "NOT_ESTABLISHED_BY_REFERENCE_PROFILE"
+    },
+    "state": {
+      "enum": [
+        "RESOLVED",
+        "INCOMPLETE",
+        "CONFLICT",
+        "FORBIDDEN",
+        "UNSUPPORTED",
+        "ABSTAIN"
+      ]
+    },
+    "tax_authority": {
+      "const": "NONE"
+    },
+    "version": {
+      "const": "1.1.1"
+    },
+    "vesting_condition": {},
+    "visibility_state": {
+      "enum": [
+        "VISIBLE",
+        "WITHHELD",
+        "NONE"
+      ]
+    }
+  },
+  "required": [
+    "actuarial_valuation_authority",
+    "age_condition",
+    "amount_condition",
+    "annuity_outcome",
+    "authority_ids",
+    "authority_profile_id",
+    "canonical_input_id",
+    "canonicalization_id",
+    "conflicts",
+    "context_id",
+    "contract_condition",
+    "contract_id",
+    "contract_interpretation_authority",
+    "contribution_condition",
+    "core_version",
+    "currency",
+    "diagnostics",
+    "election_condition",
+    "evidence_set_id",
+    "identity_domain_id",
+    "legal_entitlement_authority",
+    "missing_dependencies",
+    "outcome_id",
+    "payee_condition",
+    "payment_authority",
+    "payout_amount_minor",
+    "profile_id",
+    "quantum_profile_id",
+    "reason_codes",
+    "resolution_state",
+    "result_id",
+    "rule_profile_id",
+    "ruleset_id",
+    "schema",
+    "source_authenticity",
+    "state",
+    "tax_authority",
+    "version",
+    "vesting_condition",
+    "visibility_state"
+  ],
+  "title": "SLANG-ANNUITY-RESULT-1",
+  "type": "object"
+}

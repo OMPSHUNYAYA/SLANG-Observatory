@@ -1,0 +1,68 @@
+{
+  "$id": "SLANG_Annuity_Contract_Schema_v1_1_1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authority_boundary": {},
+    "authority_profile_id": {},
+    "canonicalization_id": {},
+    "claim_boundary": {},
+    "contract_id": {
+      "pattern": "^slang_annuity_contract_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "core_version": {},
+    "forbidden_derived_field_signatures": {},
+    "identity_domain_id": {},
+    "identity_domain_material": {},
+    "profile_id": {},
+    "quantum_profile_id": {},
+    "reason_codes": {},
+    "receipt_correspondence_scope": {},
+    "receipt_integrity_scope": {},
+    "rule_profile_material": {},
+    "ruleset_id": {},
+    "schema": {
+      "const": "SLANG-ANNUITY-CONTRACT-1"
+    },
+    "schemas": {},
+    "state_precedence": {},
+    "supported_contract_status": {},
+    "supported_evidence_modes": {},
+    "supported_payee_status": {},
+    "supported_payout_election": {},
+    "supported_payout_modes": {},
+    "version": {
+      "const": "1.1.1"
+    }
+  },
+  "required": [
+    "authority_boundary",
+    "authority_profile_id",
+    "canonicalization_id",
+    "claim_boundary",
+    "contract_id",
+    "core_version",
+    "forbidden_derived_field_signatures",
+    "identity_domain_id",
+    "identity_domain_material",
+    "profile_id",
+    "quantum_profile_id",
+    "reason_codes",
+    "receipt_correspondence_scope",
+    "receipt_integrity_scope",
+    "rule_profile_material",
+    "ruleset_id",
+    "schema",
+    "schemas",
+    "state_precedence",
+    "supported_contract_status",
+    "supported_evidence_modes",
+    "supported_payee_status",
+    "supported_payout_election",
+    "supported_payout_modes",
+    "version"
+  ],
+  "title": "SLANG-ANNUITY-CONTRACT-1",
+  "type": "object"
+}
