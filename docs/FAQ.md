@@ -27,9 +27,9 @@ SLANG-Observatory is a collection of focused structural-resolution
 demonstrations.
 
 Each demo applies a shared bounded discipline to a different declared domain
-schema, such as invoices, claims, cybersecurity escalation, forecast
-visibility, examination-form assembly, voting, access admission, or password
-reset admission.
+schema, such as invoices, claims, annuity payout admission, cybersecurity
+escalation, forecast visibility, examination-form assembly, voting,
+password-verification admission, or password-reset admission.
 
 The demos are not presented as separate foundational frameworks merely because
 their domain labels differ.
@@ -316,12 +316,12 @@ Published evidence may include:
 - reconstruction bundles
 - compact receipts
 - portable non-result attestations
-- machine-readable contract manifests and schemas
+- machine-readable contracts and schemas
 - machine-readable verification reports where published
 - artifact-correspondence checks
 - optional authenticity envelopes
 - tamper tests
-- independent implementation paths
+- independent semantic verifiers where published
 
 Each verification result applies only to its declared files, profiles, inputs,
 schemas, and evidence boundary.
@@ -330,8 +330,8 @@ schemas, and evidence boundary.
 
 ### **E2. What does a passing self-test prove?**
 
-It establishes that the tested implementation reproduces its declared reference
-expectations for the covered cases.
+It establishes only that the tested implementation satisfies the self-checks
+declared by that demo for the covered cases.
 
 It does not by itself establish:
 
@@ -456,6 +456,48 @@ policy or law, determine fraud, settle claims, authorize payment, or move money.
 
 ---
 
+### **E7. What is special about SLANG-Annuity v1.1.1?**
+
+SLANG-Annuity v1.1.1 is a bounded annuitant periodic-payout admission reference.
+
+It resolves declared annuity context and bound authority evidence under an
+identified profile, ruleset, canonicalization contract, and declared
+periodic-benefit pass-through profile.
+
+Its published verification surface includes:
+
+- `102/102 PASS` core self-test
+- `79/79 PASS` frozen conformance corpus
+- `34/34 PASS` independent semantic verifier
+- reconstruction bundles
+- compact receipts
+- portable non-result attestations
+- machine-readable contracts and schemas
+- separate integrity and correspondence checks
+- deterministic binding-maintenance commands
+- precise library-path diagnostics
+- dependency-aware evidence-set identity checking
+
+The central deterministic relation is:
+
+`same admitted canonical annuity structure + same versioned contract -> same bounded result`
+
+The operational boundary remains:
+
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+The declared payout amount is admitted rather than actuarially calculated:
+
+`payout_amount_minor = declared_periodic_payout_minor`
+
+when the payout is admitted.
+
+SLANG-Annuity does not authenticate evidence sources, interpret annuity
+contracts, establish legal entitlement, perform actuarial valuation, determine
+tax treatment, authorize payment, or move money.
+
+---
+
 ## **SECTION F — Safety and Failure Behavior**
 
 ### **F1. What prevents a forced positive result?**
@@ -494,8 +536,9 @@ implements them.
 
 No.
 
-Verification establishes agreement with the declared structural contract and
-evidence boundary. It does not automatically establish:
+A verification result establishes only the scope claimed by that verifier,
+such as satisfaction of declared self-checks, reproduction of a frozen corpus,
+or exact artifact correspondence. It does not automatically establish:
 
 - authenticity of the source
 - truth of the submitted facts
@@ -617,7 +660,7 @@ No.
 They intentionally reuse a common bounded structural-resolution discipline
 across different domain schemas.
 
-`shared structural primitive + different bounded domain schema -> domain demonstration`
+`shared SLANG discipline + different bounded domain contract -> domain demonstration`
 
 A domain adaptation does not automatically create a separate architectural or
 novelty claim.
