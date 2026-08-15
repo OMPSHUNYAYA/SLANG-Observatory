@@ -1,0 +1,455 @@
+SLANG-CLAIMS PROFILE v0.2.1
+
+1. STATUS AND SCOPE
+
+Profile ID: SLANG-CLAIMS-PROFILE-1-D03
+Ruleset ID: SLANG-CLAIMS-RULESET-1-D03
+Core ID: SLANG-CORE-1-D05
+Canonicalization ID: SLANG-CANONICAL-JSON-1-D02
+Authority Evidence Profile: CLAIM-AUTHORITY-EVIDENCE-1
+Quantum Profile: CLAIM-QUANTUM-NET-AFTER-DEDUCTIBLE-CAP-1
+Contract ID: slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a
+Identity Domain ID: slang_claims_identity_domain_sha256:849c01acebc72403093ffa5e6878136d06a33cbb96ae2ab82827ec91e9cb999e
+
+This profile defines a bounded structural claim-payability reference.
+It does not authenticate sources, establish real-world loss, interpret policy or law, determine fraud, settle claims, authorize payment, or move money.
+
+2. CENTRAL CONTRACT
+
+`declared claim context + bound claim-authority evidence + versioned rules -> bounded claim-payability state`
+
+For admitted canonical structure:
+
+`same admitted canonical structure + same versioned contract -> same bounded result`
+
+3. AUTHORITY EXCLUSIONS
+
+`payment_authority = NONE`
+`settlement_authority = NONE`
+`legal_authority = NONE`
+`policy_interpretation_authority = NONE`
+`fraud_determination_authority = NONE`
+`money_movement = NONE`
+
+No result, receipt, attestation, contract identity, or authenticity envelope changes these exclusions.
+
+4. SUPPORTED RESOLUTION STATES
+
+`RESOLVED`
+`INCOMPLETE`
+`CONFLICT`
+`FORBIDDEN`
+`UNSUPPORTED`
+`ABSTAIN`
+
+Primary-state precedence:
+
+`FORBIDDEN > CONFLICT > UNSUPPORTED > INCOMPLETE > ABSTAIN > RESOLVED`
+
+5. OUTCOMES AND ADMISSION
+
+Resolved outcomes:
+
+`PAYABLE`
+`NOT_PAYABLE`
+
+Non-result outcome symbol:
+
+`NONE`
+
+Admission symbols:
+
+`ADMIT`
+`DENY`
+`WITHHOLD`
+
+Mapping:
+
+`RESOLVED + PAYABLE -> ADMIT`
+`RESOLVED + NOT_PAYABLE -> DENY`
+`non-result state -> WITHHOLD`
+
+6. EVIDENCE MODES
+
+`SINGLE_AUTHORITY`
+
+Exactly one expected authority and exactly one evidence record.
+
+`MULTI_AUTHORITY_EXACT_AGREEMENT`
+
+Two or more expected authorities are supported within resource limits. Every expected authority must be present exactly once. Admitted evidence must agree exactly on coverage, occurrence, exclusion, control, and assessed loss.
+
+`exact agreement -> continue`
+`material disagreement -> ABSTAIN`
+
+No voting, averaging, authority ranking, majority selection, or first-arrival rule is used.
+
+7. EVALUATION AUTHORITY
+
+If `evaluation_authorized = false`, the primary state is `ABSTAIN` unless a higher-precedence structural issue is present.
+
+`evaluation not authorized -> ABSTAIN`
+
+The `conflicts` diagnostic list contains only locations classified as `CONFLICT`. An `ABSTAIN` reason is carried by the state and `reason_codes` and is not mislabeled as a conflict.
+
+This is distinct from `FORBIDDEN`, which is reserved for prohibited material or caller-supplied derived authority/outcome fields.
+
+8. BINDING
+
+Each admitted evidence record is bound to the normalized claim context, including:
+
+- evaluation identifier
+- claim reference
+- policy reference
+- claimant reference
+- loss-event reference
+- currency
+- authority identity
+- evidence mode
+
+A supported binding mismatch is `CONFLICT`.
+
+9. QUANTUM PROFILE
+
+Let:
+
+`C = claim_amount_minor`
+`A = assessed_loss_minor`
+`D = deductible_minor`
+`L = remaining_limit_minor`
+
+Then:
+
+`admitted_loss_minor = min(C, A)`
+`post_deductible_minor = max(admitted_loss_minor - D, 0)`
+`payable_amount_minor = min(post_deductible_minor, L)`
+
+Equivalent:
+
+`payable_amount_minor = min(max(min(C, A) - D, 0), L)`
+
+This arithmetic is specific to `CLAIM-QUANTUM-NET-AFTER-DEDUCTIBLE-CAP-1` and is not universal insurance mathematics.
+
+10. MONEY REPRESENTATION
+
+Supported bounded monetary values use integer minor units.
+
+`0 <= money_minor <= 9007199254740991`
+
+Binary floating-point money is not part of this profile.
+
+11. CANONICALIZATION AND IDENTITIES
+
+The reference uses `SLANG-CANONICAL-JSON-1-D02`.
+
+Supported set-like structures are normalized where declared, including JSON object key order, expected authority order, and evidence-record presentation order.
+
+The reference constructs domain-separated SHA-256 identities for contract, input, context, authority manifest, evidence, agreement, rule profile, outcome, result, bundle, receipt, summary, attestation, and vector material.
+
+`identity of structure != source authenticity`
+
+12. STRICT JSON BOUNDARY
+
+Principal limits:
+
+`MAX_JSON_INPUT_BYTES = 1048576`
+`MAX_JSON_DEPTH = 48`
+`MAX_JSON_NODES = 50000`
+`MAX_LIST_LENGTH = 256`
+`MAX_STRING_LENGTH = 1024`
+`MAX_IDENTIFIER_LENGTH = 128`
+`MAX_EVIDENCE_RECORDS = 8`
+`MAX_REASON_CODES = 64`
+`MAX_SAFE_INTEGER = 9007199254740991`
+
+The parser rejects duplicate JSON object keys, floats, non-finite numbers, invalid UTF-8 file input, unsupported JSON classes, non-string object keys, excessive depth, excessive node counts, oversized strings/lists, and nonportable integers.
+
+The public library entry point applies `validate_portable_json(raw_input)` before forbidden-field scanning or any other recursive domain inspection. Therefore the same depth, node, string, list, type, and portable-integer limits apply whether input arrives through the CLI parser or as a hand-built Python value.
+
+`library entry -> portable/resource validation -> recursive domain inspection`
+
+13. FIELD ADMISSION AND FORBIDDEN-NAME DEFENSE
+
+Exact supported-field sets are the primary admission gate.
+
+Unknown fields are not silently ignored.
+
+Forbidden-name recognition is defense in depth. It derives ASCII separated and compact signatures so separator, camelCase, and compact spellings can map to one forbidden field family.
+
+Examples:
+
+`bank_account`
+`bank-account`
+`bankAccount`
+`bankaccount`
+
+`strict allowlist = primary gate`
+`forbidden-name recognition = defense-in-depth classification`
+`field-name recognition != secret-content detection`
+
+Values under recognized forbidden field names are replaced by `<FORBIDDEN_VALUE_REDACTED>` before the structural submission commitment is computed. The reference therefore does not create distinct submission digests solely from differing values under a recognized forbidden field name.
+
+Unknown and permitted field values are not content-classified for sensitivity. Sensitive material must not be placed in any field.
+
+14. VISIBILITY
+
+Resolution and presentation are separate.
+
+`reference_visibility_authorized = true -> VISIBLE`
+`reference_visibility_authorized = false -> WITHHELD`
+
+For a resolved withheld outcome, the summary neutralizes outcome-dependent fields:
+
+`admission_state = WITHHOLD`
+`claim_outcome = NONE`
+`currency = NONE`
+`payable_amount_minor = 0`
+`outcome_id = NONE`
+`result_id = NONE`
+`reason_codes = [OUTCOME_WITHHELD]`
+
+The reference tests:
+
+`withheld PAYABLE summary == withheld NOT_PAYABLE summary`
+
+for otherwise presentation-equivalent cases.
+
+15. RECONSTRUCTION BUNDLE
+
+Schema: `SLANG-CLAIMS-BUNDLE-1`
+
+A bundle carries submitted input, normalized projection, deterministic result, contract identifiers, and `bundle_id`.
+
+Bundle verification reconstructs the artifact from submitted input and requires exact canonical equality.
+
+`bundle verification = deterministic reconstruction`
+
+It does not establish source authenticity or operational authority.
+
+16. COMPACT RECEIPT
+
+Schema: `SLANG-CLAIMS-RECEIPT-1`
+
+A receipt is a compact result-binding artifact. It does not contain the complete submitted input.
+
+Receipt integrity checking validates:
+
+- exact field set
+- schema and version
+- core, profile, ruleset, and canonicalization identifiers
+- authority exclusions
+- identifier forms and domain prefixes
+- state, outcome, admission, and visibility invariants
+- money-field types and arithmetic relations
+- reason-code membership
+- result and receipt identity relations
+
+17. RECEIPT VERIFICATION SCOPES
+
+Integrity-only command:
+
+`--check-receipt-integrity RECEIPT.json`
+
+Scope:
+
+`SELF_CONSISTENCY_AND_DECLARED_INVARIANTS_ONLY`
+
+It must report:
+
+`BUNDLE_CORRESPONDENCE: NOT_CHECKED`
+
+Full receipt verifier:
+
+`--verify-receipt RECEIPT.json --against-bundle BUNDLE.json`
+
+Scope:
+
+`REQUIRES_EXACT_RECONSTRUCTION_BUNDLE`
+
+It verifies the bundle, checks receipt integrity, rebuilds the expected receipt, and requires exact canonical equality.
+
+`receipt integrity != bundle correspondence`
+`bundle correspondence != source authenticity`
+`source authenticity != payment authority`
+
+A receipt must not be treated as a payment approval signal solely because an integrity command exits successfully.
+
+18. STATE ATTESTATION
+
+Schema: `SLANG-CLAIMS-ATTESTATION-1`
+
+A state attestation provides a compact portable evidence surface for all resolution states, including non-result states.
+
+It can represent:
+
+`RESOLVED`
+`INCOMPLETE`
+`CONFLICT`
+`FORBIDDEN`
+`UNSUPPORTED`
+`ABSTAIN`
+
+The artifact binds contract, submission, result state, reason codes, diagnostics, available context/evidence identities, and fixed authority exclusions.
+
+Integrity-only scope:
+
+`SELF_CONSISTENCY_ONLY`
+
+Correspondence scope:
+
+`REQUIRES_ORIGINAL_INPUT`
+
+Full attestation verification regenerates the attestation from the supplied input and requires exact canonical equality.
+
+`attestation integrity != input correspondence`
+
+19. MACHINE-READABLE CONTRACT
+
+Schema: `SLANG-CLAIMS-CONTRACT-1`
+
+Contract ID:
+
+`slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a`
+
+The contract manifest freezes profile/ruleset identifiers, schemas, state precedence, outcome symbols, reason codes, resource limits, authority exclusions, verification scopes, forbidden-field matching model, schema scope, uniform library-entry validation, reason-code closure, runtime compatibility statement, and payable formula.
+
+`contract_id` is the domain-separated identity of canonical manifest material excluding the `contract_id` field. It is not the SHA-256 of the serialized file bytes.
+
+`contract_id != file_sha256`
+
+The manifest is inspectable through:
+
+`python -B slang_claims_v0_2_1.py --describe-contract`
+
+20. JSON SCHEMAS
+
+The package supplies Draft 2020-12 schemas for input, result, bundle, receipt, summary, attestation, core contract, signed envelope, keyset, authenticity contract, and verification-report objects.
+
+Schema scope:
+
+`PREFLIGHT_ONLY`
+
+A schema validator does not replace strict source parsing, duplicate-key rejection, byte/depth/node limits, canonicalization, semantic cross-field checks, deterministic identities, artifact correspondence, or authenticity verification.
+
+21. REASON CODE REGISTRY
+
+The v0.2.1 contract reason-code registry is exhaustive for issue/result codes emitted by this reference profile. `ValidationIssue` construction rejects unregistered issue codes, and final result construction rejects any emitted reason code outside the registry. The self-test also exercises this closure firewall.
+
+`emitted reason code -> member of frozen registry`
+
+The registered codes are:
+
+- `BOOLEAN_REQUIRED`
+- `CLAIM_PAYABILITY_ADMITTED`
+- `CONTEXT_OBJECT_REQUIRED`
+- `CONTROL_BLOCKS_PAYABILITY`
+- `COVERAGE_NOT_ADMITTED`
+- `DECLARED_CONTEXT_ID_MISMATCH`
+- `DECLARED_EVIDENCE_SET_ID_MISMATCH`
+- `DUPLICATE_AUTHORITY_EVIDENCE`
+- `DUPLICATE_EVIDENCE_ID`
+- `DUPLICATE_IDENTIFIER`
+- `EMPTY_IDENTIFIER_LIST`
+- `EVALUATION_NOT_AUTHORIZED`
+- `EVIDENCE_BINDING_MISMATCH`
+- `EVIDENCE_LIST_REQUIRED`
+- `EVIDENCE_OBJECT_REQUIRED`
+- `EVIDENCE_RESULT_DISAGREEMENT`
+- `EXCLUSION_BLOCKS_PAYABILITY`
+- `FLOAT_NOT_SUPPORTED`
+- `FORBIDDEN_FIELD_PRESENT`
+- `IDENTIFIER_LIST_REQUIRED`
+- `INTEGER_OUT_OF_PORTABLE_RANGE`
+- `INTEGER_OUT_OF_RANGE`
+- `INVALID_CURRENCY_UNIT`
+- `INVALID_EVIDENCE_COMMITMENT`
+- `INVALID_IDENTIFIER`
+- `JSON_DEPTH_LIMIT`
+- `JSON_NODE_LIMIT`
+- `LIST_TOO_LONG`
+- `LONE_SURROGATE`
+- `MISSING_EXPECTED_AUTHORITY`
+- `MISSING_REQUIRED_FIELD`
+- `MULTI_AUTHORITY_REQUIRES_AT_LEAST_TWO_AUTHORITIES`
+- `MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS`
+- `NONNEGATIVE_INTEGER_REQUIRED`
+- `NON_STRING_OBJECT_KEY`
+- `NO_AMOUNT_ABOVE_DEDUCTIBLE`
+- `NO_REMAINING_LIMIT`
+- `OBJECT_KEY_TOO_LONG`
+- `OCCURRENCE_NOT_ADMITTED`
+- `OUTCOME_WITHHELD`
+- `SINGLE_AUTHORITY_REQUIRES_EXACTLY_ONE_AUTHORITY`
+- `SINGLE_AUTHORITY_REQUIRES_EXACTLY_ONE_EVIDENCE_RECORD`
+- `STRING_TOO_LONG`
+- `TOO_MANY_AUTHORITIES`
+- `TOO_MANY_EVIDENCE_RECORDS`
+- `TOP_LEVEL_OBJECT_REQUIRED`
+- `UNEXPECTED_AUTHORITY`
+- `UNKNOWN_FIELD`
+- `UNSUPPORTED_CONTROL_RESULT`
+- `UNSUPPORTED_COVERAGE_RESULT`
+- `UNSUPPORTED_EVIDENCE_MODE`
+- `UNSUPPORTED_EVIDENCE_SCHEMA`
+- `UNSUPPORTED_EXCLUSION_RESULT`
+- `UNSUPPORTED_INPUT_SCHEMA`
+- `UNSUPPORTED_JSON_TYPE`
+- `UNSUPPORTED_OCCURRENCE_RESULT`
+- `UNSUPPORTED_PROFILE_ID`
+- `UNSUPPORTED_RULESET_ID`
+- `ZERO_PAYABLE_AMOUNT`
+
+The machine-readable copy is frozen in `SLANG_Claims_Contract_v0_2_1.json` and reproduced by the vector corpus.
+
+22. FROZEN VERIFICATION CORPUS
+
+The v0.2.1 corpus verifies:
+
+- header: 1/1
+- semantic: 88/88
+- parser: 11/11
+- relations: 13/13
+- artifacts: 30/30
+- serialization: 5/5
+- reference evidence: 6/6
+- total: 154/154
+
+The core permanent self-test reports:
+
+`101/101 PASS`
+
+Passing tests establish agreement with this implementation and declared test boundary. They do not establish operational suitability or third-party certification.
+
+23. OPTIONAL AUTHENTICITY EXTENSION
+
+The optional authenticity extension is defined in `SLANG_Claims_Authenticity_Profile_v0_2_1.txt`.
+
+It sits outside the deterministic reconstruction boundary.
+
+The core bundle, receipt, attestation, contract, and frozen-vector identities do not include signature material.
+
+24. VERIFICATION SCOPE SEPARATION
+
+`SELF_CONSISTENT != CORRESPONDS`
+`CORRESPONDS != AUTHENTICATED`
+`AUTHENTICATED != REAL_WORLD_TRUE`
+`REAL_WORLD_TRUE != AUTHORIZED_TO_ACT`
+`PAYABLE != PAYMENT_AUTHORIZED`
+
+No command may be interpreted as granting settlement or payment authority.
+
+25. COMMAND EXIT CONTRACT
+
+`0 = requested command completed successfully`
+`1 = self-test or artifact-verification failure`
+`2 = runtime, input, JSON, I/O, or command-resolution error`
+
+For resolution commands, exit `0` means the command executed. It does not mean `PAYABLE` or payment authorized.
+
+26. BOUNDED CLAIM
+
+`same admitted canonical claim structure + same versioned contract -> same bounded claim result`
+
+`non-result state -> no forced PAYABLE outcome`
+
+This profile is a deterministic structural-resolution reference, not a production claims engine or insurance-law authority.

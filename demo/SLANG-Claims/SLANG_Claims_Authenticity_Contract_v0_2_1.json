@@ -1,0 +1,35 @@
+{
+  "authenticity_contract_id": "slang_claims_authenticity_contract_sha256:1cfbe74fdf2d3efe9f9597aa01eb3f3a02560fc0698b4e3a53d668c1b2bd5a4f",
+  "core_contract_id": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a",
+  "created_at_format": "RFC3339_UTC_SECONDS",
+  "ed25519_private_seed_bytes": 32,
+  "ed25519_public_key_bytes": 32,
+  "envelope_schema": "SLANG-CLAIMS-SIGNED-ENVELOPE-1",
+  "fraud_determination_authority": "NONE",
+  "freshness_evaluation": "OUT_OF_SCOPE",
+  "hmac_min_secret_bytes": 32,
+  "hmac_secret_requirement": "CRYPTOGRAPHICALLY_RANDOM_SECRET_MATERIAL_RECOMMENDED",
+  "legal_authority": "NONE",
+  "max_keyset_entries": 64,
+  "max_signatures": 16,
+  "money_movement": "NONE",
+  "payment_authority": "NONE",
+  "policy_interpretation_authority": "NONE",
+  "replay_protection": "EXTERNAL",
+  "schema": "SLANG-CLAIMS-AUTHENTICITY-CONTRACT-1",
+  "settlement_authority": "NONE",
+  "signature_domain": "SLANG-CLAIMS-SIGNATURE-1",
+  "signing_statement_schema": "SLANG-CLAIMS-SIGNING-STATEMENT-1",
+  "supported_algorithms": [
+    "ED25519",
+    "HMAC-SHA256"
+  ],
+  "supported_payload_kinds": [
+    "ATTESTATION",
+    "BUNDLE",
+    "RECEIPT"
+  ],
+  "trust_roots_rotation_revocation": "EXTERNAL",
+  "verification_report_schema": "SLANG-CLAIMS-VERIFICATION-REPORT-1",
+  "version": "0.2.1"
+}

@@ -1,0 +1,372 @@
+SLANG-CLAIMS AUTHENTICITY PROFILE v0.2.1
+
+1. SCOPE
+
+The authenticity layer is optional and additive.
+
+It wraps an already constructed SLANG-Claims bundle, receipt, or attestation in an outer signed envelope.
+
+It does not modify the deterministic payload and does not enter the core reconstruction boundary.
+
+`deterministic artifact -> outer authenticity envelope`
+
+2. NON-GOALS
+
+The layer does not establish:
+
+- real-world coverage, occurrence, loss, or fraud status
+- claimant identity ownership
+- policy or legal correctness
+- settlement authority
+- payment authority
+- money movement authority
+- key trust roots
+- key rotation or revocation
+- certificate chains
+- freshness policy
+- operational authorization
+
+3. AUTHORITY FIREWALL
+
+The only supported signing purpose is:
+
+`ATTEST_STRUCTURE`
+
+Any signature block using another purpose is rejected.
+
+Authenticity reports preserve:
+
+`payment_authority = NONE`
+`settlement_authority = NONE`
+`money_movement = NONE`
+`operational_authority = NONE`
+
+4. ENVELOPE SCHEMA
+
+Envelope schema:
+
+`SLANG-CLAIMS-SIGNED-ENVELOPE-1`
+
+Signing statement schema:
+
+`SLANG-CLAIMS-SIGNING-STATEMENT-1`
+
+Signature domain:
+
+`SLANG-CLAIMS-SIGNATURE-1`
+
+Keyset schema:
+
+`SLANG-CLAIMS-KEYSET-1`
+
+5. PAYLOAD KINDS
+
+Supported payload kinds:
+
+`BUNDLE`
+`RECEIPT`
+`ATTESTATION`
+
+The payload is retained as the same JSON artifact value. Its canonical JSON and declared artifact identity remain unchanged by wrapping and stripping.
+
+The envelope does not claim to preserve arbitrary original source-file whitespace, key ordering, or escape spelling that existed before JSON parsing.
+
+6. SIGNED STATEMENT
+
+The signing statement binds:
+
+- envelope version
+- core version
+- identity-domain identifier
+- contract identifier
+- payload kind
+- payload schema
+- payload declared identifier
+- full canonical payload hash
+- purpose
+- signer identifier
+- key identifier
+- optional `created_at`
+
+The signed message is:
+
+`b"SLANG-CLAIMS-SIGNATURE-1\x00" + canonical_json(statement).encode("utf-8")`
+
+This provides protocol and artifact-kind domain separation.
+
+7. CORRESPONDENCE BEFORE SIGNING
+
+A bundle must pass deterministic reconstruction before signing.
+
+A receipt must pass exact correspondence against its supplied reconstruction bundle before signing.
+
+An attestation must pass exact correspondence against its supplied original input before signing.
+
+The same requirement applies when a co-signature is added.
+
+There is no reference command for silently signing an unbound receipt or unbound attestation.
+
+8. VERIFICATION PHASES
+
+Phase A: payload structural integrity.
+
+For bundles, deterministic reconstruction is checked.
+
+For receipts, receipt structural integrity is checked and the full verifier requires bundle correspondence.
+
+For attestations, attestation structural integrity is checked and the full verifier requires input correspondence.
+
+Phase B: authenticity.
+
+The verifier rebuilds the signed statement from the actual payload, checks the statement identity, resolves the supplied key, and verifies the MAC or signature.
+
+Phase C: signer policy.
+
+The report keeps `AUTHENTICITY` and `SIGNER_POLICY` as separate dimensions. Cryptographically valid signatures may therefore report `AUTHENTICITY: PASS` while a requested signer-set policy reports `SIGNER_POLICY: FAIL`. If no signer policy is requested, the report uses `SIGNER_POLICY: NOT_APPLIED`.
+
+An optional exact required signer set may be enforced.
+
+`missing required signer -> FAIL`
+`unexpected signer under exact policy -> FAIL`
+`invalid signature block -> FAIL`
+
+There is no vote, weighting, averaging, or ranking.
+
+9. FULL VERIFIER AND WEAKER CHECKER
+
+Full command:
+
+`--verify-envelope`
+
+For `RECEIPT`, the matching `--against-bundle` is required.
+
+For `ATTESTATION`, the matching `--against-input` is required.
+
+If required correspondence evidence is absent, full verification stops before the signature phase and reports `AUTHENTICITY: NOT_CHECKED`.
+
+The deliberately weaker command is:
+
+`--check-envelope-authenticity`
+
+It can check payload structural integrity and cryptographic authentication without external correspondence evidence. For receipt and attestation envelopes it reports correspondence as `NOT_CHECKED`.
+
+`authenticity check != correspondence check`
+
+10. HMAC-SHA256
+
+HMAC-SHA256 is the zero-additional-dependency authenticity path.
+
+Minimum secret size in this profile:
+
+`32 bytes`
+
+The floor constrains length, not entropy. Operational HMAC material should be generated as cryptographically random secret material; a 32-byte human-chosen or otherwise low-entropy value does not acquire 256 bits of security merely because it is 32 bytes long.
+
+`minimum length != entropy guarantee`
+
+HMAC provides message authentication within a shared-secret trust domain.
+
+It does not provide public verification because every holder of the secret can generate a valid HMAC.
+
+HMAC `key_id` is an opaque label and must not be a hash of the shared secret.
+
+HMAC material belongs only in a `PRIVATE` keyset or direct secret-key file.
+
+A `PUBLIC` keyset containing HMAC material is rejected.
+
+11. ED25519
+
+Ed25519 is supported through an optional guarded import of the `cryptography` package.
+
+When the backend is unavailable, HMAC functionality remains available and Ed25519 entry points fail explicitly with:
+
+`ED25519_BACKEND_UNAVAILABLE`
+
+Ed25519 uses a raw 32-byte private seed and raw 32-byte public key represented as hex inside the reference keyset format.
+
+The Ed25519 `key_id` is a domain-separated fingerprint of the public key.
+
+At verification time, the supplied public key is re-fingerprinted and must match the committed `key_id`.
+
+Ed25519 is deterministic for a fixed private key and message, so:
+
+`same private key + same signed statement -> same signature bytes`
+
+A valid Ed25519 signature establishes verification under the supplied public key. It does not by itself establish that the public key is trusted, current, legally attributable, uncompromised, or authorized for a particular deployment.
+
+12. KEYSETS
+
+Keyset kinds:
+
+`PRIVATE`
+`PUBLIC`
+
+A `PRIVATE` keyset may contain:
+
+- Ed25519 public key + private seed
+- HMAC shared secret
+
+A `PUBLIC` keyset may contain:
+
+- Ed25519 public keys only
+
+A `PUBLIC` keyset must contain no private seed and no HMAC shared secret.
+
+The Ed25519 public view can be derived from a private keyset.
+
+If a private keyset contains HMAC entries, public-view generation refuses silent publication unless the caller explicitly elects to drop symmetric entries.
+
+13. KEY IDENTITIES
+
+Ed25519 `key_id` is bound to the public-key fingerprint.
+
+HMAC `key_id` is an opaque normalized label.
+
+The verifier requires key identifier correspondence, including HMAC key identifiers, before accepting a resolved key for a signature block.
+
+14. SIGNER SETS
+
+The maximum signature count is bounded.
+
+Signer identifiers must be unique within an envelope.
+
+If any supplied signature block is malformed or cryptographically invalid, envelope verification fails rather than ignoring the bad block and accepting only the valid subset.
+
+Optional exact signer-set policy requires all and only the declared signers.
+
+Keyset entries are canonicalized by `(signer_id, alg, key_id)`.
+
+Signature blocks are canonicalized by `(signer_id, alg, key_id, tbs_id, signature)`.
+
+Therefore:
+
+`same admitted key set -> same canonical keyset order`
+
+`same admitted signature set + same payload -> same canonical envelope`
+
+15. ENVELOPE IDENTITY
+
+`envelope_id` is a deterministic identity over the complete envelope excluding the identity field itself when constructed.
+
+The verifier recomputes and checks the envelope identity.
+
+`envelope_id` is an integrity identity, not the cryptographic source of authenticity. Authenticity comes from the MAC or signature over the domain-separated statement.
+
+16. CREATED_AT
+
+If supplied, `created_at` must use strict UTC RFC3339 second form:
+
+`YYYY-MM-DDTHH:MM:SSZ`
+
+The field is included in the signed statement.
+
+This profile does not enforce a freshness window or compare the time to a trusted clock.
+
+`created_at bound != freshness policy enforced`
+
+17. FRESHNESS
+
+The verifier reports:
+
+`FRESHNESS: NOT_EVALUATED`
+
+`REPLAY_PROTECTION: EXTERNAL`
+
+Replay within the same valid artifact/key/trust context is not rejected by a nonce database or expiry rule in this reference.
+
+Deployments that require freshness must define and enforce their own trusted clock, maximum age, nonce/replay registry, or equivalent policy.
+
+18. TRUST POLICY
+
+The verifier reports:
+
+`TRUST_POLICY: EXTERNAL`
+
+A keyset says which key material is being used. It does not establish which keys are trusted by an organization at a given time.
+
+Deployments remain responsible for trust roots, authorization of signers, key custody, rotation, revocation, compromise response, expiry, and distribution.
+
+19. STRIPPING
+
+`--strip-envelope` recovers the enclosed JSON artifact value.
+
+For a canonical artifact file generated by this package, canonical serialization of the stripped value equals canonical serialization of the original artifact.
+
+The operation does not claim preservation of arbitrary pre-parse formatting bytes.
+
+20. REFERENCE COMMANDS
+
+Generate Ed25519 private keyset:
+
+`python -B slang_claims_signature_v0_2_1.py --gen-ed25519 --signer-id SIGNER-E --output private_keyset.json`
+
+Derive public keyset:
+
+`python -B slang_claims_signature_v0_2_1.py --public-view private_keyset.json --output public_keyset.json`
+
+Sign bundle:
+
+`python -B slang_claims_signature_v0_2_1.py --sign-bundle BUNDLE.json --private-keyset private_keyset.json --signer-id SIGNER-E --output bundle_envelope.json`
+
+Sign receipt with correspondence:
+
+`python -B slang_claims_signature_v0_2_1.py --sign-receipt RECEIPT.json --against-bundle BUNDLE.json --private-keyset private_keyset.json --signer-id SIGNER-E --output receipt_envelope.json`
+
+Sign attestation with correspondence:
+
+`python -B slang_claims_signature_v0_2_1.py --sign-attestation ATTESTATION.json --against-input INPUT.json --private-keyset private_keyset.json --signer-id SIGNER-E --output attestation_envelope.json`
+
+Full verification:
+
+`python -B slang_claims_signature_v0_2_1.py --verify-envelope ENVELOPE.json --keyset public_keyset.json [--against-bundle BUNDLE.json | --against-input INPUT.json]`
+
+Weaker authenticity check:
+
+`python -B slang_claims_signature_v0_2_1.py --check-envelope-authenticity ENVELOPE.json --keyset public_keyset.json`
+
+Strip:
+
+`python -B slang_claims_signature_v0_2_1.py --strip-envelope ENVELOPE.json --output ARTIFACT.json`
+
+21. REFERENCE VERIFICATION
+
+With the optional Ed25519 backend available, the v0.2.1 authenticity self-test reports:
+
+`46/46 PASS`
+
+The HMAC-only path remains independently runnable when Ed25519 is unavailable and currently reports `35/35 PASS`.
+
+The core verifier and frozen vector corpus remain separate from the authenticity layer and retain their own v0.2.1 results.
+
+22. VERIFICATION SEMANTICS
+
+`payload integrity != correspondence`
+`correspondence != authenticity`
+`authenticity != key trust`
+`key trust != real-world truth`
+`real-world truth != operational authority`
+
+A valid envelope never means `move the money`.
+
+23. MACHINE-READABLE AUTHENTICITY CONTRACT
+
+Artifact: `SLANG_Claims_Authenticity_Contract_v0_2_1.json`
+
+Schema: `SLANG-CLAIMS-AUTHENTICITY-CONTRACT-1`
+
+The authenticity contract is separate from the deterministic claims contract. It freezes supported signature algorithms and payload kinds, HMAC minimum secret bytes, Ed25519 raw key sizes, signature and keyset limits, timestamp grammar, replay/freshness boundary, trust-policy boundary, and authority exclusions.
+
+`resolution contract != authenticity contract`
+
+Inspect it with:
+
+`python -B slang_claims_signature_v0_2_1.py --describe-authenticity-contract`
+
+24. MACHINE-READABLE VERIFICATION REPORT
+
+Schema: `SLANG-CLAIMS-VERIFICATION-REPORT-1`
+
+Envelope verification commands may write a JSON report with `--report-json PATH`. The report keeps payload integrity, correspondence, authenticity, signer policy, freshness, replay protection, and trust policy as separate dimensions.
+
+`integrity != correspondence != authenticity != trust != authority`
+

@@ -1,0 +1,43 @@
+{
+  "claim_evidence": [
+    {
+      "assessed_loss_minor": 450000,
+      "authority_id": "CLAIM-AUTHORITY-A",
+      "claim_ref": "CLAIM-ALPHA",
+      "claimant_ref": "CLAIMANT-ALPHA",
+      "control_result": "CLEAR",
+      "coverage_result": "COVERED",
+      "currency": "USD",
+      "evaluation_id": "CLAIM-EVALUATION-001",
+      "evidence_commitment": "sha256:3e5206e6fef55be6aaecf7124ef498085d416391d1484612edb1be7d10b67434",
+      "evidence_id": "EVIDENCE-A",
+      "exclusion_result": "CLEAR",
+      "loss_event_ref": "LOSS-EVENT-ALPHA",
+      "occurrence_result": "ESTABLISHED",
+      "policy_ref": "POLICY-ALPHA",
+      "schema": "CLAIM-AUTHORITY-EVIDENCE-1"
+    }
+  ],
+  "context": {
+    "claim_amount_minor": 500000,
+    "claim_ref": "CLAIM-ALPHA",
+    "claimant_ref": "CLAIMANT-ALPHA",
+    "currency": "USD",
+    "deductible_minor": 100000,
+    "evaluation_authorized": true,
+    "evaluation_id": "CLAIM-EVALUATION-001",
+    "evidence_mode": "SINGLE_AUTHORITY",
+    "expected_authority_ids": [
+      "CLAIM-AUTHORITY-A"
+    ],
+    "loss_event_ref": "LOSS-EVENT-ALPHA",
+    "policy_ref": "POLICY-ALPHA",
+    "reference_visibility_authorized": true,
+    "remaining_limit_minor": 1000000
+  },
+  "declared_context_id": "slang_claims_context_sha256:5b036c34370c9936cb9b7e2318563e4ad3f39283c42c153fed41bbc45a6a5f7b",
+  "declared_evidence_set_id": "slang_claims_evidence_set_sha256:739a43993c0d8b72547cb78991cb03f69efb0f451b277231a60ee4a686206dfe",
+  "profile_id": "SLANG-CLAIMS-PROFILE-1-D03",
+  "ruleset_id": "SLANG-CLAIMS-RULESET-1-D03",
+  "schema": "SLANG-CLAIMS-INPUT-1"
+}
