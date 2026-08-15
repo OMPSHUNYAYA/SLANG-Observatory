@@ -48,16 +48,13 @@ The diagram summarizes context binding, claim evidence, exact agreement, bounded
 
 ## **Quick Links**
 
-[Core](slang_claims_v0_2_1.py) ·
-[Vector Verifier](slang_claims_vectors_v0_2_1.py) ·
-[Frozen Vectors](SLANG_Claims_Vectors_v0_2_1.json) ·
-[Profile](SLANG_Claims_Profile_v0_2_1.txt) ·
-[Contract](SLANG_Claims_Contract_v0_2_1.json) ·
-[Authenticity Layer](slang_claims_signature_v0_2_1.py) ·
-[Authenticity Profile](SLANG_Claims_Authenticity_Profile_v0_2_1.txt) ·
-[Authenticity Contract](SLANG_Claims_Authenticity_Contract_v0_2_1.json) ·
-[Schemas](schemas/) ·
-[Diagram](SLANG-Claims-Reference-Diagram.png)
+**Core & Verification:** [Core](slang_claims_v0_2_1.py) · [Vector Verifier](slang_claims_vectors_v0_2_1.py) · [Frozen Vectors](SLANG_Claims_Vectors_v0_2_1.json)
+
+**Contract & Profile:** [Profile](SLANG_Claims_Profile_v0_2_1.txt) · [Contract](SLANG_Claims_Contract_v0_2_1.json) · [Schemas](schemas/)
+
+**Authenticity:** [Authenticity Layer](slang_claims_signature_v0_2_1.py) · [Authenticity Profile](SLANG_Claims_Authenticity_Profile_v0_2_1.txt) · [Authenticity Contract](SLANG_Claims_Authenticity_Contract_v0_2_1.json)
+
+**Visual:** [Reference Diagram](SLANG-Claims-Reference-Diagram.png)
 
 ---
 
