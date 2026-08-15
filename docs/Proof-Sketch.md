@@ -43,8 +43,9 @@ Let a SLANG demo define:
 - a versioned rule set `R`
 - a bounded resolver `F`
 - a result domain `O`
-- explicit non-result states such as `INCOMPLETE`, `CONFLICT`, `ABSTAIN`,
-  `DENY`, `FORBIDDEN`, or `UNSUPPORTED`
+- explicit resolution or non-result states such as `INCOMPLETE`, `CONFLICT`,
+  `ABSTAIN`, `FORBIDDEN`, or `UNSUPPORTED`
+- separate admission, visibility, or authority states where the demo defines them
 
 The reference relation is:
 
@@ -199,14 +200,16 @@ If:
 
 then the contract must not produce a positive result that requires completeness.
 
-Instead, the resolver returns an explicit non-result state such as:
+Instead, the resolver returns the explicit non-result state defined by its
+contract, such as `INCOMPLETE` or another declared unresolved state.
 
-- `INCOMPLETE`
-- `ABSTAIN`
-- `DENY`
-- another declared unresolved state
+The exact state vocabulary is demo-specific.
 
 Thus:
+
+`incomplete structure -> explicit declared non-result state`
+
+and therefore:
 
 `incomplete structure -> no forced positive outcome`
 
@@ -226,14 +229,17 @@ If:
 then the resolver must not silently select one contradictory declaration unless
 the contract explicitly defines a conflict-resolution rule.
 
-Instead, it returns an explicit state such as:
+Instead, it returns the explicit non-result state defined by its contract.
 
-- `CONFLICT`
-- `ABSTAIN`
-- `DENY`
-- another declared refusal state
+A demo may expose `CONFLICT` directly or use another explicitly declared
+non-result state. State meanings remain demo-specific; `CONFLICT` and `ABSTAIN`
+must not be assumed to mean the same thing unless the relevant contract says so.
 
 Thus:
+
+`conflicting structure -> explicit declared non-result state`
+
+and therefore:
 
 `conflicting structure -> no forced positive outcome`
 
@@ -264,33 +270,43 @@ cover inputs that its contract does not define.
 
 ---
 
-## **9. Admission and Visibility**
+## **9. Resolution, Admission, and Visibility**
 
-Some demos separate semantic resolution from authority or visibility.
+Some demos separate semantic resolution from admission, authority, or
+presentation.
 
 Let:
 
 - `P_resolved(x)` mean that a bounded semantic result exists
-- `P_authorized(x)` mean that the declared authority conditions hold
+- `P_admitted(x)` mean that the declared admission conditions hold
+- `P_authorized(x)` mean that the relevant authority conditions hold
 - `P_visible(x)` mean that release or visibility conditions hold
 
-Then a demo may define:
+A demo may therefore define:
 
-`semantic result exists AND authority withheld -> result not admitted`
+`semantic result exists AND admission withheld -> no admitted action`
+
+or:
+
+`semantic result exists AND visibility withheld -> result remains hidden`
 
 or:
 
 `paper assembled AND release withheld -> paper remains hidden`
 
-This establishes that:
+Accordingly, where these dimensions are separately defined:
+
+`resolution != admission`
 
 `resolution != automatic visibility`
+
+`admission != operational authority`
 
 `capability != automatic authority`
 
 `assembled result != automatic release`
 
-The exact state names are project-specific.
+The exact state names and precedence rules are project-specific.
 
 ---
 
@@ -456,24 +472,54 @@ implementations.
 
 ---
 
-## **16. Evidence Is Not Automatically Truth**
+## **16. Verification Scope Is Not Automatically Truth or Authority**
 
-A verified bundle, receipt, vector, or replay artifact establishes agreement
-with a declared contract.
+A verification result proves only the scope actually checked by the relevant
+verifier.
 
-It does not automatically establish that:
+Depending on the demo, verification may establish one or more distinct
+properties:
 
-- the source declarations were authentic
-- the facts were true
+- structural integrity
+- correspondence to a required reconstruction source
+- cryptographic authenticity under supplied key material
+- semantic conformance
+- exact reference replay
+
+These properties must not be collapsed.
+
+`structural integrity != correspondence`
+
+`correspondence != authenticity`
+
+`authenticity != trust policy`
+
+`authenticity != real-world truth`
+
+`real-world truth != authorization to act`
+
+`trust policy != authorization to act`
+
+A verified bundle, receipt, attestation, vector, envelope, or replay artifact
+therefore does not automatically establish that:
+
+- the underlying source declarations were authentic merely because an artifact was authenticated
+- the supplied signing or authentication key corresponds to a trusted real-world actor
+- the submitted facts were true
 - the actor was authorized
 - the result was legally valid
 - the system was safe
 - the decision was fair
+- an external system may act on the result
 - the implementation was independently certified
 
 Therefore:
 
 `verified structural resolution != universal factual or institutional truth`
+
+and:
+
+`verified artifact != operational authority`
 
 ---
 
@@ -568,21 +614,32 @@ while:
 
 ## **20. Representative State Relation**
 
-A generic top-level SLANG-style admission-and-resolution surface may be
-represented as:
+A generic SLANG-style resolver may expose several classes of bounded state.
+
+Illustratively:
 
 `resolve_R(x) =`
 
-- `UNSUPPORTED` if `x` lies outside the supported boundary
-- `INCOMPLETE` if required declarations are missing
-- `CONFLICT` if accepted declarations contradict one another
-- `FORBIDDEN` or `DENY` if authority is not admitted
-- `ABSTAIN` if the contract refuses to choose
-- `RESOLVED` when all declared conditions are satisfied
+- `UNSUPPORTED` when `x` lies outside the declared supported boundary
+- `INCOMPLETE` when required structure is missing
+- `CONFLICT` when admitted declarations cannot coexist
+- `FORBIDDEN` when prohibited material or a prohibited structural condition is present
+- `ABSTAIN` when the contract explicitly refuses to choose or evaluate where so defined
+- `RESOLVED` when the declared conditions for bounded resolution are satisfied
 
-This ordering is illustrative.
+Other demos may expose additional states or separate dimensions such as
+`ADMIT`, `DENY`, `WITHHOLD`, visibility states, or authority states.
 
-Each demo defines its own state precedence and must document it explicitly.
+Accordingly:
+
+`resolution state != admission state != visibility state != operational authority`
+
+where the relevant demo defines those dimensions separately.
+
+The labels above are illustrative rather than a repository-wide common enum.
+
+Each demo defines its own state vocabulary, semantics, precedence, and
+cross-state invariants and must document them explicitly.
 
 ---
 
@@ -599,6 +656,7 @@ Each demo defines its own state precedence and must document it explicitly.
 | Dependency elimination | A named mechanism is removed from sole resolution authority within the bounded model |
 | Semantic conformance | Conforming implementations reproduce the declared semantic result |
 | Exact replay | Reference operational evidence is reproduced where the contract binds it |
+| Verification-scope separation | Structural integrity, correspondence, authenticity, trust, truth, and operational authority remain distinct where separately defined |
 | Evidence boundary | Verification proves agreement with the declared contract, not universal factual truth |
 
 ---
@@ -623,8 +681,8 @@ The proof sketch does not replace:
 - independent assurance
 - production qualification
 
-Each demo remains authoritative for its own implemented rules, evidence, limits,
-and unresolved states.
+Each demo remains the governing reference for its own implemented rules,
+evidence, limits, and unresolved states.
 
 ---
 
@@ -632,6 +690,8 @@ and unresolved states.
 
 `same admitted canonical structure + same versioned rules -> same bounded semantic result`
 
-`incomplete, conflicting, forbidden, unsupported, or inconclusive structure -> explicit non-result state`
+`incomplete, conflicting, forbidden, unsupported, or inconclusive structure -> explicit declared non-result state`
+
+`structural integrity != correspondence != authenticity != operational authority`
 
 `operations may remain; they need not be the sole authority over the bounded resolution`
