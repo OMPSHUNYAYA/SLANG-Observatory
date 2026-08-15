@@ -1,0 +1,293 @@
+{
+  "$id": "urn:slang:claims:receipt:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admission_state": {
+      "type": "string"
+    },
+    "admitted_loss_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "assessed_loss_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "authority_count": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "authority_manifest_id": {
+      "type": "string"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "canonical_input_id": {
+      "type": "string"
+    },
+    "canonicalization_id": {
+      "const": "SLANG-CANONICAL-JSON-1-D02"
+    },
+    "claim_amount_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "claim_outcome": {
+      "type": "string"
+    },
+    "claim_ref": {
+      "type": "string"
+    },
+    "claimant_identity_verification": {
+      "type": "string"
+    },
+    "claimant_ref": {
+      "type": "string"
+    },
+    "context_id": {
+      "type": "string"
+    },
+    "contract_id": {
+      "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+    },
+    "core_version": {
+      "const": "SLANG-CORE-1-D05"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "deductible_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "evaluation_evidence_id": {
+      "type": "string"
+    },
+    "evaluation_id": {
+      "type": "string"
+    },
+    "evidence_agreement_id": {
+      "type": "string"
+    },
+    "evidence_mode": {
+      "type": "string"
+    },
+    "evidence_set_id": {
+      "type": "string"
+    },
+    "fraud_determination_authority": {
+      "type": "string"
+    },
+    "identity_domain_id": {
+      "type": "string"
+    },
+    "legal_authority": {
+      "type": "string"
+    },
+    "loss_event_ref": {
+      "type": "string"
+    },
+    "money_movement": {
+      "type": "string"
+    },
+    "outcome_id": {
+      "type": "string"
+    },
+    "outcome_visible": {
+      "type": "boolean"
+    },
+    "payable_amount_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "payment_authority": {
+      "type": "string"
+    },
+    "policy_interpretation_authority": {
+      "type": "string"
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "post_deductible_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "profile_id": {
+      "const": "SLANG-CLAIMS-PROFILE-1-D03"
+    },
+    "reason_codes": {
+      "items": {
+        "enum": [
+          "BOOLEAN_REQUIRED",
+          "CLAIM_PAYABILITY_ADMITTED",
+          "CONTEXT_OBJECT_REQUIRED",
+          "CONTROL_BLOCKS_PAYABILITY",
+          "COVERAGE_NOT_ADMITTED",
+          "DECLARED_CONTEXT_ID_MISMATCH",
+          "DECLARED_EVIDENCE_SET_ID_MISMATCH",
+          "DUPLICATE_AUTHORITY_EVIDENCE",
+          "DUPLICATE_EVIDENCE_ID",
+          "DUPLICATE_IDENTIFIER",
+          "EMPTY_IDENTIFIER_LIST",
+          "EVALUATION_NOT_AUTHORIZED",
+          "EVIDENCE_BINDING_MISMATCH",
+          "EVIDENCE_LIST_REQUIRED",
+          "EVIDENCE_OBJECT_REQUIRED",
+          "EVIDENCE_RESULT_DISAGREEMENT",
+          "EXCLUSION_BLOCKS_PAYABILITY",
+          "FLOAT_NOT_SUPPORTED",
+          "FORBIDDEN_FIELD_PRESENT",
+          "IDENTIFIER_LIST_REQUIRED",
+          "INTEGER_OUT_OF_PORTABLE_RANGE",
+          "INTEGER_OUT_OF_RANGE",
+          "INVALID_CURRENCY_UNIT",
+          "INVALID_EVIDENCE_COMMITMENT",
+          "INVALID_IDENTIFIER",
+          "JSON_DEPTH_LIMIT",
+          "JSON_NODE_LIMIT",
+          "LIST_TOO_LONG",
+          "LONE_SURROGATE",
+          "MISSING_EXPECTED_AUTHORITY",
+          "MISSING_REQUIRED_FIELD",
+          "MULTI_AUTHORITY_REQUIRES_AT_LEAST_TWO_AUTHORITIES",
+          "MULTI_AUTHORITY_REQUIRES_MULTIPLE_EVIDENCE_RECORDS",
+          "NONNEGATIVE_INTEGER_REQUIRED",
+          "NON_STRING_OBJECT_KEY",
+          "NO_AMOUNT_ABOVE_DEDUCTIBLE",
+          "NO_REMAINING_LIMIT",
+          "OBJECT_KEY_TOO_LONG",
+          "OCCURRENCE_NOT_ADMITTED",
+          "OUTCOME_WITHHELD",
+          "SINGLE_AUTHORITY_REQUIRES_EXACTLY_ONE_AUTHORITY",
+          "SINGLE_AUTHORITY_REQUIRES_EXACTLY_ONE_EVIDENCE_RECORD",
+          "STRING_TOO_LONG",
+          "TOO_MANY_AUTHORITIES",
+          "TOO_MANY_EVIDENCE_RECORDS",
+          "TOP_LEVEL_OBJECT_REQUIRED",
+          "UNEXPECTED_AUTHORITY",
+          "UNKNOWN_FIELD",
+          "UNSUPPORTED_CONTROL_RESULT",
+          "UNSUPPORTED_COVERAGE_RESULT",
+          "UNSUPPORTED_EVIDENCE_MODE",
+          "UNSUPPORTED_EVIDENCE_SCHEMA",
+          "UNSUPPORTED_EXCLUSION_RESULT",
+          "UNSUPPORTED_INPUT_SCHEMA",
+          "UNSUPPORTED_JSON_TYPE",
+          "UNSUPPORTED_OCCURRENCE_RESULT",
+          "UNSUPPORTED_PROFILE_ID",
+          "UNSUPPORTED_RULESET_ID",
+          "ZERO_PAYABLE_AMOUNT"
+        ],
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "type": "array"
+    },
+    "receipt_id": {
+      "type": "string"
+    },
+    "remaining_limit_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "resolution_state": {
+      "type": "string"
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "rule_profile_id": {
+      "type": "string"
+    },
+    "ruleset_id": {
+      "const": "SLANG-CLAIMS-RULESET-1-D03"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-RECEIPT-1"
+    },
+    "settlement_authority": {
+      "type": "string"
+    },
+    "source_authenticity": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "submission_id": {
+      "type": "string"
+    },
+    "version": {
+      "const": "0.2.1"
+    },
+    "visibility_state": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "admission_state",
+    "admitted_loss_minor",
+    "assessed_loss_minor",
+    "authority_count",
+    "authority_manifest_id",
+    "bundle_id",
+    "canonical_input_id",
+    "canonicalization_id",
+    "claim_amount_minor",
+    "claim_outcome",
+    "claim_ref",
+    "claimant_identity_verification",
+    "claimant_ref",
+    "context_id",
+    "contract_id",
+    "core_version",
+    "currency",
+    "deductible_minor",
+    "evaluation_evidence_id",
+    "evaluation_id",
+    "evidence_agreement_id",
+    "evidence_mode",
+    "evidence_set_id",
+    "fraud_determination_authority",
+    "identity_domain_id",
+    "legal_authority",
+    "loss_event_ref",
+    "money_movement",
+    "outcome_id",
+    "outcome_visible",
+    "payable_amount_minor",
+    "payment_authority",
+    "policy_interpretation_authority",
+    "policy_ref",
+    "post_deductible_minor",
+    "profile_id",
+    "reason_codes",
+    "receipt_id",
+    "remaining_limit_minor",
+    "resolution_state",
+    "result_id",
+    "rule_profile_id",
+    "ruleset_id",
+    "schema",
+    "settlement_authority",
+    "source_authenticity",
+    "state",
+    "submission_id",
+    "version",
+    "visibility_state"
+  ],
+  "title": "SLANG-Claims Receipt Schema",
+  "type": "object"
+}

@@ -1,0 +1,201 @@
+{
+  "$id": "urn:slang:claims:attestation:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admission_state": {
+      "enum": [
+        "ADMIT",
+        "DENY",
+        "WITHHOLD"
+      ]
+    },
+    "attestation_id": {
+      "type": "string"
+    },
+    "authority_manifest_id": {
+      "type": "string"
+    },
+    "canonical_input_id": {
+      "type": "string"
+    },
+    "canonicalization_id": {
+      "const": "SLANG-CANONICAL-JSON-1-D02"
+    },
+    "claim_outcome": {
+      "enum": [
+        "NONE",
+        "NOT_PAYABLE",
+        "PAYABLE"
+      ]
+    },
+    "claim_ref": {
+      "type": "string"
+    },
+    "claimant_ref": {
+      "type": "string"
+    },
+    "conflicts": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "type": "array"
+    },
+    "context_id": {
+      "type": "string"
+    },
+    "contract_id": {
+      "type": "string"
+    },
+    "core_version": {
+      "const": "SLANG-CORE-1-D05"
+    },
+    "evaluation_id": {
+      "type": "string"
+    },
+    "evidence_agreement_id": {
+      "type": "string"
+    },
+    "evidence_set_id": {
+      "type": "string"
+    },
+    "fraud_determination_authority": {
+      "type": "string"
+    },
+    "identity_domain_id": {
+      "type": "string"
+    },
+    "legal_authority": {
+      "type": "string"
+    },
+    "loss_event_ref": {
+      "type": "string"
+    },
+    "missing_dependencies": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "type": "array"
+    },
+    "money_movement": {
+      "type": "string"
+    },
+    "outcome_id": {
+      "type": "string"
+    },
+    "payment_authority": {
+      "type": "string"
+    },
+    "policy_interpretation_authority": {
+      "type": "string"
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "profile_id": {
+      "const": "SLANG-CLAIMS-PROFILE-1-D03"
+    },
+    "prohibitions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "type": "array"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "type": "array"
+    },
+    "resolution_state": {
+      "enum": [
+        "ABSTAIN",
+        "CONFLICT",
+        "FORBIDDEN",
+        "INCOMPLETE",
+        "RESOLVED",
+        "UNSUPPORTED"
+      ]
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "rule_profile_id": {
+      "type": "string"
+    },
+    "ruleset_id": {
+      "const": "SLANG-CLAIMS-RULESET-1-D03"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-ATTESTATION-1"
+    },
+    "settlement_authority": {
+      "type": "string"
+    },
+    "source_authenticity": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ABSTAIN",
+        "CONFLICT",
+        "FORBIDDEN",
+        "INCOMPLETE",
+        "RESOLVED",
+        "UNSUPPORTED"
+      ]
+    },
+    "submission_id": {
+      "type": "string"
+    },
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "admission_state",
+    "attestation_id",
+    "authority_manifest_id",
+    "canonical_input_id",
+    "canonicalization_id",
+    "claim_outcome",
+    "claim_ref",
+    "claimant_ref",
+    "conflicts",
+    "context_id",
+    "contract_id",
+    "core_version",
+    "evaluation_id",
+    "evidence_agreement_id",
+    "evidence_set_id",
+    "fraud_determination_authority",
+    "identity_domain_id",
+    "legal_authority",
+    "loss_event_ref",
+    "missing_dependencies",
+    "money_movement",
+    "outcome_id",
+    "payment_authority",
+    "policy_interpretation_authority",
+    "policy_ref",
+    "profile_id",
+    "prohibitions",
+    "reason_codes",
+    "resolution_state",
+    "result_id",
+    "rule_profile_id",
+    "ruleset_id",
+    "schema",
+    "settlement_authority",
+    "source_authenticity",
+    "state",
+    "submission_id",
+    "version"
+  ],
+  "title": "SLANG-Claims State Attestation Schema",
+  "type": "object"
+}

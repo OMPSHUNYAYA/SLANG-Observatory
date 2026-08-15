@@ -1,0 +1,183 @@
+{
+  "$id": "urn:slang:claims:input:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Preflight schema for supported SLANG-Claims input fields. Semantic completeness, duplicate-key rejection, canonicalization, resource limits, and cross-field rules are enforced by the resolver.",
+  "properties": {
+    "claim_evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "assessed_loss_minor": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "authority_id": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "claim_ref": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "claimant_ref": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "control_result": {
+            "enum": [
+              "BLOCKED",
+              "CLEAR"
+            ]
+          },
+          "coverage_result": {
+            "enum": [
+              "COVERED",
+              "NOT_COVERED"
+            ]
+          },
+          "currency": {
+            "pattern": "^[A-Za-z]{3}$",
+            "type": "string"
+          },
+          "evaluation_id": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "evidence_commitment": {
+            "pattern": "^sha256:[0-9A-Fa-f]{64}$",
+            "type": "string"
+          },
+          "evidence_id": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "exclusion_result": {
+            "enum": [
+              "BLOCKED",
+              "CLEAR"
+            ]
+          },
+          "loss_event_ref": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "occurrence_result": {
+            "enum": [
+              "ESTABLISHED",
+              "NOT_ESTABLISHED"
+            ]
+          },
+          "policy_ref": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "schema": {
+            "const": "CLAIM-AUTHORITY-EVIDENCE-1"
+          }
+        },
+        "type": "object"
+      },
+      "maxItems": 8,
+      "type": "array"
+    },
+    "context": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_amount_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "claim_ref": {
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "claimant_ref": {
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "currency": {
+          "pattern": "^[A-Za-z]{3}$",
+          "type": "string"
+        },
+        "deductible_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "evaluation_authorized": {
+          "type": "boolean"
+        },
+        "evaluation_id": {
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "evidence_mode": {
+          "enum": [
+            "SINGLE_AUTHORITY",
+            "MULTI_AUTHORITY_EXACT_AGREEMENT"
+          ]
+        },
+        "expected_authority_ids": {
+          "items": {
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "loss_event_ref": {
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "policy_ref": {
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "reference_visibility_authorized": {
+          "type": "boolean"
+        },
+        "remaining_limit_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "declared_context_id": {
+      "type": "string"
+    },
+    "declared_evidence_set_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "const": "SLANG-CLAIMS-PROFILE-1-D03"
+    },
+    "ruleset_id": {
+      "const": "SLANG-CLAIMS-RULESET-1-D03"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-INPUT-1"
+    }
+  },
+  "title": "SLANG-Claims Input Schema",
+  "type": "object"
+}

@@ -1,0 +1,175 @@
+{
+  "$defs": {
+    "edPrivate": {
+      "additionalProperties": false,
+      "properties": {
+        "alg": {
+          "const": "ED25519"
+        },
+        "key_id": {
+          "pattern": "^slang_claims_signing_key_sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "private_key": {
+          "pattern": "^[0-9A-Fa-f]{64}$",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^[0-9A-Fa-f]{64}$",
+          "type": "string"
+        },
+        "signer_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "signer_id",
+        "alg",
+        "key_id",
+        "public_key"
+      ],
+      "type": "object"
+    },
+    "edPublic": {
+      "additionalProperties": false,
+      "properties": {
+        "alg": {
+          "const": "ED25519"
+        },
+        "key_id": {
+          "pattern": "^slang_claims_signing_key_sha256:[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "public_key": {
+          "pattern": "^[0-9A-Fa-f]{64}$",
+          "type": "string"
+        },
+        "signer_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "signer_id",
+        "alg",
+        "key_id",
+        "public_key"
+      ],
+      "type": "object"
+    },
+    "hmacPrivate": {
+      "additionalProperties": false,
+      "properties": {
+        "alg": {
+          "const": "HMAC-SHA256"
+        },
+        "key_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        },
+        "secret": {
+          "pattern": "^(?:[0-9A-Fa-f]{2}){32,512}$",
+          "type": "string"
+        },
+        "signer_id": {
+          "pattern": "^[A-Z0-9][A-Z0-9._:@/\\-]{0,127}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "signer_id",
+        "alg",
+        "key_id",
+        "secret"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:slang:claims:keyset:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "keyset_kind": {
+            "const": "PUBLIC"
+          }
+        },
+        "required": [
+          "keyset_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "keys": {
+            "items": {
+              "$ref": "#/$defs/edPublic"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "keyset_kind": {
+            "const": "PRIVATE"
+          }
+        },
+        "required": [
+          "keyset_kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "keys": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/edPrivate"
+                },
+                {
+                  "$ref": "#/$defs/hmacPrivate"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "keys": {
+      "maxItems": 64,
+      "minItems": 1,
+      "type": "array"
+    },
+    "keyset_id": {
+      "pattern": "^slang_claims_keyset_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "keyset_kind": {
+      "enum": [
+        "PUBLIC",
+        "PRIVATE"
+      ]
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-KEYSET-1"
+    },
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "schema",
+    "version",
+    "keyset_kind",
+    "keys",
+    "keyset_id"
+  ],
+  "title": "SLANG-Claims Keyset Schema",
+  "type": "object"
+}

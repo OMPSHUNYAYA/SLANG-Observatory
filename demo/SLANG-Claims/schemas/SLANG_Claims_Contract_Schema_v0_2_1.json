@@ -1,0 +1,95 @@
+{
+  "$id": "urn:slang:claims:contract:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attestation_correspondence_scope": {},
+    "attestation_integrity_scope": {},
+    "authority_exclusions": {},
+    "authority_profile_id": {
+      "const": "CLAIM-AUTHORITY-EVIDENCE-1"
+    },
+    "canonicalization_id": {
+      "const": "SLANG-CANONICAL-JSON-1-D02"
+    },
+    "contract_id": {},
+    "core_version": {
+      "const": "SLANG-CORE-1-D05"
+    },
+    "forbidden_field_matching": {},
+    "forbidden_value_commitment": {
+      "const": "REDACTED_BEFORE_SUBMISSION_ID"
+    },
+    "identity_domain_id": {},
+    "library_entry_validation": {
+      "type": "string"
+    },
+    "payable_formula": {},
+    "profile_id": {
+      "const": "SLANG-CLAIMS-PROFILE-1-D03"
+    },
+    "python_compatibility": {
+      "type": "string"
+    },
+    "quantum_profile_id": {
+      "const": "CLAIM-QUANTUM-NET-AFTER-DEDUCTIBLE-CAP-1"
+    },
+    "reason_code_emission": {
+      "type": "string"
+    },
+    "reason_code_registry": {},
+    "receipt_correspondence_scope": {},
+    "receipt_integrity_scope": {},
+    "resource_limits": {},
+    "ruleset_id": {
+      "const": "SLANG-CLAIMS-RULESET-1-D03"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-CONTRACT-1"
+    },
+    "schema_validation_scope": {},
+    "schemas": {},
+    "state_precedence": {},
+    "supported_admission_states": {},
+    "supported_evidence_modes": {},
+    "supported_outcomes": {},
+    "supported_states": {},
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "attestation_correspondence_scope",
+    "attestation_integrity_scope",
+    "authority_exclusions",
+    "authority_profile_id",
+    "canonicalization_id",
+    "contract_id",
+    "core_version",
+    "forbidden_field_matching",
+    "forbidden_value_commitment",
+    "identity_domain_id",
+    "library_entry_validation",
+    "payable_formula",
+    "profile_id",
+    "python_compatibility",
+    "quantum_profile_id",
+    "reason_code_emission",
+    "reason_code_registry",
+    "receipt_correspondence_scope",
+    "receipt_integrity_scope",
+    "resource_limits",
+    "ruleset_id",
+    "schema",
+    "schema_validation_scope",
+    "schemas",
+    "state_precedence",
+    "supported_admission_states",
+    "supported_evidence_modes",
+    "supported_outcomes",
+    "supported_states",
+    "version"
+  ],
+  "title": "SLANG-Claims Contract Manifest Schema",
+  "type": "object"
+}

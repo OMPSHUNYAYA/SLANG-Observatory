@@ -1,0 +1,107 @@
+{
+  "$id": "urn:slang:claims:summary:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admission_state": {
+      "enum": [
+        "ADMIT",
+        "DENY",
+        "WITHHOLD"
+      ]
+    },
+    "claim_outcome": {
+      "enum": [
+        "NONE",
+        "NOT_PAYABLE",
+        "PAYABLE"
+      ]
+    },
+    "contract_id": {
+      "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "money_movement": {
+      "type": "string"
+    },
+    "outcome_id": {
+      "type": "string"
+    },
+    "payable_amount_minor": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "payment_authority": {
+      "type": "string"
+    },
+    "profile_id": {
+      "const": "SLANG-CLAIMS-PROFILE-1-D03"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 64,
+      "type": "array"
+    },
+    "result_id": {
+      "type": "string"
+    },
+    "ruleset_id": {
+      "const": "SLANG-CLAIMS-RULESET-1-D03"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-SUMMARY-1"
+    },
+    "settlement_authority": {
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ABSTAIN",
+        "CONFLICT",
+        "FORBIDDEN",
+        "INCOMPLETE",
+        "RESOLVED",
+        "UNSUPPORTED"
+      ]
+    },
+    "summary_id": {
+      "type": "string"
+    },
+    "version": {
+      "const": "0.2.1"
+    },
+    "visibility_state": {
+      "enum": [
+        "VISIBLE",
+        "WITHHELD"
+      ]
+    }
+  },
+  "required": [
+    "admission_state",
+    "claim_outcome",
+    "contract_id",
+    "currency",
+    "money_movement",
+    "outcome_id",
+    "payable_amount_minor",
+    "payment_authority",
+    "profile_id",
+    "reason_codes",
+    "result_id",
+    "ruleset_id",
+    "schema",
+    "settlement_authority",
+    "state",
+    "summary_id",
+    "version",
+    "visibility_state"
+  ],
+  "title": "SLANG-Claims Summary Schema",
+  "type": "object"
+}

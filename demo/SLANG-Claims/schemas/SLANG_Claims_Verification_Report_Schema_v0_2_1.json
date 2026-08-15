@@ -1,0 +1,112 @@
+{
+  "$id": "urn:slang:claims:verification-report:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authenticity_contract_id": {
+      "const": "slang_claims_authenticity_contract_sha256:1cfbe74fdf2d3efe9f9597aa01eb3f3a02560fc0698b4e3a53d668c1b2bd5a4f"
+    },
+    "authenticity_status": {
+      "type": "string"
+    },
+    "core_contract_id": {
+      "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+    },
+    "correspondence_status": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "fraud_determination_authority": {
+      "const": "NONE"
+    },
+    "freshness_status": {
+      "const": "NOT_EVALUATED"
+    },
+    "invalid_signers": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "legal_authority": {
+      "const": "NONE"
+    },
+    "money_movement": {
+      "const": "NONE"
+    },
+    "operational_authority": {
+      "const": "NONE"
+    },
+    "payload_integrity": {
+      "type": "string"
+    },
+    "payload_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "policy_interpretation_authority": {
+      "const": "NONE"
+    },
+    "replay_protection_status": {
+      "const": "EXTERNAL"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-VERIFICATION-REPORT-1"
+    },
+    "settlement_authority": {
+      "const": "NONE"
+    },
+    "signer_policy_status": {
+      "type": "string"
+    },
+    "trust_policy_status": {
+      "const": "EXTERNAL"
+    },
+    "valid_signers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification_ok": {
+      "type": "boolean"
+    },
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "schema",
+    "version",
+    "verification_ok",
+    "detail",
+    "payload_kind",
+    "payload_integrity",
+    "correspondence_status",
+    "authenticity_status",
+    "signer_policy_status",
+    "valid_signers",
+    "invalid_signers",
+    "freshness_status",
+    "replay_protection_status",
+    "trust_policy_status",
+    "core_contract_id",
+    "authenticity_contract_id",
+    "payment_authority",
+    "settlement_authority",
+    "legal_authority",
+    "policy_interpretation_authority",
+    "fraud_determination_authority",
+    "money_movement",
+    "operational_authority"
+  ],
+  "title": "SLANG-Claims Verification Report Schema",
+  "type": "object"
+}

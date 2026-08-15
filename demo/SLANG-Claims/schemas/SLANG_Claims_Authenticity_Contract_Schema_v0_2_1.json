@@ -1,0 +1,131 @@
+{
+  "$id": "urn:slang:claims:authenticity-contract:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authenticity_contract_id": {
+      "pattern": "^slang_claims_authenticity_contract_sha256:[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "core_contract_id": {
+      "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+    },
+    "created_at_format": {
+      "const": "RFC3339_UTC_SECONDS"
+    },
+    "ed25519_private_seed_bytes": {
+      "const": 32
+    },
+    "ed25519_public_key_bytes": {
+      "const": 32
+    },
+    "envelope_schema": {
+      "const": "SLANG-CLAIMS-SIGNED-ENVELOPE-1"
+    },
+    "fraud_determination_authority": {
+      "const": "NONE"
+    },
+    "freshness_evaluation": {
+      "const": "OUT_OF_SCOPE"
+    },
+    "hmac_min_secret_bytes": {
+      "const": 32
+    },
+    "hmac_secret_requirement": {
+      "const": "CRYPTOGRAPHICALLY_RANDOM_SECRET_MATERIAL_RECOMMENDED"
+    },
+    "legal_authority": {
+      "const": "NONE"
+    },
+    "max_keyset_entries": {
+      "const": 64
+    },
+    "max_signatures": {
+      "const": 16
+    },
+    "money_movement": {
+      "const": "NONE"
+    },
+    "payment_authority": {
+      "const": "NONE"
+    },
+    "policy_interpretation_authority": {
+      "const": "NONE"
+    },
+    "replay_protection": {
+      "const": "EXTERNAL"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-AUTHENTICITY-CONTRACT-1"
+    },
+    "settlement_authority": {
+      "const": "NONE"
+    },
+    "signature_domain": {
+      "const": "SLANG-CLAIMS-SIGNATURE-1"
+    },
+    "signing_statement_schema": {
+      "const": "SLANG-CLAIMS-SIGNING-STATEMENT-1"
+    },
+    "supported_algorithms": {
+      "items": {
+        "enum": [
+          "ED25519",
+          "HMAC-SHA256"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "supported_payload_kinds": {
+      "items": {
+        "enum": [
+          "ATTESTATION",
+          "BUNDLE",
+          "RECEIPT"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "trust_roots_rotation_revocation": {
+      "const": "EXTERNAL"
+    },
+    "verification_report_schema": {
+      "const": "SLANG-CLAIMS-VERIFICATION-REPORT-1"
+    },
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "schema",
+    "version",
+    "core_contract_id",
+    "envelope_schema",
+    "signing_statement_schema",
+    "verification_report_schema",
+    "signature_domain",
+    "supported_algorithms",
+    "supported_payload_kinds",
+    "hmac_min_secret_bytes",
+    "hmac_secret_requirement",
+    "ed25519_private_seed_bytes",
+    "ed25519_public_key_bytes",
+    "max_signatures",
+    "max_keyset_entries",
+    "created_at_format",
+    "freshness_evaluation",
+    "replay_protection",
+    "trust_roots_rotation_revocation",
+    "payment_authority",
+    "settlement_authority",
+    "legal_authority",
+    "policy_interpretation_authority",
+    "fraud_determination_authority",
+    "money_movement",
+    "authenticity_contract_id"
+  ],
+  "title": "SLANG-Claims Authenticity Contract Schema",
+  "type": "object"
+}

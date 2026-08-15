@@ -1,0 +1,331 @@
+{
+  "$defs": {
+    "result": {
+      "additionalProperties": false,
+      "properties": {
+        "admission_state": {
+          "enum": [
+            "ADMIT",
+            "DENY",
+            "WITHHOLD"
+          ]
+        },
+        "admitted_loss_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "assessed_loss_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "authority_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "authority_manifest_id": {
+          "type": "string"
+        },
+        "authority_profile_id": {
+          "const": "CLAIM-AUTHORITY-EVIDENCE-1"
+        },
+        "canonical_input_id": {
+          "type": "string"
+        },
+        "canonicalization_id": {
+          "const": "SLANG-CANONICAL-JSON-1-D02"
+        },
+        "claim_amount_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "claim_outcome": {
+          "enum": [
+            "NONE",
+            "NOT_PAYABLE",
+            "PAYABLE"
+          ]
+        },
+        "claim_ref": {
+          "type": "string"
+        },
+        "claimant_identity_verification": {
+          "type": "string"
+        },
+        "claimant_ref": {
+          "type": "string"
+        },
+        "conflicts": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "type": "array"
+        },
+        "context_id": {
+          "type": "string"
+        },
+        "contract_id": {
+          "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+        },
+        "core_version": {
+          "const": "SLANG-CORE-1-D05"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "deductible_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "evaluation_evidence_id": {
+          "type": "string"
+        },
+        "evaluation_id": {
+          "type": "string"
+        },
+        "evidence_agreement_id": {
+          "type": "string"
+        },
+        "evidence_mode": {
+          "type": "string"
+        },
+        "evidence_set_id": {
+          "type": "string"
+        },
+        "fraud_determination_authority": {
+          "type": "string"
+        },
+        "identity_domain_id": {
+          "type": "string"
+        },
+        "legal_authority": {
+          "type": "string"
+        },
+        "loss_event_ref": {
+          "type": "string"
+        },
+        "missing_dependencies": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "type": "array"
+        },
+        "money_movement": {
+          "type": "string"
+        },
+        "outcome_id": {
+          "type": "string"
+        },
+        "outcome_visible": {
+          "type": "boolean"
+        },
+        "payable_amount_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "payment_authority": {
+          "type": "string"
+        },
+        "policy_interpretation_authority": {
+          "type": "string"
+        },
+        "policy_ref": {
+          "type": "string"
+        },
+        "post_deductible_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "profile_id": {
+          "const": "SLANG-CLAIMS-PROFILE-1-D03"
+        },
+        "prohibitions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "type": "array"
+        },
+        "quantum_profile_id": {
+          "const": "CLAIM-QUANTUM-NET-AFTER-DEDUCTIBLE-CAP-1"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "type": "array"
+        },
+        "remaining_limit_minor": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "resolution_state": {
+          "enum": [
+            "ABSTAIN",
+            "CONFLICT",
+            "FORBIDDEN",
+            "INCOMPLETE",
+            "RESOLVED",
+            "UNSUPPORTED"
+          ]
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "rule_profile_id": {
+          "type": "string"
+        },
+        "ruleset_id": {
+          "const": "SLANG-CLAIMS-RULESET-1-D03"
+        },
+        "schema": {
+          "const": "SLANG-CLAIMS-RESULT-1"
+        },
+        "settlement_authority": {
+          "type": "string"
+        },
+        "source_authenticity": {
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "ABSTAIN",
+            "CONFLICT",
+            "FORBIDDEN",
+            "INCOMPLETE",
+            "RESOLVED",
+            "UNSUPPORTED"
+          ]
+        },
+        "submission_id": {
+          "type": "string"
+        },
+        "version": {
+          "const": "0.2.1"
+        },
+        "visibility_state": {
+          "enum": [
+            "VISIBLE",
+            "WITHHELD"
+          ]
+        }
+      },
+      "required": [
+        "admission_state",
+        "admitted_loss_minor",
+        "assessed_loss_minor",
+        "authority_count",
+        "authority_manifest_id",
+        "authority_profile_id",
+        "canonical_input_id",
+        "canonicalization_id",
+        "claim_amount_minor",
+        "claim_outcome",
+        "claim_ref",
+        "claimant_identity_verification",
+        "claimant_ref",
+        "conflicts",
+        "context_id",
+        "contract_id",
+        "core_version",
+        "currency",
+        "deductible_minor",
+        "evaluation_evidence_id",
+        "evaluation_id",
+        "evidence_agreement_id",
+        "evidence_mode",
+        "evidence_set_id",
+        "fraud_determination_authority",
+        "identity_domain_id",
+        "legal_authority",
+        "loss_event_ref",
+        "missing_dependencies",
+        "money_movement",
+        "outcome_id",
+        "outcome_visible",
+        "payable_amount_minor",
+        "payment_authority",
+        "policy_interpretation_authority",
+        "policy_ref",
+        "post_deductible_minor",
+        "profile_id",
+        "prohibitions",
+        "quantum_profile_id",
+        "reason_codes",
+        "remaining_limit_minor",
+        "resolution_state",
+        "result_id",
+        "rule_profile_id",
+        "ruleset_id",
+        "schema",
+        "settlement_authority",
+        "source_authenticity",
+        "state",
+        "submission_id",
+        "version",
+        "visibility_state"
+      ],
+      "title": "SLANG-Claims Result Schema",
+      "type": "object"
+    }
+  },
+  "$id": "urn:slang:claims:bundle:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bundle_id": {
+      "type": "string"
+    },
+    "canonicalization_id": {
+      "const": "SLANG-CANONICAL-JSON-1-D02"
+    },
+    "contract_id": {
+      "const": "slang_claims_contract_sha256:dcc9fe86df0ded6930fe7c4116ba0f22e43220605d6a0bfd96b75c44f5f19d9a"
+    },
+    "core_version": {
+      "const": "SLANG-CORE-1-D05"
+    },
+    "identity_domain_id": {
+      "type": "string"
+    },
+    "normalized_projection": {
+      "type": "object"
+    },
+    "result": {
+      "$ref": "#/$defs/result"
+    },
+    "schema": {
+      "const": "SLANG-CLAIMS-BUNDLE-1"
+    },
+    "submitted_input": {
+      "type": "object"
+    },
+    "version": {
+      "const": "0.2.1"
+    }
+  },
+  "required": [
+    "bundle_id",
+    "canonicalization_id",
+    "contract_id",
+    "core_version",
+    "identity_domain_id",
+    "normalized_projection",
+    "result",
+    "schema",
+    "submitted_input",
+    "version"
+  ],
+  "title": "SLANG-Claims Reconstruction Bundle Schema",
+  "type": "object"
+}
