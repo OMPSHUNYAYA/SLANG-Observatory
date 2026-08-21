@@ -74,13 +74,13 @@ Expected:
 
 ```text
 SLANG-Hurricane structural admission demonstration self-test
-checks:18/18 PASS
+checks:24/24 PASS
 schema_id:SLANG-HURRICANE-STRUCTURAL-ADMISSION-DEMO-1
 ruleset_id:SLANG-HURRICANE-STRUCTURAL-ADMISSION-RULESET-1
 meteorological_prediction_performed:false
 ```
 
-The self-test checks the admitted example, canonical receipt stability under source-key reordering, full SHA-256 receipt length, the explicit non-prediction flag, and refusal behavior for each demonstration gate.
+The self-test checks the admitted example, canonical receipt stability under source-key reordering, full SHA-256 receipt length, the explicit non-prediction flag, refusal behavior for each demonstration gate, and rejection of Boolean values in numeric gate fields.
 
 A passing self-test establishes only that the supplied implementation reproduces its own declared checks.
 
