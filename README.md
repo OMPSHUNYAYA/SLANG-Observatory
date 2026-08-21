@@ -33,13 +33,13 @@ each demo.
 
 ## ⚡ **What SLANG-Observatory Tests**
 
-Each demo asks a narrow question:
+Each demo asks a narrow structural-resolution question.
 
-Can a named workflow, sequence, arrival order, or operational mechanism stop
-being the sole authority over a bounded result while deterministic structural
-resolution remains reproducible?
+Many demos test whether a named workflow, sequence, arrival order, or operational
+mechanism must remain the sole authority over a bounded result. Other demos
+demonstrate a bounded structural admission relation directly.
 
-The practical pattern is:
+A recurring practical pattern is:
 
 `operational mechanism -> no longer the sole resolution authority`
 
@@ -203,12 +203,25 @@ or security controls.
 
 ### [SLANG-Hurricane](demo/SLANG-Hurricane/)
 
-**Forecast visibility from structural maturity.**
+**Deterministic structural admission from declared hurricane-domain demonstration inputs.**
 
-`forecast_visible iff structure_complete AND structure_consistent`
+SLANG-Hurricane evaluates seven declared demonstration gates under an identified
+ruleset and resolves one bounded state:
 
-This is a visibility-admission demonstration, not a forecasting model,
-meteorological system, or public-safety authority.
+`all required demonstration gates satisfied -> ADMITTED`
+
+`one or more required demonstration gates not satisfied -> NOT_ADMITTED`
+
+For canonical declared content:
+
+`same canonical declared content + same ruleset -> same bounded result + same receipt`
+
+The numeric gate limits are illustrative rules of the demonstration profile,
+not established meteorological thresholds.
+
+SLANG-Hurricane does not predict hurricane formation, track, intensity, rapid
+intensification, landfall, hazards, or emergency impact. It does not authenticate
+observations or establish real-world meteorological truth.
 
 ### [SLANG-Exam](demo/SLANG-Exam/)
 
@@ -283,15 +296,15 @@ This table describes only the bounded question tested by each demonstration.
 | Claims | claim-processing or payout workflow sequence | declared claim context, bound claim-authority evidence, versioned rules, and bounded claim arithmetic |
 | Annuity | annuity-processing or payout-admission workflow sequence | declared annuity context, bound authority evidence, versioned rules, and declared periodic-payout structure |
 | Cybersecurity | pipeline or escalation sequence | complete supported escalation evidence |
-| Hurricane | forced or premature forecast publication | maturity and visibility-admission structure |
+| Hurricane | no domain-operational mechanism claimed; direct bounded admission demonstration | declared hurricane-domain demonstration inputs, identified ruleset, and explicit admission gates |
 | Exam | pre-created final paper or selector procedure alone | question-bank metadata, blueprint, selector context, authority, and release structure |
 | Voting | recount or tally workflow sequence | complete recorded tally structure |
 | Password | password-verification workflow or verifier-evidence arrival order as sole bounded admission authority | declared verifier evidence, bound authentication context, verifier set, evidence mode, profile, and ruleset |
 | ResetPassword | reset workflow or authorization-evidence arrival order as sole bounded admission authority | declared authorization evidence, bound reset context, authorizer set, evidence mode, profile, and ruleset |
 
 The table does not claim that the named mechanisms are unnecessary in
-real-world systems. It records what each demo removes from sole authority over
-its own bounded result.
+real-world systems. It records the bounded structural question tested by each
+demo, including cases where no domain-operational mechanism is claimed.
 
 ---
 
@@ -325,7 +338,7 @@ A typical SLANG demonstration:
 3. normalizes order-independent structures where declared
 4. checks completeness, consistency, authority, and admissibility
 5. resolves a bounded state
-6. preserves explicit non-result states when resolution is not justified
+6. preserves explicit non-result or refusal states where declared when resolution is not justified
 7. produces evidence where the demo publishes verification artifacts
 
 Conceptually:
@@ -422,8 +435,8 @@ repositories define their own contracts, evidence, and limitations.
 - a collection of bounded structural-resolution demonstrations
 - a deterministic resolution playground
 - a repository for inspectable domain kernels and evidence
-- a place to test whether a named operational mechanism must remain the sole
-  authority over a bounded result
+- a place to test bounded structural-resolution relations, including whether a
+  named operational mechanism must remain the sole authority over a bounded result
 
 ### SLANG-Observatory is not:
 
@@ -440,11 +453,12 @@ repositories define their own contracts, evidence, and limitations.
 
 ## 🛡 **Safety and Claim Boundary**
 
-The demonstrations preserve explicit non-result states rather than forcing an
-answer when required structure is missing, conflicting, forbidden, unsupported,
-or inconclusive.
+Depending on the declared domain contract, demonstrations preserve bounded
+non-result or refusal states rather than forcing an outcome when required
+structure is missing, conflicting, forbidden, unsupported, inconclusive, or
+otherwise not admitted.
 
-Typical relations include:
+Representative relations across the demos include:
 
 `complete + consistent + admitted structure -> bounded resolution`
 
@@ -497,8 +511,10 @@ SLANG-Observatory demonstrates a bounded structural-resolution discipline:
 `same admitted canonical structure + same versioned rules -> same bounded result`
 
 Where a named workflow, sequence, or operational mechanism is removed from sole
-resolution authority, the remaining structure must still be explicit,
-complete, consistent, and verifiable within the declared model.
+resolution authority, the remaining structure must still be explicit, complete,
+consistent, and verifiable within the declared model. Other demos may test a
+bounded structural-admission relation directly without making such a
+domain-operational removal claim.
 
 Each demo should be judged by its own code, evidence, limits, and documented
 claim boundary.
